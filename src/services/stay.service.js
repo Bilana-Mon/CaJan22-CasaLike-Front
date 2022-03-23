@@ -1,8 +1,13 @@
 import { storageService } from './async-storage.service.js';
 import { utilService } from './util.service.js';
 
+
+// const fs = require('fs')
+
 const STAYS_KEY = 'staysDB'
-const gStays = '../data/stay.json'
+import gStays from '../../data/stay.json'
+
+console.log(gStays)
 
 
 export const stayService = {
@@ -14,10 +19,10 @@ export const stayService = {
 }
 
 // add filter 
-async function query(filterBy = {}) {
+async function query() {
     let stays = await storageService.query(STAYS_KEY)
     if(!stays.length){
-        stays = [...gStays]
+       let stays = {...gStays}
         utilService.saveToStorage(STAYS_KEY,JSON.stringify(stays || null))
     }
     return stays

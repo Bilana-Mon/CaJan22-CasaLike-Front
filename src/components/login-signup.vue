@@ -1,6 +1,7 @@
 <template>
   <app-modal>
   <section>
+   
     <button @click="closeModal">X</button>
 
   </section>

@@ -1,25 +1,34 @@
 <template>
   <section class="stay-app">
-    <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
+   <p>{{stays}}</p>
+
+    <!-- <stay-list :stays="stays" /> -->
+   
+    
   </section>
 </template>
 
 <script>
-import loginSignup from '../components/login-signup.vue'
+import stayList from '../components/stay-list.vue'
 
 export default {
   components: {
-    loginSignup
+    stayList
   },
   created() { },
 
   data() {
     return {
-      addSignupModal: false
+
+      
     }
   },
   methods: {},
-  computed: {},
+  computed: {
+    stays() {
+      return this.$store.getters.stays 
+    }
+  },
   unmounted() { },
 }
 </script>

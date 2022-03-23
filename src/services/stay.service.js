@@ -53,6 +53,6 @@ async function save(stay) {
 //     })
 // }
 
-function _buileFilter() {
+function _buildFilter() {
 
 }

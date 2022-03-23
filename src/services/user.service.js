@@ -12,7 +12,7 @@ export const userService = {
 }
 
 async function login({ username, password }) {
-    const users = await utilService.loadFromStorage(USERS_KEY)
+    let users = await utilService.loadFromStorage(USERS_KEY)
     if (!users || !users.length) {
         users = gUsers
     }

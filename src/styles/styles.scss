@@ -1,0 +1,30 @@
+//BASICS
+@import 'basics/base';
+@import 'basics/helpers';
+@import 'basics/layout';
+
+
+//SETUP
+@import 'setup/functions';
+@import 'setup/typography';
+@import 'setup/variables';
+@import 'setup/mixins';
+
+
+//COMPONENTS
+@import 'components/app-footer';
+@import 'components/app-header';
+@import 'components/app-modal';
+@import 'components/custom-card';
+@import 'components/login-signup';
+@import 'components/search.scss';
+@import 'components/stay-preview';
+
+
+//VIEWS
+@import 'views/about';
+@import 'views/stay-details';
+@import 'views/stay-app';
+@import 'views/home';
+@import 'views/backoffice';
+@import 'views/become-host';

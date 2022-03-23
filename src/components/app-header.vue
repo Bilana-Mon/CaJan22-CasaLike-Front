@@ -1,31 +1,37 @@
 <template>
     <header class="app-header">
-        <div @click="goHome" class="logo">Casa<span>Like</span></div>
+        <div @click="goHome" class="logo">
+            Casa
+            <span>Like</span>
+        </div>
         <nav>
-      <router-link class="link" to="/stay">Places to stay</router-link> |
-      <router-link class="link" to="/host">Become a host</router-link>
-      <ul>
-          <li @click="addSignupModal = true">
-              <a>Signup</a>
-          </li>
-          <li @click="addSignupModal = true">
-          <a>Login</a>
-           </li>           
-      </ul>
+            <router-link class="link" to="/stay">Places to stay</router-link>|
+            <router-link class="link" to="/host">Become a host</router-link>
+            <ul>
+                <li @click="addSignupModal = true">
+                    <a>Signup</a>
+                </li>
+                <li @click="addSignupModal = true">
+                    <a>Login</a>
+                </li>
+            </ul>
         </nav>
-<login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
+        <search />
+        <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
     </header>
 </template>
 
 <script>
 
 import loginSignup from './login-signup.vue'
+import search from './search.vue'
 
 
 export default {
-    name:'app-header',
+    name: 'app-header',
     components: {
-        loginSignup
+        loginSignup,
+        search
     },
     created() { },
     data() {

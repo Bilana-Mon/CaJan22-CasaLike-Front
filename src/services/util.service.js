@@ -2,7 +2,8 @@ export const utilService = {
     loadFromStorage,
     saveToStorage,
     loadFromSessionStorage,
-    saveToSessionStorage
+    saveToSessionStorage,
+    makeId
 }
 
 

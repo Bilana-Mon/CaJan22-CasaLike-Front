@@ -6,13 +6,13 @@
 // import gUsers from '../../data/user.json'
 // import gStays from '../../data/stay.json'
 
-// export const orderService = {
-//     query,
-//     getById,
-//     remove,
-//     save,
-//     getEmptyOrder
-// }
+export const orderService = {
+    // query,
+    // getById,
+    // remove,
+    // save,
+    // getEmptyOrder
+}
 // const gOrders = _createOrders()
 
 // async function query() {

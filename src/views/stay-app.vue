@@ -1,6 +1,6 @@
 <template>
   <section class="stay-app">
-    <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
+    
   </section>
 </template>
 
@@ -15,7 +15,7 @@ export default {
 
   data() {
     return {
-      addSignupModal: false
+      
     }
   },
   methods: {},

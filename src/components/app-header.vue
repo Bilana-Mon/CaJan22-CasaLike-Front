@@ -13,16 +13,20 @@
            </li>           
       </ul>
         </nav>
-
+<login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
     </header>
 </template>
 
 <script>
 
+import loginSignup from './login-signup.vue'
+
 
 export default {
     name:'app-header',
-    components: {},
+    components: {
+        loginSignup
+    },
     created() { },
     data() {
         return {

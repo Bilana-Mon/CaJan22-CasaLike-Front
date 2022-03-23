@@ -20,11 +20,11 @@ export const stayService = {
 
 // add filter 
 async function query() {
-    let stays = await storageService.query(STAYS_KEY)
-    if(!stays.length){
+    // let stays = await storageService.query(STAYS_KEY)
+    // if(!stays.length){
        let stays = {...gStays}
-        utilService.saveToStorage(STAYS_KEY,JSON.stringify(stays || null))
-    }
+    //     utilService.saveToStorage(STAYS_KEY,JSON.stringify(stays || null))
+    // }
     return stays
 }
 

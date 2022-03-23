@@ -1,8 +1,8 @@
 <template>
   <section class="stay-app">
-   <p>{{stays}}</p>
+   <!-- <p>{{stays}}</p> -->
 
-    <!-- <stay-list :stays="stays" /> -->
+    <stay-list :stays="stays" />
    
     
   </section>

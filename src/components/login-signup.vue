@@ -13,6 +13,7 @@ import appModal from './app-modal.vue'
 
 
 export default {
+  name:'login-signup',
 
   components: {
       appModal

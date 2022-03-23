@@ -1,5 +1,14 @@
 <template>
-    <section class="app-footer">this is a footer</section>
+    <section class="app-footer"><div class="footer-bottom">
+        <p>© 2022 CasaLike, Inc.</p>
+        <p>Privacy</p>
+        <p>Terms</p>
+        <p>Sitemap</p>
+        <p>English (US)</p>
+        <p>$</p>
+        <p>USD</p>
+    </div>
+    </section>
 </template>
 
 <script>

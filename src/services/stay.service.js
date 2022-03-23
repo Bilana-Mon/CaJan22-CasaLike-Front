@@ -10,12 +10,12 @@ export const stayService = {
     getById,
     remove,
     save,
-    getEmptyStay
+    // getEmptyStay
 }
 
 // add filter 
 async function query(filterBy = {}) {
-    const stays = await storageService.query(STAYS_KEY)
+    let stays = await storageService.query(STAYS_KEY)
     if(!stays.length){
         stays = [...gStays]
         utilService.saveToStorage(STAYS_KEY,JSON.stringify(stays || null))

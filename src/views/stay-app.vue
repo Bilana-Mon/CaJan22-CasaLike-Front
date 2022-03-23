@@ -1,25 +1,25 @@
 <template>
   <section class="stay-app">
-    <login-signup v-if="addSignupModal" @close="addSignupModal=false"></login-signup>
+    <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
   </section>
 </template>
 
 <script>
-import loginSignup from './login-signup.vue'
+import loginSignup from '../components/login-signup.vue'
 
 export default {
   components: {
-  loginSignup
+    loginSignup
   },
-  created() {},
+  created() { },
 
-   data() {
+  data() {
     return {
-        addSignupModal: false
+      addSignupModal: false
     }
   },
   methods: {},
   computed: {},
-  unmounted() {},
+  unmounted() { },
 }
 </script>

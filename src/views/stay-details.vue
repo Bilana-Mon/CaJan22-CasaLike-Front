@@ -5,18 +5,17 @@
 </template>
 
 <script>
-import appHeader from './components/app-header.vue'
 
 export default {
-name:'stay-details',
+  name: 'stay-details',
   // props: [''],
   components: {},
-  created() {},
+  created() { },
   data() {
     return {}
   },
   methods: {},
   computed: {},
-  unmounted() {},
+  unmounted() { },
 }
 </script>

@@ -1,4 +1,4 @@
-import { userService } from '../../services.user.service.js';
+import { userService } from '../../services/user.service.js';
 import { utilService } from '../../services/util.service.js';
 
 export default {

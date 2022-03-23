@@ -25,11 +25,11 @@ export default {
     },
     actions: {
         async loadOrders({ commit, state }) {
-            const orders = await orderService.query()
+            await orderService.query()
             commit({ type: 'setOrders', orders })
         },
         async saveOrder({ commit }, { order }) {
-            const order = await orderService.save(order)
+            await orderService.save(order)
             commit({ type: 'saveOrder', order })
         },
         async removeOrder({ commit }, { orderId }) {

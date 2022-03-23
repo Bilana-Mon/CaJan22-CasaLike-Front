@@ -51,3 +51,7 @@ async function save(stay) {
      
 //     })
 // }
+
+function _buileFilter() {
+
+}

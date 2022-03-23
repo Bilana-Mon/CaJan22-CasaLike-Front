@@ -26,7 +26,7 @@ export default {
   methods: {},
   computed: {
     stays() {
-      return this.$store.getters.stays 
+      return this.$store.getters.staysToShow
     }
   },
   unmounted() { },

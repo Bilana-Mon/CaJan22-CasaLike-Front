@@ -7,7 +7,12 @@
         </template>
 
         <template #footer>
-          <p><span>Name:</span> {{ stay.name }}</p>
+          <p>{{getFormattedRate}}(<span>{{stay.numOfReviews}}</span>)</p>
+          <p><span>{{stay.roomType}}</span>·<span>{{getLocation}}</span></p>
+          <p><span>{{stay.name}}</span></p>
+          <p><span>{{getFormattedPrice}}</span> <span>total</span></p>
+          <p><a href="#">Price breakdown</a></p>
+          
         </template>
 
       </custom-card>
@@ -40,7 +45,21 @@ export default {
     
   },
   computed: {
-   
+   getFormattedRate() {
+     let rate = +(this.stay.reviewScores.rating) /20 
+    return rate
+   },
+   getLocation() {
+     let stayStreet = this.stay.address.street.split(',')
+     let formattedStayStreet = stayStreet[0]
+     let city = this.stay.address.city
+     let formattedLocation = formattedStayStreet + ' ' + city
+     return formattedLocation
+   }, 
+   getFormattedPrice() {
+     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'}).format(this.stay.price)
+   },
+
   },
  
   unmounted() {},

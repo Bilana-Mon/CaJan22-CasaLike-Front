@@ -26,3 +26,8 @@ export default {
     unmounted() { },
 }
 </script>
+<style>
+.stay-list ul {
+    list-style-type: none;
+}
+</style>

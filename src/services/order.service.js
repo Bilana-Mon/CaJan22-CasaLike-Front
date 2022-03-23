@@ -1,6 +1,6 @@
 import { utilService } from "./util.service.js";
 import { storageService } from "./async-storage.service.js";
-import { remove } from "@vue/shared";
+
 
 const ORDERS_KEY = 'ordersDB'
 
@@ -21,8 +21,8 @@ async function getById(id) {
     return await storageService.getById(ORDERS_KEY, id)
 }
 
-async function remove(id) {
-    return await storageService.delete(ORDERS_KEY, id)
+function remove(id) {
+    return storageService.delete(ORDERS_KEY, id)
 }
 
 async function save(order) {

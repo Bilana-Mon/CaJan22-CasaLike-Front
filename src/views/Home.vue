@@ -9,22 +9,23 @@
     <h1>Ultimate Rentals</h1>
     <div class="rental-cards">
 
-      <div class="rental-card">
+      <div class="rental-card" @click="$router.push('/stay')">
         <h2>Copenhagen</h2>
         <img class="rental-img" alt="copenhagen" src="~@/assets/imgs/homepage/kbh.webp">
+    
       </div>
 
-      <div class="rental-card">
+      <div class="rental-card" @click="$router.push('/stay/')">
         <h2>Paris</h2>
         <img class="rental-img" alt="paris" src="~@/assets/imgs/homepage/paris.webp">
       </div>
 
-      <div class="rental-card">
+      <div class="rental-card" @click="$router.push(`/stay`)">
         <h2>Hongkong</h2>
         <img class="rental-img" alt="hongkong" src="~@/assets/imgs/homepage/hongkong.webp">
       </div>
 
-      <div class="rental-card">
+      <div class="rental-card" @click="$router.push(`/stay`)">
         <h2>San-Francisco</h2>
         <img class="rental-img" alt="sanfrancisco" src="~@/assets/imgs/homepage/sanfran.webp">
       </div>
@@ -47,7 +48,10 @@ export default {
   data() {
     return {}
   },
-  methods: {},
+  methods: {
+    // toRental(stayId){
+    // this.$router.push(`/stay`)
+  },
   computed: {},
   unmounted() { },
 }

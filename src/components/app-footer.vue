@@ -1,5 +1,6 @@
 <template>
-    <section class="app-footer"><div class="footer-bottom">
+    <section class="footer-container">
+        <div class="footer-bottom">
         <p>© 2022 CasaLike, Inc.</p>
         <p>Privacy</p>
         <p>Terms</p>
@@ -26,3 +27,19 @@ export default {
     unmounted() { },
 }
 </script>
+<style>
+.footer-bottom {
+    height: 10rem;
+    background-color: lightgrey;
+    bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p {
+    cursor:pointer;
+}
+
+</style>

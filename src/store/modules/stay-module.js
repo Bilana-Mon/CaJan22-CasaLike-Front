@@ -25,8 +25,8 @@ export default {
     actions: {
         async loadStays({ commit, state }) {
             try {
-               let stays = await stayService.query()
-               console.log(stays)
+                let stays = await stayService.query()
+                console.log(stays)
                 commit({ type: 'setStays', stays })
             } catch (err) {
                 console.log('error', err);

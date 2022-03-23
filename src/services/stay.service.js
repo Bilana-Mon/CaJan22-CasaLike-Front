@@ -21,10 +21,10 @@ export const stayService = {
 // add filter 
 async function query() {
     let stays = await storageService.query(STAYS_KEY)
-    if(!stays || !stays.length){
-       stays = [...gStays]
-       console.log(stays)
-       utilService.saveToStorage(STAYS_KEY, stays)
+    if (!stays || !stays.length) {
+        stays = [...gStays]
+        console.log(stays)
+        utilService.saveToStorage(STAYS_KEY, stays)
     }
     return stays
 }
@@ -49,7 +49,7 @@ async function save(stay) {
 // async function getEmptyStay(){
 //     return Promise.resolve({
 //       name:'',
-     
+
 //     })
 // }
 

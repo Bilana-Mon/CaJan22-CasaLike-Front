@@ -3,6 +3,8 @@ import { storageService } from "./async-storage.service.js";
 
 
 const ORDERS_KEY = 'ordersDB'
+import gUsers from '../../data/user.json'
+import gStays from '../../data/stay.json'
 
 export const orderService = {
     query,
@@ -61,8 +63,8 @@ function _createOrder(location, fromDate, toDate, capacity, user, host) {
         fromDate,
         toDate,
         capacity,
-        user: user.fullname,
-        host: stay.host.fullname,
+        user: gUsers.fullname,
+        host: gStays.host.fullname,
         createdAt: new Date()
     }
 }

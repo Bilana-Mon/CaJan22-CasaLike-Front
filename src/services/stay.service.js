@@ -7,7 +7,7 @@ import { utilService } from './util.service.js';
 const STAYS_KEY = 'staysDB'
 import gStays from '../../data/stay.json'
 
-console.log(gStays)
+
 
 
 export const stayService = {
@@ -20,11 +20,12 @@ export const stayService = {
 
 // add filter 
 async function query() {
-    // let stays = await storageService.query(STAYS_KEY)
-    // if(!stays.length){
-       let stays = {...gStays}
-    //     utilService.saveToStorage(STAYS_KEY,JSON.stringify(stays || null))
-    // }
+    let stays = await storageService.query(STAYS_KEY)
+    if(!stays || !stays.length){
+       stays = [...gStays]
+       console.log(stays)
+       utilService.saveToStorage(STAYS_KEY, stays)
+    }
     return stays
 }
 

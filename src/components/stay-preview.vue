@@ -1,17 +1,17 @@
 <template>
-<custom-card>
+<!-- <custom-card> -->
 
     <li class="stay-preview-container">
          <p><span>Name:</span> {{ stay.name }}</p>
     </li>
-</custom-card>
+<!-- </custom-card> -->
 
 
 </template>
 
 <script>
 
-import customCard from './custom-card.vue'
+// import customCard from './custom-card.vue'
 export default {
     name:'stay-preview',
  props: {

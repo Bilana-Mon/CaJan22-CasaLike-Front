@@ -19,16 +19,18 @@ export const stayService = {
 }
 
 // add filter 
-async function query(filterBy = {}) {
+async function query(filterBy) {
     let stays = await storageService.query(STAYS_KEY)
     let filteredStays = []
     if (!stays || !stays.length) {
         stays = [...gStays]
         utilService.saveToStorage(STAYS_KEY, stays)
-        filteredStays = _filterStays(filterBy, stays)
-        console.log(filteredStays)
     }
-    return stays
+    filteredStays = _filterStays(filterBy, stays)
+    console.log(filteredStays)
+    console.log(filterBy);
+    console.log(stays);
+    return filteredStays
 }
 
 async function getById(id) {
@@ -57,7 +59,11 @@ async function save(stay) {
 
 function _filterStays(filterBy, stays) {
     let searchedStays = []
-
-    const regex = new RexExp(filterBy.location, 'i')
-    return searchedStays = stays.filter((stay) => regex.test(stay.address.street))
+    if (filterBy.location) {
+        const regex = new RegExp(filterBy.location, 'i')
+        searchedStays = stays.filter((stay) => regex.test(stay.address.street))
+        console.log(searchedStays);
+    }
+    return searchedStays;
+    // return searchedStays = stays.filter((stay) => regex.test(stay.address.street))
 }

@@ -44,8 +44,8 @@ export default {
             this.$router.push('/')
         },
         setFilter(filterBy) {
-            const copyFilter = JSON.parse(JSON.stringify(filterBy))
-            this.$store.dispatch({ type: 'setFilter', filterBy: copyFilter })
+            console.log(filterBy)
+            this.$store.dispatch({ type: 'setFilter', filterBy })
         }
     },
     computed: {},

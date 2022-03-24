@@ -8,7 +8,6 @@
                             <div>Location</div>
                             <input
                                 type="text"
-                                @input="setFilter"
                                 v-model="filterBy.location"
                                 placeholder="Where are you going?"
                             />
@@ -20,7 +19,7 @@
                         <div>Check in</div>
                         <div>Add dates</div>
                         <el-date-picker
-                            v-model="value1"
+                            v-model="filterBy.dates"
                             type="daterange"
                             range-separator="Check out"
                             start-placeholder="Add dates"
@@ -48,21 +47,21 @@
 </template>
 
 
+<!-- import { ref } from 'vue' -->
 <script>
-import { ref } from 'vue'
 
 export default {
     name: 'search',
     data() {
         return {
             filterBy: {
-                location: ''
+                location: '',
+                dates: {
+                    end: new Date(),
+                    start: new Date().getTime() - 3600 * 1000 * 24 * 7,
+                }
             },
-            value: {
-                value1: ref(''),
-                end: new Date(),
-                start: new Date().getTime() - 3600 * 1000 * 24 * 7,
-            }
+
         }
     },
     created() {

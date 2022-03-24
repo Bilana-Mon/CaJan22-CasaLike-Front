@@ -22,12 +22,13 @@ export default {
         },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
+            console.log(state.filterBy);
         }
     },
     actions: {
         async loadStays({ commit, state }) {
             try {
-                let stays = await stayService.query()
+                let stays = await stayService.query(state.filterBy)
                 console.log(stays)
                 commit({ type: 'setStays', stays })
             } catch (err) {
@@ -36,6 +37,7 @@ export default {
 
         },
         setFilter({ dispatch, commit }, { filterBy }) {
+            console.log(filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         }

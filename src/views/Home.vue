@@ -6,26 +6,26 @@
         <p>Where would you like to feel at home today?</p>
       </div>
 
-      <h1>Ultimate Rentals</h1>
-      <div class="rental-cards">
-        <div class="rental-card" @click="goExplore()">
-          <p>Copenhagen</p>
-          <img class="rental-img" alt="copenhagen" src="~@/assets/imgs/homepage/kbh.webp" />
+      <h1>Ultimate Destinations</h1>
+      <div class="destination-cards">
+        <div class="destination-card" @click="goExplore()">
+          <p>Porto</p>
+          <img class="destination-img" alt="porto" src="~@/assets/imgs/homepage/porto.webp" />
         </div>
 
-        <div class="rental-card" @click="goExplore()">
-          <p>Paris</p>
-          <img class="rental-img" alt="paris" src="~@/assets/imgs/homepage/paris.webp" />
+        <div class="destination-card" @click="goExplore()">
+          <p>Maui</p>
+          <img class="destination-img" alt="maui" src="~@/assets/imgs/homepage/maui.webp" />
         </div>
 
-        <div class="rental-card" @click="goExplore()">
+        <div class="destination-card" @click="goExplore()">
           <p>Hongkong</p>
-          <img class="rental-img" alt="hongkong" src="~@/assets/imgs/homepage/hongkong.webp" />
+          <img class="destination-img" alt="hongkong" src="~@/assets/imgs/homepage/hongkong.webp" />
         </div>
 
-        <div class="rental-card" @click="goExplore()">
-          <p>San-Francisco</p>
-          <img class="rental-img" alt="sanfrancisco" src="~@/assets/imgs/homepage/sanfran.webp" />
+        <div class="destination-card" @click="goExplore()">
+          <p>Montreal</p>
+          <img class="destination-img" alt="montreal" src="~@/assets/imgs/homepage/montreal.webp" />
         </div>
       </div>
     </div>
@@ -62,20 +62,20 @@ img {
   height: 100vh;
   position: relative;
 }
-.rental-img {
+.destination-img {
   width: 300px;
   height: 300px;
   border-radius: 10px;
 }
 
-.rental-cards {
+.destination-cards {
   cursor: pointer;
   display: grid;
   column-gap: 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.rental-card {
+.destination-card {
   border-radius: 10px;
   object-fit: cover;
 }

@@ -8,6 +8,7 @@
     "test:unit": "vitest --environment jsdom"
   },
   "dependencies": {
+    "sass": "^1.49.9",
     "swiper": "^8.0.7",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",

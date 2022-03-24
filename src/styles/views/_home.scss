@@ -2,29 +2,67 @@ img {
   position: relative;
 }
 
+.header-bg{
+  position: absolute;
+  background: black;
+  height: 30vw;
+  width: 100%;
+}
 .destination-img {
   width: 300px;
   height: 300px;
   border-radius: 10px;
 }
 
+.destination-cards-container{
+  position: relative;
+  width: 100vw;
+  height: 400px;
+}
 .destination-cards {
   cursor: pointer;
   display: grid;
   column-gap: 30px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  overflow: scroll;
+  position: absolute;
+  padding-bottom: 10px;
 }
 
 .destination-card {
   border-radius: 10px;
 }
+@media (min-width: 1450px){
+  .destination-cards-container{
+    width: 100%;
+  }
+  .destination-cards{
+    overflow: visible;
+  }
+}
 
+.homepage-img{
+  margin-top: 2rem;
+  position: relative;
+}
+.homepage-img img{
+  border-radius: 20px;
+}
 .jingle {
     font-family: airbnb-medium;
-    transform: translate(10%, -380%);
     font-size: 40px;
     text-align: center;
     color: coral;
     position: absolute;
-    
+    top: 34%;
+    width: 100%;
+}
+
+.section-heading{
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: 'Airbnb-Light';
 }

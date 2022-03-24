@@ -12,3 +12,19 @@
     display: flex;
     justify-content: space-between;
 }
+.toy-list-container{
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 10px;
+}
+.toy-list-container .stay-preview-container{
+    width: 400px;
+    justify-self: center;
+}
+.toy-list-container .center-container{
+    display: flex;
+    justify-content: center;
+}

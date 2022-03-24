@@ -1,35 +1,35 @@
 <template>
   <li @click="goToStayDetalis" class="stay-preview-container">
-    <custom-card>
-    <template #header>
-    <el-carousel :interval="5000" arrow="always">
-     <el-carousel-item v-for="item in stay.imgUrls" :key="item">
-    <img class="stay-img-gallery" :src="`src/assets/imgs/stays/${item}`" />
-     </el-carousel-item>
-     </el-carousel>
-    </template>
+      <custom-card>
+      <template #header>
+      <el-carousel :autoplay="false" arrow="hover" trigger="click">
+       <el-carousel-item v-for="item in stay.imgUrls" :key="item">
+      <img class="stay-img-gallery" :src="`src/assets/imgs/stays/${item}`" />
+       </el-carousel-item>
+       </el-carousel>
+      </template>
 
-    <template #footer>
-    <p>
-      {{ getFormattedRate }}(
-      <span>{{ stay.numOfReviews }}</span>)
-    </p>
-    <p>
-      <span>{{ stay.roomType }}</span>·
-      <span>{{ getLocation }}</span>
-    </p>
-    <p>
-      <span>{{ stay.name }}</span>
-    </p>
-    <p>
-      <span>{{ getFormattedPrice }}</span>
-      <span>total</span>
-    </p>
-    <p>
-      <a href="#">Price breakdown</a>
-    </p>
-    </template>
-    </custom-card>
+      <template #footer>
+      <p>
+        {{ getFormattedRate }}(
+        <span>{{ stay.numOfReviews }}</span>)
+      </p>
+      <p>
+        <span>{{ stay.roomType }}</span>·
+        <span>{{ getLocation }}</span>
+      </p>
+      <p>
+        <span>{{ stay.name }}</span>
+      </p>
+      <p>
+        <span>{{ getFormattedPrice }}</span>
+        <span>total</span>
+      </p>
+      <p>
+        <a href="#">Price breakdown</a>
+      </p>
+      </template>
+      </custom-card>
   </li>
 </template>
 

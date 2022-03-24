@@ -1,4 +1,5 @@
 <template>
+  <div class="header-bg"></div>
     <section class="homepage layout">
         <div class="section-row">
             <div class="section-col">
@@ -10,26 +11,29 @@
                 </div>
               </div>
             </div>
+
         <div class="section-row">
             <div class="section-col">
-                <h1>Ultimate Destinations</h1>
-                <div class="destination-cards">
-                    <div class="destination-card" @click="goExplore()">
-                        <p>Porto</p>
-                        <img class="destination-img" alt="porto" src="src/assets/imgs/homepage/porto.webp" />
-                    </div>
-                    <div class="destination-card" @click="goExplore()">
-                        <p>Maui</p>
-                        <img class="destination-img" alt="maui" src="src/assets/imgs/homepage/maui.webp" />
-                    </div>
-                    <div class="destination-card" @click="goExplore()">
-                        <p>Hongkong</p>
-                        <img class="destination-img" alt="hongkong" src="src/assets/imgs/homepage/hongkong.webp" />
-                    </div>
-                    <div class="destination-card" @click="goExplore()">
-                        <p>Montreal</p>
-                        <img class="destination-img" alt="montreal" src="src/assets/imgs/homepage/montreal.webp" />
-                    </div>
+                <h1 class="section-heading">Ultimate Destinations</h1>
+                <div class="destination-cards-container">
+                  <div class="destination-cards">
+                      <div class="destination-card" @click="goExplore()">
+                          <p>Porto</p>
+                          <img class="destination-img" alt="porto" src="src/assets/imgs/homepage/porto.webp" />
+                      </div>
+                      <div class="destination-card" @click="goExplore()">
+                          <p>Maui</p>
+                          <img class="destination-img" alt="maui" src="src/assets/imgs/homepage/maui.webp" />
+                      </div>
+                      <div class="destination-card" @click="goExplore()">
+                          <p>Hongkong</p>
+                          <img class="destination-img" alt="hongkong" src="src/assets/imgs/homepage/hongkong.webp" />
+                      </div>
+                      <div class="destination-card" @click="goExplore()">
+                          <p>Montreal</p>
+                          <img class="destination-img" alt="montreal" src="src/assets/imgs/homepage/montreal.webp" />
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

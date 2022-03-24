@@ -1,12 +1,17 @@
 <template>
     <section class="search-bar">
-        <form @submit.prevent="filterSearch">
+        <form @submit.prevent="setFilter">
             <div class="search-bar-container">
                 <div class="location-container">
                     <label for="location">
                         <div class="location-input-container">
                             <div>Location</div>
-                            <input type="text" placeholder="Where are you going?" />
+                            <input
+                                type="text"
+                                @input="setFilter"
+                                v-model="filterBy.location"
+                                placeholder="Where are you going?"
+                            />
                         </div>
                     </label>
                 </div>
@@ -14,12 +19,13 @@
                     <div class="date-from-picker-container">
                         <div>Check in</div>
                         <div>Add dates</div>
-                    </div>
-                </div>
-                <div class="date-to-container">
-                    <div class="date-to-picker-container">
-                        <div>Check out</div>
-                        <div>Add dates</div>
+                        <el-date-picker
+                            v-model="value1"
+                            type="daterange"
+                            range-separator="Check out"
+                            start-placeholder="Add dates"
+                            end-placeholder="Add dates"
+                        />
                     </div>
                 </div>
                 <div class="guests-container">
@@ -29,7 +35,7 @@
                     </div>
                 </div>
                 <div class="search-btn-container">
-                    <button class="search-btn">
+                    <button class="search-btn" @click="goExplore">
                         <div class="svg-container">
                             <svg />
                         </div>
@@ -41,38 +47,62 @@
     </section>
 </template>
 
+
 <script>
+import { ref } from 'vue'
 
 export default {
     name: 'search',
     data() {
-        return {}
-    },
-    methods: {
-        filterSearch() {
-            console.log('searching')
+        return {
+            filterBy: {
+                location: ''
+            },
+            value: {
+                value1: ref(''),
+                end: new Date(),
+                start: new Date().getTime() - 3600 * 1000 * 24 * 7,
+            }
         }
     },
-    computed: {},
+    created() {
+        console.log(this.fitlerBy)
+    },
+    methods: {
+        setFilter() {
+            console.log(this.filterBy)
+            console.log('lala')
+            this.$emit('setFilter', { ...this.filterBy })
+            this.$router.push(`/stay/${this.filterBy.location}`)
+        },
+        goExplore() {
+            console.log('kaka')
+            this.$router.push(`/stay`)
+        },
+    },
 }
 </script>
 
-<style>
-.search-bar {
+<style scoped>
+.demo-date-picker {
     display: flex;
-}
-.search-bar-container {
+    width: 100%;
+    padding: 0;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 }
-.search-btn-container {
-    display: flex;
-    width: 10px;
-    height: 20px;
-    padding: 10px;
+.demo-date-picker .block {
+    padding: 30px 0;
+    text-align: center;
+    border-right: solid 1px var(--el-border-color);
+    flex: 1;
 }
-.search-btn {
-    padding: 10px;
+.demo-date-picker .block:last-child {
+    border-right: none;
+}
+.demo-date-picker .demonstration {
+    display: block;
+    color: var(--el-text-color-secondary);
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 </style>

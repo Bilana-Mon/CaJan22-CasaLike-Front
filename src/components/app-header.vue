@@ -16,7 +16,7 @@
                 </li>
             </ul>
         </nav>
-        <search />
+        <search @setFilter="setFilter" />
         <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
     </header>
 </template>
@@ -42,6 +42,10 @@ export default {
     methods: {
         goHome() {
             this.$router.push('/')
+        },
+        setFilter(filterBy) {
+            const copyFilter = JSON.parse(JSON.stringify(filterBy))
+            this.$store.dispatch({ type: 'setFilter', filterBy: copyFilter })
         }
     },
     computed: {},

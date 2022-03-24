@@ -3,7 +3,9 @@ import { stayService } from "../../services/stay.service.js"
 export default {
     state: {
         stays: [],
-        filterBy: {}
+        filterBy: {
+            location: ''
+        }
     },
     getters: {
         stays({ stays }) {

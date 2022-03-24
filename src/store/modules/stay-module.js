@@ -14,9 +14,6 @@ export default {
         staysToShow({ stays }) {
             const copyStays = JSON.parse(JSON.stringify(stays))
             return copyStays
-        },
-        filter({ filterBy }) {
-            return filterBy
         }
     },
     mutations: {

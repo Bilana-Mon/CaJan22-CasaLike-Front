@@ -6,11 +6,13 @@
 
 <script>
 
+import { stayService } from '../services/stay.service'
+
 export default {
   name: 'stay-details',
   // props: [''],
   components: {},
-  created() { 
+  async created() { 
     const { id } = this.$route.params
     this.stay = await stayService.getById(id)
   },

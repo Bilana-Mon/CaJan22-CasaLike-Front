@@ -1,31 +1,50 @@
 <template>
   <section v-if="stay" class="stay-details">
-    <p>{{ stay.name }}</p>
-    <p>
-      <span>{{ getFormattedRate }}</span> ·
-      <a href="#">{{ stay.numOfReviews }} reviews</a> ·
-      <a href="#">{{ stay.address.street }}</a>
+    <h1>{{ stay.name }}</h1>
+    <p class="stay-rate-container">
+      <span>
+        <svg
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="presentation"
+          focusable="false"
+          style="display: inline-block; height: 14px; width: 14px; fill: #ff385c;"
+          class="st-current"
+        >
+          <path
+            d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
+            fill-rule="evenodd"
+            class
+          />
+        </svg>
+      </span>
+      <span class="stay-details-rate">{{ getFormattedRate }}</span> ·
+      <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a> ·
+      <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
     </p>
-    <div class="stay-images-container">
-      <div class="stay-images" v-for="i in stay.imgUrls" :key="i">
-        <img :src="`src/assets/imgs/stays/${i}`" />
+    <div class="stay-images">
+      <img v-for="i in stay.imgUrls" :key="i" :src="`src/assets/imgs/stays/${i}`" />
+    </div>
+         <div class="stay-desc-container">
+           <div class="stay-type-container">
+        <h2>
+          <span>{{ stay.propertyType }}</span> hosted by
+          <span>{{ stay.host.fullname }}</span>
+         
+        </h2>
+        <p class="stay-desc">
+          <span>{{ stay.capacity }}</span> guests ·
+          <span>{{ getNumBedrooms }}</span> ·
+          <span>{{ getNumsBeds }}</span> ·
+          <span>{{ getNumsBathes }}</span>
+        </p>
+        </div>
+        <div class="small-img-container">
+      <img class="small-img" :src="`src/assets/imgs/stays/${stay.imgUrls[0]}`" />
+        </div>
       </div>
-    </div>
-    <div>
-      <div>
-    <h2>
-      <span>{{ stay.propertyType }}</span> hosted by
-      <span>{{ stay.host.fullname }}</span>
-    </h2>
-    <p>
-      <span>{{ stay.capacity }}</span> guests ·
-      <span>{{ getNumBedrooms }}</span> ·
-      <span>{{ getNumsBeds }}</span> ·
-      <span>{{getNumsBathes}}</span> 
-    </p>
-    </div>
-       <img class="small-img" :src="`src/assets/imgs/stays/${stay.imgUrls[0]}`" />
-       </div>
+        <div class="hr"></div>
   </section>
 </template>
 
@@ -65,7 +84,7 @@ export default {
       let formattedNumOfBeds = numOfBeds + ' ' + msg
 
       return formattedNumOfBeds
-    }, 
+    },
     getNumsBathes() {
       let numOfBathes = this.stay.bathrooms
       console.log(numOfBathes)
@@ -78,19 +97,3 @@ export default {
   unmounted() { },
 }
 </script>
-<style>
-.stay-images-container {
-  display: flex;
-}
-.stay-images img {
-  height: 200px;
-  width: 200px;
-}
-
-.stay-details .small-img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-</style>

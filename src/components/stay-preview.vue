@@ -2,13 +2,16 @@
   <li class="stay-preview-container">
     <custom-card>
     <template #header>
-    <swiper :options="swiperOption" ref="swiper" class="swiper">
-      <swiper-slide v-for="i in stay.imgUrls" :key="i">
-        <button @click="$refs.swiper.swiperInstance.slidePrev()" class="swiper-button-prev">swipe my ass</button>
-        <img :src="`src/assets/imgs/stays/${i}`" />
-        <button @click="$refs.swiper.swiperInstance.slideNext()" class="swiper-button-next">swipe my ass</button>
-      </swiper-slide>  
-    </swiper>
+    <carousel :items-to-show="1">  
+    <slide v-for="slide in stay.imgUrls" :key="slide">
+        <img :src="`src/assets/imgs/stays/${slide}`" />
+    </slide>
+<template #addons>
+      <navigation />
+      <pagination />
+    </template>
+    </carousel>
+    
     </template>
 
     <template #footer>
@@ -37,8 +40,9 @@
 
 <script>
 import customCard from './custom-card.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/css'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+
 
 
 export default {
@@ -48,21 +52,17 @@ export default {
   },
   components: {
     customCard,
-    Swiper,
-    SwiperSlide
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+
   },
   data() {
     return {
-      swiperOption: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }
+     
       }
-    }
+    
   },
   computed: {
     getFormattedRate() {
@@ -84,6 +84,10 @@ export default {
 </script>
 <style>
 .stay-preview-container img {
+  width: 300px;
+  height: 200px;
+}
+.stay-preview-container .slide {
   width: 300px;
   height: 200px;
 }

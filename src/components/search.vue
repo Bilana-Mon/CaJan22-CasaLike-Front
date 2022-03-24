@@ -2,44 +2,46 @@
     <section class="search-bar">
         <form @submit.prevent="setFilter">
             <div class="search-bar-container">
-                <div class="location-container">
+                <div class="search-element location-container">
                     <label for="location">
                         <div class="location-input-container">
-                            <div>Location</div>
-                            <input
+                            <div class="search-heading">Location</div>
+                            <div class="search-text">Where are you going?</div>
+                            <!-- <input
                                 type="text"
                                 v-model="filterBy.location"
                                 placeholder="Where are you going?"
-                            />
+                            /> -->
                         </div>
                     </label>
                 </div>
-                <div class="date-from-container">
+                <div class="vsep"></div>
+                <div class="search-element date-from-container">
                     <div class="date-from-picker-container">
-                        <div>Check in</div>
-                        <div>Add dates</div>
+                        <div class="search-heading">Check in</div>
                         <el-date-picker
                             v-model="filterBy.dates"
                             type="daterange"
-                            range-separator="Check out"
+                            range-separator="|"
                             start-placeholder="Add dates"
                             end-placeholder="Add dates"
                         />
                     </div>
                 </div>
-                <div class="guests-container">
-                    <div class="guests-container">
-                        <div>Guests</div>
-                        <div>Add guests</div>
+                <div class="vsep"></div>
+                <div class="search-element guests-container">
+                    <div class="">
+                        <div class="search-heading">Guests</div>
+                        <div class="search-text">Add guests</div>
                     </div>
-                </div>
-                <div class="search-btn-container">
+
+                    <div class="search-btn-container">
                     <button class="search-btn" @click="goExplore">
                         <div class="svg-container">
-                            <svg />
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg>
                         </div>
-                        <div class="search-container">Search</div>
                     </button>
+                    </div>
                 </div>
             </div>
         </form>

@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "Airbnb-Medium";
+  src: url("@/assets/fonts/AirbnbCereal-Medium.ttf");
+}
+@font-face {
+  font-family: "Airbnb-Black";
+  src: url("@/assets/fonts/AirbnbCereal-Black.ttf");
+}
+@font-face {
+  font-family: "Airbnb-Light";
+  src: url("@/assets/fonts/AirbnbCereal-Light.ttf");
+}
+@font-face {
+  font-family: "Airbnb-Book";
+  src: url("@/assets/fonts/AirbnbCereal-Book.ttf");
+}
+@font-face {
+  font-family: "Airbnb-ExtraBold";
+  src: url("@/assets/fonts/AirbnbCereal-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "Airbnb-ExtraBold";
+  src: url("@/assets/fonts/AirbnbCereal-ExtraBold.ttf");
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: airbnb-light;
+  width: 100vh;
+  background: green;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-family: airbnb-extrabold;
+}
+
+.layout {
+  display: -ms-grid;
+  display: grid;
+}
+
+.footer-container {
+  background-color: #f7f7f7;
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-side1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-side2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-margin-end: 10px;
+          margin-inline-end: 10px;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 10px 0 0;
+}
+
+.app-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.logo-img {
+  height: 50px;
+  width: 40px;
+}
+
+.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-padding-start: 25px;
+          padding-inline-start: 25px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: inherit;
+}
+
+.search-bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+svg {
+  height: 40px;
+  width: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.stay-img-gallery {
+  height: 300px;
+  width: 400px;
+  border-radius: 20px;
+}
+
+.stay-details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.stay-images-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.stay-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+img {
+  position: relative;
+}
+
+.destination-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.destination-cards {
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr 30px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.destination-card {
+  border-radius: 10px;
+}
+
+.jingle {
+  font-family: airbnb-medium;
+  -webkit-transform: translate(10%, -380%);
+          transform: translate(10%, -380%);
+  font-size: 40px;
+  text-align: center;
+  color: coral;
+  position: absolute;
+}

@@ -4,17 +4,19 @@
   cursor: pointer;
   padding-inline-start: 25px;
   justify-content: space-between;
+  position: inherit;
+//   position:absolute;
 }
 
 .search-bar-container{
     display: flex;
     align-items: center;
     cursor: pointer;
-    position: relative;
 }
 
-.svg-container {
-    position:relative;
+svg {
     height: 40px;
     width: 80px;
+    align-items: center;
+    justify-self: center;
 }

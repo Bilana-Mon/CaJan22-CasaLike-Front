@@ -3,7 +3,9 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.main-nav{
+    display: flex;
+}
 .logo{
  cursor: pointer;
 }
@@ -11,4 +13,5 @@
 .logo-img {
  height: 50px;
  width: 40px;
+
 }

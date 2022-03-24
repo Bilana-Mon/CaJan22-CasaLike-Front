@@ -1,30 +1,30 @@
 img {
-   position: relative;
-  }
-  .destination-img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-  }
-  
-  .destination-cards {
-    cursor: pointer;
-    display: grid;
-    column-gap: 30px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  
-  .destination-card {
-    border-radius: 10px;
-    object-fit: cover;
-  }
-  
-  .jingle {
-      font-family: airbnb-extrabold;
-      font-size: 40px;
-      text-align: center;
-      color: white;
-      position: absolute;
-      transform: translate(30%, -260%);
-      
-  }
+  position: relative;
+}
+
+.destination-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.destination-cards {
+  cursor: pointer;
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.destination-card {
+  border-radius: 10px;
+}
+
+.jingle {
+    font-family: airbnb-medium;
+    transform: translate(10%, -380%);
+    font-size: 40px;
+    text-align: center;
+    color: coral;
+    position: absolute;
+    
+}

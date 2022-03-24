@@ -56,3 +56,52 @@
     width: 100%;
     height: 100%;
 }
+
+.stay-details h2 {
+    font-size: 1.375rem;
+    font-family: Airbnb-Book;
+    color:#222222;
+    margin-bottom: 0.4rem;
+    line-height: 1.625rem;
+    letter-spacing: normal;
+    text-align: start;
+
+}
+
+.stay-details .stay-desc {
+    font-size: 1rem;
+    font-family: Airbnb-Book;
+    color:#222222;
+    line-height: 1.25rem;
+    text-align: left;
+}
+
+.stay-details .small-img {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.stay-details .stay-desc-container {
+    display: flex;
+    justify-content: space-between;
+    width: 34.0625rem;
+}
+
+.stay-details .stay-type-container {
+    flex-direction: column;
+  
+}
+
+.stay-details .small-img-container {
+    display: flex;
+    align-self: center;
+}
+
+.stay-details .hr {
+border-top-color: rgb(221, 221, 221);
+border-top-width: 0.5px;
+border-top-style:solid;
+width: 34.0625rem;
+}

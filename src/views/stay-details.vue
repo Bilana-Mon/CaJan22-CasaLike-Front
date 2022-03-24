@@ -2,7 +2,6 @@
   <section v-if="stay" class="stay-details">
     <h1>{{ stay.name }}</h1>
     <p class="stay-rate-container">
-      <!-- <img class="star-img" src="src/assets/imgs/stay-details/star.png" /> -->
       <span>
         <svg
           viewBox="0 0 32 32"
@@ -27,22 +26,25 @@
     <div class="stay-images">
       <img v-for="i in stay.imgUrls" :key="i" :src="`src/assets/imgs/stays/${i}`" />
     </div>
-    <!-- </div> -->
-    <div>
-      <div>
+         <div class="stay-desc-container">
+           <div class="stay-type-container">
         <h2>
           <span>{{ stay.propertyType }}</span> hosted by
           <span>{{ stay.host.fullname }}</span>
+         
         </h2>
-        <p>
+        <p class="stay-desc">
           <span>{{ stay.capacity }}</span> guests ·
           <span>{{ getNumBedrooms }}</span> ·
           <span>{{ getNumsBeds }}</span> ·
           <span>{{ getNumsBathes }}</span>
         </p>
-      </div>
+        </div>
+        <div class="small-img-container">
       <img class="small-img" :src="`src/assets/imgs/stays/${stay.imgUrls[0]}`" />
-    </div>
+        </div>
+      </div>
+        <div class="hr"></div>
   </section>
 </template>
 
@@ -95,19 +97,3 @@ export default {
   unmounted() { },
 }
 </script>
-<!-- <style>
-.stay-images-container {
-  display: flex;
-}
-.stay-images img {
-  height: 200px;
-  width: 200px;
-}
-
-.stay-details .small-img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-</style> -->

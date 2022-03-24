@@ -3,11 +3,11 @@
 }
 
 // for body
-@include for-normal-layout {
-  &.sidebar-open {
-      overflow: hidden;
-  }
-}
+// @include for-normal-layout {
+//   &.sidebar-open {
+//       overflow: hidden;
+//   }
+// }
 
 html {
   margin: 0;

@@ -26,6 +26,9 @@
     <div class="stay-images">
       <img v-for="i in stay.imgUrls" :key="i" :src="`src/assets/imgs/stays/${i}`" />
     </div>
+      <div>
+        <reserve :stay="stay"></reserve>
+      </div>
          <div class="stay-desc-container">
            <div class="stay-type-container">
         <h2>
@@ -51,11 +54,14 @@
 <script>
 
 import { stayService } from '../services/stay.service'
+import reserve from '../components/reserve.vue'
 
 export default {
   name: 'stay-details',
   // props: [''],
-  components: {},
+  components: {
+    reserve
+  },
   async created() {
     const { id } = this.$route.params
     this.stay = await stayService.getById(id)

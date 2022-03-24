@@ -34,7 +34,7 @@ const router = createRouter({
       name: 'become-host',
       component: becomeHost
     },
- 
+
   ]
 })
 

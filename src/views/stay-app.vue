@@ -1,10 +1,8 @@
 <template>
   <section class="stay-app">
-   <!-- <p>{{stays}}</p> -->
+    <!-- <p>{{stays}}</p> -->
 
     <stay-list :stays="stays" />
-   
-    
   </section>
 </template>
 
@@ -15,20 +13,10 @@ export default {
   components: {
     stayList
   },
-  created() { },
-
-  data() {
-    return {
-
-      
-    }
-  },
-  methods: {},
   computed: {
     stays() {
       return this.$store.getters.staysToShow
     }
   },
-  unmounted() { },
 }
 </script>

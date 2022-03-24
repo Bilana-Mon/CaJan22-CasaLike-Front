@@ -20,6 +20,9 @@ p {
     cursor:pointer;
 }
 .footer-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-inline-end: 10px;
     cursor:pointer;
     height:20px;

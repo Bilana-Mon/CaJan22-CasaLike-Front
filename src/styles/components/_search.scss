@@ -1,6 +1,20 @@
-.search-bar-container {
+.search-bar {
   display: flex;
   align-items: center;
   cursor: pointer;
   padding-inline-start: 25px;
+  justify-content: space-between;
+}
+
+.search-bar-container{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.svg-container {
+    position:relative;
+    height: 40px;
+    width: 80px;
 }

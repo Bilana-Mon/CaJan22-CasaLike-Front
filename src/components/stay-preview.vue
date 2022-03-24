@@ -1,17 +1,12 @@
 <template>
-  <li class="stay-preview-container">
+  <li @click="goToStayDetalis" class="stay-preview-container">
     <custom-card>
     <template #header>
-    <carousel :items-to-show="1">  
-    <slide v-for="slide in stay.imgUrls" :key="slide">
-        <img :src="`src/assets/imgs/stays/${slide}`" />
-    </slide>
-<template #addons>
-      <navigation />
-      <pagination />
-    </template>
-    </carousel>
-    
+    <el-carousel :interval="5000" arrow="always">
+     <el-carousel-item v-for="item in stay.imgUrls" :key="item">
+    <img :src="`src/assets/imgs/stays/${item}`" />
+     </el-carousel-item>
+     </el-carousel>
     </template>
 
     <template #footer>
@@ -40,10 +35,6 @@
 
 <script>
 import customCard from './custom-card.vue'
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-
-
 
 export default {
   name: 'stay-preview',
@@ -52,17 +43,7 @@ export default {
   },
   components: {
     customCard,
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
 
-  },
-  data() {
-    return {
-     
-      }
-    
   },
   computed: {
     getFormattedRate() {
@@ -80,15 +61,10 @@ export default {
       return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.stay.price)
     }
   },
+  methods: {
+    goToStayDetalis() {
+      this.$router.push('/stay/' + this.stay._id)
+    }
+  }
 }
 </script>
-<style>
-.stay-preview-container img {
-  width: 300px;
-  height: 200px;
-}
-.stay-preview-container .slide {
-  width: 300px;
-  height: 200px;
-}
-</style>

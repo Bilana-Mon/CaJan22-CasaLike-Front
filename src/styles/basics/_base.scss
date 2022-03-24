@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+// for body
+@include for-normal-layout {
+  &.sidebar-open {
+      overflow: hidden;
+  }
+}
+
 html {
   margin: 0;
   padding: 0;

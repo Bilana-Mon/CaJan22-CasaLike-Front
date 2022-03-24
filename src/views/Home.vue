@@ -55,6 +55,7 @@ export default {
 <style>
 
 body {
+  font-family: airbnb-medium;
   margin: 0;
   background-color: black,
 }
@@ -86,5 +87,6 @@ img {
     color: black;
     position: absolute;
     transform: translate(30%, -400%);
+    font-family: airbnb-medium;
 }
 </style>

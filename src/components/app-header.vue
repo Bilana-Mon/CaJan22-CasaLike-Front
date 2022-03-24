@@ -2,16 +2,17 @@
     <header class="app-header">
         <div @click="goHome" class="logo">
             Casa
-            <span>Like</span>
+            <img class="logo-img" alt="logo-img" src="src/assets/airbnb/logo.svg" />
+            <span class="logo-span">Like</span>
         </div>
-        <nav>
+        <nav class="main-nav">
             <router-link class="link" to="/stay">Places to stay</router-link>|
             <router-link class="link" to="/host">Become a host</router-link>
-            <ul>
-                <li @click="addSignupModal = true">
+            <ul class="clean-list login-bar">
+                <li class="login-btn" @click="addSignupModal = true">
                     <a>Signup</a>
                 </li>
-                <li @click="addSignupModal = true">
+                <li class="login-btn" @click="addSignupModal = true">
                     <a>Login</a>
                 </li>
             </ul>

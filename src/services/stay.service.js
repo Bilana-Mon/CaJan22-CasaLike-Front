@@ -21,16 +21,17 @@ export const stayService = {
 // add filter 
 async function query(filterBy) {
     let stays = await storageService.query(STAYS_KEY)
-    let filteredStays = []
     if (!stays || !stays.length) {
         stays = [...gStays]
         utilService.saveToStorage(STAYS_KEY, stays)
     }
-    filteredStays = _filterStays(filterBy, stays)
-    console.log(filteredStays)
-    console.log(filterBy);
-    console.log(stays);
-    return filteredStays
+    if (filterBy.location) {
+        let filteredStays = _filterStays(filterBy, stays)
+        console.log(filteredStays)
+        return filteredStays
+    } else {
+        return stays
+    }   
 }
 
 async function getById(id) {

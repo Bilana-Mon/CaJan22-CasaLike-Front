@@ -11,7 +11,7 @@ export default {
         stays({ stays }) {
             return stays
         },
-        staysToShow({ stays, filterBy }) {
+        staysToShow({ stays }) {
             const copyStays = JSON.parse(JSON.stringify(stays))
             return copyStays
         }

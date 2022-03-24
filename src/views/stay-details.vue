@@ -1,5 +1,5 @@
 <template>
-  <section class="stay-details">
+  <section v-if="stay" class="stay-details">
     <h1>Stay details</h1>
   </section>
 </template>
@@ -10,9 +10,14 @@ export default {
   name: 'stay-details',
   // props: [''],
   components: {},
-  created() { },
+  created() { 
+    const { id } = this.$route.params
+    this.stay = await stayService.getById(id)
+  },
   data() {
-    return {}
+    return {
+      stay: null
+    }
   },
   methods: {},
   computed: {},

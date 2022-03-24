@@ -1,5 +1,28 @@
 @font-face {
-    font-family: airbnb-medium;
-    src: url(../../assets/fonts/AirbnbCereal-Medium.ttf);
-}
+    font-family: 'Airbnb-Medium';
+    src: url('@/assets/fonts/AirbnbCereal-Medium.ttf');
+}   
+@font-face {
+    font-family: 'Airbnb-Black';
+    src: url('@/assets/fonts/AirbnbCereal-Black.ttf');
+}   
 
+@font-face {
+    font-family: 'Airbnb-Light';
+    src: url('@/assets/fonts/AirbnbCereal-Light.ttf');
+}   
+
+@font-face {
+    font-family: 'Airbnb-Book';
+    src: url('@/assets/fonts/AirbnbCereal-Book.ttf');
+}   
+
+@font-face {
+    font-family: 'Airbnb-ExtraBold';
+    src: url('@/assets/fonts/AirbnbCereal-ExtraBold.ttf');
+}   
+
+// @font-face {
+//     font-family: 'Montserrat-Regular';
+//     src: url('@/assets/fonts/Montserrat/Montserrat-Regular.ttf');
+//   }

@@ -1,16 +1,13 @@
-//BASICS
-@import 'basics/base';
-@import 'basics/helpers';
-@import 'basics/layout';
-
-
-
 //SETUP
 @import 'setup/functions';
 @import 'setup/typography';
 @import 'setup/variables';
 @import 'setup/mixins';
 
+//BASICS
+@import 'basics/base';
+@import 'basics/helpers';
+@import 'basics/layout';
 
 //COMPONENTS
 @import 'components/app-footer';

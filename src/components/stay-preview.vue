@@ -2,7 +2,7 @@
   <li @click="goToStayDetalis" class="stay-preview-container">
     <custom-card>
       <template #header>
-        <el-carousel :interval="5000" arrow="always">
+        <el-carousel :autoplay="false" arrow="hover" trigger="click">
           <el-carousel-item v-for="item in stay.imgUrls" :key="item">
             <img class="stay-img-gallery" :src="`src/assets/imgs/stays/${item}`" />
           </el-carousel-item>

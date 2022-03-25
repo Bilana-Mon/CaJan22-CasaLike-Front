@@ -31,17 +31,36 @@
         />
         <div class="container">
             <input type="checkbox" class="select-checkbox" />
-            <label class="select-label">Guests</label>
+            <label class="select-label" for="select-checkbox">Guests</label>
             <div class="select-wrap">
                 <ul class="select">
                     <li>
-                        <a href="#" title="First">Adults Age 13+</a>
-                        <button @click="updateCount('adults',-1)">-</button>
-                        Guests: {{ countOfGuests.adults }}
-                        <button @click="updateCount('adults',1)">+</button>
+                        <a href="#" title="First">
+                            Adults
+                            Age 13+
+                        </a>
+                        <button
+                            :disabled="countOfGuests.adults === 0"
+                            @click="updateCount('adults', -1)"
+                        >-</button>
+                        {{ countOfGuests.adults }}
+                        <button
+                            @click="updateCount('adults', 1)"
+                        >+</button>
                     </li>
                     <li>
-                        <a href="#" title="Second">Second</a>
+                        <a href="#" title="Second">
+                            Children
+                            Ages 2–12
+                        </a>
+                        <button
+                            :disabled="countOfGuests.children === 0"
+                            @click="updateCount('children', -1)"
+                        >-</button>
+                        {{ countOfGuests.children }}
+                        <button
+                            @click="updateCount('children', 1)"
+                        >+</button>
                     </li>
                     <li>
                         <a href="#" title="Third">Third</a>
@@ -70,15 +89,17 @@ export default {
                 start: new Date().getTime() - 3600 * 1000 * 24 * 7,
             },
             countOfGuests: {
-                adults:0,
-                children:0,
+                adults: 0,
+                children: 0,
             },
         }
     },
     methods: {
-        updateCount(age,diff) {
+        updateCount(age, diff) {
             if (age === 'adults') {
-            this.countOfGuests.adults += diff
+                this.countOfGuests.adults += diff
+            } else {
+                this.countOfGuests.children += diff
             }
         }
     },
@@ -116,4 +137,38 @@ export default {
     font-size: 14px;
     margin-bottom: 20px;
 }
+/* .container {
+    position: relative;
+}
+.select-checkbox {
+    display: none;
+}
+.select-label {
+    display: block;
+    border: 1px solid;
+    padding: 4px;
+}
+.select-label:before {
+    content: "\25BE";
+    float: right;
+}
+.select-wrap {
+    position: absolute;
+    width: 100%;
+    background: #eee;
+    display: none;
+}
+.select-checkbox:checked ~ .select-wrap {
+    display: block;
+}
+.select {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+.select a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+} */
 </style>

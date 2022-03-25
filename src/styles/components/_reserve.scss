@@ -1,7 +1,7 @@
 .reserve-card {
     border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-    width: 20.25rem;
-    height: 23.25rem;
+    width: 23.25rem;
+    height: 20.25rem;
     position: fixed;
     right:100px;
     bottom:200px;
@@ -57,7 +57,20 @@
     position: relative;
 }
 
-.time {
-    width: 100px;
+.reserve-card .time {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 3.5rem;
 }
 
+.reserve-card .container {
+    width: 20rem;
+    height:3.5rem ;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: solid 1px #222222;
+}
+
+.reserve-card .date {
+    width: 20rem
+}

@@ -23,12 +23,12 @@
             <a href="#">{{ stay.numOfReviews }} reviews</a>
         </p>
         <div class="input-container">
-         <Datepicker v-model="dates" range multiCalendars multiCalendarsSolo />
-        <div class="container">
+         <Datepicker class="date" v-model="dates" range multiCalendars multiCalendarsSolo />
+        <div class="container" @click="toggleSelect">
             <input type="checkbox" class="select-checkbox" />
             <label class="select-label" for="select-checkbox">Guests</label>
             <div class="select-wrap">
-                <ul class="select">
+                <ul v-if="selectOpen" class="select">
                     <li class="option">
                         <a href="#" title="First">
                             Adults
@@ -119,6 +119,7 @@ export default {
                 infants: 0,
                 pets: 0
             },
+            selectOpen: false
         }
     },
     methods: {
@@ -146,6 +147,9 @@ export default {
                 btn.style.setProperty('--x', x + 'px');
                 btn.style.setProperty('--y', y + 'px');
             });
+        },
+        toggleSelect() {
+           this.selectOpen = !this.selectOpen 
         }
     },
     computed: {
@@ -162,37 +166,28 @@ export default {
 
 
 <style scoped>
-.container {
-    position: relative;
-}
+
 .select-checkbox {
     display: none;
 }
-.select-label {
-    display: block;
-    border: 1px solid;
-    padding: 4px;
-}
+
 .select-label:before {
     content: "\25BE";
     float: right;
 }
 .select-wrap {
-    position: absolute;
-    background: #eee;
-    display: none;
+    background:rgb(255, 255, 255);
 }
-.select-checkbox:checked ~ .select-wrap {
-    display: block;
-}
+
 .select {
     list-style: none;
     padding: 10px;
     margin: 0;
+    
 }
 .select a {
-    display: block;
     text-decoration: none;
     color: inherit;
 }
+
 </style>

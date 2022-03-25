@@ -30,8 +30,8 @@
           </span>
           <p>
             {{ getFormattedRate }}
-            (
-            <span>{{ stay.numOfReviews }}</span>)
+            
+            (<span>{{ stay.numOfReviews }}</span>)
           </p>
         </div>
         <p>

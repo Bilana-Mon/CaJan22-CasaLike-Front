@@ -7,11 +7,11 @@
                         <div class="location-input-container">
                             <div class="search-heading">Location</div>
                             <div class="search-text">Where are you going?</div>
-                            <!-- <input
+                            <input
                                 type="text"
                                 v-model="filterBy.location"
                                 placeholder="Where are you going?"
-                            /> -->
+                            />
                         </div>
                     </label>
                 </div>

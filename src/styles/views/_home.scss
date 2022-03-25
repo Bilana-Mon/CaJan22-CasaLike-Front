@@ -2,7 +2,7 @@ img {
   position: relative;
 }
 
-.header-bg{
+.header-bg {
   position: absolute;
   background: black;
   height: 30vw;
@@ -14,7 +14,7 @@ img {
   border-radius: 10px;
 }
 
-.destination-cards-container{
+.destination-cards-container {
   position: relative;
   width: 100vw;
   height: 400px;
@@ -33,36 +33,36 @@ img {
 .destination-card {
   border-radius: 10px;
 }
-@media (min-width: 1450px){
-  .destination-cards-container{
+@media (min-width: 1450px) {
+  .destination-cards-container {
     width: 100%;
   }
-  .destination-cards{
+  .destination-cards {
     overflow: visible;
   }
 }
 
-.homepage-img{
+.homepage-img {
   margin-top: 2rem;
   position: relative;
 }
-.homepage-img img{
+.homepage-img img {
   border-radius: 20px;
 }
 .jingle {
-    font-family: airbnb-medium;
-    font-size: 40px;
-    text-align: center;
-    color: coral;
-    position: absolute;
-    top: 34%;
-    width: 100%;
+  font-family: airbnb-medium;
+  font-size: 40px;
+  text-align: center;
+  color: coral;
+  position: absolute;
+  top: 34%;
+  width: 100%;
 }
 
-.section-heading{
+.section-heading {
   width: 100%;
   margin-top: 50px;
   margin-bottom: 1rem;
   font-size: 2rem;
-  font-family: 'Airbnb-Light';
+  font-family: "Airbnb-Light";
 }

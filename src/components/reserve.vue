@@ -22,13 +22,8 @@
             <span>{{ getFormattedRate }}</span> ·
             <a href="#">{{ stay.numOfReviews }} reviews</a>
         </p>
-        <el-date-picker
-            v-model="dates"
-            type="daterange"
-            range-separator="|"
-            start-placeholder="Add dates"
-            end-placeholder="Add dates"
-        />
+        <div class="input-container">
+         <Datepicker v-model="dates" range multiCalendars multiCalendarsSolo />
         <div class="container">
             <input type="checkbox" class="select-checkbox" />
             <label class="select-label" for="select-checkbox">Guests</label>
@@ -92,10 +87,11 @@
                     </li>
                     <a href="#">Close</a>
                 </ul>
+                </div>
+            </div>
                 <button class="mouse-cursor-gradient-tracking" @mousemove="changeColor">
                     <span>Reserve</span>
                 </button>
-            </div>
         </div>
     </section>
 </template>
@@ -164,29 +160,9 @@ export default {
 }
 </script>
 
+
 <style scoped>
-.demo-date-picker {
-    display: flex;
-    width: 100%;
-    padding: 0;
-    flex-wrap: wrap;
-}
-.demo-date-picker .block {
-    padding: 30px 0;
-    text-align: center;
-    border-right: solid 1px var(--el-border-color);
-    flex: 1;
-}
-.demo-date-picker .block:last-child {
-    border-right: none;
-}
-.demo-date-picker .demonstration {
-    display: block;
-    color: var(--el-text-color-secondary);
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-/* .container {
+.container {
     position: relative;
 }
 .select-checkbox {
@@ -203,7 +179,6 @@ export default {
 }
 .select-wrap {
     position: absolute;
-    width: 100%;
     background: #eee;
     display: none;
 }
@@ -219,5 +194,5 @@ export default {
     display: block;
     text-decoration: none;
     color: inherit;
-} */
+}
 </style>

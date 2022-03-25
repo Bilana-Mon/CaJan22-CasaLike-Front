@@ -48,6 +48,7 @@
         </div>
       </div>
         <div class="hr"></div>
+        <stay-map :stay="stay"></stay-map>
   </section>
 </template>
 
@@ -55,12 +56,14 @@
 
 import { stayService } from '../services/stay.service'
 import reserve from '../components/reserve.vue'
+import stayMap from '../components/stay-map.vue'
 
 export default {
   name: 'stay-details',
   // props: [''],
   components: {
-    reserve
+    reserve,
+    stayMap,
   },
   async created() {
     const { id } = this.$route.params

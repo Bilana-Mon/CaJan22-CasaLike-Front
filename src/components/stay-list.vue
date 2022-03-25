@@ -1,6 +1,7 @@
 <template>
     <section class="stay-list">
       <ul class="stay-list-container">
+
         <stay-preview v-for="stay in stays" :stay="stay" :key="stay._id"></stay-preview>
     </ul>
     </section>

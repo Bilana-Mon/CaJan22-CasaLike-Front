@@ -65,12 +65,17 @@ export default {
     customCard,
 
   },
+  mounted() {
+    console.log(this.stay);
+  },
   computed: {
     getFormattedRate() {
+      return 75
       let rate = +(this.stay.reviewScores.rating) / 20
       return rate
     },
     getLocation() {
+      return 'sdfsdf'
       let stayStreet = this.stay.address.street.split(',')
       let formattedStayStreet = stayStreet[0]
       let city = this.stay.address.city

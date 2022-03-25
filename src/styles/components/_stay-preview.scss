@@ -28,11 +28,11 @@
   padding-left: 10px;
   padding-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
   gap: 10px;
 }
 .stay-list-container .stay-preview-container {
-  width: 400px;
+  width: 200px;
   justify-self: center;
 }
 .stay-list-container .center-container {

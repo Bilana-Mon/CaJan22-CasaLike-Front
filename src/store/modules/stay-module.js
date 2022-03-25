@@ -17,7 +17,7 @@ export default {
         }
     },
     mutations: {
-        setStays(state, { stays }) {
+        setStays(state, stays) {
             state.stays = stays;
         },
         setFilter(state, { filterBy }) {
@@ -29,7 +29,7 @@ export default {
         async loadStays({ commit, state }) {
             try {
                 let stays = await stayService.query(state.filterBy)
-                console.log(stays)
+                console.log(123, stays)
                 commit({ type: 'setStays', stays })
             } catch (err) {
                 console.log('error', err);
@@ -37,7 +37,6 @@ export default {
 
         },
         setFilter({ dispatch, commit }, { filterBy }) {
-            console.log(filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         }

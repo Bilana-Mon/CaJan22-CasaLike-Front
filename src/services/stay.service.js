@@ -20,6 +20,7 @@ export const stayService = {
 
 // add filter 
 async function query(filterBy) {
+    console.log(8888888 ,filterBy);
     let stays = await storageService.query(STAYS_KEY)
     if (!stays || !stays.length) {
         stays = [...gStays]
@@ -59,6 +60,7 @@ async function save(stay) {
 // }
 
 function _filterStays(filterBy, stays) {
+    console.log(filterBy, stays);
     let searchedStays = []
     if (filterBy.location) {
         const regex = new RegExp(filterBy.location, 'i')

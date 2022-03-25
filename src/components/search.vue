@@ -107,3 +107,6 @@ export default {
     margin-bottom: 20px;
 }
 </style>
+
+<!-- SVG FOR THE PINPOINT SEARCH ON LOCATION  -->
+<!-- <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 22px; width: 22px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false"><path d="m15.9999.33325c6.4433664 0 11.6667 5.22332687 11.6667 11.66665 0 .395185-.0196984.7942624-.0585936 1.1970109-.3656031 3.7857147-2.3760434 7.7525726-5.487905 11.7201691-1.1932825 1.5214248-2.4696691 2.9382012-3.7464266 4.2149447l-.264609.2625401-.2565836.2505683-.4871024.4643445-.3377669.3126669-.259231 -->

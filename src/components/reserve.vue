@@ -34,7 +34,7 @@
             <label class="select-label" for="select-checkbox">Guests</label>
             <div class="select-wrap">
                 <ul class="select">
-                    <li>
+                    <li class="option">
                         <a href="#" title="First">
                             Adults
                             Age 13+
@@ -48,7 +48,7 @@
                             @click="updateCount('adults', 1)"
                         >+</button>
                     </li>
-                    <li>
+                    <li class="option">
                         <a href="#" title="Second">
                             Children
                             Ages 2–12
@@ -62,10 +62,39 @@
                             @click="updateCount('children', 1)"
                         >+</button>
                     </li>
-                    <li>
-                        <a href="#" title="Third">Third</a>
+                    <li class="option">
+                        <a href="#" title="Third">
+                            Infants
+                            Under 2
+                        </a>
+                        <button
+                            :disabled="countOfGuests.infants === 0"
+                            @click="updateCount('infants', -1)"
+                        >-</button>
+                        {{ countOfGuests.infants }}
+                        <button
+                            @click="updateCount('infants', 1)"
+                        >+</button>
                     </li>
+                    <li class="option">
+                        <a href="#" title="fourth">
+                            Pets
+                            <a href="#">Bringing a service animal?</a>
+                        </a>
+                        <button
+                            :disabled="countOfGuests.pets === 0"
+                            @click="updateCount('pets', -1)"
+                        >-</button>
+                        {{ countOfGuests.pets }}
+                        <button
+                            @click="updateCount('pets', 1)"
+                        >+</button>
+                    </li>
+                    <a href="#">Close</a>
                 </ul>
+                <button class="mouse-cursor-gradient-tracking" @mousemove="changeColor">
+                    <span>Reserve</span>
+                </button>
             </div>
         </div>
     </section>
@@ -91,16 +120,36 @@ export default {
             countOfGuests: {
                 adults: 0,
                 children: 0,
+                infants: 0,
+                pets: 0
             },
         }
     },
     methods: {
         updateCount(age, diff) {
-            if (age === 'adults') {
-                this.countOfGuests.adults += diff
-            } else {
-                this.countOfGuests.children += diff
+            switch (age) {
+                case 'adults':
+                    this.countOfGuests.adults += diff;
+                    break;
+                case 'children':
+                    this.countOfGuests.children += diff;
+                    break;
+                case 'infants':
+                    this.countOfGuests.infants += diff;
+                    break;
+                case 'pets':
+                    this.countOfGuests.pets += diff;
             }
+        },
+        changeColor(e) {
+            let btn = document.querySelector('.mouse-cursor-gradient-tracking');
+            btn.addEventListener('mousemove', e => {
+                let rect = e.target.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+                btn.style.setProperty('--x', x + 'px');
+                btn.style.setProperty('--y', y + 'px');
+            });
         }
     },
     computed: {

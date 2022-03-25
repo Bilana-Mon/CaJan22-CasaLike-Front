@@ -1,5 +1,5 @@
 <template>
-    <section class="search-bar">
+    <section :class="{ 'search-bar': isActive, 'search-bar-small': !isActive }">
         <form @submit.prevent="setFilter">
             <div class="search-bar-container">
                 <div class="search-element location-container">
@@ -64,11 +64,14 @@ export default {
                     start: new Date().getTime() - 3600 * 1000 * 24 * 7,
                 }
             },
+            isActive: true
 
         }
     },
     created() {
-        console.log(this.fitlerBy)
+         window.addEventListener('scroll', this.handleScroll);
+        console.log(window.scrollY)
+
     },
     methods: {
         setFilter() {
@@ -81,6 +84,11 @@ export default {
             console.log('kaka')
             this.$router.push(`/stay`)
         },
+        handleScroll (event) {
+     console.log(window.scrollY)
+     if (window.scrollY > 20) this.isActive = false
+     else this.isActive = true
+    }
     },
 }
 </script>

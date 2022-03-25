@@ -1,5 +1,7 @@
 <template v-if="stay">
 <section class="map-container">
+  <h2>Where you’ll be</h2>
+  <p>{{stay.address.street}}</p>
   <GMapMap class="map"
       :center="center"
       :zoom="10"
@@ -43,4 +45,5 @@ export default {
     height: 30rem;
     margin: 0 auto
 }
+
 </style>

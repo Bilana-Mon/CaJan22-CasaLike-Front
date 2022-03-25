@@ -24,6 +24,7 @@ const router = createRouter({
       name: 'stay',
       component: stayApp
     },
+  
     {
       path: '/stay/:id',
       name: 'stay-details',

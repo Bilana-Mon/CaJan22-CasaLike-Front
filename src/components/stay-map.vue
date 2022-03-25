@@ -1,11 +1,13 @@
 <template v-if="stay">
-  <GMapMap
+<section class="map-container">
+  <GMapMap class="map"
       :center="center"
-      :zoom="7"
+      :zoom="10"
       map-type-id="terrain"
-      style="width: 500px; height: 100vh"
+
   >
   </GMapMap>
+  </section>
 </template>
 
 <script>
@@ -34,3 +36,11 @@ export default {
   unmounted() {},
 }
 </script>
+<style>
+
+.map {
+    width: 70rem;
+    height: 30rem;
+    margin: 0 auto
+}
+</style>

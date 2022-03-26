@@ -27,8 +27,8 @@
                 v-model="filterBy.dates"
                 type="daterange"
                 range-separator="|"
-                start-placeholder="Add dates"
-                end-placeholder="Add dates"
+                start-placeholder="getStartDate"
+                end-placeholder="filterBy.dates.end"
             />
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />
@@ -112,7 +112,9 @@ export default {
 
     },
     components: {},
-    created() { },
+    created() {
+      console.log(this.filter)
+     },
     data() {
         return {
             filterBy: {
@@ -168,6 +170,13 @@ export default {
             let rate = +(this.stay.reviewScores.rating) / 20
             return rate
         },
+        filter() {
+            return this.$store.getters.filter
+        },
+        getStartDate() {
+         return this.$store.getters.filter.filterBy.dates.start
+        }
+        
     },
 }
 </script>

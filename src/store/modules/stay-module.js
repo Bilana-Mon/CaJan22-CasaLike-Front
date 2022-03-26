@@ -4,7 +4,11 @@ export default {
     state: {
         stays: [],
         filterBy: {
-            location: ''
+            location: '',
+            dates: {
+                end: new Date(),
+                start: new Date().getTime() - 3600 * 1000 * 24 * 7,
+            },
         }
     },
     getters: {

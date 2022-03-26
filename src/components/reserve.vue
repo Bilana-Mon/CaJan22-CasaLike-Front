@@ -1,8 +1,8 @@
 <template>
     <section v-if="stay" class="reserve-card">
-        <p>
-            <span>{{ getFormattedPrice }}</span> / night
-            <span>
+        <div class="card-info">
+            <div class="card-price">{{ getFormattedPrice }}</div> / night
+            <div>
                 <svg
                     viewBox="0 0 32 32"
                     xmlns="http://www.w3.org/2000/svg"
@@ -18,10 +18,10 @@
                         class
                     />
                 </svg>
-            </span>
-            <span>{{ getFormattedRate }}</span> ·
+            </div>
+            <div class="card-rate">{{ getFormattedRate }}</div> ·
             <a href="#">{{ stay.numOfReviews }} reviews</a>
-        </p>
+        </div>
         <div class="input-container">
             <el-date-picker
                 v-model="filterBy.dates"

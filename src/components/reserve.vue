@@ -27,8 +27,10 @@
                 v-model="filterBy.dates"
                 type="daterange"
                 range-separator="|"
-                start-placeholder="getStartDate"
-                end-placeholder="filterBy.dates.end"
+                :start-placeholder="`${filterBy.dates.start}`"
+                :end-placeholder="`${filterBy.dates.end}`"
+                format="M/D/YYYY"
+                default="Add Dates"
             />
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />
@@ -113,8 +115,10 @@ export default {
     },
     components: {},
     created() {
-      console.log(this.filter)
-     },
+        this.filterBy.dates.start = this.$store.getters.filter.dates.start
+        this.filterBy.dates.end = this.$store.getters.filter.dates.end
+        console.log(this.filter)
+    },
     data() {
         return {
             filterBy: {
@@ -174,9 +178,12 @@ export default {
             return this.$store.getters.filter
         },
         getStartDate() {
-         return this.$store.getters.filter.filterBy.dates.start
+            return this.$store.getters.filter.dates.start
+        },
+        getEndDate() {
+            return this.$store.getters.filter.dates.end
         }
-        
+
     },
 }
 </script>

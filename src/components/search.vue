@@ -40,62 +40,84 @@
                             <div class="select-wrap">
                                 <ul v-if="selectOpen" class="select">
                                     <li class="option">
-                                        <a href="#" title="First">
-                                            Adults
-                                            Age 13+
-                                        </a>
-                                        <button
-                                            :disabled="filterBy.countOfGuests.adults === 0"
-                                            @click="updateCount('adults', -1)"
-                                        >-</button>
-                                        {{ filterBy.countOfGuests.adults }}
-                                        <button
-                                            @click="updateCount('adults', 1)"
-                                        >+</button>
+                                        <div class="options-list">
+                                            <a href="#" title="First">
+                                                Adults
+                                                <br />Age 13+
+                                            </a>
+                                        </div>
+                                        <div class="btn-list">
+                                            <button
+                                                :disabled="filterBy.countOfGuests.adults === 0"
+                                                @click="updateCount('adults', -1)"
+                                            >-</button>
+                                            <span
+                                                class="count-span"
+                                            >{{ filterBy.countOfGuests.adults }}</span>
+                                            <button @click="updateCount('adults', 1)">+</button>
+                                        </div>
                                     </li>
                                     <li class="option">
-                                        <a href="#" title="Second">
-                                            Children
-                                            Ages 2–12
-                                        </a>
-                                        <button
-                                            :disabled="filterBy.countOfGuests.children === 0"
-                                            @click="updateCount('children', -1)"
-                                        >-</button>
-                                        {{ filterBy.countOfGuests.children }}
-                                        <button
-                                            @click="updateCount('children', 1)"
-                                        >+</button>
+                                        <div class="options-list">
+                                            <a href="#" title="Second">
+                                                Children
+                                                <br />Ages 2–12
+                                            </a>
+                                        </div>
+                                        <div class="btn-list">
+                                            <button
+                                                :disabled="filterBy.countOfGuests.children === 0"
+                                                @click="updateCount('children', -1)"
+                                            >-</button>
+                                            <span
+                                                class="count-span"
+                                            >{{ filterBy.countOfGuests.children }}</span>
+                                            <button @click="updateCount('children', 1)">+</button>
+                                        </div>
                                     </li>
                                     <li class="option">
-                                        <a href="#" title="Third">
-                                            Infants
-                                            Under 2
-                                        </a>
-                                        <button
-                                            :disabled="filterBy.countOfGuests.infants === 0"
-                                            @click="updateCount('infants', -1)"
-                                        >-</button>
-                                        {{ filterBy.countOfGuests.infants }}
-                                        <button
-                                            @click="updateCount('infants', 1)"
-                                        >+</button>
+                                        <div class="options-list">
+                                            <a href="#" title="Third">
+                                                Infants
+                                                <br />Under 2
+                                            </a>
+                                        </div>
+                                        <div class="btn-list">
+                                            <button
+                                                :disabled="filterBy.countOfGuests.infants === 0"
+                                                @click="updateCount('infants', -1)"
+                                            >-</button>
+                                            <span
+                                                class="count-span"
+                                            >{{ filterBy.countOfGuests.infants }}</span>
+                                            <button @click="updateCount('infants', 1)">+</button>
+                                        </div>
                                     </li>
                                     <li class="option">
-                                        <a href="#" title="fourth">
-                                            Pets
-                                            <a href="#">Bringing a service animal?</a>
-                                        </a>
-                                        <button
-                                            :disabled="filterBy.countOfGuests.pets === 0"
-                                            @click="updateCount('pets', -1)"
-                                        >-</button>
-                                        {{ filterBy.countOfGuests.pets }}
-                                        <button
-                                            @click="updateCount('pets', 1)"
-                                        >+</button>
+                                        <div class="options-list">
+                                            <a href="#" title="fourth">
+                                                Pets
+                                                <br />
+                                                <a
+                                                    class="pets-service"
+                                                    href="#"
+                                                >Bringing a service animal?</a>
+                                            </a>
+                                        </div>
+                                        <div class="btn-list">
+                                            <button
+                                                :disabled="filterBy.countOfGuests.pets === 0"
+                                                @click="updateCount('pets', -1)"
+                                            >-</button>
+                                            <span
+                                                class="count-span"
+                                            >{{ filterBy.countOfGuests.pets }}</span>
+                                            <button @click="updateCount('pets', 1)">+</button>
+                                        </div>
                                     </li>
-                                    <a href="#">Close</a>
+                                    <span
+                                        class="pet-msg"
+                                    >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
                                 </ul>
                             </div>
                         </div>
@@ -210,27 +232,5 @@ export default {
     color: var(--el-text-color-secondary);
     font-size: 14px;
     margin-bottom: 20px;
-}
-
-.select-checkbox {
-    display: none;
-}
-
-.select-label:before {
-    content: "\25BE";
-    float: right;
-}
-.select-wrap {
-    background: rgb(255, 255, 255);
-}
-
-.select {
-    list-style: none;
-    padding: 10px;
-    margin: 0;
-}
-.select a {
-    text-decoration: none;
-    color: inherit;
 }
 </style>

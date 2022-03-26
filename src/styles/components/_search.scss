@@ -136,6 +136,89 @@
     height: 16px;
     fill: #fff;
 }
+
+
+.search-bar-container .select-checkbox {
+    display: none;
+    position: relative;
+}
+
+.search-bar-container .select-label:before {
+    content: "\25BE";
+    float: right;
+}
+.search-bar-container .select-wrap {
+    background: rgb(255, 255, 255);
+}
+
+.search-bar-container .select {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    list-style: none;
+    padding: 10px;
+    margin-top: 0.85rem;
+    margin-left: -11.966rem;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    width: 24.625rem;
+    height: 23.9775rem;
+    border-radius: 2rem;
+}
+
+.search-bar-container .options-list{
+    flex-direction: column;
+    line-height: 1.25rem;
+    text-align: left;
+    font-size: 1rem;
+}
+.search-bar-container .btn-list{
+    display: flex;
+    justify-content: right;
+    color: #222222;
+}
+
+.search-bar-container .count-span{
+    margin-right: 0.125rem;
+    margin-left: 0.125rem;
+    text-align: center;
+}
+
+.search-bar-container .option:not(:last-child){
+    border-bottom:1px solid rgb(235, 235, 235) !important
+}
+
+.search-bar-container .pets-service{
+    text-decoration: underline !important;
+}
+
+.search-bar-container .btn-list button{
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+    border-radius: 50%;
+    border: 1px solid;
+    width: 2rem;
+    height: 2rem;
+    background-color: whitesmoke;
+    color: #717171;
+}
+.search-bar-container .pet-msg{
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: #717171;
+    text-align: left;
+}
+.search-bar-container .select a {
+    text-decoration: none;
+    color: inherit;
+}
+
 @media (max-width: 800px){
     .search-bar{
         height: auto;

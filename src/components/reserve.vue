@@ -27,10 +27,10 @@
                 v-model="filterBy.dates"
                 type="daterange"
                 range-separator="|"
-                :start-placeholder="`${filterBy.dates.start}`"
-                :end-placeholder="`${filterBy.dates.end}`"
+                :start-placeholder="`${getFormattedStart}`"
+                :end-placeholder="`${getFormattedEnd}`"
                 format="M/D/YYYY"
-                default="Add Dates"
+               
             />
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />
@@ -115,9 +115,10 @@ export default {
     },
     components: {},
     created() {
-        this.filterBy.dates.start = this.$store.getters.filter.dates.start
-        this.filterBy.dates.end = this.$store.getters.filter.dates.end
-        console.log(this.filter)
+        this.filterBy.dates.start = this.$store.getters.filter.dates['0']
+        this.filterBy.dates.end = this.$store.getters.filter.dates['1']
+        console.log(this.filterBy.dates.start)
+        console.log(this.filterBy.dates.end)
     },
     data() {
         return {
@@ -164,7 +165,8 @@ export default {
         },
         toggleSelect() {
             this.selectOpen = !this.selectOpen
-        }
+        },
+       
     },
     computed: {
         getFormattedPrice() {
@@ -174,16 +176,30 @@ export default {
             let rate = +(this.stay.reviewScores.rating) / 20
             return rate
         },
-        filter() {
-            return this.$store.getters.filter
+            getFormattedStart() {
+            let startDate = this.filterBy.dates.start
+            // console.log(startDate)
+            const date1 = startDate.getDate()
+            console.log(date1)
+            const date2 = startDate.getMonth() + 1;
+            console.log(date2)
+            const date3 = startDate.getFullYear();
+            console.log(date3)
+            const fullDate = date2 + "/" + date1 + "/" + date3
+            return fullDate
         },
-        getStartDate() {
-            return this.$store.getters.filter.dates.start
-        },
-        getEndDate() {
-            return this.$store.getters.filter.dates.end
+            getFormattedEnd() {
+            let endtDate = this.filterBy.dates.end
+            // console.log(startDate)
+            const date1 = endtDate.getDate()
+            console.log(date1)
+            const date2 = endtDate.getMonth() + 1;
+            console.log(date2)
+            const date3 = endtDate.getFullYear();
+            console.log(date3)
+            const fullDate = date2 + "/" + date1 + "/" + date3
+            return fullDate
         }
-
     },
 }
 </script>

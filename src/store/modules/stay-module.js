@@ -9,6 +9,12 @@ export default {
                 end: new Date(),
                 start: new Date().getTime() - 3600 * 1000 * 24 * 7,
             },
+            countOfGuests: {
+                adults: 0,
+                children: 0,
+                infants: 0,
+                pets: 0
+            },
         }
     },
     getters: {
@@ -19,7 +25,7 @@ export default {
             const copyStays = JSON.parse(JSON.stringify(stays))
             return copyStays
         },
-        filter({filterBy}) {
+        filter({ filterBy }) {
             return filterBy
         }
     },

@@ -104,6 +104,7 @@
                         <span
                             class="pet-msg"
                         >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
+                        <a class="pets-service" href="#">Close</a>
                     </ul>
                 </div>
             </div>
@@ -160,16 +161,16 @@ export default {
         updateCount(age, diff) {
             switch (age) {
                 case 'adults':
-                    this.countOfGuests.adults += diff;
+                    this.filterBy.countOfGuests.adults += diff;
                     break;
                 case 'children':
-                    this.countOfGuests.children += diff;
+                    this.filterBy.countOfGuests.children += diff;
                     break;
                 case 'infants':
-                    this.countOfGuests.infants += diff;
+                    this.filterBy.countOfGuests.infants += diff;
                     break;
                 case 'pets':
-                    this.countOfGuests.pets += diff;
+                    this.filterBy.countOfGuests.pets += diff;
             }
         },
         changeColor(e) {

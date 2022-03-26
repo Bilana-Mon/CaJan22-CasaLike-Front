@@ -1,6 +1,24 @@
 <template>
-    <section :class="{ 'search-bar': isActive, 'search-bar-small': !isActive }">
-        <form >
+    <div
+        :class="{ 'search-scroll-bg expanded': searchExpanded, 'search-scroll-bg': !searchExpanded }"
+    ></div>
+    <div class="search-scroll" @click="expandSearch">
+        <div class="search-field">
+            <div class="start-your-search">Start your search</div>
+            <button class="search-btn">
+                <div class="svg-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                            d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"
+                        />
+                    </svg>
+                </div>
+            </button>
+        </div>
+    </div>
+    <section class="search-bar">
+        <form>
             <div class="search-bar-container">
                 <div class="search-element location-container">
                     <label for="location">
@@ -69,9 +87,11 @@
                                                 :disabled="filterBy.countOfGuests.children === 0"
                                                 @click.stop="updateCount('children', -1)"
                                             >-</button>
-                                            <span
-                                                class="count-span"
-                                            >{{ filterBy.countOfGuests.children }}</span>
+                                            <span class="count-span">
+                                                {{
+                                                    filterBy.countOfGuests.children
+                                                }}
+                                            </span>
                                             <button @click.stop="updateCount('children', 1)">+</button>
                                         </div>
                                     </li>
@@ -115,9 +135,10 @@
                                             <button @click.stop="updateCount('pets', 1)">+</button>
                                         </div>
                                     </li>
-                                    <span
-                                        class="pet-msg"
-                                    >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
+                                    <span class="pet-msg">
+                                        If you're lucky enough to have more than 2 pets with
+                                        you, be sure to let your host know.
+                                    </span>
                                 </ul>
                             </div>
                         </div>
@@ -163,7 +184,9 @@ export default {
                 },
             },
             isActive: true,
-            selectOpen: false
+            selectOpen: false,
+            searchExpanded: false
+
 
         }
     },
@@ -207,6 +230,10 @@ export default {
                     this.filterBy.countOfGuests.pets += diff;
             }
         },
+        expandSearch() {
+            this.searchExpanded = !this.searchExpanded;
+            console.log(this.searchExpanded);
+        }
     },
 }
 </script>

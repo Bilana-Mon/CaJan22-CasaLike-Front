@@ -23,75 +23,81 @@
             <a href="#">{{ stay.numOfReviews }} reviews</a>
         </p>
         <div class="input-container">
-         <Datepicker class="date" v-model="dates" range multiCalendars multiCalendarsSolo />
-        <div class="container" @click="toggleSelect">
-            <input type="checkbox" class="select-checkbox" />
-            <label class="select-label" for="select-checkbox">Guests</label>
-            <div class="select-wrap">
-                <ul v-if="selectOpen" class="select">
-                    <li class="option">
-                        <a href="#" title="First">
-                            Adults
-                            Age 13+
-                        </a>
-                        <button
-                            :disabled="countOfGuests.adults === 0"
-                            @click="updateCount('adults', -1)"
-                        >-</button>
-                        {{ countOfGuests.adults }}
-                        <button
-                            @click="updateCount('adults', 1)"
-                        >+</button>
-                    </li>
-                    <li class="option">
-                        <a href="#" title="Second">
-                            Children
-                            Ages 2–12
-                        </a>
-                        <button
-                            :disabled="countOfGuests.children === 0"
-                            @click="updateCount('children', -1)"
-                        >-</button>
-                        {{ countOfGuests.children }}
-                        <button
-                            @click="updateCount('children', 1)"
-                        >+</button>
-                    </li>
-                    <li class="option">
-                        <a href="#" title="Third">
-                            Infants
-                            Under 2
-                        </a>
-                        <button
-                            :disabled="countOfGuests.infants === 0"
-                            @click="updateCount('infants', -1)"
-                        >-</button>
-                        {{ countOfGuests.infants }}
-                        <button
-                            @click="updateCount('infants', 1)"
-                        >+</button>
-                    </li>
-                    <li class="option">
-                        <a href="#" title="fourth">
-                            Pets
-                            <a href="#">Bringing a service animal?</a>
-                        </a>
-                        <button
-                            :disabled="countOfGuests.pets === 0"
-                            @click="updateCount('pets', -1)"
-                        >-</button>
-                        {{ countOfGuests.pets }}
-                        <button
-                            @click="updateCount('pets', 1)"
-                        >+</button>
-                    </li>
-                    <a href="#">Close</a>
-                </ul>
+            <el-date-picker
+                v-model="filterBy.dates"
+                type="daterange"
+                range-separator="|"
+                start-placeholder="Add dates"
+                end-placeholder="Add dates"
+            />
+            <div class="container" @click="toggleSelect">
+                <input type="checkbox" class="select-checkbox" />
+                <label class="select-label" for="select-checkbox">Guests</label>
+                <div class="select-wrap">
+                    <ul v-if="selectOpen" class="select">
+                        <li class="option">
+                            <a href="#" title="First">
+                                Adults
+                                Age 13+
+                            </a>
+                            <button
+                                :disabled="countOfGuests.adults === 0"
+                                @click="updateCount('adults', -1)"
+                            >-</button>
+                            {{ countOfGuests.adults }}
+                            <button
+                                @click="updateCount('adults', 1)"
+                            >+</button>
+                        </li>
+                        <li class="option">
+                            <a href="#" title="Second">
+                                Children
+                                Ages 2–12
+                            </a>
+                            <button
+                                :disabled="countOfGuests.children === 0"
+                                @click="updateCount('children', -1)"
+                            >-</button>
+                            {{ countOfGuests.children }}
+                            <button
+                                @click="updateCount('children', 1)"
+                            >+</button>
+                        </li>
+                        <li class="option">
+                            <a href="#" title="Third">
+                                Infants
+                                Under 2
+                            </a>
+                            <button
+                                :disabled="countOfGuests.infants === 0"
+                                @click="updateCount('infants', -1)"
+                            >-</button>
+                            {{ countOfGuests.infants }}
+                            <button
+                                @click="updateCount('infants', 1)"
+                            >+</button>
+                        </li>
+                        <li class="option">
+                            <a href="#" title="fourth">
+                                Pets
+                                <a href="#">Bringing a service animal?</a>
+                            </a>
+                            <button
+                                :disabled="countOfGuests.pets === 0"
+                                @click="updateCount('pets', -1)"
+                            >-</button>
+                            {{ countOfGuests.pets }}
+                            <button
+                                @click="updateCount('pets', 1)"
+                            >+</button>
+                        </li>
+                        <a href="#">Close</a>
+                    </ul>
                 </div>
             </div>
-                <button class="mouse-cursor-gradient-tracking" @mousemove="changeColor">
-                    <span>Reserve</span>
-                </button>
+            <button class="mouse-cursor-gradient-tracking" @mousemove="changeColor">
+                <span>Reserve</span>
+            </button>
         </div>
     </section>
 </template>
@@ -109,9 +115,11 @@ export default {
     created() { },
     data() {
         return {
-            dates: {
-                end: new Date(),
-                start: new Date().getTime() - 3600 * 1000 * 24 * 7,
+            filterBy: {
+                dates: {
+                    end: new Date(),
+                    start: new Date().getTime() - 3600 * 1000 * 24 * 7,
+                },
             },
             countOfGuests: {
                 adults: 0,
@@ -149,7 +157,7 @@ export default {
             });
         },
         toggleSelect() {
-           this.selectOpen = !this.selectOpen 
+            this.selectOpen = !this.selectOpen
         }
     },
     computed: {
@@ -166,7 +174,6 @@ export default {
 
 
 <style scoped>
-
 .select-checkbox {
     display: none;
 }
@@ -176,18 +183,16 @@ export default {
     float: right;
 }
 .select-wrap {
-    background:rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
 }
 
 .select {
     list-style: none;
     padding: 10px;
     margin: 0;
-    
 }
 .select a {
     text-decoration: none;
     color: inherit;
 }
-
 </style>

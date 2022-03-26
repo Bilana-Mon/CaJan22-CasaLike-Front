@@ -30,7 +30,6 @@ export default {
 ,
     fillColor: '#FF0000',
     fillOpacity: .6,
-    anchor: new google.maps.Point(0,0),
     strokeWeight: 0,
     scale: 1 },
      this.markerOptions = { position: this.center, label: "", title: "Exact location provided after booking", icon: this.icon};

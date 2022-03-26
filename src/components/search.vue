@@ -34,7 +34,7 @@
                     <div>
                         <div class="search-heading">Guests</div>
                         <div class="search-text">Add guests</div>
-                        <div class="container" @click="toggleSelect">
+                        <div class="container" >
                             <input type="checkbox" class="select-checkbox" />
                             <label class="select-label" for="select-checkbox">Guests</label>
                             <div class="select-wrap">

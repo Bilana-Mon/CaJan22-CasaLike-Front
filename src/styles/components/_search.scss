@@ -1,16 +1,35 @@
-.search-bar {
+.search-bar{
     display: flex;
     align-items: center;
     cursor: pointer;
     position: inherit;
     background-color: #fff;
-    width: 100%;
+    width: 95%;
     max-width: 960px;
     height: 66px;
     margin-top: 10px;
     margin-bottom: 25px;
     border-radius: 100px;
+    z-index: 80;
 }
+
+.main-nav.scrolled + .search-scroll-bg + .search-scroll + .search-bar{
+    transform: translateY(-81px) scale(0.7);
+    opacity: 0;
+    position: fixed;
+    top: 80px;
+    transition: all .2s;
+}
+
+.search-scroll-bg.expanded{
+    height: 183px!important;
+}
+.search-scroll-bg.expanded + .search-scroll + .search-bar{
+    transform: none!important;
+    opacity: 1!important;
+    outline: 1px solid #e7e7e7!important;
+}
+
 .search-bar form, .search-bar-container{
     height: 100%;
     width: 100%;
@@ -38,14 +57,19 @@
     justify-self: center;
 }*/
 .search-scroll-bg{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #fff;
     width: 100%;
-    height: 83px;
-    z-index: 5;
+    height: 183px;
     opacity: 0;
+    transition: all .2s;
+    z-index: 50;
+}
+
+.main-nav.scrolled + .search-scroll-bg{
+    height: 83px;
 }
 .main-nav.scrolled + .search-scroll-bg, .main-nav.scrolled + .search-scroll-bg + .search-scroll{
     opacity: 1;
@@ -55,14 +79,16 @@
     width: 20%;
     padding: 5px;
     border-radius: 25px;
-    position: absolute;
+    position: fixed;
     top: 18px;
     cursor: pointer;
     min-width: 200px;
-    z-index: 10;
     -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
     box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
     opacity: 0;
+    transition: all .2s;
+    transition-timing-function: ease-out;
+    z-index: 150;
 }
 .search-scroll .search-field{
     display: flex;
@@ -75,6 +101,7 @@
     padding-left: 20px;
     font-weight: bold;
     font-size: 0.9rem;
+    user-select: none;
 }
 .search-scroll .search-btn{
     cursor: pointer;
@@ -219,6 +246,17 @@
     color: inherit;
 }
 
+@media (max-width: 990px){
+    .search-scroll{
+        top: 18px + 57px;
+    }
+    .main-nav.scrolled + .search-scroll-bg + .search-scroll + .search-bar{
+        top: 80px + 50px;
+    }
+    .search-scroll-bg{
+        height: 130px!important;
+    }
+}
 @media (max-width: 800px){
     .search-bar{
         height: auto;
@@ -240,5 +278,10 @@
     }
     .vsep{
         display: none;
+    }
+}
+@media (max-width: 580px){
+    .search-scroll{
+        left: 20px;
     }
 }

@@ -5,8 +5,14 @@ img {
 .header-bg{
   position: absolute;
   background: black;
-  height: 30%;
+  height: 255px;
   width: 100%;
+}
+.header-bg.scrolled{
+  height: 255px + 166px;
+}
+.header-bg.scrolled + .homepage.layout{
+  margin-top: 166px;
 }
 .destination-img {
   width: 300px;

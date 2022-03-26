@@ -17,10 +17,11 @@ img {
 h1 {
   font-family: airbnb-extrabold;
 }
-
-.section-col {
-  width: 100%;
+.section-col, .main-nav.scrolled{
   max-width: calc(min(1600px, 100%) - 160px);
+}
+.section-col{
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,12 +32,12 @@ h1 {
   justify-content: center;
 }
 @media (max-width: 1040px) {
-  .section-col {
+  .section-col, .main-nav.scrolled {
     max-width: calc(min(1600px, 100%) - 80px);
   }
 }
 @media (max-width: 800px) {
-  .section-col {
+  .section-col, .main-nav.scrolled {
     max-width: calc(min(1600px, 100%) - 40px);
   }
   .brand-name {

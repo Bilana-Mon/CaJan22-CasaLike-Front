@@ -1,6 +1,8 @@
 .stay-img-gallery {
-  height: 300px;
-  width: 400px;
+  height: 100%;
+  max-height: 300px;
+  // width: 400px;
+  width: 100%;
   border-radius: 20px;
 }
 .stay-images-container {
@@ -16,11 +18,11 @@
   padding-left: 10px;
   padding-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 10px;
 }
 .stay-list-container .stay-preview-container {
-  width: 400px;
+  width: 350px;
   justify-self: center;
 }
 .stay-list-container .center-container {
@@ -68,4 +70,57 @@ span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  background: #fff!important;
+  color: #4c4c4c!important;
 }
+.el-carousel__item{
+  border-radius: 20px;
+}
+.el-carousel__item img{
+  object-fit: cover;
+}
+.stay-desc{
+  margin-bottom: 1.5rem;
+}
+.stay-desc > div {
+  margin-top: 5px;
+}
+.stay-desc .rating{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.stay-desc .rating .rating-star{
+  margin-right: 8px;
+}
+.stay-desc .stay-loc{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stay-desc .stay-loc-name{
+  font-weight: bold;
+}
+.stay-desc .stay-loc span{
+  margin: 0 5px;
+}
+.stay-desc .stay-price .price{
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+
+
+@media (min-width: 600px){
+  .stay-list{
+    margin: 0 75px;
+  }
+}
+@media (max-width: 869px){
+  .stay-preview-container{
+    width: 100%!important;
+  }
+}
+
+

@@ -86,7 +86,7 @@
 .stay-details .stay-desc-container {
     display: flex;
     justify-content: space-between;
-    width: 34.0625rem;
+    width: 100%;
 }
 
 .stay-details .stay-type-container {
@@ -100,9 +100,22 @@
 }
 
 .stay-details .hr {
-border-top-color: rgb(221, 221, 221);
-border-top-width: 0.5px;
-border-top-style:solid;
-width: 34.0625rem;
+    border-top-color: rgb(221, 221, 221);
+    border-top-width: 0.5px;
+    border-top-style:solid;
+    width: 100%;
 }
+
+.vue-map-container.map{
+    height: 30rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.app-header.scrolled + .stay-details{
+    margin-top: 166px;
+}
+// .reserve-card{
+//     // display: none;
+// }
 

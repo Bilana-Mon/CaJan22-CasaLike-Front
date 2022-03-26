@@ -20,6 +20,9 @@
     flex-direction: column;
 }
 
+.card-info {
+    display:flex
+}
 .mouse-cursor-gradient-tracking{
     position: relative;
     background: var(--dls19-brand-gradient-radial, radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ));

@@ -1,5 +1,5 @@
 <template>
-  <div class="header-bg"></div>
+  <div :class="{ 'header-bg scrolled': isScrolled, 'header-bg': !isScrolled }"></div>
   <section class="homepage layout">
     <div class="section-row">
       <div class="section-col">
@@ -55,13 +55,22 @@ export default {
   components: {
 
   },
-  created() { },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
   data() {
-    return {}
+    return {
+      isScrolled: false
+    }
   },
   methods: {
     goExplore() {
       this.$router.push('/stay')
+    },
+    handleScroll (event) {
+      // console.log(window.scrollY)
+      if (window.scrollY > 5) this.isScrolled = true
+      else this.isScrolled = false
     }
   },
   computed: {},

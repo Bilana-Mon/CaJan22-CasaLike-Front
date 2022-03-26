@@ -1,4 +1,6 @@
 <template>
+  <div class="section-row">
+  <div class="section-col">
   <section v-if="stay" class="stay-details">
     <h1>{{ stay.name }}</h1>
     <p class="stay-rate-container">
@@ -50,6 +52,8 @@
         <div class="hr"></div>
         <stay-map :stay="stay"></stay-map>
   </section>
+  </div>
+  </div>
 </template>
 
 <script>

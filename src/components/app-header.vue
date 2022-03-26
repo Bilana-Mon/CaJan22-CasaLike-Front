@@ -1,8 +1,10 @@
 <template>
-    <header class="app-header">
+    <header :class="{ 'app-header scrolled': isScrolled, 'app-header': !isScrolled }">
+    <!-- <header class="app-header"> -->
         <div class="section-row">
             <div class="section-col">
                 <nav :class="{ 'main-nav scrolled': isScrolled, 'main-nav': !isScrolled }">
+                <!-- <nav class="main-nav"> -->
                     <div @click="goHome" class="logo">
                         <!-- <img class="logo-img" alt="logo-img" src="src/assets/airbnb/logo.svg" /> -->
 
@@ -55,7 +57,6 @@
 import loginSignup from './login-signup.vue'
 import search from './search.vue'
 
-
 export default {
     name: 'app-header',
     components: {
@@ -81,8 +82,8 @@ export default {
             this.$store.dispatch({ type: 'setFilter', filterBy })
         },
         handleScroll (event) {
-         console.log(window.scrollY)
-         if (window.scrollY > 125) this.isScrolled = true
+         // console.log(window.scrollY)
+         if (window.scrollY > 5) this.isScrolled = true
          else this.isScrolled = false
         }
     },

@@ -34,7 +34,7 @@
                     <div>
                         <div class="search-heading">Guests</div>
                         <div class="search-text">Add guests</div>
-                        <div class="container" >
+                        <div class="container">
                             <input type="checkbox" class="select-checkbox" />
                             <label class="select-label" for="select-checkbox">Guests</label>
                             <div class="select-wrap">
@@ -49,12 +49,12 @@
                                         <div class="btn-list">
                                             <button
                                                 :disabled="filterBy.countOfGuests.adults === 0"
-                                                @click="updateCount('adults', -1)"
+                                                @click.stop="updateCount('adults', -1)"
                                             >-</button>
                                             <span
                                                 class="count-span"
                                             >{{ filterBy.countOfGuests.adults }}</span>
-                                            <button @click="updateCount('adults', 1)">+</button>
+                                            <button @click.stop="updateCount('adults', 1)">+</button>
                                         </div>
                                     </li>
                                     <li class="option">
@@ -67,12 +67,12 @@
                                         <div class="btn-list">
                                             <button
                                                 :disabled="filterBy.countOfGuests.children === 0"
-                                                @click="updateCount('children', -1)"
+                                                @click.stop="updateCount('children', -1)"
                                             >-</button>
                                             <span
                                                 class="count-span"
                                             >{{ filterBy.countOfGuests.children }}</span>
-                                            <button @click="updateCount('children', 1)">+</button>
+                                            <button @click.stop="updateCount('children', 1)">+</button>
                                         </div>
                                     </li>
                                     <li class="option">
@@ -85,12 +85,12 @@
                                         <div class="btn-list">
                                             <button
                                                 :disabled="filterBy.countOfGuests.infants === 0"
-                                                @click="updateCount('infants', -1)"
+                                                @click.stop="updateCount('infants', -1)"
                                             >-</button>
                                             <span
                                                 class="count-span"
                                             >{{ filterBy.countOfGuests.infants }}</span>
-                                            <button @click="updateCount('infants', 1)">+</button>
+                                            <button @click.stop="updateCount('infants', 1)">+</button>
                                         </div>
                                     </li>
                                     <li class="option">
@@ -107,12 +107,12 @@
                                         <div class="btn-list">
                                             <button
                                                 :disabled="filterBy.countOfGuests.pets === 0"
-                                                @click="updateCount('pets', -1)"
+                                                @click.stop="updateCount('pets', -1)"
                                             >-</button>
                                             <span
                                                 class="count-span"
                                             >{{ filterBy.countOfGuests.pets }}</span>
-                                            <button @click="updateCount('pets', 1)">+</button>
+                                            <button @click.stop="updateCount('pets', 1)">+</button>
                                         </div>
                                     </li>
                                     <span

@@ -31,95 +31,82 @@
                 :end-placeholder="`${getFormattedEnd}`"
                 format="M/D/YYYY"
             />
-                        <div class="container" @click="toggleSelect">
-                            <input type="checkbox" class="select-checkbox" />
-                            <label class="select-label" for="select-checkbox">Guests</label>
-                            <div class="select-wrap">
-                                <ul v-if="selectOpen" class="select">
-                                    <li class="option">
-                                        <div class="options-list">
-                                            <a href="#" title="First">
-                                                Adults
-                                                <br />Age 13+
-                                            </a>
-                                        </div>
-                                        <div class="btn-list">
-                                            <button
-                                                :disabled="filterBy.countOfGuests.adults === 0"
-                                                @click="updateCount('adults', -1)"
-                                            >-</button>
-                                            <span
-                                                class="count-span"
-                                            >{{ filterBy.countOfGuests.adults }}</span>
-                                            <button @click="updateCount('adults', 1)">+</button>
-                                        </div>
-                                    </li>
-                                    <li class="option">
-                                        <div class="options-list">
-                                            <a href="#" title="Second">
-                                                Children
-                                                <br />Ages 2–12
-                                            </a>
-                                        </div>
-                                        <div class="btn-list">
-                                            <button
-                                                :disabled="filterBy.countOfGuests.children === 0"
-                                                @click="updateCount('children', -1)"
-                                            >-</button>
-                                            <span
-                                                class="count-span"
-                                            >{{ filterBy.countOfGuests.children }}</span>
-                                            <button @click="updateCount('children', 1)">+</button>
-                                        </div>
-                                    </li>
-                                    <li class="option">
-                                        <div class="options-list">
-                                            <a href="#" title="Third">
-                                                Infants
-                                                <br />Under 2
-                                            </a>
-                                        </div>
-                                        <div class="btn-list">
-                                            <button
-                                                :disabled="filterBy.countOfGuests.infants === 0"
-                                                @click="updateCount('infants', -1)"
-                                            >-</button>
-                                            <span
-                                                class="count-span"
-                                            >{{ filterBy.countOfGuests.infants }}</span>
-                                            <button @click="updateCount('infants', 1)">+</button>
-                                        </div>
-                                    </li>
-                                    <li class="option">
-                                        <div class="options-list">
-                                            <a href="#" title="fourth">
-                                                Pets
-                                                <br />
-                                                <a
-                                                    class="pets-service"
-                                                    href="#"
-                                                >Bringing a service animal?</a>
-                                            </a>
-                                        </div>
-                                        <div class="btn-list">
-                                            <button
-                                                :disabled="filterBy.countOfGuests.pets === 0"
-                                                @click="updateCount('pets', -1)"
-                                            >-</button>
-                                            <span
-                                                class="count-span"
-                                            >{{ filterBy.countOfGuests.pets }}</span>
-                                            <button @click="updateCount('pets', 1)">+</button>
-                                        </div>
-                                    </li>
-                                    <span
-                                        class="pet-msg"
-                                    >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
-                                </ul>
+            <div class="container" @click="toggleSelect">
+                <input type="checkbox" class="select-checkbox" />
+                <label class="select-label" for="select-checkbox">Guests</label>
+                <div class="select-wrap">
+                    <ul v-if="selectOpen" class="select">
+                        <li class="option">
+                            <div class="options-list">
+                                <a href="#" title="First">
+                                    Adults
+                                    <br />Age 13+
+                                </a>
                             </div>
-                        </div>
-                     
-                      
+                            <div class="btn-list">
+                                <button
+                                    :disabled="filterBy.countOfGuests.adults === 0"
+                                    @click.stop="updateCount('adults', -1)"
+                                >-</button>
+                                <span class="count-span">{{ filterBy.countOfGuests.adults }}</span>
+                                <button @click.stop="updateCount('adults', 1)">+</button>
+                            </div>
+                        </li>
+                        <li class="option">
+                            <div class="options-list">
+                                <a href="#" title="Second">
+                                    Children
+                                    <br />Ages 2–12
+                                </a>
+                            </div>
+                            <div class="btn-list">
+                                <button
+                                    :disabled="filterBy.countOfGuests.children === 0"
+                                    @click.stop="updateCount('children', -1)"
+                                >-</button>
+                                <span class="count-span">{{ filterBy.countOfGuests.children }}</span>
+                                <button @click.stop="updateCount('children', 1)">+</button>
+                            </div>
+                        </li>
+                        <li class="option">
+                            <div class="options-list">
+                                <a href="#" title="Third">
+                                    Infants
+                                    <br />Under 2
+                                </a>
+                            </div>
+                            <div class="btn-list">
+                                <button
+                                    :disabled="filterBy.countOfGuests.infants === 0"
+                                    @click.stop="updateCount('infants', -1)"
+                                >-</button>
+                                <span class="count-span">{{ filterBy.countOfGuests.infants }}</span>
+                                <button @click.stop="updateCount('infants', 1)">+</button>
+                            </div>
+                        </li>
+                        <li class="option">
+                            <div class="options-list">
+                                <a href="#" title="fourth">
+                                    Pets
+                                    <br />
+                                    <a class="pets-service" href="#">Bringing a service animal?</a>
+                                </a>
+                            </div>
+                            <div class="btn-list">
+                                <button
+                                    :disabled="filterBy.countOfGuests.pets === 0"
+                                    @click.stop="updateCount('pets', -1)"
+                                >-</button>
+                                <span class="count-span">{{ filterBy.countOfGuests.pets }}</span>
+                                <button @click.stop="updateCount('pets', 1)">+</button>
+                            </div>
+                        </li>
+                        <span
+                            class="pet-msg"
+                        >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
+                    </ul>
+                </div>
+            </div>
             <button class="mouse-cursor-gradient-tracking" @mousemove="changeColor">
                 <span>Reserve</span>
             </button>
@@ -143,13 +130,13 @@ export default {
             this.filterBy.dates.end = this.$store.getters.filter.dates['1']
             console.log(this.filterBy.dates.start)
             console.log(this.filterBy.dates.end)
-            
+
         }
         console.log(this.$store.getters.filter.countOfGuests)
         this.filterBy.countOfGuests.adults = this.$store.getters.filter.countOfGuests.adults
         this.filterBy.countOfGuests.children = this.$store.getters.filter.countOfGuests.children
         this.filterBy.countOfGuests.infants = this.$store.getters.filter.countOfGuests.infants
-        this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets   
+        this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets
     },
     data() {
         return {
@@ -159,13 +146,13 @@ export default {
                     start: 'Add dates',
                 },
                 countOfGuests: {
-                adults: 0,
-                children: 0,
-                infants: 0,
-                pets: 0
+                    adults: 0,
+                    children: 0,
+                    infants: 0,
+                    pets: 0
+                },
             },
-            },
-           
+
             selectOpen: false
         }
     },
@@ -209,31 +196,31 @@ export default {
             return rate
         },
         getFormattedStart() {
-                let startDate = this.filterBy.dates.start
-                if (startDate === 'Add dates') return 'Add dates'
-                // console.log(startDate)
-                const date1 = startDate.getDate()
-                console.log(date1)
-                const date2 = startDate.getMonth() + 1;
-                console.log(date2)
-                const date3 = startDate.getFullYear();
-                console.log(date3)
-                const fullDate = date2 + "/" + date1 + "/" + date3
-                return fullDate
+            let startDate = this.filterBy.dates.start
+            if (startDate === 'Add dates') return 'Add dates'
+            // console.log(startDate)
+            const date1 = startDate.getDate()
+            console.log(date1)
+            const date2 = startDate.getMonth() + 1;
+            console.log(date2)
+            const date3 = startDate.getFullYear();
+            console.log(date3)
+            const fullDate = date2 + "/" + date1 + "/" + date3
+            return fullDate
 
         },
         getFormattedEnd() {
-                let endDate = this.filterBy.dates.end
-                if (endDate === 'Add dates') return 'Add dates'
-                // console.log(startDate)
-                const date1 = endDate.getDate()
-                console.log(date1)
-                const date2 = endDate.getMonth() + 1;
-                console.log(date2)
-                const date3 = endDate.getFullYear();
-                console.log(date3)
-                const fullDate = date2 + "/" + date1 + "/" + date3
-                return fullDate
+            let endDate = this.filterBy.dates.end
+            if (endDate === 'Add dates') return 'Add dates'
+            // console.log(startDate)
+            const date1 = endDate.getDate()
+            console.log(date1)
+            const date2 = endDate.getMonth() + 1;
+            console.log(date2)
+            const date3 = endDate.getFullYear();
+            console.log(date3)
+            const fullDate = date2 + "/" + date1 + "/" + date3
+            return fullDate
         }
     },
 }

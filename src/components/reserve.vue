@@ -104,13 +104,21 @@
                         <span
                             class="pet-msg"
                         >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
-                        <a class="pets-service" href="#">Close</a>
+                        <a class="pets-service" @click.stop="toggleSelect">Close</a>
                     </ul>
                 </div>
             </div>
-            <button class="mouse-cursor-gradient-tracking" @mousemove="changeColor">
+            <button
+                class="mouse-cursor-gradient-tracking"
+                @mousemove="changeColor"
+                @click="sendMsg"
+            >
                 <span>Reserve</span>
             </button>
+        </div>
+        <div v-if="isReserved">
+            {{ msg }}
+            <button @click="isReserved = !isReserved">Close</button>
         </div>
     </section>
 </template>
@@ -153,8 +161,9 @@ export default {
                     pets: 0
                 },
             },
-
-            selectOpen: false
+            isReserved: false,
+            selectOpen: false,
+            msg: ''
         }
     },
     methods: {
@@ -186,6 +195,16 @@ export default {
         toggleSelect() {
             this.selectOpen = !this.selectOpen
         },
+        sendMsg() {
+            let adults = this.filterBy.countOfGuests.adults
+            this.isReserved = true;
+
+            if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
+                this.msg = 'Your reservetion has been succefull!'
+            } else {
+                this.msg = 'Missing reservetion details!'
+            }
+        }
 
     },
     computed: {

@@ -201,6 +201,7 @@ export default {
             console.log('lala')
             this.$emit('setFilter', { ...this.filterBy })
             this.$router.push(`/stay?location=${this.filterBy.location}`)
+            this.selectOpen = false;
         },
         goExplore() {
             console.log('kaka')

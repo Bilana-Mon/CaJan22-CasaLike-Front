@@ -2,7 +2,7 @@
     <header class="app-header">
         <div class="section-row">
             <div class="section-col">
-                <nav class="main-nav">
+                <nav :class="{ 'main-nav scrolled': isScrolled, 'main-nav': !isScrolled }">
                     <div @click="goHome" class="logo">
                         <!-- <img class="logo-img" alt="logo-img" src="src/assets/airbnb/logo.svg" /> -->
 
@@ -62,11 +62,14 @@ export default {
         loginSignup,
         search
     },
-    created() { },
+    created() { 
+        window.addEventListener('scroll', this.handleScroll);
+    },
     data() {
         return {
             addSignupModal: false,
-            openLoginBar: false
+            openLoginBar: false,
+            isScrolled: false
         }
     },
     methods: {
@@ -76,6 +79,11 @@ export default {
         setFilter(filterBy) {
             console.log(filterBy)
             this.$store.dispatch({ type: 'setFilter', filterBy })
+        },
+        handleScroll (event) {
+         console.log(window.scrollY)
+         if (window.scrollY > 125) this.isScrolled = true
+         else this.isScrolled = false
         }
     },
     computed: {},

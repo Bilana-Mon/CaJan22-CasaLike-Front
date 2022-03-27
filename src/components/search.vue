@@ -54,10 +54,14 @@
                 <div class="guests-container search-element" @click.stop="toggleSelect">
                     <div>
                         <div class="search-heading">Guests</div>
-                        <div class="search-text">Add guests</div>
+                        <div class="search-text" v-if="!selectOpen">Add guests</div>
                         <div class="container">
                             <input type="checkbox" class="select-checkbox" />
-                            <label class="select-label" for="select-checkbox">Guests</label>
+                            <label
+                                class="select-label"
+                                for="select-checkbox"
+                                v-if="selectOpen"
+                            >Guests</label>
                             <div class="select-wrap">
                                 <ul v-if="selectOpen" class="select">
                                     <li class="option">

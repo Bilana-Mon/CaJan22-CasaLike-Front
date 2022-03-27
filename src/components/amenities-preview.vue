@@ -7,7 +7,7 @@
             <div class="amenities-container">
                 <div class="amenity-container">
                     <!-- v-for="amenity in stay.amenities" :key="amenity" -->
-                    <div class="svg" v-if="stay.amenities"></div>
+                    <div class="svg"></div>
                     <ul class="amenity">
                         <li>
                             <span>
@@ -147,8 +147,7 @@ export default {
     },
     components: {},
     created() {
-        this.getAmenities
-        console.log(this.getAmenities);
+        this.getAmenities()
     },
     data() {
         return {
@@ -166,18 +165,22 @@ export default {
     },
     methods: {
         getAmenities() {
-            let amenities = this.stay.amenities;
+            let amenities = this.stay.amenities
             console.log(amenities);
-            // let tvAmenity = amenities.find(amenity => amenity.type === 'TV')
-            // if (tvAmenity) {
-            //     this.isTV = true;
-            // } else {
-            //     this.isTV = false;
-            // }
-            // return amenities = amenities.filter(amenity => {
-            //     return this.stay.amenities.includes(amenity.type);
-            // })
-
+            let tvAmenity = amenities.find(amenity => amenity === 'TV')
+            console.log(tvAmenity)
+            if (tvAmenity) {
+                this.isTV = true;
+            } else {
+                this.isTV = false;
+            }
+            let essentialsAmenity = amenities.find(amenity => amenity === 'Essentials')
+            console.log(tvAmenity)
+            if (essentialsAmenity) {
+                this.isEssentials = true;
+            } else {
+                this.isEssentials = false;
+            }
         }
     },
     computed: {

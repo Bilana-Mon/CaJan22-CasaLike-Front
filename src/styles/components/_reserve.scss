@@ -5,7 +5,7 @@
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   width: 24.25rem;
   height: 20.25rem;
-  position: fixed;
+  position: absolute;
   right: 75px;
   bottom: 200px;
   background-color: white;
@@ -107,6 +107,7 @@
   height: 50px;
   width: 100%;
   margin-top: 1rem;
+  margin-bottom:20px;
 }
 
 .mouse-cursor-gradient-tracking:before {
@@ -190,7 +191,7 @@
   border: 1px solid #ddd;
   z-index: 1;
   width: 23.625rem;
-  height: 23.9775rem;
+  height: 27.9775rem;
   border-radius: 1rem;
 }
 .count-span {

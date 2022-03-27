@@ -48,7 +48,7 @@
             <img class="small-img" :src="`src/assets/imgs/stays/${stay.imgUrls[0]}`" />
           </div>
         </div>
-        <div class="hr"></div>
+        <div class="hr-first"></div>
         <amenities-preview :stay="stay"></amenities-preview>
         <div class="hr"></div>
         <review-preview :stay="stay"></review-preview>

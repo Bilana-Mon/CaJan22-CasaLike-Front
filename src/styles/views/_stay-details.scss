@@ -74,6 +74,12 @@
 
 }
 
+.hr-first{
+    border-top-color: #dddddd;
+    border-top-width: 0.5px;
+    border-top-style: solid;
+    width: 40rem;
+}
 .stay-details .stay-desc {
     font-size: 1rem;
     font-family: Airbnb-Book;
@@ -92,7 +98,7 @@
 .stay-details .stay-desc-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 40rem;
 }
 
 .stay-details .stay-type-container {
@@ -142,7 +148,7 @@
 // }
 
 .stay-details-rate {
-    font-size: 22px;
+    font-size: 0.875rem;
     font-family:airbnb-medium;
     text-decoration: none;
 }

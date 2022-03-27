@@ -29,7 +29,7 @@
             :src="review.by.imgUrl" 
             onerror="this.onerror=null; this.src='./src/assets/host.png'"
             alt="">
-            <p>{{getFormattedDate(review.at)}}</p>
+            <div class="">{{getFormattedDate(review.at)}}</div>
           <p>{{getReviewTxt(review.txt)}}</p>
           <a href="#" v-if="isTxtLong">Show more</a>
         </li>

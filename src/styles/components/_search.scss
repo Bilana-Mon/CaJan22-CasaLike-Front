@@ -49,7 +49,6 @@
     justify-content: space-between;
     padding-top:15px;
     align-items: center;
-    padding-right:100px
 }
 
 .date-from-container{
@@ -236,7 +235,8 @@
     margin-right: 0.125rem;
     margin-left: 0.125rem;
     text-align: center;
-    font-family: airbnb-book;
+    font-family: 'CircularStd-Light';
+    margin: 0.6rem;
 }
 
 .search-bar-container .option:not(:last-child){
@@ -252,8 +252,8 @@
     margin-right: 0.125rem;
     border-radius: 50%;
     border: 1px solid;
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     background-color: whitesmoke;
     color: #717171;
 }
@@ -273,21 +273,53 @@
 
 }
 
-// .option-adults {
+.option-adults {
+    font-family: 'CircularStd-Book';
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  
+}
 
-// }
 
-// .option-children {
+.option-child {
+    font-family: 'CircularStd-Book';
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    
+}
 
-// }
+.option-infants{
+    font-family: 'CircularStd-Book';
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
 
-// .option-infants{
+}
 
-// }
+.option-pets {
+    font-family: 'CircularStd-Book';
+    font-size: 1.1rem;
+   
+}
 
-// .option-pets {
+.option-age {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 400 !important;
+    color: rgb(113, 113, 113) !important;
+}
 
-// }
+.option-age2 {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 400 !important;
+    color: rgb(113, 113, 113) !important;
+}
+.option-age3 {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 400 !important;
+    color: rgb(113, 113, 113) !important;
+}
 
 .el-date-editor .el-range-separator {
     flex: 1;
@@ -301,7 +333,21 @@
     word-break: keep-all;
     color: #dddddd;
 }
-
+.el-date-editor .el-range-input {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 39%;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Airbnb-Light';
+    color: #717171;
+}
 @media (max-width: 990px){
     .search-scroll{
         top: 18px + 57px;

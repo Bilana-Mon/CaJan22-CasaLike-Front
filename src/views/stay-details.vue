@@ -50,6 +50,8 @@
         </div>
       </div>
         <div class="hr"></div>
+        <review-preview :stay="stay"></review-preview>
+          <div class="hr"></div>
         <stay-map :stay="stay"></stay-map>
   </section>
   </div>
@@ -61,6 +63,7 @@
 import { stayService } from '../services/stay.service'
 import reserve from '../components/reserve.vue'
 import stayMap from '../components/stay-map.vue'
+import reviewPreview from '../components/review-preview.vue'
 
 export default {
   name: 'stay-details',
@@ -68,6 +71,7 @@ export default {
   components: {
     reserve,
     stayMap,
+    reviewPreview
   },
   async created() {
     const { id } = this.$route.params

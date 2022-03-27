@@ -27,8 +27,8 @@
                 v-model="filterBy.dates"
                 type="daterange"
                 range-separator="|"
-                :start-placeholder="`${getFormattedStart}`"
-                :end-placeholder="`${getFormattedEnd}`"
+                :start-placeholder="`${filterBy.dates.start}`"
+                :end-placeholder="`${filterBy.dates.end}`"
                 format="M/D/YYYY"
             />
             <div class="container" @click="toggleSelect">
@@ -136,7 +136,9 @@ export default {
     created() {
         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
             this.filterBy.dates.start = this.$store.getters.filter.dates['0']
+            this.filterBy.dates.start = this.getFormattedStart
             this.filterBy.dates.end = this.$store.getters.filter.dates['1']
+            this.filterBy.dates.end = this.getFormattedEnd
             console.log(this.filterBy.dates.start)
             console.log(this.filterBy.dates.end)
 

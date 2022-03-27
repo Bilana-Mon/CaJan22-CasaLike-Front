@@ -46,7 +46,10 @@
 
 .date-picker-heading {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-top:15px;
+    align-items: center;
+    padding-right:100px
 }
 
 .date-from-container{
@@ -233,6 +236,7 @@
     margin-right: 0.125rem;
     margin-left: 0.125rem;
     text-align: center;
+    font-family: airbnb-book;
 }
 
 .search-bar-container .option:not(:last-child){
@@ -264,6 +268,10 @@
     text-decoration: none;
     color: inherit;
 }
+.search-heading .date-picker-heading {
+    padding-top:15px
+
+}
 
 // .option-adults {
 
@@ -280,6 +288,19 @@
 // .option-pets {
 
 // }
+
+.el-date-editor .el-range-separator {
+    flex: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 0px;
+    margin: 0;
+    font-size: 33px;
+    word-break: keep-all;
+    color: #dddddd;
+}
 
 @media (max-width: 990px){
     .search-scroll{

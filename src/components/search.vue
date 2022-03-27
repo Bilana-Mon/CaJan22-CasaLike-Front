@@ -68,7 +68,7 @@
                                         <div class="options-list">
                                             <a href="#" title="First">
                                                <div class="option-adults"> Adults </div> 
-                                                <br />Age 13+
+                                                <br /> <div class="option-age">Age 13 or above</div>
                                             </a>
                                         </div>
                                         <div class="btn-list">

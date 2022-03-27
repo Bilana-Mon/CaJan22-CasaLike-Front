@@ -250,9 +250,9 @@
   color: inherit;
 }
 
-// .el-range-editor.el-input__inner {
-//   display: inline-flex;
-//   align-items: center;
-//   padding: 2px 9px;
-//   margin: 10px;
-// }
+.el-range-editor.el-input__inner {
+  display: inline-flex;
+  align-items: center;
+  margin: 10px;
+  padding-bottom: 10px;
+}

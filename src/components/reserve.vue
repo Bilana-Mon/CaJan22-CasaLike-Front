@@ -25,9 +25,9 @@
         </div>
         <div class="input-container">
             <div class="input-container-checks">
-            <div class="card-check-in">CHECK-IN</div>
-            <div class="card-check-out">CHECKOUT</div>
-        </div>
+                <div class="card-check-in">CHECK-IN</div>
+                <div class="card-check-out">CHECKOUT</div>
+            </div>
             <el-date-picker
                 v-model="filterBy.dates"
                 type="daterange"
@@ -38,14 +38,15 @@
             />
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />
-                <label class="select-label" for="select-checkbox" >GUESTS</label>
+                <label class="select-label" for="select-checkbox">GUESTS</label>
                 <div class="select-wrap">
                     <ul v-if="selectOpen" class="select">
                         <li class="option">
                             <div class="options-list">
                                 <a href="#" title="First">
-                                    Adults
-                                    <br />Age 13+
+                                    <div class="option-adults">Adults</div>
+                                    <br />
+                                    <div class="option-age">Age 13 or above</div>
                                 </a>
                             </div>
                             <div class="btn-list">

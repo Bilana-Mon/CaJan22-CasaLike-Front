@@ -14,7 +14,7 @@
 
     <div class="section-row">
       <div class="section-col">
-        <h1 class="section-heading">Ultimate Destinations</h1>
+        <h1 class="section-heading">Popular Destinations</h1>
         <div class="destination-cards-container">
           <div class="destination-cards">
             <div class="destination-card" @click="goExplore()">

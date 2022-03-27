@@ -34,7 +34,7 @@
           <a href="#" v-if="isTxtLong">Show more</a>
         </li>
     </ul>
-   <button>Show all {{stay.reviews.length}} reviews</button>
+   <button class="show-btn">Show all {{stay.reviews.length}} reviews</button>
   </section>
 
 </template>

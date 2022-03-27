@@ -67,7 +67,7 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="First">
-                                                Adults
+                                               <div class="option-adults"> Adults </div> 
                                                 <br />Age 13+
                                             </a>
                                         </div>
@@ -85,7 +85,7 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="Second">
-                                                Children
+                                               <div class="option-child"> Children</div> 
                                                 <br />Ages 2–12
                                             </a>
                                         </div>
@@ -105,7 +105,7 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="Third">
-                                                Infants
+                                                <div class="option-infants"> Infants </div>
                                                 <br />Under 2
                                             </a>
                                         </div>
@@ -122,7 +122,7 @@
                                     </li>
                                     <li class="option">
                                         <div class="options-list">
-                                            <a href="#" title="fourth">
+                                            <a class="option-pets" href="#" title="fourth">
                                                 Pets
                                                 <br />
                                                 <a

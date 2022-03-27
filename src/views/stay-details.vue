@@ -33,7 +33,7 @@
         </div>
         <div class="stay-desc-container">
           <div class="stay-type-container">
-            <h2>
+            <h2 class="stay-details h2">
               <span>{{ stay.propertyType }}</span> hosted by
               <span>{{ stay.host.fullname }}</span>
             </h2>

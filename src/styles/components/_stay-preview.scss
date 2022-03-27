@@ -4,6 +4,7 @@
   // width: 400px;
   width: 100%;
   border-radius: 20px;
+  cursor: pointer;
 }
 .stay-images-container {
   display: flex;
@@ -81,6 +82,7 @@ span {
 }
 .stay-desc{
   margin-bottom: 1.5rem;
+  cursor: pointer;
 }
 .stay-desc > div {
   margin-top: 5px;

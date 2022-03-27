@@ -3,10 +3,10 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  width: 23.25rem;
+  width: 24.25rem;
   height: 20.25rem;
   position: fixed;
-  right: 100px;
+  right: 75px;
   bottom: 200px;
   background-color: white;
   z-index: 5;
@@ -18,26 +18,67 @@
 
 .reserve-card .input-container {
   display: flex;
-  justify-content: center;
+  //   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.input-container-checks {
+  display: flex;
+  margin: 15px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+  font-size: 12px;
+  font-family: airbnb-medium;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+.card-check-in {
+  padding: 26px 15px 10px;
+}
+
+.card-check-out {
+  padding: 26px 12px 10px;
+}
+.select-label {
+    font-weight: bold;
+    font-family: airbnb-medium;
+    font-size: 14px
 }
 
 .card-info {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .card-price {
+  font-weight: bold;
+  font-family: airbnb-medium;
+  font-size: 22px;
 }
 
-.card-star {
+.night {
+  font-size: 16px;
+  padding-right: 60px;
 }
+
+// .card-star {
+// }
 
 .card-rate {
+  color: black;
+  font-weight: bold;
+  font-family: airbnb-medium;
 }
 
 .card-reviews {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+  font-family: airbnb-medium;
 }
 
 .mouse-cursor-gradient-tracking {
@@ -139,17 +180,18 @@
   text-align: left;
   list-style: none;
   padding: 20px;
-  margin-top: 0.85rem;
-  margin-left: -11.966rem;
+  padding-top: 10px;
+  margin-top: 1.85rem;
+  margin-left: -1.966rem;
   position: absolute;
   background-color: #f6f6f6;
   min-width: 230px;
   overflow: auto;
   border: 1px solid #ddd;
   z-index: 1;
-  width: 24.625rem;
+  width: 23.625rem;
   height: 23.9775rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 .count-span {
   align-items: center;
@@ -207,3 +249,10 @@
   text-decoration: none;
   color: inherit;
 }
+
+// .el-range-editor.el-input__inner {
+//   display: inline-flex;
+//   align-items: center;
+//   padding: 2px 9px;
+//   margin: 10px;
+// }

@@ -5,8 +5,9 @@
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   width: 24.25rem;
   height: 22.25rem;
-  position: absolute;
-  right: 75px;
+  position: sticky;
+  align-self:flex-end;
+  left: 800px;
   bottom:12px;
   background-color: white;
   z-index: 5;

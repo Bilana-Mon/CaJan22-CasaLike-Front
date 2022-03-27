@@ -208,9 +208,9 @@ export default {
             this.isReserved = true;
 
             if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
-                this.msg = 'Your reservetion has been succefull!'
+                this.msg = 'Your reservation was successful'
             } else {
-                this.msg = 'Missing reservetion details!'
+                this.msg = 'Missing reservation details!'
             }
         }
 

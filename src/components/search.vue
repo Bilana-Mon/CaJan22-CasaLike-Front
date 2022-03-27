@@ -37,7 +37,10 @@
                 <div class="vsep"></div>
                 <div class="search-element date-from-container">
                     <div class="date-from-picker-container">
-                        <div class="search-heading">Check in</div>
+                        <div class="search-heading date-picker-heading">
+                            <span class="check-in">Check in</span>
+                            <span class="check-out">Check out</span>
+                        </div>
                         <el-date-picker
                             v-model="filterBy.dates"
                             type="daterange"

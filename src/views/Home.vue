@@ -65,9 +65,10 @@ export default {
   },
   methods: {
     goExplore() {
-      this.$router.push('/stay')
+      this.$router.push(`/stay`)
+      // ?location=${this.filterBy.location}
     },
-    handleScroll (event) {
+    handleScroll(event) {
       // console.log(window.scrollY)
       if (window.scrollY > 5) this.isScrolled = true
       else this.isScrolled = false

@@ -124,7 +124,7 @@
         </div>
         <div v-if="isReserved">
             {{ msg }}
-            <button @click="isReserved = !isReserved">Close</button>
+            <button class="msg-btn" @click="isReserved = !isReserved">Close</button>
         </div>
     </section>
 </template>
@@ -253,4 +253,14 @@ export default {
     },
 }
 </script>
+
+<style>
+.msg-btn {
+    background-color: white;
+    border: none;
+}
+.msg-btn:hover {
+    cursor: pointer;
+}
+</style>
 

@@ -4,10 +4,10 @@
   padding: 24px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   width: 24.25rem;
-  height: 20.25rem;
+  height: 22.25rem;
   position: absolute;
   right: 75px;
-  bottom: 200px;
+  bottom:12px;
   background-color: white;
   z-index: 5;
 }
@@ -107,7 +107,7 @@
   height: 50px;
   width: 100%;
   margin-top: 1rem;
-  margin-bottom:20px;
+  margin-bottom:11px;
 }
 
 .mouse-cursor-gradient-tracking:before {
@@ -221,9 +221,7 @@
   text-align: center;
 }
 
-.reserve-card .option:not(:last-child) {
-  border-bottom: 1px solid rgb(235, 235, 235) !important;
-}
+
 
 .reserve-card .pets-service {
   text-decoration: underline !important;

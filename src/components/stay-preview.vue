@@ -31,8 +31,8 @@
             </span>
             <div class="rating-value">
               {{ getFormattedRate }}
-              (
-              <span>{{ stay.numOfReviews }}</span>)
+              
+              (<span>{{ stay.numOfReviews }}</span>)
             </div>
           </div>
           <div class="stay-loc">
@@ -43,7 +43,6 @@
           <div class="stay-name">{{ stay.name }}</div>
           <div class="stay-price">
             <span class="price">{{ getFormattedPrice }} total</span>
-            <a class="breakdown" href="#">(Price breakdown)</a>
           </div>
         </div>
       </template>

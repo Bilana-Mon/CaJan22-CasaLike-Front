@@ -80,6 +80,56 @@ img {
   font-size: 2rem;
   font-family: 'Airbnb-Light';
 }
+
+.el-date-editor .el-range__icon {
+  height: inherit;
+  font-size: 14px;
+  color: var(--el-text-color-placeholder);
+  float: left;
+  display: none;
+}
+.el-input__inner {
+  position: relative;
+  -webkit-appearance: none;
+  background-color: var(--el-input-bg-color,var(--el-fill-color-blank));
+  background-image: none;
+  border-radius: var(--el-input-border-radius,var(--el-border-radius-base));
+  box-sizing: border-box;
+  color: var(--el-input-text-color,var(--el-text-color-regular));
+  display: inline-block;
+  font-size: inherit;
+  height: 38px;
+  line-height: 38px;
+  outline: 0;
+  padding: 0 11px;
+  transition: var(--el-transition-box-shadow);
+  width: 100%;
+  box-shadow: none !important;
+  border: none;
+}
+.el-date-editor {
+  --el-date-editor-width: 220px;
+  --el-date-editor-monthrange-width: 300px;
+  --el-date-editor-daterange-width: 350px;
+  --el-date-editor-datetimerange-width: 400px;
+  --el-input-text-color: var(--el-text-color-regular);
+  --el-input-border: var(--el-border);
+  --el-input-hover-border: var(--el-border-color-hover);
+  --el-input-focus-border: var(--el-color-primary);
+  --el-input-transparent-border: 0 0 0 1px transparent inset;
+  --el-input-border-color: var(--el-border-color);
+  --el-input-border-radius: var(--el-border-radius-base);
+  --el-input-bg-color: var(--el-fill-color-blank);
+  --el-input-icon-color: var(--el-text-color-placeholder);
+  --el-input-placeholder-color: var(--el-text-color-placeholder);
+  --el-input-hover-border-color: var(--el-border-color-hover);
+  --el-input-clear-hover-color: var(--el-text-color-secondary);
+   --el-input-focus-border-color: none !important; 
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
 @media (max-width: 620px){
   .jingle{
     font-size: 2rem;

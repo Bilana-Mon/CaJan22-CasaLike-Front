@@ -76,7 +76,7 @@
 .main-nav.scrolled .nav-right a:hover{
     background-color: #f7f7f7;
 }
-.clean-list.login-bar{
+.login-bar{
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -87,10 +87,10 @@
     height: 42px;
     cursor: pointer;
 }
-.main-nav.scrolled .clean-list.login-bar{
+.main-nav.scrolled .login-bar{
     outline: 1px solid #e7e7e7;
 }
-.clean-list.login-bar svg{
+.login-bar svg{
     fill: #717171;
 }
 #hamburger{

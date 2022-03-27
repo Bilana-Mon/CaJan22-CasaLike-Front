@@ -7,6 +7,10 @@ import becomeHost from '../views/become-host.vue';
 
 
 const router = createRouter({
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -24,7 +28,7 @@ const router = createRouter({
       name: 'stay',
       component: stayApp
     },
-  
+
     {
       path: '/stay/:id',
       name: 'stay-details',

@@ -88,14 +88,14 @@
     --dls19-brand-gradient-radial,
     radial-gradient(
       circle at center,
-      #ff385c 0%,
+      #ff385c 5%,
       #e61e4d 27.5%,
       #e31c5f 40%,
       #d70466 57.5%,
       #bd1e59 75%,
-      #bd1e59 100%
+      #bd1e59 950%
     )
-  );
+  )!important;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -119,20 +119,12 @@
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: var(
-    --dls19-brand-gradient-radial,
-    radial-gradient(
-      circle at center,
-      #ff385c 0%,
-      #e61e4d 27.5%,
-      #e31c5f 40%,
-      #d70466 57.5%,
-      #bd1e59 75%,
-      #bd1e59 100%
-    )
-  );
+  background: radial-gradient(circle at center center, rgb(255, 56, 92) 5%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(197, 30, 92) 95%) !important;
   transform: translate(-50%, -50%);
+  opacity: 0.12 !important;
   transition: width 0.2s ease, height 0.2s ease;
+  background-size: 200% 200% !important;
+  // transition: opacity 1s ease 0s !important;
 }
 
 .mouse-cursor-gradient-tracking:hover:before {

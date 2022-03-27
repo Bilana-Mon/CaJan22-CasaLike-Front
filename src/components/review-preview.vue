@@ -22,6 +22,38 @@
       <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a>
     </p>
     <ul>
+        <li class="review-chart">
+         <span>Cleanliness</span>
+         <progress :value="(this.stay.reviewScores.cleanliness) /2" max="5"/>
+          <span>{{this.stay.reviewScores.cleanliness/2}}</span>
+        </li>
+        <li class="review-chart">
+        <span>Communication</span>
+        <progress :value="(this.stay.reviewScores.communication) /2" max="5"/> 
+        <span>{{this.stay.reviewScores.communication/2}}</span>
+        </li>
+          <li class="review-chart">
+        <span>Check-in</span>
+         <progress :value="(this.stay.reviewScores.checkin) /2" max="5"/>
+         <span>{{this.stay.reviewScores.checkin/2}}</span>
+        </li>
+           <li class="review-chart">
+        <span>Accuracy</span>
+           <progress :value="(this.stay.reviewScores.accuracy) /2" max="5"/>
+           <span>{{this.stay.reviewScores.accuracy/2}}</span>
+        </li>
+            <li class="review-chart">
+        <span>Location</span>
+            <progress :value="(this.stay.reviewScores.location) /2" max="5"/>
+             <span>{{this.stay.reviewScores.location/2}}</span>  
+        </li>
+               <li class="review-chart">
+        <span>Value</span>
+            <progress :value="(this.stay.reviewScores.value) /2" max="5"/>
+             <span>{{this.stay.reviewScores.value/2}}</span> 
+        </li>
+    </ul>
+    <ul>
         <li v-for="review in stay.reviews.slice(0,6)" :key="review">
         <p>{{review.by.fullname}}</p>
             <img 
@@ -47,11 +79,14 @@ export default {
  props: {
     stay: Object,
   },
-  components: {},
-  created() {},
+  components: {
+      
+  },
+  created() {
+  },
   data() {
     return {
-        isTxtLong: false
+        isTxtLong: false,
     }
   },
   methods: {
@@ -102,5 +137,51 @@ export default {
 
 .review-preview li {
     list-style: none; 
+}
+
+.progress-value {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  font-size: .875rem;
+  padding-bottom: .25rem;
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 143px;
+  color: #273238;
+  height: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+progress::-webkit-progress-bar {
+  background-color: #eee;
+}
+
+progress::-webkit-progress-value {
+  background-color: #273238;
+}
+
+progress::-moz-progress-bar {
+  background-color: #eee;
+}
+
+.review-preview .review-chart {
+    display: flex;
+    gap:20px;
 }
 </style>

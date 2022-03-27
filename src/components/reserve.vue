@@ -31,10 +31,11 @@
             <el-date-picker
                 v-model="filterBy.dates"
                 type="daterange"
-                range-separator="|"
+                range-separator
                 :start-placeholder="`${filterBy.dates.start}`"
                 :end-placeholder="`${filterBy.dates.end}`"
                 format="M/D/YYYY"
+                clearable
             />
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />

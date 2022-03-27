@@ -113,6 +113,7 @@
 
 .mouse-cursor-gradient-tracking:before {
   --size: 0;
+  opacity: 0.18 !important;
   content: "";
   position: absolute;
   left: var(--x);
@@ -121,7 +122,7 @@
   height: var(--size);
   background: radial-gradient(circle at center center, rgb(255, 56, 92) 5%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(197, 30, 92) 95%) !important;
   transform: translate(-50%, -50%);
-  opacity: 0.12 !important;
+  
   transition: width 0.2s ease, height 0.2s ease;
   background-size: 200% 200% !important;
   // transition: opacity 1s ease 0s !important;

@@ -146,7 +146,7 @@
                         </li>
                     </ul>
                     <div>
-                        <a href="#">Show all {{stay.amenities.length}} amenities</a>
+                        <a href="#">Show all {{ stay.amenities.length }} amenities</a>
                     </div>
                 </div>
             </div>
@@ -254,5 +254,4 @@ export default {
 }
 </script>
 <style>
-
 </style> 

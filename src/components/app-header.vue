@@ -83,8 +83,8 @@ export default {
         },
         handleScroll (event) {
          // console.log(window.scrollY)
-         // if (window.scrollY > 5) this.isScrolled = true
-         // else this.isScrolled = false
+         if (window.scrollY > 5) this.isScrolled = true
+         else this.isScrolled = false
         }
     },
     computed: {},

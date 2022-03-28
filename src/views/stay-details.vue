@@ -1,6 +1,6 @@
 <template>
   <div class="section-row">
-    <div class="section-col">
+    <div class="section-col stay-col">
       <section v-if="stay" class="stay-details">
         <h1>{{ stay.name }}</h1>
         <p class="stay-rate-container">
@@ -49,24 +49,27 @@
           </div>
         </div>
         <hr>
-        <div class="hr-first"></div>
         <special-features :stay="stay"></special-features>
-        <div class="hr-first"></div>
-        <span class="stay-summary">{{stay.summary.slice(0,356)}}</span>
-        <span class="stay-summary-2">{{stay.summary.slice(356,stay.summary.length)}}</span>
-        <div class="hr-first"></div>
+        <hr>
+          <span class="stay-summary">
+            <p>{{stay.summary.slice(0,356)}}</p>
+            <p>{{stay.summary.slice(356,stay.summary.length)}}</p>
+            <div class="show-more">
+              Show more
+              <svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 12px; width: 12px; display: block; fill: var(--f-k-smk-x);"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd"></path></svg>
+            </div>
+          </span>
+        <hr>
         <amenities-preview :stay="stay"></amenities-preview>
-        <div class="hr"></div>
+        <hr>
+        <stay-map :stay="stay"></stay-map>
+        <hr>
+        <review-preview :stay="stay"></review-preview>
+        <hr>
         <!-- <section class="date-wrapper">
           <date-open :stay="stay"></date-open>
         </section> -->
-        <!-- <div class="hr"></div> -->
-        <review-preview :stay="stay"></review-preview>
-        <div class="hr"></div>
-        <stay-map :stay="stay"></stay-map>
-         <div class="hr"></div>
-         <!-- <host :stay="stay"></host> -->
-          <div class="hr"></div>
+        <host :stay="stay"></host>
       </section>
     </div>
   </div>

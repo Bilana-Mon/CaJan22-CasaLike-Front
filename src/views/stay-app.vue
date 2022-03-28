@@ -1,6 +1,6 @@
 <template>
   <div class="section-row">
-    <div class="section-col">
+    <div class="section-col stay-col">
     <section class="stay-app">
     <!-- <p>{{stays}}</p> -->
 

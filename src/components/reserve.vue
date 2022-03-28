@@ -1,8 +1,8 @@
- 
+<!-- :class="{ 'reserve-card': isAbsoluteUp, 'reserve-card-fixed': isFixed, 'reserve-card-down': isAbsoluteDown }" -->
 <template>
     <section
         v-if="stay"
-        :class="{ 'reserve-card': isAbsoluteUp, 'reserve-card-fixed': isFixed, 'reserve-card-down': isAbsoluteDown }"
+        class="reserve-card"
     >
         <div class="card-info">
             <div class="card-price">{{ getFormattedPrice }}</div>

@@ -1,6 +1,19 @@
-.app-header.scrolled + .stay-app{
-	margin-top: 166px;
-}
+.app-header.scrolled + .section-row .stay-details {
+    margin-top: 166px;
+  }
 .stay-app{
 	width: 100%;
 }
+.section-col.stay-col{
+	max-width: 1100px;
+}
+// @media (max-width: 1040px) {
+//   .section-col.stay-col{
+//     max-width: calc(min(1600px, 100%) - 80px);
+//   }
+// }
+// @media (max-width: 800px) {
+//   .section-col.stay-col{
+//     max-width: calc(min(1600px, 100%) - 40px);
+//   }
+// }

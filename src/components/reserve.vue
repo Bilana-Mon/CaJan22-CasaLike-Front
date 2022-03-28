@@ -46,7 +46,7 @@
             </div>
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />
-                <label class="select-label" for="select-checkbox">GUESTS</label>
+                <label class="select-label" for="select-checkbox">Add guests</label>
                 <div class="select-wrap">
                     <ul v-if="selectOpen" class="select">
                         <li class="option">

@@ -55,6 +55,7 @@
         </li>
     </ul>
   </div>
+  <div class="reviews-container">
     <ul>
         <li v-for="review in stay.reviews.slice(0,6)" :key="review">
         <p>{{review.by.fullname}}</p>
@@ -68,6 +69,7 @@
           <a href="#" v-if="isTxtLong">Show more</a>
         </li>
     </ul>
+  </div>
    <button class="show-btn">Show all {{stay.reviews.length}} reviews</button>
   </section>
 

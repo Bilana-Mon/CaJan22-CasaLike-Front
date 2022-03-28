@@ -28,10 +28,11 @@
             <a href="#" class="card-reviews">{{ stay.numOfReviews }} reviews</a>
         </div>
         <div class="input-container">
-            <div class="input-container-checks">
-                <div class="card-check-in">CHECK-IN</div>
+            <div class="input-container-checks" @click="isDateShown=!isDateShown">
+                <div class="card-check-in" >CHECK-IN</div>
                 <div class="card-check-out">CHECKOUT</div>
             </div>
+            <div v-if="isDateShown">
             <el-date-picker
                 v-model="filterBy.dates"
                 type="daterange"
@@ -40,7 +41,9 @@
                 :end-placeholder="`${filterBy.dates.end}`"
                 format="M/D/YYYY"
                 clearable
+                visible
             />
+            </div>
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />
                 <label class="select-label" for="select-checkbox">GUESTS</label>
@@ -158,7 +161,6 @@ export default {
         this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets
         window.addEventListener('scroll', this.handleScroll);
         console.log(window.scrollY)
-        
     },
     data() {
         return {
@@ -180,7 +182,8 @@ export default {
         
              isFixed: false,
             isAbsoluteUp: false,
-            isAbsoluteDown: false
+            isAbsoluteDown: false,
+            isDateShown: false
         }
         },
             methods: {
@@ -199,6 +202,7 @@ export default {
                         this.filterBy.countOfGuests.pets += diff;
                 }
             },
+            
             changeColor(e) {
                 let btn = document.querySelector('.mouse-cursor-gradient-tracking');
                 btn.addEventListener('mousemove', e => {

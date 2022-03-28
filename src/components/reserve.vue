@@ -1,3 +1,4 @@
+ 
 <template>
     <section
         v-if="stay"

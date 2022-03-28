@@ -1,6 +1,6 @@
 <template>
   <section class="review-preview">
-      <p>
+      <div class="chart-rating">
       <span>
         <svg
           viewBox="0 0 32 32"
@@ -20,39 +20,41 @@
       </span>
       <span class="stay-details-rate">{{ getFormattedRate }}</span> ·
       <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a>
-    </p>
+    </div>
+    <div class="chart-container"> 
     <ul>
         <li class="review-chart">
-         <span>Cleanliness</span>
+         <div class="chartrating1">Cleanliness</div>
          <progress :value="(this.stay.reviewScores.cleanliness) /2" max="5"/>
           <span>{{this.stay.reviewScores.cleanliness/2}}</span>
         </li>
         <li class="review-chart">
-        <span>Communication</span>
+        <div class="chartrating2">Communication</div>
         <progress :value="(this.stay.reviewScores.communication) /2" max="5"/> 
         <span>{{this.stay.reviewScores.communication/2}}</span>
         </li>
           <li class="review-chart">
-        <span>Check-in</span>
+        <div class="chartrating3">Check-in</div>
          <progress :value="(this.stay.reviewScores.checkin) /2" max="5"/>
          <span>{{this.stay.reviewScores.checkin/2}}</span>
         </li>
            <li class="review-chart">
         <span>Accuracy</span>
            <progress :value="(this.stay.reviewScores.accuracy) /2" max="5"/>
-           <span>{{this.stay.reviewScores.accuracy/2}}</span>
+           <div class="chartrating4">{{this.stay.reviewScores.accuracy/2}}</div>
         </li>
             <li class="review-chart">
-        <span>Location</span>
+        <div class="chartrating5">Location</div>
             <progress :value="(this.stay.reviewScores.location) /2" max="5"/>
              <span>{{this.stay.reviewScores.location/2}}</span>  
         </li>
                <li class="review-chart">
-        <span>Value</span>
+        <div class="chartrating6">Value</div>
             <progress :value="(this.stay.reviewScores.value) /2" max="5"/>
              <span>{{this.stay.reviewScores.value/2}}</span> 
         </li>
     </ul>
+  </div>
     <ul>
         <li v-for="review in stay.reviews.slice(0,6)" :key="review">
         <p>{{review.by.fullname}}</p>
@@ -180,8 +182,4 @@ progress::-moz-progress-bar {
   background-color: #eee;
 }
 
-.review-preview .review-chart {
-    display: flex;
-    gap:20px;
-}
 </style>

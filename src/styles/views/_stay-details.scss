@@ -5,7 +5,10 @@
   font-family: CircularStd-Medium;
   color: #222222;
   letter-spacing: 1px;
+  position:relative;
 }
+
+
 .h2 {
   font-family: Airbnb-Medium;
   font-weight: bold;
@@ -25,7 +28,7 @@
 }
 .stay-details-address {
   color: #717171;
-  font-family:CircularStd-Book;
+  font-family: CircularStd-Book;
 }
 .stay-images {
   display: grid;
@@ -139,18 +142,50 @@
   padding: 13px;
   cursor: pointer;
 }
-// .review-preview {
-//     display:grid;
-//     grid-template-columns: 200px 200px 200px;
-// }
+.review-preview {
+    display:grid;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 50px;
+}
 
 .stay-details-rating {
-    font-family: airbnb-medium;
-    margin:5px
+  font-family: airbnb-medium;
+  margin: 5px;
 }
 
 .stay-details-rate {
   font-size: 0.875rem;
   font-family: airbnb-medium;
   text-decoration: underline;
+}
+
+.reviews-container{ 
+
+}
+
+.chartrating1 , .chartrating2 , .chartrating3 , .chartrating4 , .chartrating5, .chartrating6 {
+    margin-right:10px;
+}
+.chartrating4 , .chartrating5, .chartrating6 {
+    margin-right:20px;
+}
+.chart-rating {
+
+}
+
+
+
+
+.chart-container {
+
+    display: grid;
+    grid-template-columns: 25% 25%;
+    grid-template-rows: 1fr;
+    column-gap: 50px;
+}
+
+.review-chart {
+    display: grid;
+    text-align:start
 }

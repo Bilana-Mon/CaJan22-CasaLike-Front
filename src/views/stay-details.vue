@@ -58,8 +58,10 @@
         <div class="hr-first"></div>
         <amenities-preview :stay="stay"></amenities-preview>
         <div class="hr"></div>
-        <date-open :stay="stay"></date-open>
-        <div class="hr"></div>
+        <!-- <section class="date-wrapper">
+          <date-open :stay="stay"></date-open>
+        </section> -->
+        <!-- <div class="hr"></div> -->
         <review-preview :stay="stay"></review-preview>
         <div class="hr"></div>
         <stay-map :stay="stay"></stay-map>

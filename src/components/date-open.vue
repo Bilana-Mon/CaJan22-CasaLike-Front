@@ -1,6 +1,12 @@
 <template>
-  <section>
-    {{stay.name}}
+  <section class="date-open-container">
+   <el-date-picker      
+                type="daterange"
+                range-separator
+                format="M/D/YYYY"
+                clearable
+                visible
+            />
   </section>
 </template>
 
@@ -22,3 +28,10 @@ export default {
   unmounted() {},
 }
 </script>
+<style>
+
+
+</style>
+
+
+

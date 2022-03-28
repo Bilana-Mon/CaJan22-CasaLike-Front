@@ -21,7 +21,7 @@
               />
             </svg>
           </span>
-          <span class="stay-details-rate">{{ getFormattedRate }}</span> ·
+          <span class="stay-details-rating">{{ getFormattedRate }}</span> ·
           <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a> ·
           <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
         </p>

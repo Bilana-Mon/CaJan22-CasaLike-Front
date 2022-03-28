@@ -2,7 +2,7 @@
   margin-bottom: 0.3rem;
   font-size: 1.625rem;
   line-height: 1.875rem;
-  font-family: Airbnb-Bold;
+  font-family: CircularStd-Medium;
   color: #222222;
   letter-spacing: 1px;
 }
@@ -25,6 +25,7 @@
 }
 .stay-details-address {
   color: #717171;
+  font-family:CircularStd-Book;
 }
 .stay-images {
   display: grid;
@@ -143,8 +144,13 @@
 //     grid-template-columns: 200px 200px 200px;
 // }
 
+.stay-details-rating {
+    font-family: airbnb-medium;
+    margin:5px
+}
+
 .stay-details-rate {
   font-size: 0.875rem;
   font-family: airbnb-medium;
-  text-decoration: none;
+  text-decoration: underline;
 }

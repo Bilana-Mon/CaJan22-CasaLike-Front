@@ -48,6 +48,8 @@
             <img class="small-img" :src="`src/assets/imgs/stays/${stay.imgUrls[0]}`" />
           </div>
         </div>
+         <div class="hr-first"></div>
+        <special-features :stay="stay"></special-features>
         <div class="hr-first"></div>
         <span>{{stay.summary.slice(0,356)}}</span>
         <br>
@@ -71,6 +73,7 @@ import reserve from '../components/reserve.vue'
 import stayMap from '../components/stay-map.vue'
 import reviewPreview from '../components/review-preview.vue'
 import amenitiesPreview from '../components/amenities-preview.vue'
+import specialFeatures from '../components/special-features.vue'
 
 export default {
   name: 'stay-details',
@@ -79,7 +82,8 @@ export default {
     reserve,
     stayMap,
     reviewPreview,
-    amenitiesPreview
+    amenitiesPreview,
+    specialFeatures
   },
   async created() {
     const { id } = this.$route.params

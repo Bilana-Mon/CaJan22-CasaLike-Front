@@ -145,6 +145,9 @@
                             <span>Iron</span>
                         </li>
                     </ul>
+                    <div>
+                        <a href="#">Show all {{stay.amenities.length}} amenities</a>
+                    </div>
                 </div>
             </div>
         </section>

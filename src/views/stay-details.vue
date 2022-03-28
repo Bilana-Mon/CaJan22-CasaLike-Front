@@ -61,6 +61,9 @@
         <review-preview :stay="stay"></review-preview>
         <div class="hr"></div>
         <stay-map :stay="stay"></stay-map>
+         <div class="hr"></div>
+         <host :stay="stay"></host>
+          <div class="hr"></div>
       </section>
     </div>
   </div>
@@ -74,6 +77,7 @@ import stayMap from '../components/stay-map.vue'
 import reviewPreview from '../components/review-preview.vue'
 import amenitiesPreview from '../components/amenities-preview.vue'
 import specialFeatures from '../components/special-features.vue'
+import host from '../components/host.vue'
 
 export default {
   name: 'stay-details',
@@ -83,7 +87,8 @@ export default {
     stayMap,
     reviewPreview,
     amenitiesPreview,
-    specialFeatures
+    specialFeatures,
+    host
   },
   async created() {
     const { id } = this.$route.params

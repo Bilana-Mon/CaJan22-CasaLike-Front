@@ -12,7 +12,13 @@
   background-color: white;
   z-index: 5;
 }
+// .reserve-card-fixed {
 
+// }
+
+// .reserve-card-down {
+
+// }
 .reserve-card p {
   margin-bottom: 1.5rem;
 }
@@ -98,7 +104,7 @@
   ) !important;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
-  letter-spacing: 1px;
+  font-family: "CircularStd-Book";
   border: none;
   color: white;
   cursor: pointer;
@@ -130,7 +136,7 @@
     rgb(197, 30, 92) 95%
   ) !important;
   transform: translate(-50%, -50%);
-  
+
   transition: width 0.2s ease, height 0.2s ease;
   background-size: 200% 200% !important;
   // transition: opacity 1s ease 0s !important;
@@ -187,7 +193,7 @@
   margin-top: 1.85rem;
   margin-left: -1.966rem;
   position: absolute;
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   min-width: 230px;
   overflow: auto;
   border: 1px solid #ddd;
@@ -228,6 +234,9 @@
 .reserve-card .pets-service {
   text-decoration: underline !important;
 }
+
+// .text-reserve {
+// }
 
 .reserve-card .btn-list button {
   margin-left: 0.125rem;

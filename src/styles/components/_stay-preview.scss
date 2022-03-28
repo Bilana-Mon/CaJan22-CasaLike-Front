@@ -35,7 +35,12 @@ span {
   display: inline;
 }
 //CAROUSEL ON LIST-PREVIEW SETTINGS
-
+.el-carousel__container {
+  height: 80%;
+  max-height: 300px;
+  // width: 400px;
+  width: 100%;
+}
 .el-carousel__button {
   display: block;
   opacity: 0.48;

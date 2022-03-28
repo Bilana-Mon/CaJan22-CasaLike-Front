@@ -123,7 +123,7 @@
                 @mousemove="changeColor"
                 @click="sendMsg"
             >
-                <span>Reserve</span>
+                <span class="text-reserve">Check availability</span>
             </button>
         </div>
         <div v-if="isReserved">

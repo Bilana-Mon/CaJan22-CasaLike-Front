@@ -1,5 +1,5 @@
 .stay-img-gallery {
-  height: 80%;
+  height: 100%;
   max-height: 300px;
   // width: 400px;
   width: 100%;
@@ -24,7 +24,8 @@
   gap: 10px;
 }
 .stay-list-container .stay-preview-container {
-  width: 350px;
+  // width: 350px;
+  width: 100%;
   justify-self: center;
 }
 .stay-list-container .center-container {
@@ -37,7 +38,7 @@ span {
 //CAROUSEL ON LIST-PREVIEW SETTINGS
 .el-carousel__container {
   height: 80%;
-  max-height: 300px;
+  max-height: 250px;
   // width: 400px;
   width: 100%;
 }
@@ -109,6 +110,9 @@ span {
 .stay-desc .stay-loc-name {
   font-weight: bold;
 }
+.stay-desc .stay-name{
+  margin-top: 0;
+}
 .stay-desc .stay-loc span {
   margin: 0 5px;
 }
@@ -119,7 +123,7 @@ span {
 
 @media (min-width: 600px) {
   .stay-list {
-    margin: 0 75px;
+    // margin: 0 75px;
   }
 }
 @media (max-width: 869px) {

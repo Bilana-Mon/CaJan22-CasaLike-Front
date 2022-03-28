@@ -37,24 +37,23 @@
               <span>{{ stay.propertyType }}</span> hosted by
               <span>{{ stay.host.fullname }}</span>
             </h2>
-            <p class="stay-desc">
+            <div class="stay-desc">
               <span>{{ stay.capacity }}</span> guests ·
               <span>{{ getNumBedrooms }}</span> ·
               <span>{{ getNumsBeds }}</span> ·
               <span>{{ getNumsBathes }}</span>
-            </p>
+            </div>
           </div>
           <div class="small-img-container">
             <img class="small-img" :src="`src/assets/imgs/stays/${stay.imgUrls[0]}`" />
           </div>
         </div>
-         <div class="hr-first"></div>
+        <hr>
+        <div class="hr-first"></div>
         <special-features :stay="stay"></special-features>
         <div class="hr-first"></div>
-        <span>{{stay.summary.slice(0,356)}}</span>
-        <br>
-        <br>
-        <span>{{stay.summary.slice(356,stay.summary.length)}}</span>
+        <span class="stay-summary">{{stay.summary.slice(0,356)}}</span>
+        <span class="stay-summary-2">{{stay.summary.slice(356,stay.summary.length)}}</span>
         <div class="hr-first"></div>
         <amenities-preview :stay="stay"></amenities-preview>
         <div class="hr"></div>
@@ -66,7 +65,7 @@
         <div class="hr"></div>
         <stay-map :stay="stay"></stay-map>
          <div class="hr"></div>
-         <host :stay="stay"></host>
+         <!-- <host :stay="stay"></host> -->
           <div class="hr"></div>
       </section>
     </div>

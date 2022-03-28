@@ -1,9 +1,13 @@
 <template>
-  <section class="stay-app">
+  <div class="section-row">
+    <div class="section-col">
+    <section class="stay-app">
     <!-- <p>{{stays}}</p> -->
 
     <stay-list :stays="stays" />
   </section>
+  </div>
+  </div>
 </template>
 
 <script>

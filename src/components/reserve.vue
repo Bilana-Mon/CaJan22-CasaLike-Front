@@ -158,6 +158,7 @@ export default {
         this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets
         window.addEventListener('scroll', this.handleScroll);
         console.log(window.scrollY)
+        
     },
     data() {
         return {

@@ -31,7 +31,7 @@
   justify-content: center;
 }
 span {
-  display:inline
+  display: inline;
 }
 //CAROUSEL ON LIST-PREVIEW SETTINGS
 
@@ -71,58 +71,53 @@ span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: #fff!important;
-  color: #4c4c4c!important;
+  background: #fff !important;
+  color: #4c4c4c !important;
 }
-.el-carousel__item{
+.el-carousel__item {
   border-radius: 20px;
 }
-.el-carousel__item img{
+.el-carousel__item img {
   object-fit: cover;
 }
-.stay-desc{
+.stay-desc {
   margin-bottom: 1.5rem;
   cursor: pointer;
 }
 .stay-desc > div {
   margin-top: 5px;
 }
-.stay-desc .rating{
+.stay-desc .rating {
   margin-top: 10px;
   display: flex;
   flex-direction: row;
 }
-.stay-desc .rating .rating-star{
+.stay-desc .rating .rating-star {
   margin-right: 8px;
 }
-.stay-desc .stay-loc{
+.stay-desc .stay-loc {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.stay-desc .stay-loc-name{
+.stay-desc .stay-loc-name {
   font-weight: bold;
 }
-.stay-desc .stay-loc span{
+.stay-desc .stay-loc span {
   margin: 0 5px;
 }
-.stay-desc .stay-price .price{
+.stay-desc .stay-price .price {
   font-weight: bold;
   margin-right: 10px;
 }
 
-
-
-
-@media (min-width: 600px){
-  .stay-list{
+@media (min-width: 600px) {
+  .stay-list {
     margin: 0 75px;
   }
 }
-@media (max-width: 869px){
-  .stay-preview-container{
-    width: 100%!important;
+@media (max-width: 869px) {
+  .stay-preview-container {
+    width: 100% !important;
   }
 }
-
-

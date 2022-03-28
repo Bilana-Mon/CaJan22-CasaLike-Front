@@ -6,9 +6,9 @@
   width: 24.25rem;
   height: 22.25rem;
   position: absolute;
-  align-self:flex-end;
+  align-self: flex-end;
   left: 900px;
-  bottom:-183px;
+  bottom: -183px;
   background-color: white;
   z-index: 5;
 }
@@ -44,9 +44,9 @@
   padding: 26px 12px 10px;
 }
 .select-label {
-    font-weight: bold;
-    font-family: airbnb-medium;
-    font-size: 14px
+  font-weight: bold;
+  font-family: airbnb-medium;
+  font-size: 14px;
 }
 
 .card-info {
@@ -95,7 +95,7 @@
       #bd1e59 75%,
       #bd1e59 950%
     )
-  )!important;
+  ) !important;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -108,7 +108,7 @@
   height: 50px;
   width: 100%;
   margin-top: 1rem;
-  margin-bottom:11px;
+  margin-bottom: 11px;
 }
 
 .mouse-cursor-gradient-tracking:before {
@@ -119,7 +119,15 @@
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(circle at center center, rgb(255, 56, 92) 5%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(197, 30, 92) 95%) !important;
+  background: radial-gradient(
+    circle at center center,
+    rgb(255, 56, 92) 5%,
+    rgb(230, 30, 77) 27.5%,
+    rgb(227, 28, 95) 40%,
+    rgb(215, 4, 102) 57.5%,
+    rgb(189, 30, 89) 75%,
+    rgb(197, 30, 92) 95%
+  ) !important;
   transform: translate(-50%, -50%);
   opacity: 0.12 !important;
   transition: width 0.2s ease, height 0.2s ease;
@@ -215,8 +223,6 @@
   margin: 0.5rem;
   font-family: airbnb-book;
 }
-
-
 
 .reserve-card .pets-service {
   text-decoration: underline !important;

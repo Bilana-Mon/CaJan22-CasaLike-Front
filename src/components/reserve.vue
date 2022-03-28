@@ -1,5 +1,8 @@
 <template>
-    <section v-if="stay" class="reserve-card">
+    <section
+        v-if="stay"
+        :class="{ 'reserve-card': isAbsoluteUp, 'reserve-card-fixed': isFixed, 'reserve-card-down': isAbsoluteDown }"
+    >
         <div class="card-info">
             <div class="card-price">{{ getFormattedPrice }}</div>
             <div class="night">/ night</div>
@@ -146,15 +149,14 @@ export default {
             this.filterBy.dates.start = this.getFormattedStart
             this.filterBy.dates.end = this.$store.getters.filter.dates['1']
             this.filterBy.dates.end = this.getFormattedEnd
-            console.log(this.filterBy.dates.start)
-            console.log(this.filterBy.dates.end)
 
         }
-        console.log(this.$store.getters.filter.countOfGuests)
         this.filterBy.countOfGuests.adults = this.$store.getters.filter.countOfGuests.adults
         this.filterBy.countOfGuests.children = this.$store.getters.filter.countOfGuests.children
         this.filterBy.countOfGuests.infants = this.$store.getters.filter.countOfGuests.infants
         this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets
+        window.addEventListener('scroll', this.handleScroll);
+        console.log(window.scrollY)
     },
     data() {
         return {
@@ -172,87 +174,112 @@ export default {
             },
             isReserved: false,
             selectOpen: false,
-            msg: ''
+            msg: '',
+        
+             isFixed: false,
+            isAbsoluteUp: false,
+            isAbsoluteDown: false
         }
-    },
-    methods: {
-        updateCount(age, diff) {
-            switch (age) {
-                case 'adults':
-                    this.filterBy.countOfGuests.adults += diff;
-                    break;
-                case 'children':
-                    this.filterBy.countOfGuests.children += diff;
-                    break;
-                case 'infants':
-                    this.filterBy.countOfGuests.infants += diff;
-                    break;
-                case 'pets':
-                    this.filterBy.countOfGuests.pets += diff;
+        },
+            methods: {
+            updateCount(age, diff) {
+                switch (age) {
+                    case 'adults':
+                        this.filterBy.countOfGuests.adults += diff;
+                        break;
+                    case 'children':
+                        this.filterBy.countOfGuests.children += diff;
+                        break;
+                    case 'infants':
+                        this.filterBy.countOfGuests.infants += diff;
+                        break;
+                    case 'pets':
+                        this.filterBy.countOfGuests.pets += diff;
+                }
+            },
+            changeColor(e) {
+                let btn = document.querySelector('.mouse-cursor-gradient-tracking');
+                btn.addEventListener('mousemove', e => {
+                    let rect = e.target.getBoundingClientRect();
+                    let x = e.clientX - rect.left;
+                    let y = e.clientY - rect.top;
+                    btn.style.setProperty('--x', x + 'px');
+                    btn.style.setProperty('--y', y + 'px');
+                });
+            },
+            toggleSelect() {
+                this.selectOpen = !this.selectOpen
+            },
+            sendMsg() {
+                let adults = this.filterBy.countOfGuests.adults
+                this.isReserved = true;
+
+                if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
+                    this.msg = 'Your reservation was successful'
+                } else {
+                    this.msg = 'Missing reservation details!'
+                }
+            },
+            handleScroll(event) {
+                console.log(window.scrollY)
+                if (window.scrollY < 419) {
+                    this.isAbsoluteUp = true
+                    this.isFixed = false
+                    this.isAbsoluteDown = false
+                }
+                if (window.scrollY > 419 && window.scrollY < 1000) {
+                    this.isFixed = true
+                     this.isAbsoluteUp = false
+                    this.isAbsoluteDown = false
+                }
+
+                if (window.scrollY > 1000) {
+                    this.isAbsoluteDown = true
+                      this.isFixed = false
+                     this.isAbsoluteUp = false
+                }
+                  console.log('fixed', this.isFixed)
+                  console.log('abup',this.isAbsoluteUp)
+                  console.log('abdown', this.isAbsoluteDown)
+            },
+        },
+        computed: {
+            getFormattedPrice() {
+                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.stay.price)
+            },
+            getFormattedRate() {
+                let rate = +(this.stay.reviewScores.rating) / 20
+                return rate
+            },
+            getFormattedStart() {
+                let startDate = this.filterBy.dates.start
+                if (startDate === 'Add dates') return 'Add dates'
+                // console.log(startDate)
+                const date1 = startDate.getDate()
+                console.log(date1)
+                const date2 = startDate.getMonth() + 1;
+                console.log(date2)
+                const date3 = startDate.getFullYear();
+                console.log(date3)
+                const fullDate = date2 + "/" + date1 + "/" + date3
+                return fullDate
+
+            },
+            getFormattedEnd() {
+                let endDate = this.filterBy.dates.end
+                if (endDate === 'Add dates') return 'Add dates'
+                // console.log(startDate)
+                const date1 = endDate.getDate()
+                console.log(date1)
+                const date2 = endDate.getMonth() + 1;
+                console.log(date2)
+                const date3 = endDate.getFullYear();
+                console.log(date3)
+                const fullDate = date2 + "/" + date1 + "/" + date3
+                return fullDate
             }
         },
-        changeColor(e) {
-            let btn = document.querySelector('.mouse-cursor-gradient-tracking');
-            btn.addEventListener('mousemove', e => {
-                let rect = e.target.getBoundingClientRect();
-                let x = e.clientX - rect.left;
-                let y = e.clientY - rect.top;
-                btn.style.setProperty('--x', x + 'px');
-                btn.style.setProperty('--y', y + 'px');
-            });
-        },
-        toggleSelect() {
-            this.selectOpen = !this.selectOpen
-        },
-        sendMsg() {
-            let adults = this.filterBy.countOfGuests.adults
-            this.isReserved = true;
-
-            if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
-                this.msg = 'Your reservation was successful'
-            } else {
-                this.msg = 'Missing reservation details!'
-            }
-        }
-
-    },
-    computed: {
-        getFormattedPrice() {
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.stay.price)
-        },
-        getFormattedRate() {
-            let rate = +(this.stay.reviewScores.rating) / 20
-            return rate
-        },
-        getFormattedStart() {
-            let startDate = this.filterBy.dates.start
-            if (startDate === 'Add dates') return 'Add dates'
-            // console.log(startDate)
-            const date1 = startDate.getDate()
-            console.log(date1)
-            const date2 = startDate.getMonth() + 1;
-            console.log(date2)
-            const date3 = startDate.getFullYear();
-            console.log(date3)
-            const fullDate = date2 + "/" + date1 + "/" + date3
-            return fullDate
-
-        },
-        getFormattedEnd() {
-            let endDate = this.filterBy.dates.end
-            if (endDate === 'Add dates') return 'Add dates'
-            // console.log(startDate)
-            const date1 = endDate.getDate()
-            console.log(date1)
-            const date2 = endDate.getMonth() + 1;
-            console.log(date2)
-            const date3 = endDate.getFullYear();
-            console.log(date3)
-            const fullDate = date2 + "/" + date1 + "/" + date3
-            return fullDate
-        }
-    },
-}
+    }
 </script>
 
 <style>

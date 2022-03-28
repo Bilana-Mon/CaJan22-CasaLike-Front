@@ -199,8 +199,6 @@ export default {
     },
     created() {
         window.addEventListener('scroll', this.handleScroll);
-        console.log(window.scrollY)
-
     },
     methods: {
         setFilter() {

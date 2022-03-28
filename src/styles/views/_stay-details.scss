@@ -1,3 +1,7 @@
+.stay-details {
+  display:grid;
+}
+
 .stay-details h1 {
   margin-bottom: 0.3rem;
   font-size: 1.625rem;
@@ -5,9 +9,7 @@
   font-family: CircularStd-Medium;
   color: #222222;
   letter-spacing: 1px;
-  position:relative; 
 }
-
 
 .h2 {
   font-family: Airbnb-Medium;
@@ -65,7 +67,16 @@
   width: 100%;
   height: 100%;
 }
+.amenity-container {
+  align-items: left;
+}
 
+.clean-list {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  gap: 1rem;
+}
 .stay-details h2 {
   font-size: 1.375rem;
   font-family: Airbnb-Book;
@@ -143,9 +154,9 @@
   cursor: pointer;
 }
 .review-preview {
-    display:grid;
-    width: 100%;
-    margin-bottom: 50px;
+  display: grid;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .stay-details-rating {
@@ -159,32 +170,29 @@
   text-decoration: underline;
 }
 
-.reviews-container{ 
+// .reviews-container {
+// }
 
+.chartrating1,
+.chartrating2,
+.chartrating3,
+.chartrating4,
+.chartrating5,
+.chartrating6 {
+  margin-right: 10px;
 }
-
-.chartrating1 , .chartrating2 , .chartrating3 , .chartrating4 , .chartrating5, .chartrating6 {
-    margin-right:10px;
-}
-.chartrating4 , .chartrating5, .chartrating6 {
-    margin-right:20px;
+.chartrating4,
+.chartrating5,
+.chartrating6 {
+  margin-right: 20px;
 }
 .chart-rating {
-
+    padding-bottom: 10px;
 }
-
-
-
 
 .chart-container {
-
-    display: grid;
-    grid-template-columns: 25% 25%;
-    grid-template-rows: 1fr;
-    column-gap: 50px;
-}
-
-.review-chart {
-    display: grid;
-    text-align:start
+  display: grid;
+  grid-template-columns: 25% 25%;
+  grid-template-rows: 1fr;
+  column-gap: 50px;
 }

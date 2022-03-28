@@ -152,12 +152,15 @@
 }
 .search-text{
     font-size: 14px;
-    color: #222222;
+    color: #717171;
+    font-family: 'CircularStd-Light';
 }
 .search-text.location-text, .search-text.location-text:focus-visible{
     background-color: transparent;
     border: none;
     outline: none;
+    color:#717171;
+    font-family:'CircularStd-Light'
 }
 .search-btn{
     width: 48px;
@@ -171,6 +174,11 @@
     height: 16px;
     fill: #fff;
 }
+.select-label {
+    font-size: 14px;
+    color: #717171;
+    font-family: 'CircularStd-Light';
+  }
 
 
 .search-bar-container .select-checkbox {
@@ -179,8 +187,8 @@
 }
 
 .search-bar-container .select-label:before {
-    content: "\25BE";
     float: right;
+ 
 }
 .search-bar-container .select-wrap {
     background: rgb(255, 255, 255);
@@ -247,6 +255,11 @@
     text-decoration: underline !important;
 }
 
+.pets-service{
+    font-size:14px;
+    font-family:'CircularStd-Book';
+}
+
 .search-bar-container .btn-list button{
     margin-left: 0.125rem;
     margin-right: 0.125rem;
@@ -254,7 +267,7 @@
     border: 1px solid;
     width: 2.2rem;
     height: 2.2rem;
-    background-color: whitesmoke;
+    background-color: #FFFFFF;
     color: #717171;
 }
 .search-bar-container .pet-msg{
@@ -345,7 +358,7 @@
     width: 39%;
     text-align: center;
     font-size: 14px;
-    font-family: 'Airbnb-Light';
+    font-family: 'CircularStd-Light';
     color: #717171;
 }
 @media (max-width: 990px){

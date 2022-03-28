@@ -60,7 +60,7 @@
                                 class="select-label"
                                 for="select-checkbox"
                                 v-if="selectOpen"
-                            >Guests</label>
+                            >Add guests</label>
                             <div class="select-wrap">
                                 <ul v-if="selectOpen" class="select">
                                     <li class="option">

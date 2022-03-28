@@ -44,7 +44,6 @@
                         <el-date-picker
                             v-model="filterBy.dates"
                             type="daterange"
-                            range-separator="|"
                             start-placeholder="Add dates"
                             end-placeholder="Add dates"
                         />
@@ -86,7 +85,7 @@
                                         <div class="options-list">
                                             <a href="#" title="Second">
                                                <div class="option-child"> Children</div> 
-                                                <br />Ages 2–12
+                                                <br /> <div class="option-age2">Ages 2–12</div>
                                             </a>
                                         </div>
                                         <div class="btn-list">
@@ -106,7 +105,7 @@
                                         <div class="options-list">
                                             <a href="#" title="Third">
                                                 <div class="option-infants"> Infants </div>
-                                                <br />Under 2
+                                                <br /> <div class="option-age3">Under 2</div>
                                             </a>
                                         </div>
                                         <div class="btn-list">

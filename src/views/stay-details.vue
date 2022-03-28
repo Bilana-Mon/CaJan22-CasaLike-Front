@@ -49,6 +49,11 @@
           </div>
         </div>
         <div class="hr-first"></div>
+        <span>{{stay.summary.slice(0,356)}}</span>
+        <br>
+        <br>
+        <span>{{stay.summary.slice(356,stay.summary.length)}}</span>
+        <div class="hr-first"></div>
         <amenities-preview :stay="stay"></amenities-preview>
         <div class="hr"></div>
         <review-preview :stay="stay"></review-preview>

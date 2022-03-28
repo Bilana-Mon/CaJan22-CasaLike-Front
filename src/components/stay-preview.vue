@@ -8,6 +8,7 @@
           </el-carousel-item>
         </el-carousel>
       </template>
+      
 
       <template #footer>
         <div class="stay-desc">

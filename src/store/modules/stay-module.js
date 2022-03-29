@@ -4,7 +4,7 @@ export default {
     state: {
         stays: [],
         filterBy: {
-            location: '',
+            location: undefined,
             dates: {
                 end: new Date(),
                 start: new Date().getTime() - 3600 * 1000 * 24 * 7,
@@ -40,9 +40,9 @@ export default {
         }
     },
     actions: {
-        async loadStays({ commit, state }) {
+        async loadStays({ commit }) {
             try {
-                let stays = await stayService.query(state.filterBy)
+                let stays = await stayService.query()
                 console.log(stays)
                 commit({ type: 'setStays', stays })
             } catch (err) {

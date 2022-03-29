@@ -19,11 +19,15 @@
           <div class="destination-cards">
             <div class="destination-card" @click="goExplore()">
               <img class="destination-img" alt="porto" src="src/assets/imgs/homepage/porto.webp" />
+              <div class="destination-text">
               <p>Porto</p>
+            </div>
             </div>
             <div class="destination-card" @click="goExplore()">
               <img class="destination-img" alt="maui" src="src/assets/imgs/homepage/maui.webp" />
+              <div class="destination-text">
               <p>Maui</p>
+              </div>
             </div>
             <div class="destination-card" @click="goExplore()">
               <img
@@ -31,7 +35,9 @@
                 alt="hongkong"
                 src="src/assets/imgs/homepage/hongkong.webp"
               />
+              <div class="destination-text">
               <p>Hongkong</p>
+              </div>
             </div>
             <div class="destination-card" @click="goExplore()">
               <img
@@ -39,7 +45,9 @@
                 alt="montreal"
                 src="src/assets/imgs/homepage/montreal.webp"
               />
+              <div class="destination-text">
               <p>Montreal</p>
+              </div>
             </div>
           </div>
         </div>
@@ -71,25 +79,25 @@
           <div class="card-image"></div>
           <div class="card-text">
             <h2>Hawaii</h2>
-            <p>Escape to spectacular resort to relax in a coastal refuge</p>
+            <p class="card-desc">Escape to spectacular resort to relax in a coastal refuge</p>
           </div>
           <div class="card">
-          <div class="card-image"></div>
-          <div class="card-text">
+          <div class="card-image card2"></div>
+          <div class="card-text card2">
             <h2>Seychelles</h2>
-            <p>Get there for beautiful beaches and welcoming lagoons</p>
+            <p class="card-desc">Get there for beautiful beaches and welcoming lagoons</p>
           </div>
           <div class="card">
-          <div class="card-image"></div>
-          <div class="card-text">
+          <div class="card-image card3"></div>
+          <div class="card-text card3">
             <h2>Namibia</h2>
-            <p>Explore the very best of Africa's raw landscapes</p>
+            <p class="card-desc">Explore the very best of Africa's raw landscapes</p>
           </div>
           <div class="card">
-          <div class="card-image"></div>
-          <div class="card-text">
+          <div class="card-image card4"></div>
+          <div class="card-text card4">
             <h2>Iceland</h2>
-            <p>Visit world's northernmost capital</p>
+            <p class="card-desc">It is a great place to see the aurora borealis</p>
           </div>
           </div>
         </div> 

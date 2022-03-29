@@ -216,7 +216,7 @@ export default {
 
             if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
                 this.msg = 'Your reservation was successful'
-                this.$router.push('/order')
+                this.$router.push('/order/' + this.stay._id)
             } else {
                 this.msg = 'Missing reservation details!'
             }

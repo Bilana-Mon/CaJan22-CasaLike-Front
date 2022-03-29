@@ -14,6 +14,7 @@ export default {
     name: 'stay-list',
     props: {
         stays: Array,
+        
     },
     components: {
         stayPreview

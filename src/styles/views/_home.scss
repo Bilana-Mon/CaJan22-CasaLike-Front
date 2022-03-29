@@ -73,6 +73,34 @@ img {
     width: 85%;
 }
 
+.jingle2 {
+  font-family: "CircularStd-Medium";
+  font-size: 2.2rem;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: -2%;
+  width: 85%;
+  right: 21%;
+}
+
+.become-btn {
+  cursor: pointer;
+  position: absolute;
+  color: #2f2f2f;
+  font-size: 1.07rem;
+  font-family: "CircularStd-Medium";
+  background-color: #FFFFFF;
+  padding-top: 16px;
+  padding-right: 18px;
+  padding-bottom: 16px;
+  padding-left: 18px;
+  border-radius: 8px;
+  border: none;
+  top: 79%;
+  left: 5%;
+}
+
 .section-heading{
   width: 100%;
   margin-top: 50px;

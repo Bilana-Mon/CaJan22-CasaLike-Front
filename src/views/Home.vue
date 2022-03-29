@@ -18,12 +18,77 @@
         <div class="destination-cards-container">
           <div class="destination-cards">
             <div class="destination-card" @click="goExplore()">
+             
+              <img 
+              class="destination-img" 
+              alt="porto" 
+              src="src/assets/imgs/homepage/porto.webp" />
               <p>Porto</p>
-              <img class="destination-img" alt="porto" src="src/assets/imgs/homepage/porto.webp" />
+            </div>
+            <div class="destination-card" @click="goExplore()">
+              
+              <img 
+              class="destination-img" 
+              alt="maui" 
+              src="src/assets/imgs/homepage/maui.webp" />
+              <p>Maui</p>
+            </div>
+            <div class="destination-card" @click="goExplore()">
+              
+              <img
+                class="destination-img"
+                alt="hongkong"
+                src="src/assets/imgs/homepage/hongkong.webp"
+              />
+              <p>Hongkong</p>
+            </div>
+            <div class="destination-card" @click="goExplore()">
+             
+              <img
+                class="destination-img"
+                alt="montreal"
+                src="src/assets/imgs/homepage/montreal.webp"
+              />
+              <p>Montreal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-row">
+      <div class="section-col">
+        <div class="homepage-img">
+          <img alt="homepage-img" src="src/assets/imgs/homepage/hoster2.jpg" />
+          <div class="jingle2">
+            <h3>
+              You can host
+              anything, anywhere.
+            </h3>
+          </div>
+          <router-link class="link" to="/host">
+            <button href="#/host" class="become-btn">Become a host</button>
+          </router-link>
+        </div>
+      </div>
+    </div>
+    <div class="section-row">
+      <div class="section-col">
+        <h1 class="section-heading">Exotic Retreats</h1>
+        <div class="destination-cards-container">
+          <div class="destination-cards">
+            <div class="destination-card" @click="goExplore()">
+              <p>Porto</p>
+              <img 
+              class="destination-img" 
+              alt="porto" 
+              src="src/assets/imgs/homepage/porto.webp" />
             </div>
             <div class="destination-card" @click="goExplore()">
               <p>Maui</p>
-              <img class="destination-img" alt="maui" src="src/assets/imgs/homepage/maui.webp" />
+              <img 
+              class="destination-img" 
+              alt="maui" 
+              src="src/assets/imgs/homepage/maui.webp" />
             </div>
             <div class="destination-card" @click="goExplore()">
               <p>Hongkong</p>

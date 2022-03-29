@@ -62,7 +62,7 @@
           <div class="jingle2">
             <h3>
               You can host
-              anything, anywhere.
+              anything, <br> anywhere.
             </h3>
           </div>
           <router-link class="link" to="/host">

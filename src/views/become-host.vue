@@ -1,6 +1,24 @@
 <template>
   <section class="become-host">
-    <h1>become host</h1>
+    <div class="section-row">
+      <div class="section-col">
+        <div class="becomehost-img">
+          <img alt="becomehost-img" src="src/assets/imgs/homepage/taylor-murphy.jpg" />
+          <div class="jingle-host">
+            <h3>
+              Try hosting on
+              CasaLike
+              <br />Join us.
+              <br />
+            </h3>
+            <div class="jingle-host-phrase">
+              We’ll help you every
+              step of the way.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -8,15 +26,15 @@
 
 
 export default {
-    name: 'become-host',
+  name: 'become-host',
   // props: [''],
   components: {},
-  created() {},
+  created() { },
   data() {
     return {}
   },
   methods: {},
   computed: {},
-  unmounted() {},
+  unmounted() { },
 }
 </script>

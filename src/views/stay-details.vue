@@ -28,9 +28,11 @@
         <div class="stay-images">
           <img v-for="i in stay.imgUrls" :key="i" :src="`src/assets/imgs/stays/${i}`" />
         </div>
-        <!-- <div> -->
-          <!-- <reserve :stay="stay"></reserve> -->
-        <!-- </div> -->
+        <div class="details-reserve-container">
+        <div class="reserve-container">
+          <reserve :stay="stay"></reserve>
+        </div>
+        <div class="stay-description-container">
         <div class="stay-desc-container">
           <div class="stay-type-container">
             <h2 class="stay-details h2">
@@ -61,10 +63,12 @@
           </span>
         <hr>
         <amenities-preview :stay="stay"></amenities-preview>
-        <hr>
-        <stay-map :stay="stay"></stay-map>
+        </div>
+        </div>
         <hr>
         <review-preview :stay="stay"></review-preview>
+        <hr>
+        <stay-map :stay="stay"></stay-map>
         <hr>
         <!-- <section class="date-wrapper">
           <date-open :stay="stay"></date-open>
@@ -139,4 +143,6 @@ export default {
   unmounted() { },
 }
 </script>
+
+
 

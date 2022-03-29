@@ -1,4 +1,3 @@
-<!-- :class="{ 'reserve-card': isAbsoluteUp, 'reserve-card-fixed': isFixed, 'reserve-card-down': isAbsoluteDown }" -->
 <template>
     <section
         v-if="stay"
@@ -159,8 +158,6 @@ export default {
         this.filterBy.countOfGuests.children = this.$store.getters.filter.countOfGuests.children
         this.filterBy.countOfGuests.infants = this.$store.getters.filter.countOfGuests.infants
         this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets
-        window.addEventListener('scroll', this.handleScroll);
-        console.log(window.scrollY)
     },
     data() {
         return {
@@ -225,28 +222,6 @@ export default {
                 } else {
                     this.msg = 'Missing reservation details!'
                 }
-            },
-            handleScroll(event) {
-                console.log(window.scrollY)
-                if (window.scrollY < 419) {
-                    this.isAbsoluteUp = true
-                    this.isFixed = false
-                    this.isAbsoluteDown = false
-                }
-                if (window.scrollY > 419 && window.scrollY < 1000) {
-                    this.isFixed = true
-                     this.isAbsoluteUp = false
-                    this.isAbsoluteDown = false
-                }
-
-                if (window.scrollY > 1000) {
-                    this.isAbsoluteDown = true
-                      this.isFixed = false
-                     this.isAbsoluteUp = false
-                }
-                  console.log('fixed', this.isFixed)
-                  console.log('abup',this.isAbsoluteUp)
-                  console.log('abdown', this.isAbsoluteDown)
             },
         },
         computed: {

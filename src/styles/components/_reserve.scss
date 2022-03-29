@@ -5,12 +5,11 @@
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   width: 24.25rem;
   height: 22.25rem;
-  position: absolute;
-  align-self: flex-end;
-  left: 900px;
-  bottom: -183px;
   background-color: white;
   z-index: 5;
+  position: sticky;
+  top:3rem;
+  margin-top: 1rem; 
 }
 // .reserve-card-fixed {
 

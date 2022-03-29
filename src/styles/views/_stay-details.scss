@@ -115,11 +115,6 @@
   margin-left: 0.5rem;
 }
 
-.reserve-card,
-.hr-first,
-.hr {
-  display: none !important;
-}
 
 hr {
   width: 100%;
@@ -316,6 +311,15 @@ hr {
   margin: 1rem 0;
 }
 
+.details-reserve-container {
+  display: flex;
+  flex-direction: row-reverse;
+  gap:4.375rem;
+}
+.stay-description-container {
+  flex-direction: column;
+}
+
 @media (max-width: 743px) {
   .stay-images {
     display: flex;
@@ -353,3 +357,5 @@ hr {
     padding-right: 3rem;
   }
 }
+
+

@@ -4,7 +4,7 @@ export default {
     state: {
         stays: [],
         filterBy: {
-            location: undefined,
+            location: '',
             dates: {
                 end: new Date(),
                 start: new Date().getTime() - 3600 * 1000 * 24 * 7,
@@ -31,7 +31,7 @@ export default {
         }
     },
     mutations: {
-        setStays(state, stays) {
+        setStays(state, {stays}) {
             state.stays = stays;
         },
         setFilter(state, { filterBy }) {

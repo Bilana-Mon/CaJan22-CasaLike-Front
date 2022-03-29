@@ -4,7 +4,7 @@
       <template #header>
         <el-carousel :autoplay="false" arrow="hover" trigger="click">
           <el-carousel-item v-for="item in stay.imgUrls" :key="item">
-            <img class="stay-img-gallery" :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648473465/casaLike/stays/${item}.jpeg`" />
+            <img class="stay-img-gallery" :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648473465/casaLike/stays/${item}`" />
           </el-carousel-item>
         </el-carousel>
       </template>
@@ -64,7 +64,7 @@ export default {
 
   },
   mounted() {
-    console.log(this.stay);
+    console.log(this.stay.imgUrls);
   },
   computed: {
     getFormattedRate() {

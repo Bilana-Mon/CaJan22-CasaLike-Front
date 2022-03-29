@@ -4,7 +4,7 @@
     <section class="stay-app">
     <!-- <p>{{stays}}</p> -->
 
-    <stay-list v-if="stays" :stays="stays"  />
+    <stay-list :stays="stays"  />
   </section>
   </div>
   </div>
@@ -17,10 +17,13 @@ export default {
   components: {
     stayList
   },
+   created() {
+    this.$store.dispatch({ type: 'loadStays' })
+  },
   computed: {
     stays() {
-      console.log(this.$store.getters.stays)
-      return this.$store.getters.stays
+      let stays = this.$store.getters.stays
+      return stays
     }
   },
 }

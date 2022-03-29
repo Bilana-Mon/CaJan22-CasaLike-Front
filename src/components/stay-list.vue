@@ -14,17 +14,11 @@ export default {
     name: 'stay-list',
     props: {
         stays: Array,
+        
     },
     components: {
         stayPreview
     },
-    created() { },
-    data() {
-        return {}
-    },
-    methods: {},
-    computed: {},
-    unmounted() { },
 }
 </script>
 <style>

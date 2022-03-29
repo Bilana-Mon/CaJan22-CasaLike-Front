@@ -1,43 +1,51 @@
-import { storageService } from "./async-storage.service.js"
-import { utilService } from "./util.service.js"
+// import { storageService } from "./async-storage.service.js"
+// import { utilService } from "./util.service.js"
+import { httpService } from "./http.service.js"
 
-const gUsers = '../data/user.json'
-const USERS_KEY = 'usersDB'
+// const gUsers = '../data/user.json'
+// const USERS_KEY = 'usersDB'
+const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
 export const userService = {
     login,
     signup,
     logout,
-    // getGuestUser
+    getLoggedinUser,
 }
 
-async function login({ username, password }) {
-    let users = await utilService.loadFromStorage(USERS_KEY)
-    if (!users || !users.length) {
-        users = gUsers
-    }
-    const loginUser = users.find(user => user.username === username && user.password === password)
-    return loginUser;
+async function login(userCred) {
+    const user = await httpService.post('auth/login', userCred)
+    if (user) return _saveLocalUser(user)
+    // let users = await utilService.loadFromStorage(USERS_KEY)
+    // if (!users || !users.length) {
+    //     users = gUsers
+    // }
+    // const loginUser = users.find(user => user.username === username && user.password === password)
+    // return loginUser;
 }
 
-async function signup({ username, password, fullname }) {
-    const newUser = {
-        username,
-        password,
-        fullname,
-        imgUrl: "https://robohash.org/59985?set=set1"
-    }
-    return await storageService.post(USERS_KEY, newUser)
+async function signup(userCred) {
+    const user = await httpService.post('auth/signup', userCred)
+    return _saveLocalUser(user)
+    // const newUser = {
+    //     username,
+    //     password,
+    //     fullname,
+    //     imgUrl: "https://robohash.org/59985?set=set1"
+    // }
+    // return await storageService.post(USERS_KEY, newUser)
 }
 
 async function logout() {
-    console.log('logged out');
+    sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+    return await httpService.post('auth/logout')
 }
 
-// function getGuestUser() {
-//     return {
-//         fullname: 'Guest User',
-//         username: 'guest',
-//         password: 'guest'
-//     }
-// }
+function _saveLocalUser(user) {
+    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
+    return user
+}
+
+function getLoggedinUser() {
+    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
+}

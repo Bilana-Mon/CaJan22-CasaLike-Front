@@ -18,23 +18,14 @@
         <div class="destination-cards-container">
           <div class="destination-cards">
             <div class="destination-card" @click="goExplore()">
-             
-              <img 
-              class="destination-img" 
-              alt="porto" 
-              src="src/assets/imgs/homepage/porto.webp" />
+              <img class="destination-img" alt="porto" src="src/assets/imgs/homepage/porto.webp" />
               <p>Porto</p>
             </div>
             <div class="destination-card" @click="goExplore()">
-              
-              <img 
-              class="destination-img" 
-              alt="maui" 
-              src="src/assets/imgs/homepage/maui.webp" />
+              <img class="destination-img" alt="maui" src="src/assets/imgs/homepage/maui.webp" />
               <p>Maui</p>
             </div>
             <div class="destination-card" @click="goExplore()">
-              
               <img
                 class="destination-img"
                 alt="hongkong"
@@ -43,7 +34,6 @@
               <p>Hongkong</p>
             </div>
             <div class="destination-card" @click="goExplore()">
-             
               <img
                 class="destination-img"
                 alt="montreal"
@@ -62,7 +52,8 @@
           <div class="jingle2">
             <h3>
               You can host
-              anything, <br> anywhere.
+              anything,
+              <br />anywhere.
             </h3>
           </div>
           <router-link class="link" to="/host">
@@ -71,10 +62,43 @@
         </div>
       </div>
     </div>
-    <div class="section-row">
-      <div class="section-col">
+    <!-- <div class="section-row">
+      <div class="section-col"> -->
+        
         <h1 class="section-heading">Exotic Retreats</h1>
-        <div class="destination-cards-container">
+        <div class="exotic-cards-container">
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-text">
+            <h2>Hawaii</h2>
+            <p>Enjoy luxurious apartment on Hawaii</p>
+          </div>
+          <div class="card">
+          <div class="card-image"></div>
+          <div class="card-text">
+            <h2>Hawaii</h2>
+            <p>Enjoy luxurious apartment on Hawaii</p>
+          </div>
+          <div class="card">
+          <div class="card-image"></div>
+          <div class="card-text">
+            <h2>Hawaii</h2>
+            <p>Enjoy luxurious apartment on Hawaii</p>
+          </div>
+          <div class="card">
+          <div class="card-image"></div>
+          <div class="card-text">
+            <h2>Hawaii</h2>
+            <p>Enjoy luxurious apartment on Hawaii</p>
+          </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+        </div>
+      <!-- </div>
+    </div> -->
+    <!-- <div class="destination-cards-container">
           <div class="destination-cards">
             <div class="destination-card" @click="goExplore()">
               <p>Porto</p>
@@ -109,7 +133,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
   </section>
 </template>
 

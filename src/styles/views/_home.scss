@@ -159,13 +159,54 @@ img {
   text-align: left;
 }
 
+//DESTINATION CARDS
+.exotic-cards-container{
+  position: relative;
+
+}
+.card {
+  position:absolute;
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 13.125rem 7.5rem ;
+  grid-template-areas: "image" "text";
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.07);
+  font-family: "CircularStd-Book";
+  text-align: left;
+  padding:5px
+}
+
+.card-image {
+  grid-area: image;
+}
+.card-text {
+  grid-area: text;
+}
+
+
+.card-image {
+  grid-area: image;
+  background: url('@/assets/imgs/homepage/exotic1.jpg');
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-size: cover;
+}
+
 @media (max-width: 620px){
   .jingle{
+    font-size: 2rem;
+  }
+  .jingle2{
     font-size: 2rem;
   }
 }
 @media (min-width: 1306px){
   .jingle{
+    top: 27%;
+  }
+  .jingle2{
     top: 27%;
   }
   .destination-cards-container{

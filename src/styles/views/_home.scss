@@ -130,6 +130,21 @@ img {
   float: left;
   display: none;
 }
+.el-date-editor .el-range-input {
+  /* -webkit-appearance: none; */
+  /* appearance: none; */
+  border: none;
+  /* outline: 0; */
+  /* display: inline-block; */
+  /* height: 100%; */
+  /* margin: 0; */
+  /* padding: 0; */
+  /* width: 39%; */
+    // text-align: none !important;
+  /* font-size: 14px; */
+  /* font-family: "CircularStd-Light"; */
+  /* color: #717171; */
+}
 .el-input__inner {
   position: relative;
   -webkit-appearance: none;

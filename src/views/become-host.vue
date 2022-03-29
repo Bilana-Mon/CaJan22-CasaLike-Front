@@ -5,12 +5,12 @@
         <div class="becomehost-img">
           <img alt="becomehost-img" src="src/assets/imgs/homepage/taylor-murphy.jpg" />
           <div class="jingle-host">
-            <h3>
+            <div class="jingle-host-text">
               Try hosting on
               CasaLike
               <br />Join us.
               <br />
-            </h3>
+            </div>
             <div class="jingle-host-phrase">
               We’ll help you every
               step of the way.

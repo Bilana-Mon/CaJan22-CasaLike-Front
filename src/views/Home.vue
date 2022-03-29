@@ -62,8 +62,8 @@
         </div>
       </div>
     </div>
-    <!-- <div class="section-row">
-      <div class="section-col"> -->
+    <div class="section-row">
+      <div class="section-col">
         
         <h1 class="section-heading">Exotic Retreats</h1>
         <div class="exotic-cards-container">
@@ -71,33 +71,33 @@
           <div class="card-image"></div>
           <div class="card-text">
             <h2>Hawaii</h2>
-            <p>Enjoy luxurious apartment on Hawaii</p>
+            <p>Escape to spectacular resort to relax in a coastal refuge</p>
           </div>
           <div class="card">
           <div class="card-image"></div>
           <div class="card-text">
-            <h2>Hawaii</h2>
-            <p>Enjoy luxurious apartment on Hawaii</p>
+            <h2>Seychelles</h2>
+            <p>Get there for beautiful beaches and welcoming lagoons</p>
           </div>
           <div class="card">
           <div class="card-image"></div>
           <div class="card-text">
-            <h2>Hawaii</h2>
-            <p>Enjoy luxurious apartment on Hawaii</p>
+            <h2>Namibia</h2>
+            <p>Explore the very best of Africa's raw landscapes</p>
           </div>
           <div class="card">
           <div class="card-image"></div>
           <div class="card-text">
-            <h2>Hawaii</h2>
-            <p>Enjoy luxurious apartment on Hawaii</p>
+            <h2>Iceland</h2>
+            <p>Visit world's northernmost capital</p>
           </div>
           </div>
         </div> 
       </div>
     </div>
         </div>
-      <!-- </div>
-    </div> -->
+      </div>
+    </div>
     <!-- <div class="destination-cards-container">
           <div class="destination-cards">
             <div class="destination-card" @click="goExplore()">

@@ -2,16 +2,16 @@ img {
   position: relative;
 }
 
-.header-bg{
+.header-bg {
   position: absolute;
   background: black;
   height: 255px;
   width: 100%;
 }
-.header-bg.scrolled{
+.header-bg.scrolled {
   height: 255px + 166px;
 }
-.header-bg.scrolled + .homepage.layout{
+.header-bg.scrolled + .homepage.layout {
   margin-top: 166px;
 }
 .destination-img {
@@ -20,7 +20,7 @@ img {
   border-radius: 10px;
 }
 
-.destination-cards-container{
+.destination-cards-container {
   position: relative;
   width: 100vw;
   height: 400px;
@@ -39,14 +39,14 @@ img {
 .destination-card {
   border-radius: 10px;
 }
-.destination-card p{
+.destination-card p {
   font-size: 1.4rem;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family: 'Airbnb-Light';
+  font-family: "Airbnb-Light";
 }
 
-.homepage-img{
+.homepage-img {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
@@ -56,21 +56,21 @@ img {
   // border: 1px solid pink;
   border-radius: 20px;
 }
-.homepage-img img{
+.homepage-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
 .jingle {
-    font-family: 'CircularStd-Medium';
-    font-size: 40px;
-    text-align: center;
-    // color: coral;
-    color: #fff;
-    position: absolute;
-    top: 20%;
-    width: 85%;
+  font-family: "CircularStd-Medium";
+  font-size: 40px;
+  text-align: center;
+  // color: coral;
+  color: #fff;
+  position: absolute;
+  top: 20%;
+  width: 85%;
 }
 
 .jingle2 {
@@ -90,7 +90,7 @@ img {
   color: #2f2f2f;
   font-size: 1.07rem;
   font-family: "CircularStd-Medium";
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding-top: 16px;
   padding-right: 18px;
   padding-bottom: 16px;
@@ -101,12 +101,12 @@ img {
   left: 5%;
 }
 
-.section-heading{
+.section-heading {
   width: 100%;
   margin-top: 50px;
   margin-bottom: 1rem;
   font-size: 2rem;
-  font-family: 'Airbnb-Medium';
+  font-family: "Airbnb-Medium";
   font-weight: 100;
 }
 
@@ -120,11 +120,11 @@ img {
 .el-input__inner {
   position: relative;
   -webkit-appearance: none;
-  background-color: var(--el-input-bg-color,var(--el-fill-color-blank));
+  background-color: var(--el-input-bg-color, var(--el-fill-color-blank));
   background-image: none;
-  border-radius: var(--el-input-border-radius,var(--el-border-radius-base));
+  border-radius: var(--el-input-border-radius, var(--el-border-radius-base));
   box-sizing: border-box;
-  color: var(--el-input-text-color,var(--el-text-color-regular));
+  color: var(--el-input-text-color, var(--el-text-color-regular));
   display: inline-block;
   font-size: inherit;
   height: 38px;
@@ -153,29 +153,29 @@ img {
   --el-input-placeholder-color: var(--el-text-color-placeholder);
   --el-input-hover-border-color: var(--el-border-color-hover);
   --el-input-clear-hover-color: var(--el-text-color-secondary);
-   --el-input-focus-border-color: none !important; 
+  --el-input-focus-border-color: none !important;
   position: relative;
   display: inline-block;
   text-align: left;
 }
 
-//DESTINATION CARDS
-.exotic-cards-container{
+//EXOTIC CARDS
+.exotic-cards-container {
   position: relative;
-
+  
 }
 .card {
-  position:absolute;
   display: grid;
   grid-template-columns: 300px;
-  grid-template-rows: 13.125rem 7.5rem ;
+  grid-template-rows: 13.125rem 7.5rem;
   grid-template-areas: "image" "text";
   border-radius: 8px;
   background: white;
-  box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.07);
+  box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.07);
   font-family: "CircularStd-Book";
   text-align: left;
-  padding:5px
+  padding: 5px;
+  overflow: scroll;
 }
 
 .card-image {
@@ -185,39 +185,38 @@ img {
   grid-area: text;
 }
 
-
 .card-image {
   grid-area: image;
-  background: url('@/assets/imgs/homepage/exotic1.jpg');
+  background: url("@/assets/imgs/homepage/exotic1.jpg");
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   background-size: cover;
 }
 
-@media (max-width: 620px){
-  .jingle{
+@media (max-width: 620px) {
+  .jingle {
     font-size: 2rem;
   }
-  .jingle2{
+  .jingle2 {
     font-size: 2rem;
   }
 }
-@media (min-width: 1306px){
-  .jingle{
+@media (min-width: 1306px) {
+  .jingle {
     top: 27%;
   }
-  .jingle2{
+  .jingle2 {
     top: 27%;
   }
-  .destination-cards-container{
+  .destination-cards-container {
     width: 100%;
   }
-  .destination-cards{
+  .destination-cards {
     overflow-y: hidden;
   }
 }
-@media (min-width: 1450px){
-  .destination-cards{
+@media (min-width: 1450px) {
+  .destination-cards {
     overflow: hidden;
     justify-content: space-between;
     display: flex;

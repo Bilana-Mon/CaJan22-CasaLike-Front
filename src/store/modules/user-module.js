@@ -1,45 +1,48 @@
 import { userService } from '../../services/user.service.js';
-import { utilService } from '../../services/util.service.js';
+// import { utilService } from '../../services/util.service.js';
 
 export default {
     state: {
-        loggedInUser: utilService.loadFromSessionStorage('user') || null,
+        loggedInUser: userService.getLoggedinUser(),
     },
     getters: {
-        user(state) {
-            return state.loggedInUser
-        }
+    loggedinUser({ loggedinUser }) { return loggedinUser },
     },
     mutations: {
-        setUser(state, { user }) {
-            state.loggedInUser = user
+        setLoggedinUser(state, { user }) {
+            state.loggedinUser = (user) ? {...user} : null;
         }
     },
     actions: {
-        async login({ commit }, { cred }) {
+        async login({ commit }, { userCred }) {
             try {
-                const user = await userService.login(cred)
-                commit({ type: 'setUser', user })
-                utilService.saveToSessionStorage('user', user)
+                const user = await userService.login(userCred);
+                commit({ type: 'setLoggedinUser', user })
+                return user;
             } catch (err) {
-                console.log(err)
+                console.log('userStore: Error in login', err)
+                throw err
             }
         },
-        async signup({ commit }, { cred }) {
+        async signup({ commit }, { userCred }) {
             try {
-                const user = await userService.signup(cred)
-                commit({ type: 'setUser', user })
-                utilService.saveToSessionStorage('user', user)
+                const user = await userService.signup(userCred)
+                commit({ type: 'setLoggedinUser', user })
+                return user;
             } catch (err) {
-                console.log(err)
+                console.log('userStore: Error in signup', err)
+                throw err
             }
+
         },
-        logout({ commit }) {
-
-            userService.logout()
-            commit({ type: 'setUser', user: null })
-            sessionStorage.removeItem('user')
-
+        async logout({ commit }) {
+            try {
+                await userService.logout()
+                commit({ type: 'setLoggedinUser', user: null })
+            } catch (err) {
+                console.log('userStore: Error in logout', err)
+                throw err
+            }
         },
     }
 }

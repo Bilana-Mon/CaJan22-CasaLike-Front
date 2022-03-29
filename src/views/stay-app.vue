@@ -1,10 +1,10 @@
 <template>
-  <div class="section-row">
+  <div class="section-row" >
     <div class="section-col stay-col">
     <section class="stay-app">
     <!-- <p>{{stays}}</p> -->
 
-    <stay-list :stays="stays" />
+    <stay-list v-if="stays" :stays="stays"  />
   </section>
   </div>
   </div>
@@ -19,8 +19,8 @@ export default {
   },
   computed: {
     stays() {
-      console.log(this.$store.getters.staysToShow.stays)
-      return this.$store.getters.staysToShow.stays
+      console.log(this.$store.getters.stays)
+      return this.$store.getters.stays
     }
   },
 }

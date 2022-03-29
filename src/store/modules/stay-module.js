@@ -19,6 +19,7 @@ export default {
     },
     getters: {
         stays({ stays }) {
+            console.log(stays);
             return stays
         },
         staysToShow({ stays }) {
@@ -41,7 +42,8 @@ export default {
     actions: {
         async loadStays({ commit, state }) {
             try {
-                let stays = await stayService.query()
+                let stays = await stayService.query(state.filterBy)
+                console.log(stays)
                 commit({ type: 'setStays', stays })
             } catch (err) {
                 console.log('error', err);

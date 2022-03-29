@@ -4,7 +4,7 @@
       <template #header>
         <el-carousel :autoplay="false" arrow="hover" trigger="click">
           <el-carousel-item v-for="item in stay.imgUrls" :key="item">
-            <img class="stay-img-gallery" :src="`src/assets/imgs/stays/${item}`" />
+            <img class="stay-img-gallery" :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648473465/casaLike/stays/${item}.jpeg`" />
           </el-carousel-item>
         </el-carousel>
       </template>

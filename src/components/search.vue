@@ -39,6 +39,7 @@
                     <div class="date-from-picker-container">
                         <div class="search-heading date-picker-heading">
                             <span class="check-in">Check in</span>
+                            <div class="vsep date-vsep"></div>
                             <span class="check-out">Check out</span>
                         </div>
                         <el-date-picker

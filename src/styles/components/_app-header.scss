@@ -5,6 +5,9 @@
     background-color: #000;
     width: 100%;
 }
+.app-header.scrolled + *{
+    margin-top: 166px;
+}
 .main-nav{
     position: relative;
     margin-top: 15px;
@@ -103,40 +106,39 @@
     width: auto;
     padding-right: 6px;
 }
-.login-options{
-    background-color: #fff;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    width: 250px;
-    // padding: 8px 0;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 2px 13px -4px rgba(0,0,0,0.6); 
-    box-shadow: 0px 2px 13px -4px rgba(0,0,0,0.6);
-    font-family: 'Airbnb-Light';
-    font-size: 0.9rem;
-    display: none;
-}
-.nav-right .login-options{
-  display: block;
-}
-.login-btn{
-    width: 100%;
-    height: 40px;
-    padding: 0 15px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.login-btn:first-child{
-    margin-top: 8px;
-}
-.login-btn:last-child{
-    margin-bottom: 8px;
-}
-.login-btn:hover{
-    background-color: #e7e7e7;
-}
+// .login-options{
+//     background-color: #fff;
+//     position: absolute;
+//     top: 50px;
+//     right: 0;
+//     width: 250px;
+//     border-radius: 10px;
+//     -webkit-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.07);
+//     box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.07);
+//     font-family: 'Airbnb-Light';
+//     font-size: 0.9rem;
+//     display: none;
+// }
+// .nav-right .login-options{
+//   display: block;
+// }
+// .login-btn{
+//     width: 100%;
+//     height: 40px;
+//     padding: 0 15px;
+//     display: flex;
+//     align-items: center;
+//     cursor: pointer;
+// }
+// .login-btn:first-child{
+//     margin-top: 8px;
+// }
+// .login-btn:last-child{
+//     margin-bottom: 8px;
+// }
+// .login-btn:hover{
+//     background-color: #e7e7e7;
+// }
 
 @media (max-width: 900px){
     .vsep{
@@ -146,5 +148,9 @@
 @media (max-width: 800px){
     .nav-right > a{
         padding: 12px 9px;
+    }
+    .app-header.scrolled + *{
+        // margin-top: 359px;
+        margin-top: 200px;
     }
 }

@@ -28,9 +28,9 @@
         <div class="stay-images">
           <img v-for="i in stay.imgUrls" :key="i" :src="`src/assets/imgs/stays/${i}`" />
         </div>
-        <div>
-          <reserve :stay="stay"></reserve>
-        </div>
+        <!-- <div> -->
+          <!-- <reserve :stay="stay"></reserve> -->
+        <!-- </div> -->
         <div class="stay-desc-container">
           <div class="stay-type-container">
             <h2 class="stay-details h2">

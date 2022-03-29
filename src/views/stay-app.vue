@@ -19,6 +19,7 @@ export default {
   },
   computed: {
     stays() {
+      console.log(this.$store.getters.staysToShow.stays)
       return this.$store.getters.staysToShow.stays
     }
   },

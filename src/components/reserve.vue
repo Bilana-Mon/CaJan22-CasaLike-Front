@@ -155,10 +155,12 @@ export default {
         this.filterBy.countOfGuests.children = this.$store.getters.filter.countOfGuests.children
         this.filterBy.countOfGuests.infants = this.$store.getters.filter.countOfGuests.infants
         this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets
+        this.filterBy.location = this.$store.getters.filter.location
     },
     data() {
         return {
             filterBy: {
+                location: '',
                 dates: {
                     end: 'Add dates',
                     start: 'Add dates',
@@ -216,6 +218,8 @@ export default {
 
             if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
                 this.msg = 'Your reservation was successful'
+                let order = {...this.filterBy}
+                this.$store.dispatch({ type: 'saveOrder', order })
                 this.$router.push('/order/' + this.stay._id)
             } else {
                 this.msg = 'Missing reservation details!'

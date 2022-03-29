@@ -78,10 +78,10 @@ export default {
         goHome() {
             this.$router.push('/')
         },
-        // setFilter(filterBy) {
-        //     console.log(filterBy)
-        //     this.$store.dispatch({ type: 'setFilter', filterBy })
-        // },
+        setFilter(filterBy) {
+            console.log(filterBy)
+            this.$store.dispatch({ type: 'setFilter', filterBy })
+        },
         handleScroll (event) {
          // console.log(window.scrollY)
          if (window.scrollY > 5) this.isScrolled = true

@@ -26,7 +26,7 @@
           <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
         </p>
         <div class="stay-images">
-          <img v-for="i in stay.imgUrls" :key="i" :src="`src/assets/imgs/stays/${i}`" />
+          <img v-for="i in stay.imgUrls" :key="i" :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648473465/casaLike/stays/${i}`"/>
         </div>
         <div class="details-reserve-container">
         <div class="reserve-container">

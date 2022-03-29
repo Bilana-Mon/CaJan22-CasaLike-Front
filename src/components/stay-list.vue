@@ -18,13 +18,6 @@ export default {
     components: {
         stayPreview
     },
-    created() { },
-    data() {
-        return {}
-    },
-    methods: {},
-    computed: {},
-    unmounted() { },
 }
 </script>
 <style>

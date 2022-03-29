@@ -4,22 +4,38 @@ img {
 
 .header-bg {
   position: absolute;
+  top: 0;
   background: black;
-  height: 255px;
+  // height: 255px;
+  // height: 400px;
+  height: 50%;
   width: 100%;
 }
-.header-bg.scrolled {
-  height: 255px + 166px;
+@media (max-width: 800px){
+  .header-bg{
+    height: 70%;
+  }
 }
-.header-bg.scrolled + .homepage.layout {
-  margin-top: 166px;
-}
+// .header-bg.scrolled {
+//   height: 255px + 166px;
+// }
+// .header-bg.scrolled + .homepage.layout {
+//   margin-top: 166px;
+// }
 .destination-img {
-  width: 300px;
+  min-width: 300px;
+  width: 100%;
   height: 300px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
 }
 
+.destination-row{
+  margin-bottom: 2rem;
+}
+.destination-row:last-child{
+  margin-bottom: 8rem;
+}
 .destination-cards-container {
   position: relative;
   width: 100vw;
@@ -34,7 +50,9 @@ img {
   width: 100%;
   overflow: scroll;
   position: absolute;
-  padding-bottom: 10px;
+  padding-bottom: 2rem;
+  padding-left: 1%;
+  padding-right: 1%;
   background:white;
   text-align: center;
 }
@@ -51,12 +69,20 @@ img {
 
 .destination-card {
   border-radius: 10px;
+  -webkit-box-shadow: 2px 4px 15px 0px rgb(0 0 0 / 18%);
+  box-shadow: 2px 4px 15px 0px rgb(0 0 0 / 18%);
 }
-.destination-card p {
+.destination-card h2{
   font-size: 1.4rem;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family: "Airbnb-Light";
+  font-family: 'CircularStd-Book';
+  text-align: left;
+  font-weight: normal;
+}
+.destination-card p{
+  text-align: left;
+
 }
 
 .homepage-img {
@@ -89,12 +115,13 @@ img {
 .jingle2 {
   font-family: "CircularStd-Medium";
   font-size: 2.2rem;
-  text-align: center;
+  text-align: left;
   color: #fff;
   position: absolute;
-  top: 2%;
-  width: 98%;
-  right: 25%;
+  top: 5%;
+  left: 5%;
+  width: 80%;
+  max-width: 460px;
 }
 
 .become-btn {
@@ -110,7 +137,8 @@ img {
   padding-left: 18px;
   border-radius: 8px;
   border: none;
-  top: 79%;
+  // top: 79%;
+  bottom: 10%;
   left: 5%;
 }
 
@@ -164,6 +192,10 @@ img {
   box-shadow: none !important;
   border: none;
 }
+.el-input__inner {
+  position: relative;
+  -webkit-appearance: none;
+
 .el-date-editor {
   --el-date-editor-width: 220px;
   --el-date-editor-monthrange-width: 300px;
@@ -214,11 +246,6 @@ img {
 .card-text {
   grid-area: text;
 }
-.card-desc{
-  margin-top: -5%;
-  font-family: 'CircularStd-Light';
-  letter-spacing: -0.5px;
-}
 .card-image {
   grid-area: image;
   background: url("@/assets/imgs/homepage/hawaii.jpg");
@@ -258,6 +285,10 @@ img {
   border-right: 1px solid rgb(14, 122, 50);
 
 }
+img {
+  float: left;
+  display: none;
+}
 
 @media (max-width: 620px) {
   .jingle {
@@ -271,11 +302,12 @@ img {
   .jingle {
     top: 27%;
   }
-  .jingle2 {
-    top: 27%;
-  }
+  // .jingle2 {
+  //   // top: 27%;
+  // }
   .destination-cards-container {
-    width: 100%;
+    width: 101%;
+    margin-left: -1%;
   }
   .destination-cards {
     overflow-y: hidden;
@@ -287,4 +319,5 @@ img {
     justify-content: space-between;
     display: flex;
   }
+}
 }

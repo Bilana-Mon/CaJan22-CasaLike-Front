@@ -4,13 +4,25 @@
     cursor: pointer;
     position: inherit;
     background-color: #fff;
-    width: 95%;
+    width: 100%;
     max-width: 960px;
     height: 66px;
-    margin-top: 10px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     border-radius: 100px;
     z-index: 80;
+}
+@media (max-width: 1040px) {
+  // .search-scroll-bg.expanded + .search-scroll + .search-bar {
+    .search-bar{
+    max-width: calc(min(1600px, 100%) - 80px);
+  }
+}
+@media (max-width: 800px) {
+  // .search-scroll-bg.expanded + .search-scroll + .search-bar {
+  .search-bar{
+    max-width: calc(min(1600px, 100%) - 40px);
+  }
 }
 
 .main-nav.scrolled + .search-scroll-bg + .search-scroll + .search-bar{
@@ -46,16 +58,16 @@
 
 .date-picker-heading {
     display: flex;
-    justify-content: space-between;
-    padding-top:15px;
+    // justify-content: space-between;
+    // padding-top:15px;
     align-items: center;
 }
 
 .date-from-container{
-    width: 50%;
+    width: 48%;
 }
 .guests-container{
-    width: 25%;
+    width: 27%;
     justify-content: space-between;
 }
 /*svg {
@@ -125,12 +137,13 @@
 }
 
 .search-element{
+    position: relative;
     height: 100%;
     /*width: 250px;*/
     display: flex;
     align-items: center;
     border-radius: 100px;
-    padding: 0 40px;
+    padding: 0 30px;
 }
 .search-element.location-container label{
     overflow: hidden;
@@ -141,6 +154,11 @@
 .vsep{
     height: 45%;
     border-right: 1px solid #ddd;
+}
+.date-vsep{
+    position: absolute;
+    left: 50%;
+    top: 27%;
 }
 .guests-container{
     padding-right: 10px;
@@ -204,10 +222,12 @@
     list-style: none;
     padding: 30px;
     margin-top: 1.85rem;
-    margin-left: -12.966rem;
+    // margin-left: -12.966rem;
+    right: 0;
     position: absolute;
     background-color: #ffffff;
     min-width: 230px;
+    max-width: 80vw;
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 1;
@@ -336,33 +356,64 @@
     color: rgb(113, 113, 113) !important;
 }
 
-.el-date-editor .el-range-separator {
-    flex: 1;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0 0px;
-    margin: 0;
-    font-size: 33px;
-    word-break: keep-all;
-    color: #dddddd;
+.date-picker-heading span, .el-range-input{
+    width: 50%!important;
 }
-.el-date-editor .el-range-input {
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    outline: 0;
-    display: inline-block;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 39%;
-    text-align: center;
-    font-size: 14px;
-    font-family: 'CircularStd-Light';
-    color: #717171;
+.el-date-editor, .el-date-editor *{
+    margin: 0!important;
+    padding: 0!important;
+    background: transparent!important;
 }
+.el-date-editor{
+    width: 100%!important;
+    height: 18px!important;
+}
+.el-range-editor.el-input__inner{
+    margin: 0!important;
+    // background: transparent;
+}
+.el-date-editor .el-range-input{
+    text-align: left!important;
+}
+.el-date-editor .el-range-input::placeholder{
+    font-family: 'CircularStd-Light'!important;
+    font-size: 14px!important;
+    color: #717171!important;
+}
+.el-range-separator, .el-date-editor .el-range__close-icon{
+    display: none!important;
+}
+.date-picker-heading .check-out, .el-range-input:nth-child(4){
+    padding-left: 40px!important;
+}
+// .el-date-editor .el-range-separator {
+//     flex: 1;
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100%;
+//     padding: 0 0px;
+//     margin: 0;
+//     font-size: 33px;
+//     word-break: keep-all;
+//     color: #dddddd;
+// }
+// .el-date-editor .el-range-input {
+//     background: transparent;
+//     -webkit-appearance: none;
+//     appearance: none;
+//     border: none;
+//     outline: 0;
+//     display: inline-block;
+//     height: 100%;
+//     margin: 0;
+//     padding: 0;
+//     width: 39%;
+//     text-align: center;
+//     font-size: 14px;
+//     font-family: 'CircularStd-Light';
+//     color: #717171;
+// }
 @media (max-width: 990px){
     .search-scroll{
         top: 18px + 57px;

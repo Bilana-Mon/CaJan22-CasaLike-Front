@@ -1,8 +1,5 @@
 <template>
-    <section
-        v-if="stay"
-        class="reserve-card"
-    >
+    <section v-if="stay" class="reserve-card">
         <div class="card-info">
             <div class="card-price">{{ getFormattedPrice }}</div>
             <div class="night">/ night</div>
@@ -27,21 +24,21 @@
             <a href="#" class="card-reviews">{{ stay.numOfReviews }} reviews</a>
         </div>
         <div class="input-container">
-            <div class="input-container-checks" @click="isDateShown=!isDateShown">
-                <div class="card-check-in" >CHECK-IN</div>
+            <div class="input-container-checks" @click="isDateShown = !isDateShown">
+                <div class="card-check-in">CHECK-IN</div>
                 <div class="card-check-out">CHECKOUT</div>
             </div>
             <div v-if="isDateShown">
-            <el-date-picker
-                v-model="filterBy.dates"
-                type="daterange"
-                range-separator
-                :start-placeholder="`${filterBy.dates.start}`"
-                :end-placeholder="`${filterBy.dates.end}`"
-                format="M/D/YYYY"
-                clearable
-                visible
-            />
+                <el-date-picker
+                    v-model="filterBy.dates"
+                    type="daterange"
+                    range-separator
+                    :start-placeholder="`${filterBy.dates.start}`"
+                    :end-placeholder="`${filterBy.dates.end}`"
+                    format="M/D/YYYY"
+                    clearable
+                    visible
+                />
             </div>
             <div class="container" @click="toggleSelect">
                 <input type="checkbox" class="select-checkbox" />
@@ -176,91 +173,92 @@ export default {
             isReserved: false,
             selectOpen: false,
             msg: '',
-        
-             isFixed: false,
+
+            isFixed: false,
             isAbsoluteUp: false,
             isAbsoluteDown: false,
             isDateShown: false
         }
-        },
-            methods: {
-            updateCount(age, diff) {
-                switch (age) {
-                    case 'adults':
-                        this.filterBy.countOfGuests.adults += diff;
-                        break;
-                    case 'children':
-                        this.filterBy.countOfGuests.children += diff;
-                        break;
-                    case 'infants':
-                        this.filterBy.countOfGuests.infants += diff;
-                        break;
-                    case 'pets':
-                        this.filterBy.countOfGuests.pets += diff;
-                }
-            },
-            
-            changeColor(e) {
-                let btn = document.querySelector('.mouse-cursor-gradient-tracking');
-                btn.addEventListener('mousemove', e => {
-                    let rect = e.target.getBoundingClientRect();
-                    let x = e.clientX - rect.left;
-                    let y = e.clientY - rect.top;
-                    btn.style.setProperty('--x', x + 'px');
-                    btn.style.setProperty('--y', y + 'px');
-                });
-            },
-            toggleSelect() {
-                this.selectOpen = !this.selectOpen
-            },
-            sendMsg() {
-                let adults = this.filterBy.countOfGuests.adults
-                this.isReserved = true;
-
-                if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
-                    this.msg = 'Your reservation was successful'
-                } else {
-                    this.msg = 'Missing reservation details!'
-                }
-            },
-        },
-        computed: {
-            getFormattedPrice() {
-                return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.stay.price)
-            },
-            getFormattedRate() {
-                let rate = +(this.stay.reviewScores.rating) / 20
-                return rate
-            },
-            getFormattedStart() {
-                let startDate = this.filterBy.dates.start
-                if (startDate === 'Add dates') return 'Add dates'
-                // console.log(startDate)
-                const date1 = startDate.getDate()
-                console.log(date1)
-                const date2 = startDate.getMonth() + 1;
-                console.log(date2)
-                const date3 = startDate.getFullYear();
-                console.log(date3)
-                const fullDate = date2 + "/" + date1 + "/" + date3
-                return fullDate
-
-            },
-            getFormattedEnd() {
-                let endDate = this.filterBy.dates.end
-                if (endDate === 'Add dates') return 'Add dates'
-                // console.log(startDate)
-                const date1 = endDate.getDate()
-                console.log(date1)
-                const date2 = endDate.getMonth() + 1;
-                console.log(date2)
-                const date3 = endDate.getFullYear();
-                console.log(date3)
-                const fullDate = date2 + "/" + date1 + "/" + date3
-                return fullDate
+    },
+    methods: {
+        updateCount(age, diff) {
+            switch (age) {
+                case 'adults':
+                    this.filterBy.countOfGuests.adults += diff;
+                    break;
+                case 'children':
+                    this.filterBy.countOfGuests.children += diff;
+                    break;
+                case 'infants':
+                    this.filterBy.countOfGuests.infants += diff;
+                    break;
+                case 'pets':
+                    this.filterBy.countOfGuests.pets += diff;
             }
         },
-    }
+
+        changeColor(e) {
+            let btn = document.querySelector('.mouse-cursor-gradient-tracking');
+            btn.addEventListener('mousemove', e => {
+                let rect = e.target.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+                btn.style.setProperty('--x', x + 'px');
+                btn.style.setProperty('--y', y + 'px');
+            });
+        },
+        toggleSelect() {
+            this.selectOpen = !this.selectOpen
+        },
+        sendMsg() {
+            let adults = this.filterBy.countOfGuests.adults
+            this.isReserved = true;
+
+            if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
+                this.msg = 'Your reservation was successful'
+                this.$router.push('/order')
+            } else {
+                this.msg = 'Missing reservation details!'
+            }
+        },
+    },
+    computed: {
+        getFormattedPrice() {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.stay.price)
+        },
+        getFormattedRate() {
+            let rate = +(this.stay.reviewScores.rating) / 20
+            return rate
+        },
+        getFormattedStart() {
+            let startDate = this.filterBy.dates.start
+            if (startDate === 'Add dates') return 'Add dates'
+            // console.log(startDate)
+            const date1 = startDate.getDate()
+            console.log(date1)
+            const date2 = startDate.getMonth() + 1;
+            console.log(date2)
+            const date3 = startDate.getFullYear();
+            console.log(date3)
+            const fullDate = date2 + "/" + date1 + "/" + date3
+            return fullDate
+
+        },
+        getFormattedEnd() {
+            let endDate = this.filterBy.dates.end
+            if (endDate === 'Add dates') return 'Add dates'
+            // console.log(startDate)
+            const date1 = endDate.getDate()
+            console.log(date1)
+            const date2 = endDate.getMonth() + 1;
+            console.log(date2)
+            const date3 = endDate.getFullYear();
+            console.log(date3)
+            const fullDate = date2 + "/" + date1 + "/" + date3
+            return fullDate
+        }
+    },
+}
 </script>
 
 <style>

@@ -160,7 +160,7 @@ export default {
          this.order.capacity = {...this.$store.getters.filter.countOfGuests} 
          this.order.host = this.stay.host.fullname
          this.from = this.formatFrom
-         this.to = this.formatFrom
+         this.to = this.formatTo
 
         console.log(this.order)
 

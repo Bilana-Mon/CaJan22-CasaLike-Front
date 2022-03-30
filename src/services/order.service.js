@@ -38,12 +38,12 @@ function getEmptyOrder() {
         nameOfStay: '',
         location: '',
         dates: {
-            fromDate: new Date(),
-            toDate: new Date()
+            0: new Date(),
+            1: new Date()
         },
         capacity: [],
         price: null,
-        user: 'User',
+        user: 'Bilana Boneshtein',
         host: '',
         fees: ''
     })

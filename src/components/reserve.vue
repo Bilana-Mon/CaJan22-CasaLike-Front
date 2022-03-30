@@ -157,11 +157,11 @@ export default {
         this.order.nameOfStay = this.stay.name
         this.order.fees = this.getTotalFees
         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
-            this.order.dates.fromDate = this.$store.getters.filter.dates['0']
-            this.order.dates.toDate = this.$store.getters.filter.dates['1']
+            this.order.dates['0'] = this.$store.getters.filter.dates['0']
+            this.order.dates['1'] = this.$store.getters.filter.dates['1']
         } else {
-            this.order.dates.fromDate = 'Add dates'
-            this.order.dates.toDate = 'Add dates'
+            this.order.dates['0'] = 'Add dates'
+            this.order.dates['1'] = 'Add dates'
         }
         this.from = this.formatFrom
         this.to = this.formatTo
@@ -214,7 +214,7 @@ export default {
         },
         async checkOrder() {
             let adults = this.order.capacity.adults
-            if (adults >= 1 && this.order.dates.fromDate !== 'Add dates' && this.order.dates.toDate !== 'Add dates') {
+            if (adults >= 1 && this.order.dates['0'] !== 'Add dates' && this.order.dates['1'] !== 'Add dates') {
                 let order = { ...this.order }
 
                 await this.$store.dispatch({ type: 'saveOrder', order })
@@ -237,7 +237,7 @@ export default {
         },
 
         formatFrom() {
-            let startDate = this.order.dates.fromDate
+            let startDate = this.order.dates['0']
             if (startDate === 'Add dates') return 'Add dates'
             const date1 = startDate.getDate()
             const date2 = startDate.getMonth() + 1;
@@ -246,7 +246,7 @@ export default {
             return fullDate
         },
         formatTo() {
-            let endDate = this.order.dates.toDate
+            let endDate = this.order.dates['1']
             if (endDate === 'Add dates') return 'Add dates'
             const date1 = endDate.getDate()
             const date2 = endDate.getMonth() + 1;

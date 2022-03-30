@@ -13,22 +13,38 @@
                     <span>{{ order.host }}</span>
                 </div>
                 <hr class="hr" />
+                <span>From:</span>
+                <span>{{ order.dates['0'] }}</span>
+                <span>To:</span>
+                <span>{{ order.dates['1'] }}</span>
+                <hr class="hr" />
                 <div class="guests-order-details">
                     <span>Number of guests:</span>
                     <span>Adults:</span>
                     <span>{{ order.capacity.adults }}</span>
-                    <span v-if="order.capacity.children">Children:</span>
-                    <span>{{ order.capacity.children }}</span>
-                    <span v-if="order.capacity.infants">Infants:</span>
-                    <span>{{ order.capacity.infants }}</span>
-                    <span v-if="order.capacity.pets">Pets:</span>
-                    <span>{{ order.capacity.pets }}</span>
+                    <span v-if="order.capacity.children">
+                        Children:
+                        <span>{{ order.capacity.children }}</span>
+                    </span>
+                    <span v-if="order.capacity.infants">
+                        Infants:
+                        <span>{{ order.capacity.infants }}</span>
+                    </span>
+                    <span v-if="order.capacity.pets">
+                        Pets:
+                        <span>{{ order.capacity.pets }}</span>
+                    </span>
                 </div>
                 <hr class="hr" />
                 <div class="pricing-for-order">
                     <span>Price per night:</span>
-                    <span>{{ getFormattedPrice(this.order.price) }}</span>
-                    <span>nights num</span>
+                    <span>{{ getFormattedPrice(this.order.price) }} / night</span>
+                    <span>
+                        {{ getFormattedPrice(this.order.price) }}
+                        <span>X</span>
+                        <span>{{ getNumOfNights }} nights</span>
+                    </span>
+
                     <span>Fees:</span>
                     <span>{{ getFormattedPrice(this.order.fees) }}</span>
                     <hr class="hr" />
@@ -64,9 +80,30 @@ export default {
         getFormattedPrice(price) {
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(+price)
         },
+        getFormattedDate(date) {
+            let monthNames = [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"
+            ]
+            let monthNum = new Date(date).getMonth()
+            let monthName = monthNames[monthNum - 1]
+            let yearNum = new Date(date).getFullYear()
+            console.log(yearNum)
+            let formattedDate = monthName + ' ' + yearNum
+            return formattedDate
+        },
     },
     computed: {
-
+        getNumOfNights() {
+            let startDate = this.order.dates['0'].getTime()
+            let endDate = this.order.dates['1'].getTime()
+            let diffInTime = endDate - startDate;
+            let diffInDays = diffInTime / (1000 * 3600 * 24)
+            console.log(diffInDays);
+            return diffInDays
+        }
         // getTotalFees() {
         //     let cleanFees = this.stay.cleaningFee
         //     if (!cleanFees) {
@@ -93,17 +130,18 @@ export default {
 <style>
 .order-details-container {
     height: 80vh;
+    margin-bottom: 2rem;
 }
 
 .order-details-success {
     display: flex;
     flex-direction: column;
     text-align: left;
-    width: 30rem;
+    width: 44rem;
     border: 1px solid black;
     border-radius: 20px;
-    margin: 0 auto;
-    margin-top: 5rem;
+    margin: auto;
+    margin-top: 2rem;
     padding: 2rem;
 }
 .order-details-desc {

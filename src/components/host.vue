@@ -7,6 +7,7 @@
             <div class="host-header-text">
                 <h2>Hosted by {{ stay.host.fullname }}</h2>
             </div>
+        <div class="host-info-container">
             <div class="host-icon">
                 <svg
                     viewBox="0 0 32 32"
@@ -20,6 +21,7 @@
                         d="M16 .798l.555.37C20.398 3.73 24.208 5 28 5h1v12.5C29 25.574 23.21 31 16 31S3 25.574 3 17.5V5h1c3.792 0 7.602-1.27 11.445-3.832L16 .798zm7 9.08l-9.5 9.501-4.5-4.5L6.879 17l6.621 6.621L25.121 12 23 9.879z"
                     />
                 </svg>
+        </div>
             </div>
             <div class="about-host-container">
                 <div class="host-second-header">Identity verified</div>
@@ -31,6 +33,7 @@
                 <div class="show-button2">
                     <a href="#">Contact host</a>
                 </div>
+            <div class="protect">
                 <div class="icon-protect">
                     <svg
                         viewBox="0 0 24 24"
@@ -52,6 +55,7 @@
                     class="text-protect"
                 >To protect your payment, never transfer money or communicate outside of the Airbnb website or app.</div>
             </div>
+        </div>
         </div>
     <!-- </div>
 </div> -->

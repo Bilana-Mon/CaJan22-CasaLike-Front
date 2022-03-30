@@ -197,8 +197,9 @@ export default {
     },
     methods: {
         setFilter() {
-            console.log(this.filterBy)
-            this.$emit('setFilter', { ...this.filterBy })
+           
+            let filterBy = {...this.filterBy}
+            this.$store.dispatch({ type: 'setFilter', filterBy })
             this.$router.push(`/stay?location=${this.filterBy.location}`)
             this.selectOpen = false;
         },

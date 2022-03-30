@@ -18,9 +18,9 @@ export const stayService = {
 }
 
 // add filter 
-async function query() {
-    console.log('lala');
-    return await httpService.get(`stay`)
+async function query(filterBy = {}) {
+    console.log(filterBy);
+    return await httpService.get(`stay`, filterBy)
 
     // console.log(8888888 ,filterBy);
     // let stays = await storageService.query(STAYS_KEY)

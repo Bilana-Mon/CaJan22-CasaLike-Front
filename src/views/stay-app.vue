@@ -18,7 +18,7 @@ export default {
     stayList
   },
    created() {
-    this.$store.dispatch({ type: 'loadStays' })
+    
   },
   computed: {
     stays() {

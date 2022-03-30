@@ -29,8 +29,8 @@ export default {
             commit({ type: 'setOrders', orders })
         },
         async saveOrder({ commit }, { order }) {
-            console.log('lala', order);
             await orderService.save(order)
+            console.log('lala', order);
             commit({ type: 'saveOrder', order })
         },
         async removeOrder({ commit }, { orderId }) {

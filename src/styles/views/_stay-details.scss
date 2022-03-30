@@ -61,9 +61,6 @@
   width: 100%;
   height: 100%;
 }
-.amenity-container {
-  align-items: left;
-}
 
 .clean-list {
   display: flex;
@@ -110,7 +107,6 @@
   font-family: "CircularStd-book" !important;
   margin-left: 0.5rem;
 }
-
 
 hr {
   width: 100%;
@@ -183,6 +179,10 @@ hr {
 }
 .show-more svg {
   margin-left: 6px;
+
+  .amenity-container {
+    align-items: left;
+  }
 }
 .amenities-preview-container {
   margin: 1rem 0;
@@ -192,6 +192,7 @@ hr {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 10px;
 }
 .amenity li {
   width: 100%;
@@ -310,7 +311,7 @@ hr {
 .details-reserve-container {
   display: flex;
   flex-direction: row-reverse;
-  gap:4.375rem;
+  gap: 4.375rem;
 }
 .stay-description-container {
   flex-direction: column;
@@ -353,5 +354,3 @@ hr {
     padding-right: 3rem;
   }
 }
-
-

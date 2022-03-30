@@ -74,7 +74,7 @@
                                     :disabled="order.capacity.children === 0"
                                     @click.stop="updateCount('children', -1)"
                                 >-</button>
-                                <span class="count-span">{{ order.capacity.children}}</span>
+                                <span class="count-span">{{ order.capacity.children }}</span>
                                 <button @click.stop="updateCount('children', 1)">+</button>
                             </div>
                         </li>
@@ -127,7 +127,7 @@
             </button>
         </div>
         <div v-if="isInValid">
-          <p>Missing reservation details!</p> 
+            <p>Missing reservation details!</p>
             <button class="msg-btn" @click="isInValid = !isInValid">Close</button>
         </div>
     </section>
@@ -135,7 +135,7 @@
 
 <script>
 
-import {orderService} from '../services/order.service.js'
+import { orderService } from '../services/order.service.js'
 
 
 export default {
@@ -149,18 +149,18 @@ export default {
         this.order = await orderService.getEmptyOrder()
         this.order.location = this.$store.getters.filter.location
         console.log(this.$store.getters.filter.location)
-         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
-             this.order.dates.fromDate = this.$store.getters.filter.dates['0']
-             this.order.dates.toDate = this.$store.getters.filter.dates['1']
-         } else {
-             this.order.dates.fromDate = 'Add dates'
-             this.order.dates.toDate = 'Add dates'
-         }
-         this.order.price = this.stay.price
-         this.order.capacity = {...this.$store.getters.filter.countOfGuests} 
-         this.order.host = this.stay.host.fullname
-         this.from = this.formatFrom
-         this.to = this.formatTo
+        if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
+            this.order.dates.fromDate = this.$store.getters.filter.dates['0']
+            this.order.dates.toDate = this.$store.getters.filter.dates['1']
+        } else {
+            this.order.dates.fromDate = 'Add dates'
+            this.order.dates.toDate = 'Add dates'
+        }
+        this.order.price = this.stay.price
+        this.order.capacity = { ...this.$store.getters.filter.countOfGuests }
+        this.order.host = this.stay.host.fullname
+        this.from = this.formatFrom
+        this.to = this.formatTo
 
         console.log(this.order)
 
@@ -177,7 +177,7 @@ export default {
             isAbsoluteDown: false,
             isDateShown: false,
             from: '',
-            to:'',
+            to: '',
         }
     },
     methods: {
@@ -185,16 +185,16 @@ export default {
             switch (age) {
                 case 'adults':
                     this.order.capacity.adults += diff;
-                     console.log(this.order)
+                    console.log(this.order)
                     break;
                 case 'children':
                     this.order.capacity.children += diff;
                     break;
                 case 'infants':
-                     this.order.capacity.infants += diff;
+                    this.order.capacity.infants += diff;
                     break;
                 case 'pets':
-                     this.order.capacity.pets += diff;
+                    this.order.capacity.pets += diff;
             }
         },
 
@@ -213,18 +213,15 @@ export default {
         },
         checkOrder() {
             let adults = this.order.capacity.adults
-            
-
             if (adults >= 1 && this.order.dates.fromDate !== 'Add dates' && this.order.dates.toDate !== 'Add dates') {
-                this.msg = 'Your reservation was successful'
-                let order = {...this.order}
+                let order = { ...this.order }
                 this.$store.dispatch({ type: 'saveOrder', order })
                 this.$router.push('/order/' + this.stay._id)
             } else {
                 this.isInValid = true;
             }
         },
-        
+
     },
     computed: {
         getFormattedPrice() {
@@ -234,26 +231,26 @@ export default {
             let rate = +(this.stay.reviewScores.rating) / 20
             return rate
         },
-        
+
         formatFrom() {
             let startDate = this.order.dates.fromDate
-             if (startDate === 'Add dates') return 'Add dates'
+            if (startDate === 'Add dates') return 'Add dates'
             const date1 = startDate.getDate()
             const date2 = startDate.getMonth() + 1;
             const date3 = startDate.getFullYear();
             const fullDate = date2 + "/" + date1 + "/" + date3
             return fullDate
         },
-           formatTo() {
+        formatTo() {
             let endDate = this.order.dates.toDate
-             if (endDate === 'Add dates') return 'Add dates'
-             const date1 = endDate.getDate()
+            if (endDate === 'Add dates') return 'Add dates'
+            const date1 = endDate.getDate()
             const date2 = endDate.getMonth() + 1;
             const date3 = endDate.getFullYear();
             const fullDate = date2 + "/" + date1 + "/" + date3
             return fullDate
         },
-        
+
     },
 }
 </script>

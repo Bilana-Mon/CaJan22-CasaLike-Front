@@ -1,5 +1,4 @@
 <template>
-  <section class="homepage layout">
     <li @click="goToStayDetalis" class="stay-preview-container">
       <custom-card>
         <template #header>
@@ -52,7 +51,6 @@
         </template>
       </custom-card>
     </li>
-  </section>
 </template>
 
 <script>

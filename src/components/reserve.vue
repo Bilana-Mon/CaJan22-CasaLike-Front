@@ -148,7 +148,7 @@ export default {
     async created() {
         this.order = await orderService.getEmptyOrder()
         this.order.location = this.$store.getters.filter.location
-        console.log(this.$store.getters.filter.location)
+       
         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
             this.order.dates.fromDate = this.$store.getters.filter.dates['0']
             this.order.dates.toDate = this.$store.getters.filter.dates['1']
@@ -160,10 +160,11 @@ export default {
         this.order.capacity = { ...this.$store.getters.filter.countOfGuests }
         this.order.host = this.stay.host.fullname
         this.order.location = this.stay.address.street
+
         this.from = this.formatFrom
         this.to = this.formatTo
 
-        console.log(this.order)
+      
 
     },
     data() {

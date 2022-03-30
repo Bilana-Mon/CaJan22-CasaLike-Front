@@ -20,6 +20,9 @@ h1 {
 .section-col, .main-nav.scrolled{
   max-width: calc(min(1760px, 100%) - 160px);
 }
+.section-col.stay-col, .stay-col .main-nav.scrolled{
+    max-width: calc(min(1280px, 100%) - 160px);
+}
 .section-col{
   width: 100%;
   display: flex;

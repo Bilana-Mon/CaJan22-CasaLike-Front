@@ -5,7 +5,8 @@
     position: inherit;
     background-color: #fff;
     width: 100%;
-    max-width: 960px;
+    // max-width: 960px;
+    max-width: 850px;
     height: 66px;
     margin-top: 20px;
     margin-bottom: 15px;
@@ -15,13 +16,13 @@
 @media (max-width: 1040px) {
   // .search-scroll-bg.expanded + .search-scroll + .search-bar {
     .search-bar{
-    max-width: calc(min(1600px, 100%) - 80px);
+    max-width: calc(min(1760px, 100%) - 80px);
   }
 }
 @media (max-width: 800px) {
   // .search-scroll-bg.expanded + .search-scroll + .search-bar {
   .search-bar{
-    max-width: calc(min(1600px, 100%) - 40px);
+    max-width: calc(min(1760px, 100%) - 40px);
   }
 }
 
@@ -169,6 +170,7 @@
 .search-heading{
     font-size: 12px;
     font-family: 'Airbnb-Medium';
+    letter-spacing: 0.04em;
 }
 .search-text{
     font-size: 14px;
@@ -220,19 +222,21 @@
     justify-content: space-between;
     text-align: left;
     list-style: none;
-    padding: 30px;
+    // padding: 30px;
+    padding: 16px 32px;
     margin-top: 1.85rem;
     // margin-left: -12.966rem;
     right: 0;
     position: absolute;
     background-color: #ffffff;
     min-width: 230px;
-    max-width: 80vw;
+    max-width: 75vw;
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 1;
     width: 24.625rem;
-    height: 29.9775rem;
+    // height: 29.9775rem;
+    min-height: 375px;
     border-radius: 2rem;
 }
 
@@ -252,7 +256,6 @@
 
 .option {
     padding: 16px 4px 16px 0px;
-
 }
 .search-bar-container .btn-list{
     display: flex;
@@ -262,14 +265,15 @@
 }
 
 .search-bar-container .count-span{
-    margin-right: 0.125rem;
-    margin-left: 0.125rem;
+    // margin-right: 0.125rem;
+    // margin-left: 0.125rem;
     text-align: center;
     font-family: 'CircularStd-Light';
-    margin: 0.6rem;
+    // margin: 0.6rem;
+    width: 2.2rem;
 }
 
-.search-bar-container .option:not(:last-child){
+.search-bar-container .option:not(:last-of-type){
     border-bottom:1px solid rgb(235, 235, 235) !important
 }
 
@@ -279,7 +283,7 @@
 
 .pets-service{
     font-size:14px;
-    font-family:'CircularStd-Book';
+    font-family:'Airbnb-Light';
 }
 
 .search-bar-container .btn-list button{
@@ -287,8 +291,8 @@
     margin-right: 0.125rem;
     border-radius: 50%;
     border: 1px solid;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
     background-color: #FFFFFF;
     color: #717171;
 }
@@ -309,10 +313,9 @@
 }
 
 .option-adults {
-    font-family: 'CircularStd-Book';
-    font-size: 1.1rem;
+    font-family: 'Airbnb-Light';
+    font-size: 1rem;
     letter-spacing: 0.5px;
-  
 }
 
 
@@ -356,6 +359,11 @@
     color: rgb(113, 113, 113) !important;
 }
 
+.option-title{
+    font-family: 'Airbnb-Light';
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
 .date-picker-heading span, .el-range-input{
     width: 50%!important;
 }

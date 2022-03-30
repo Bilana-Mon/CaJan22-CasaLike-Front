@@ -9,6 +9,7 @@ img {
   // height: 255px;
   // height: 400px;
   height: 50%;
+  max-height: 500px;
   width: 100%;
 }
 @media (max-width: 800px){
@@ -48,7 +49,7 @@ img {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas: "img" "text";
   width: 100%;
-  overflow: scroll;
+  // overflow: scroll;
   position: absolute;
   padding-bottom: 2rem;
   padding-left: 1%;
@@ -138,8 +139,8 @@ img {
   border-radius: 8px;
   border: none;
   // top: 79%;
-  bottom: 10%;
-  left: 5%;
+  bottom: 18%;
+  left: 74%;
 }
 
 .section-heading {
@@ -147,7 +148,7 @@ img {
   margin-top: 50px;
   margin-bottom: 1rem;
   font-size: 2rem;
-  font-family: "Airbnb-Medium";
+  font-family: "CircularStd-Medium";
   font-weight: 100;
 }
 
@@ -218,6 +219,27 @@ img {
   display: inline-block;
   text-align: left;
 }
+.el-date-table td.end-date .el-date-table-cell__text, .el-date-table td.start-date .el-date-table-cell__text {
+  background-color: #000000!important;
+}
+.el-date-table-cell__text span  {
+  background-color: #000000!important;
+}
+.el-date-table td.in-range .el-date-table-cell {
+  background-color: #f7f7f7;
+}
+.el-date-range-picker {
+  --el-datepicker-text-color: var(--el-text-color-regular);
+  --el-datepicker-off-text-color: var(--el-text-color-placeholder);
+  --el-datepicker-header-text-color: var(--el-text-color-regular);
+  --el-datepicker-icon-color: var(--el-text-color-primary);
+  --el-datepicker-border-color: var(--el-disabled-border-color);
+  --el-datepicker-inner-border-color: var(--el-border-color-light);
+  --el-datepicker-inrange-bg-color: var(--el-border-color-extra-light);
+  --el-datepicker-inrange-hover-bg-color: var(--el-border-color-extra-light);
+  --el-datepicker-active-color: #000000!important;
+  --el-datepicker-hover-text-color: #000000!important;
+}
 
 //EXOTIC CARDS
 .exotic-cards-container {
@@ -236,7 +258,7 @@ img {
   font-family: "CircularStd-Book";
   text-align: left;
   padding: 5px;
-  overflow: scroll;
+  // overflow: scroll;
   gap:20px
 }
 
@@ -297,11 +319,18 @@ img {
   .jingle2 {
     font-size: 2rem;
   }
+  .card{
+    overflow: scroll;
+  }
+  .destination-cards {
+    overflow: scroll;
+  }
 }
 @media (min-width: 1306px) {
   .jingle {
     top: 27%;
   }
+
   // .jingle2 {
   //   // top: 27%;
   // }

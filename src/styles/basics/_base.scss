@@ -18,7 +18,7 @@ h1 {
   font-family: airbnb-extrabold;
 }
 .section-col, .main-nav.scrolled{
-  max-width: calc(min(1600px, 100%) - 160px);
+  max-width: calc(min(1760px, 100%) - 160px);
 }
 .section-col{
   width: 100%;
@@ -33,12 +33,12 @@ h1 {
 }
 @media (max-width: 1040px) {
   .section-col, .main-nav.scrolled {
-    max-width: calc(min(1600px, 100%) - 80px);
+    max-width: calc(min(1760px, 100%) - 80px);
   }
 }
 @media (max-width: 800px) {
   .section-col, .main-nav.scrolled {
-    max-width: calc(min(1600px, 100%) - 40px);
+    max-width: calc(min(1760px, 100%) - 40px);
   }
   .brand-name {
     display: none;

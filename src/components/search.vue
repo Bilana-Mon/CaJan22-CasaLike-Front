@@ -67,8 +67,8 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="First">
-                                               <div class="option-adults"> Adults </div> 
-                                                <br /> <div class="option-age">Age 13 or above</div>
+                                                <div class="option-adults option-title">Adults</div>
+                                                <div class="option-age">Age 13 or above</div>
                                             </a>
                                         </div>
                                         <div class="btn-list">
@@ -85,8 +85,8 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="Second">
-                                               <div class="option-child"> Children</div> 
-                                                <br /> <div class="option-age2">Ages 2–12</div>
+                                               <div class="option-child option-title"> Children</div>
+                                                <div class="option-age2">Ages 2–12</div>
                                             </a>
                                         </div>
                                         <div class="btn-list">
@@ -105,8 +105,8 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="Third">
-                                                <div class="option-infants"> Infants </div>
-                                                <br /> <div class="option-age3">Under 2</div>
+                                                <div class="option-infants option-title"> Infants </div>
+                                                <div class="option-age3">Under 2</div>
                                             </a>
                                         </div>
                                         <div class="btn-list">
@@ -122,14 +122,9 @@
                                     </li>
                                     <li class="option">
                                         <div class="options-list">
-                                            <a class="option-pets" href="#" title="fourth">
-                                                Pets
-                                                <br />
-                                                <a
-                                                    class="pets-service"
-                                                    href="#"
-                                                >Bringing a service animal?</a>
-                                            </a>
+                                            <div class="option-pets option-title" title="fourth">
+                                                Pets</div>
+                                                <a class="pets-service" href="#">Bringing a service animal?</a>
                                         </div>
                                         <div class="btn-list">
                                             <button

@@ -159,6 +159,7 @@ export default {
         this.order.price = this.stay.price
         this.order.capacity = { ...this.$store.getters.filter.countOfGuests }
         this.order.host = this.stay.host.fullname
+        this.order.location = this.stay.address.street
         this.from = this.formatFrom
         this.to = this.formatTo
 

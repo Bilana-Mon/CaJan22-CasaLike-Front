@@ -145,7 +145,7 @@
                             <div class="icons-amen">Iron</div>
                         </li>
                     </ul>
-                    <div>
+                    <div class="show-button">
                         <a href="#">Show all {{ stay.amenities.length }} amenities</a>
                     </div>
                 </div>

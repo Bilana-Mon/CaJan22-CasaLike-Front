@@ -123,7 +123,7 @@
                 @mousemove="changeColor"
                 @click="checkOrder"
             >
-                <span class="text-reserve">Check availability</span>
+                <span class="text-reserve">Reserve</span>
             </button>
         </div>
         <div v-if="isInValid">

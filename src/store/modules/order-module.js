@@ -19,6 +19,7 @@ export default {
         },
         saveOrder(state, { order }) {
             state.currOrder = order;
+            console.log(state.currOrder);
             // const idx = state.orders.findIndex((currOrder) => currOrder._id === order._id)
             // if (idx !== -1) state.orders.splice(idx, 1, order)
             // else state.orders.push(order)

@@ -148,7 +148,14 @@ export default {
     async created() {
         this.order = await orderService.getEmptyOrder()
         this.order.location = this.$store.getters.filter.location
-       
+        if (!this.$store.getters.filter.location) {
+            this.order.location = this.stay.address.street
+        }
+        this.order.capacity = { ...this.$store.getters.filter.countOfGuests }
+        this.order.price = this.stay.price
+        this.order.host = this.stay.host.fullname
+        this.order.nameOfStay = this.stay.name
+        this.order.fees = this.getTotalFees
         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
             this.order.dates.fromDate = this.$store.getters.filter.dates['0']
             this.order.dates.toDate = this.$store.getters.filter.dates['1']
@@ -156,16 +163,8 @@ export default {
             this.order.dates.fromDate = 'Add dates'
             this.order.dates.toDate = 'Add dates'
         }
-        this.order.price = this.stay.price
-        this.order.capacity = { ...this.$store.getters.filter.countOfGuests }
-        this.order.host = this.stay.host.fullname
-        this.order.location = this.stay.address.street
-
         this.from = this.formatFrom
         this.to = this.formatTo
-
-      
-
     },
     data() {
         return {
@@ -213,12 +212,15 @@ export default {
         toggleSelect() {
             this.selectOpen = !this.selectOpen
         },
-        checkOrder() {
+        async checkOrder() {
             let adults = this.order.capacity.adults
             if (adults >= 1 && this.order.dates.fromDate !== 'Add dates' && this.order.dates.toDate !== 'Add dates') {
                 let order = { ...this.order }
-                this.$store.dispatch({ type: 'saveOrder', order })
-                this.$router.push('/order/' + this.stay._id)
+
+                await this.$store.dispatch({ type: 'saveOrder', order })
+                console.log(this.$store.getters.order);
+                // TODO: fix update of dates in reserve
+                this.$router.push('/order')
             } else {
                 this.isInValid = true;
             }
@@ -252,6 +254,24 @@ export default {
             const fullDate = date2 + "/" + date1 + "/" + date3
             return fullDate
         },
+        getTotalFees() {
+            let cleanFees = this.stay.cleaningFee
+            if (!cleanFees) {
+                cleanFees = 0;
+            }
+            let securityFees = this.stay.securityDeposit
+            if (!securityFees) {
+                securityFees = 0;
+            }
+            let extraPeopleFees = this.stay.extraPeople
+            if (!extraPeopleFees) {
+                extraPeopleFees = 0;
+            }
+            let totalFees = extraPeopleFees + securityFees + cleanFees;
+            console.log(totalFees);
+            // return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalFees)
+            return totalFees
+        }
 
     },
 }

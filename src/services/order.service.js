@@ -29,11 +29,13 @@ async function getById(orderId) {
 // }
 
 async function save(order) {
+    console.log('orderFront', order);
     return await httpService.post(`order`, order)
 }
 
 function getEmptyOrder() {
     return Promise.resolve({
+        nameOfStay: '',
         location: '',
         dates: {
             fromDate: new Date(),
@@ -43,6 +45,7 @@ function getEmptyOrder() {
         price: null,
         user: 'User',
         host: '',
+        fees: ''
     })
 }
 

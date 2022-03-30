@@ -135,6 +135,8 @@
 
 <script>
 
+<script>
+
 import { orderService } from '../services/order.service.js'
 
 

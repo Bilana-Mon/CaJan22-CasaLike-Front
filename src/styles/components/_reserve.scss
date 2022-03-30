@@ -4,7 +4,7 @@
   padding: 24px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
   width: 24.25rem;
-  height: 22.25rem;
+  // height: 22.25rem;
   background-color: white;
   z-index: 5;
   position: sticky;
@@ -26,21 +26,44 @@
 .input-container-checks {
   display: flex;
   margin: 15px;
-  padding-bottom: 10px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 320px;
   font-size: 12px;
   font-family: airbnb-medium;
   border: 1px solid lightgrey;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
+  height: 64px;
 }
-.card-check-in {
-  padding: 26px 15px 10px;
+.reserve-card .container {
+  width: 20rem;
+  height: 64px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: solid 1px lightgrey;
+  border-top: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.card-check-out {
-  padding: 26px 12px 10px;
+  
+.card-check-in, .card-check-out, .reserve-card .select-checkbox{
+  font-family: 'CircularStd-Book';
+  font-size: .8rem;
+  font-weight: normal;
+}
+.card-check-in, .card-check-out{
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-check-in{
+  border-right: 1px solid lightgrey;
 }
 
 .card-info {
@@ -145,14 +168,6 @@
   height: 3.5rem;
 }
 
-.reserve-card .container {
-  width: 20rem;
-  height: 3.5rem;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: solid 1px #222222;
-}
-
 .reserve-card .date {
   width: 20rem;
 }
@@ -162,9 +177,15 @@
   position: relative;
 }
 
-.reserve-card .select-label:before {
+.reserve-card .select-label{
+  position: relative;
+  text-transform: uppercase;
+  color: black;
+}
+.reserve-card .select-label:after {
   content: "\25BE";
-  float: right;
+  position: relative;
+  margin-left: 0.5em;
 }
 .reserve-card .select-wrap {
   background: rgb(255, 255, 255);

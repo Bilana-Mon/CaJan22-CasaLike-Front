@@ -17,6 +17,9 @@ img {
 h1 {
   font-family: airbnb-extrabold;
 }
+
+//USE THIS CLASSES TO GIVE YOUR PAGE A PROPER LAYOUT AS IT IS ON ALL OF THE PAGES
+
 .section-col, .main-nav.scrolled{
   max-width: calc(min(1760px, 100%) - 160px);
 }

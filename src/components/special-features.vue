@@ -125,10 +125,8 @@ export default {
     },
     methods: {
         getAmenities() {
-            let amenities = this.stay.amenities
-            console.log(amenities);
+            let amenities = this.stay.amenities 
             let wifiAmenity = amenities.find(amenity => amenity === 'Wifi')
-            console.log(wifiAmenity)
             if (wifiAmenity) {
                 this.isWifi = true;
             } else {

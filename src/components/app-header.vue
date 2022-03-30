@@ -45,8 +45,8 @@
                         </div>
                     </div>
                 </nav>
-                 <!-- @setFilter="setFilter" -->
-                <search />
+                 
+                <search @setFilter="setFilter"/>
                 <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
             </div>
         </div>

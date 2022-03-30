@@ -203,7 +203,6 @@ export default {
     methods: {
         setFilter() {
             console.log(this.filterBy)
-            console.log('lala')
             this.$emit('setFilter', { ...this.filterBy })
             this.$router.push(`/stay?location=${this.filterBy.location}`)
             this.selectOpen = false;

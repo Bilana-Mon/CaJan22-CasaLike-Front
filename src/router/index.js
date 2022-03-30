@@ -41,7 +41,7 @@ const router = createRouter({
       component: becomeHost
     },
     {
-      path: '/order/:id',
+      path: '/order',
       name: 'order-details',
       component: orderDetails
     },

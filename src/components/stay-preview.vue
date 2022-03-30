@@ -63,9 +63,7 @@ export default {
     customCard,
 
   },
-  mounted() {
-    console.log(this.stay.imgUrls);
-  },
+
   computed: {
     getFormattedRate() {
       let rate = +(this.stay.reviewScores.rating) / 20

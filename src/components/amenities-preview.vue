@@ -182,65 +182,56 @@ export default {
     methods: {
         getAmenities() {
             let amenities = this.stay.amenities
-            console.log(amenities);
             let tvAmenity = amenities.find(amenity => amenity === 'TV')
-            console.log(tvAmenity)
             if (tvAmenity) {
                 this.isTV = true;
             } else {
                 this.isTV = false;
             }
             let essentialsAmenity = amenities.find(amenity => amenity === 'Essentials')
-            console.log(tvAmenity)
             if (essentialsAmenity) {
                 this.isEssentials = true;
             } else {
                 this.isEssentials = false;
             }
             let wifiAmenity = amenities.find(amenity => amenity === 'Wifi')
-            console.log(tvAmenity)
             if (wifiAmenity) {
                 this.isWifi = true;
             } else {
                 this.isWifi = false;
             }
             let kitchenAmenity = amenities.find(amenity => amenity === 'Kitchen')
-            console.log(tvAmenity)
             if (kitchenAmenity) {
                 this.isKitchen = true;
             } else {
                 this.isKitchen = false;
             }
             let bathtubAmenity = amenities.find(amenity => amenity === 'Bathtub')
-            console.log(tvAmenity)
             if (bathtubAmenity) {
                 this.isBathtub = true;
             } else {
                 this.isBathtub = false;
             }
             let washerAmenity = amenities.find(amenity => amenity === 'Washer')
-            console.log(tvAmenity)
             if (washerAmenity) {
                 this.isWasher = true;
             } else {
                 this.isWasher = false;
             }
             let dryerAmenity = amenities.find(amenity => amenity === 'Dryer')
-            console.log(tvAmenity)
+
             if (dryerAmenity) {
                 this.isDryer = true;
             } else {
                 this.isDryer = false;
             }
             let heatingAmenity = amenities.find(amenity => amenity === 'Heating')
-            console.log(tvAmenity)
             if (heatingAmenity) {
                 this.isHeating = true;
             } else {
                 this.isHeating = false;
             }
             let ironAmenity = amenities.find(amenity => amenity === 'Iron')
-            console.log(tvAmenity)
             if (ironAmenity) {
                 this.isIron = true;
             } else {

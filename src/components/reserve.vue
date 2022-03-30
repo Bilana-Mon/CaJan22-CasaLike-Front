@@ -30,11 +30,11 @@
             </div>
             <div v-if="isDateShown">
                 <el-date-picker
-                    v-model="filterBy.dates"
+                    v-model="order.dates"
                     type="daterange"
                     range-separator
-                    :start-placeholder="`${filterBy.dates.start}`"
-                    :end-placeholder="`${filterBy.dates.end}`"
+                    :start-placeholder="`${this.from}`"
+                    :end-placeholder="`${this.to}`"
                     format="M/D/YYYY"
                     clearable
                     visible
@@ -55,10 +55,10 @@
                             </div>
                             <div class="btn-list">
                                 <button
-                                    :disabled="filterBy.countOfGuests.adults === 0"
+                                    :disabled="order.capacity.adults === 0"
                                     @click.stop="updateCount('adults', -1)"
                                 >-</button>
-                                <span class="count-span">{{ filterBy.countOfGuests.adults }}</span>
+                                <span class="count-span">{{ order.capacity.adults }}</span>
                                 <button @click.stop="updateCount('adults', 1)">+</button>
                             </div>
                         </li>
@@ -71,10 +71,10 @@
                             </div>
                             <div class="btn-list">
                                 <button
-                                    :disabled="filterBy.countOfGuests.children === 0"
+                                    :disabled="order.capacity.children === 0"
                                     @click.stop="updateCount('children', -1)"
                                 >-</button>
-                                <span class="count-span">{{ filterBy.countOfGuests.children }}</span>
+                                <span class="count-span">{{ order.capacity.children}}</span>
                                 <button @click.stop="updateCount('children', 1)">+</button>
                             </div>
                         </li>
@@ -87,10 +87,10 @@
                             </div>
                             <div class="btn-list">
                                 <button
-                                    :disabled="filterBy.countOfGuests.infants === 0"
+                                    :disabled="order.capacity.infants === 0"
                                     @click.stop="updateCount('infants', -1)"
                                 >-</button>
-                                <span class="count-span">{{ filterBy.countOfGuests.infants }}</span>
+                                <span class="count-span">{{ order.capacity.infants }}</span>
                                 <button @click.stop="updateCount('infants', 1)">+</button>
                             </div>
                         </li>
@@ -104,10 +104,10 @@
                             </div>
                             <div class="btn-list">
                                 <button
-                                    :disabled="filterBy.countOfGuests.pets === 0"
+                                    :disabled="order.capacity.pets === 0"
                                     @click.stop="updateCount('pets', -1)"
                                 >-</button>
-                                <span class="count-span">{{ filterBy.countOfGuests.pets }}</span>
+                                <span class="count-span">{{ order.capacity.pets }}</span>
                                 <button @click.stop="updateCount('pets', 1)">+</button>
                             </div>
                         </li>
@@ -121,19 +121,21 @@
             <button
                 class="mouse-cursor-gradient-tracking"
                 @mousemove="changeColor"
-                @click="sendMsg"
+                @click="checkOrder"
             >
                 <span class="text-reserve">Check availability</span>
             </button>
         </div>
-        <div v-if="isReserved">
-            {{ msg }}
-            <button class="msg-btn" @click="isReserved = !isReserved">Close</button>
+        <div v-if="isInValid">
+          <p>Missing reservation details!</p> 
+            <button class="msg-btn" @click="isInValid = !isInValid">Close</button>
         </div>
     </section>
 </template>
 
 <script>
+
+import {orderService} from '../services/order.service.js'
 
 
 export default {
@@ -143,57 +145,56 @@ export default {
 
     },
     components: {},
-    created() {
-        if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
-            this.filterBy.dates.start = this.$store.getters.filter.dates['0']
-            this.filterBy.dates.start = this.getFormattedStart
-            this.filterBy.dates.end = this.$store.getters.filter.dates['1']
-            this.filterBy.dates.end = this.getFormattedEnd
+    async created() {
+        this.order = await orderService.getEmptyOrder()
+        this.order.location = this.$store.getters.filter.location
+        console.log(this.$store.getters.filter.location)
+         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
+             this.order.dates.fromDate = this.$store.getters.filter.dates['0']
+             this.order.dates.toDate = this.$store.getters.filter.dates['1']
+         } else {
+             this.order.dates.fromDate = 'Add dates'
+             this.order.dates.toDate = 'Add dates'
+         }
+         this.order.price = this.stay.price
+         this.order.capacity = {...this.$store.getters.filter.countOfGuests} 
+         this.order.host = this.stay.host.fullname
+         this.from = this.formatFrom
+         this.to = this.formatTo
 
-        }
-        this.filterBy.countOfGuests.adults = this.$store.getters.filter.countOfGuests.adults
-        this.filterBy.countOfGuests.children = this.$store.getters.filter.countOfGuests.children
-        this.filterBy.countOfGuests.infants = this.$store.getters.filter.countOfGuests.infants
-        this.filterBy.countOfGuests.pets = this.$store.getters.filter.countOfGuests.pets
+        console.log(this.order)
+
     },
     data() {
         return {
-            filterBy: {
-                dates: {
-                    end: 'Add dates',
-                    start: 'Add dates',
-                },
-                countOfGuests: {
-                    adults: 0,
-                    children: 0,
-                    infants: 0,
-                    pets: 0
-                },
-            },
-            isReserved: false,
+            order: null,
+            isInValid: false,
             selectOpen: false,
             msg: '',
 
             isFixed: false,
             isAbsoluteUp: false,
             isAbsoluteDown: false,
-            isDateShown: false
+            isDateShown: false,
+            from: '',
+            to:'',
         }
     },
     methods: {
         updateCount(age, diff) {
             switch (age) {
                 case 'adults':
-                    this.filterBy.countOfGuests.adults += diff;
+                    this.order.capacity.adults += diff;
+                     console.log(this.order)
                     break;
                 case 'children':
-                    this.filterBy.countOfGuests.children += diff;
+                    this.order.capacity.children += diff;
                     break;
                 case 'infants':
-                    this.filterBy.countOfGuests.infants += diff;
+                     this.order.capacity.infants += diff;
                     break;
                 case 'pets':
-                    this.filterBy.countOfGuests.pets += diff;
+                     this.order.capacity.pets += diff;
             }
         },
 
@@ -210,17 +211,20 @@ export default {
         toggleSelect() {
             this.selectOpen = !this.selectOpen
         },
-        sendMsg() {
-            let adults = this.filterBy.countOfGuests.adults
-            this.isReserved = true;
+        checkOrder() {
+            let adults = this.order.capacity.adults
+            
 
-            if (adults >= 1 && this.filterBy.dates.start !== 'Add dates' && this.filterBy.dates.end !== 'Add dates') {
+            if (adults >= 1 && this.order.dates.fromDate !== 'Add dates' && this.order.dates.toDate !== 'Add dates') {
                 this.msg = 'Your reservation was successful'
-                this.$router.push('/order')
+                let order = {...this.order}
+                this.$store.dispatch({ type: 'saveOrder', order })
+                this.$router.push('/order/' + this.stay._id)
             } else {
-                this.msg = 'Missing reservation details!'
+                this.isInValid = true;
             }
         },
+        
     },
     computed: {
         getFormattedPrice() {
@@ -230,33 +234,26 @@ export default {
             let rate = +(this.stay.reviewScores.rating) / 20
             return rate
         },
-        getFormattedStart() {
-            let startDate = this.filterBy.dates.start
-            if (startDate === 'Add dates') return 'Add dates'
-            // console.log(startDate)
+        
+        formatFrom() {
+            let startDate = this.order.dates.fromDate
+             if (startDate === 'Add dates') return 'Add dates'
             const date1 = startDate.getDate()
-            console.log(date1)
             const date2 = startDate.getMonth() + 1;
-            console.log(date2)
             const date3 = startDate.getFullYear();
-            console.log(date3)
             const fullDate = date2 + "/" + date1 + "/" + date3
             return fullDate
-
         },
-        getFormattedEnd() {
-            let endDate = this.filterBy.dates.end
-            if (endDate === 'Add dates') return 'Add dates'
-            // console.log(startDate)
-            const date1 = endDate.getDate()
-            console.log(date1)
+           formatTo() {
+            let endDate = this.order.dates.toDate
+             if (endDate === 'Add dates') return 'Add dates'
+             const date1 = endDate.getDate()
             const date2 = endDate.getMonth() + 1;
-            console.log(date2)
             const date3 = endDate.getFullYear();
-            console.log(date3)
             const fullDate = date2 + "/" + date1 + "/" + date3
             return fullDate
-        }
+        },
+        
     },
 }
 </script>

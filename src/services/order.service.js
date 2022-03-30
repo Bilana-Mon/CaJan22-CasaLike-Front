@@ -37,12 +37,13 @@ async function save(order) {
 function getEmptyOrder() {
     return Promise.resolve({
         location: '',
-        fromDate: new Date(),
-        toDate: new Date(),
-        capacity: null,
-        user: '',
+        dates: {fromDate: new Date(),
+        toDate: new Date()
+        },
+        capacity: [],
+        price:null,
+        user: 'User',
         host: '',
-        createdAt: new Date()
     })
 }
 

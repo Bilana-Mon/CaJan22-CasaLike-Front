@@ -196,15 +196,14 @@ export default {
         window.addEventListener('scroll', this.handleScroll);
     },
     methods: {
-        // setFilter() {
-        //     console.log(this.filterBy)
-        //     console.log('lala')
-        //     this.$emit('setFilter', { ...this.filterBy })
-        //     this.$router.push(`/stay?location=${this.filterBy.location}`)
-        //     this.selectOpen = false;
-        // },
+        setFilter() {
+            console.log(this.filterBy)
+            this.$emit('setFilter', { ...this.filterBy })
+            this.$router.push(`/stay?location=${this.filterBy.location}`)
+            this.selectOpen = false;
+        },
         goExplore() {
-            console.log('kaka')
+            console.log(this.filterBy)
             this.$router.push(`/stay`)
         },
         handleScroll(event) {

@@ -14,9 +14,9 @@
                 </div>
                 <hr class="hr" />
                 <span>From:</span>
-                <span>{{ order.dates['0'] }}</span>
+                <span>{{ getFormattedDate(order.dates['0']) }}</span>
                 <span>To:</span>
-                <span>{{ order.dates['1'] }}</span>
+                <span>{{ getFormattedDate(order.dates['1']) }}</span>
                 <hr class="hr" />
                 <div class="guests-order-details">
                     <span>Number of guests:</span>
@@ -48,8 +48,10 @@
                     <span>Fees:</span>
                     <span>{{ getFormattedPrice(this.order.fees) }}</span>
                     <hr class="hr" />
-                    <span>Total</span>
-                    <span></span>
+                    <span>
+                        Total:
+                        <span>{{ getTotal }}</span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -78,7 +80,7 @@ export default {
     },
     methods: {
         getFormattedPrice(price) {
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(+price)
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(+price)
         },
         getFormattedDate(date) {
             let monthNames = [
@@ -87,11 +89,13 @@ export default {
                 "July", "August", "September",
                 "October", "November", "December"
             ]
+            let dayNum = new Date(date).getDate()
+            console.log(dayNum)
             let monthNum = new Date(date).getMonth()
             let monthName = monthNames[monthNum - 1]
             let yearNum = new Date(date).getFullYear()
             console.log(yearNum)
-            let formattedDate = monthName + ' ' + yearNum
+            let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
         },
     },
@@ -103,6 +107,14 @@ export default {
             let diffInDays = diffInTime / (1000 * 3600 * 24)
             console.log(diffInDays);
             return diffInDays
+        },
+        getTotal() {
+            let numNights = this.getNumOfNights
+            let price = numNights * (this.order.price)
+            let fees = this.order.fees
+            let total = price + fees;
+            console.log(numNights);
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(total)
         }
         // getTotalFees() {
         //     let cleanFees = this.stay.cleaningFee

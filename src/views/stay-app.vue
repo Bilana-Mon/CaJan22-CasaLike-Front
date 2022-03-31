@@ -1,12 +1,12 @@
 <template>
-  <div class="section-row" >
+  <div class="section-row">
     <div class="section-col stay-col">
-    <section class="stay-app">
-    <!-- <p>{{stays}}</p> -->
+      <section class="stay-app">
+        <!-- <p>{{stays}}</p> -->
 
-    <stay-list :stays="stays"  />
-  </section>
-  </div>
+        <stay-list :stays="stays" />
+      </section>
+    </div>
   </div>
 </template>
 
@@ -17,11 +17,11 @@ export default {
   components: {
     stayList
   },
-   created() {
-    
+  created() {
   },
   computed: {
     stays() {
+      console.log(this.$store.getters.stays);
       let stays = this.$store.getters.stays
       return stays
     }

@@ -85,7 +85,7 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="Second">
-                                               <div class="option-child option-title"> Children</div>
+                                                <div class="option-child option-title">Children</div>
                                                 <div class="option-age2">Ages 2–12</div>
                                             </a>
                                         </div>
@@ -105,7 +105,7 @@
                                     <li class="option">
                                         <div class="options-list">
                                             <a href="#" title="Third">
-                                                <div class="option-infants option-title"> Infants </div>
+                                                <div class="option-infants option-title">Infants</div>
                                                 <div class="option-age3">Under 2</div>
                                             </a>
                                         </div>
@@ -122,9 +122,14 @@
                                     </li>
                                     <li class="option">
                                         <div class="options-list">
-                                            <div class="option-pets option-title" title="fourth">
-                                                Pets</div>
-                                                <a class="pets-service" href="#">Bringing a service animal?</a>
+                                            <div
+                                                class="option-pets option-title"
+                                                title="fourth"
+                                            >Pets</div>
+                                            <a
+                                                class="pets-service"
+                                                href="#"
+                                            >Bringing a service animal?</a>
                                         </div>
                                         <div class="btn-list">
                                             <button
@@ -197,8 +202,8 @@ export default {
     },
     methods: {
         setFilter() {
-           
-            let filterBy = JSON.parse(JSON.stringify(this.filterBy))
+
+            let filterBy = { ...this.filterBy }
             this.$store.dispatch({ type: 'setFilter', filterBy })
             this.$router.push(`/stay?location=${filterBy.location}`)
             this.selectOpen = false;

@@ -92,7 +92,7 @@ export default {
             let dayNum = new Date(date).getDate()
             console.log(dayNum)
             let monthNum = new Date(date).getMonth()
-            let monthName = monthNames[monthNum - 1]
+            let monthName = monthNames[monthNum]
             let yearNum = new Date(date).getFullYear()
             console.log(yearNum)
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum

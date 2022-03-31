@@ -5,6 +5,7 @@ import stayApp from '../views/stay-app.vue';
 import stayDetails from '../views/stay-details.vue';
 import becomeHost from '../views/become-host.vue';
 import orderDetails from '../views/order-details.vue';
+import backOffice from '../views/back-office.vue';
 
 
 const router = createRouter({
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/order',
       name: 'order-details',
       component: orderDetails
+    },
+    {
+      path: '/backoffice',
+      name: 'back-office',
+      component: backOffice
     },
 
   ]

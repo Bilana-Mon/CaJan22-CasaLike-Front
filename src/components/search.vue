@@ -198,9 +198,9 @@ export default {
     methods: {
         setFilter() {
            
-            let filterBy = {...this.filterBy}
+            let filterBy = JSON.parse(JSON.stringify(this.filterBy))
             this.$store.dispatch({ type: 'setFilter', filterBy })
-            this.$router.push(`/stay?location=${this.filterBy.location}`)
+            this.$router.push(`/stay?location=${filterBy.location}`)
             this.selectOpen = false;
         },
         goExplore() {

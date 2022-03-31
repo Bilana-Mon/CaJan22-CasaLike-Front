@@ -36,96 +36,95 @@
                     :start-placeholder="`${this.from}`"
                     :end-placeholder="`${this.to}`"
                     format="M/D/YYYY"
-                    clearable
-                    visible
                 />
             </div>
-            <div class="container" @click="toggleSelect">
-                <input type="checkbox" class="select-checkbox" />
-                <label class="select-label" for="select-checkbox">Add guests</label>
-                <div class="select-wrap">
-                    <ul v-if="selectOpen" class="select">
-                        <li class="option">
-                            <div class="options-list">
-                                <a href="#" title="First">
-                                    <div class="option-adults">Adults</div>
-                                    <br />
-                                    <div class="option-age">Age 13 or above</div>
-                                </a>
-                            </div>
-                            <div class="btn-list">
-                                <button
-                                    :disabled="order.capacity.adults === 0"
-                                    @click.stop="updateCount('adults', -1)"
-                                >-</button>
-                                <span class="count-span">{{ order.capacity.adults }}</span>
-                                <button @click.stop="updateCount('adults', 1)">+</button>
-                            </div>
-                        </li>
-                        <li class="option">
-                            <div class="options-list">
-                                <a href="#" title="Second">
-                                    Children
-                                    <br />Ages 2–12
-                                </a>
-                            </div>
-                            <div class="btn-list">
-                                <button
-                                    :disabled="order.capacity.children === 0"
-                                    @click.stop="updateCount('children', -1)"
-                                >-</button>
-                                <span class="count-span">{{ order.capacity.children }}</span>
-                                <button @click.stop="updateCount('children', 1)">+</button>
-                            </div>
-                        </li>
-                        <li class="option">
-                            <div class="options-list">
-                                <a href="#" title="Third">
-                                    Infants
-                                    <br />Under 2
-                                </a>
-                            </div>
-                            <div class="btn-list">
-                                <button
-                                    :disabled="order.capacity.infants === 0"
-                                    @click.stop="updateCount('infants', -1)"
-                                >-</button>
-                                <span class="count-span">{{ order.capacity.infants }}</span>
-                                <button @click.stop="updateCount('infants', 1)">+</button>
-                            </div>
-                        </li>
-                        <li class="option">
-                            <div class="options-list">
-                                <a href="#" title="fourth">
-                                    Pets
-                                    <br />
-                                    <a class="pets-service" href="#">Bringing a service animal?</a>
-                                </a>
-                            </div>
-                            <div class="btn-list">
-                                <button
-                                    :disabled="order.capacity.pets === 0"
-                                    @click.stop="updateCount('pets', -1)"
-                                >-</button>
-                                <span class="count-span">{{ order.capacity.pets }}</span>
-                                <button @click.stop="updateCount('pets', 1)">+</button>
-                            </div>
-                        </li>
-                        <span
-                            class="pet-msg"
-                        >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
-                        <a class="pets-service" @click.stop="toggleSelect">Close</a>
-                    </ul>
-                </div>
-            </div>
-            <button
-                class="mouse-cursor-gradient-tracking"
-                @mousemove="changeColor"
-                @click.stop="checkOrder"
-            >
-                <span class="text-reserve">Reserve</span>
-            </button>
         </div>
+        <div class="container" @click="toggleSelect">
+            <input type="checkbox" class="select-checkbox" />
+            <label class="select-label" for="select-checkbox">Add guests</label>
+            <div class="select-wrap">
+                <ul v-if="selectOpen" class="select">
+                    <li class="option">
+                        <div class="options-list">
+                            <a href="#" title="First">
+                                <div class="option-adults">Adults</div>
+                                <br />
+                                <div class="option-age">Age 13 or above</div>
+                            </a>
+                        </div>
+                        <div class="btn-list">
+                            <button
+                                :disabled="order.capacity.adults === 0"
+                                @click.stop="updateCount('adults', -1)"
+                            >-</button>
+                            <span class="count-span">{{ order.capacity.adults }}</span>
+                            <button @click.stop="updateCount('adults', 1)">+</button>
+                        </div>
+                    </li>
+                    <li class="option">
+                        <div class="options-list">
+                            <a href="#" title="Second">
+                                Children
+                                <br />Ages 2–12
+                            </a>
+                        </div>
+                        <div class="btn-list">
+                            <button
+                                :disabled="order.capacity.children === 0"
+                                @click.stop="updateCount('children', -1)"
+                            >-</button>
+                            <span class="count-span">{{ order.capacity.children }}</span>
+                            <button @click.stop="updateCount('children', 1)">+</button>
+                        </div>
+                    </li>
+                    <li class="option">
+                        <div class="options-list">
+                            <a href="#" title="Third">
+                                Infants
+                                <br />Under 2
+                            </a>
+                        </div>
+                        <div class="btn-list">
+                            <button
+                                :disabled="order.capacity.infants === 0"
+                                @click.stop="updateCount('infants', -1)"
+                            >-</button>
+                            <span class="count-span">{{ order.capacity.infants }}</span>
+                            <button @click.stop="updateCount('infants', 1)">+</button>
+                        </div>
+                    </li>
+                    <li class="option">
+                        <div class="options-list">
+                            <a href="#" title="fourth">
+                                Pets
+                                <br />
+                                <a class="pets-service" href="#">Bringing a service animal?</a>
+                            </a>
+                        </div>
+                        <div class="btn-list">
+                            <button
+                                :disabled="order.capacity.pets === 0"
+                                @click.stop="updateCount('pets', -1)"
+                            >-</button>
+                            <span class="count-span">{{ order.capacity.pets }}</span>
+                            <button @click.stop="updateCount('pets', 1)">+</button>
+                        </div>
+                    </li>
+                    <span
+                        class="pet-msg"
+                    >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
+                    <a class="pets-service" @click.stop="toggleSelect">Close</a>
+                </ul>
+            </div>
+        </div>
+        <button
+            class="mouse-cursor-gradient-tracking"
+            @mousemove="changeColor"
+            @click.stop="checkOrder"
+        >
+            <span class="text-reserve">Reserve</span>
+        </button>
+
         <div v-if="isInValid">
             <p>Missing reservation details!</p>
             <button class="msg-btn" @click="isInValid = !isInValid">Close</button>

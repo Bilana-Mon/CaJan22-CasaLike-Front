@@ -47,6 +47,8 @@
                             type="daterange"
                             start-placeholder="Add dates"
                             end-placeholder="Add dates"
+                            format="M/D/YYYY"
+                            clearable
                         />
                     </div>
                 </div>

@@ -205,7 +205,7 @@ export default {
 
             let filterBy = { ...this.filterBy }
             this.$store.dispatch({ type: 'setFilter', filterBy })
-            this.$router.push(`/stay?location=${filterBy.location}`)
+            this.$router.push(`/stay?location=${this.filterBy.location}`)
             this.selectOpen = false;
         },
         goExplore() {

@@ -121,7 +121,7 @@
             <button
                 class="mouse-cursor-gradient-tracking"
                 @mousemove="changeColor"
-                @click="checkOrder"
+                @click.stop="checkOrder"
             >
                 <span class="text-reserve">Reserve</span>
             </button>

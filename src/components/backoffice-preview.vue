@@ -1,10 +1,10 @@
 <template>
     <section class="orders-preview-container">
         <li class="orders-list-conatainer">
-            <div class="order-stay-container">
+            <!-- <div class="order-stay-container">
                 <span>Name of stay:</span>
                 <span>{{ order.nameOfStay }}</span>
-            </div>
+            </div>-->
             <div class="order-guest-container">
                 <span>Number of guests:</span>
                 <span>Adults:</span>

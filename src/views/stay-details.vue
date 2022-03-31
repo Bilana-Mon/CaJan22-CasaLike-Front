@@ -1,5 +1,4 @@
 <template>
- <section class="homepage layout">
   <div class="section-row">
     <div class="section-col stay-col">
       <section v-if="stay" class="stay-details">
@@ -78,7 +77,6 @@
       </section>
     </div>
   </div>
-</section>
 </template>
 
 <script>

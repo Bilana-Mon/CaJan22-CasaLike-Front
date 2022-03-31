@@ -231,7 +231,7 @@ export default {
     },
     computed: {
         getFormattedPrice() {
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.stay.price)
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.stay.price)
         },
         getFormattedRate() {
             let rate = +(this.stay.reviewScores.rating) / 20

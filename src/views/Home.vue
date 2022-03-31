@@ -16,7 +16,7 @@
                 <h1 class="section-heading">Popular Destinations</h1>
                 <div class="destination-cards-container">
                     <div class="destination-cards">
-                        <div class="destination-card" @click="goExplore()">
+                        <div class="destination-card" @click="goExplorePorto()">
                             <img
                                 class="destination-img"
                                 alt="porto"
@@ -26,7 +26,7 @@
                                 <h2>Porto</h2>
                             </div>
                         </div>
-                        <div class="destination-card" @click="goExplore()">
+                        <div class="destination-card" @click="goExploreMaui()">
                             <img
                                 class="destination-img"
                                 alt="maui"
@@ -36,7 +36,7 @@
                                 <h2>Maui</h2>
                             </div>
                         </div>
-                        <div class="destination-card" @click="goExplore()">
+                        <div class="destination-card" @click="goExploreHongKong()">
                             <img
                                 class="destination-img"
                                 alt="hongkong"
@@ -46,7 +46,7 @@
                                 <h2>Hongkong</h2>
                             </div>
                         </div>
-                        <div class="destination-card" @click="goExplore()">
+                        <div class="destination-card" @click="goExploreMontreal()">
                             <img
                                 class="destination-img"
                                 alt="montreal"
@@ -79,7 +79,7 @@
                 <h1 class="section-heading">Exotic Retreats</h1>
                 <div class="destination-cards-container">
                     <div class="destination-cards">
-                        <div class="destination-card" @click="goExplore('porto')">
+                        <div class="destination-card" @click="goExplore()">
                             <img
                                 class="destination-img"
                                 alt="porto"
@@ -92,7 +92,7 @@
                                 >Escape to spectacular resort to relax in a coastal refuge</p>
                             </div>
                         </div>
-                        <div class="destination-card" @click="goExplore('maui')">
+                        <div class="destination-card" @click="goExplore()">
                             <img
                                 class="destination-img"
                                 alt="maui"
@@ -105,7 +105,7 @@
                                 >Get there for beautiful beaches and welcoming lagoons</p>
                             </div>
                         </div>
-                        <div class="destination-card" @click="goExplore('hong kong')">
+                        <div class="destination-card" @click="goExplore()">
                             <img
                                 class="destination-img"
                                 alt="hongkong"
@@ -118,7 +118,7 @@
                                 >Explore the very best of Africa's raw landscapes</p>
                             </div>
                         </div>
-                        <div class="destination-card" @click="goExplore('montreal')">
+                        <div class="destination-card" @click="goExplore()">
                             <img
                                 class="destination-img"
                                 alt="montreal"
@@ -149,14 +149,30 @@ export default {
         return {
             filterBy: null,
             isScrolled: false,
+            city:'',
         }
     },
     methods: {
-        goExplore(cityName) {
-            console.log(cityName);
+        goExplorePorto() {
+            this.city = 'porto'
+            this.goExplore()
+        },
+        goExploreMaui() {
+            this.city = 'maui'
+            this.goExplore()
+        },
+        goExploreHongKong() {
+            this.city = 'hong kong '
+            this.goExplore()
+        },
+        goExploreMontreal() {
+            this.city = 'montreal'
+            this.goExplore()
+        },
+        goExplore() {
+           
             let filterBy = JSON.parse(JSON.stringify(this.filterBy))
-            filterBy.location = cityName
-            console.log(cityName);
+            filterBy.location = this.city
             this.$store.dispatch({ type: 'setFilter', filterBy })
             this.$router.push(`/stay?location=${filterBy.location}`)
 

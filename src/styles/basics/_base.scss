@@ -17,14 +17,11 @@ img {
 h1 {
   font-family: airbnb-extrabold;
 }
-
-//USE THIS CLASSES TO GIVE YOUR PAGE A PROPER LAYOUT AS IT IS ON ALL OF THE PAGES
-
 .section-col, .main-nav.scrolled{
-  max-width: calc(min(1760px, 100%) - 160px);
+  max-width: calc(min(1760px, 100%) - 300px);
 }
 .section-col.stay-col, .stay-col .main-nav.scrolled{
-    max-width: calc(min(1280px, 100%) - 160px);
+  max-width: calc(min(1280px, 100%) - 120px);
 }
 .section-col{
   width: 100%;
@@ -48,5 +45,5 @@ h1 {
   }
   .brand-name {
     display: none;
-  }
-}
+  } 
+} 

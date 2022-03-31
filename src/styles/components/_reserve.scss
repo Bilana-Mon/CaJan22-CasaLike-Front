@@ -74,7 +74,7 @@
 
 .card-price {
   font-weight: bold;
-  font-family: airbnb-medium;
+  font-family: CircularStd-Book;
   font-size: 22px;
 }
 
@@ -200,7 +200,7 @@
   padding: 20px;
   padding-top: 10px;
   margin-top: 1.85rem;
-  margin-left: -1.966rem;
+  left: -1.966rem;
   position: absolute;
   background-color: #ffffff;
   min-width: 230px;
@@ -265,8 +265,10 @@
   text-align: left;
 }
 .reserve-card .select a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
+  cursor: pointer;
+  font-family: 'CircularStd-Medium';
 }
 
 .el-range-editor.el-input__inner {

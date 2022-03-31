@@ -20,7 +20,7 @@
   padding-left: 0;
   padding-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 10px;
 }
 .stay-list-container .stay-preview-container {
@@ -38,7 +38,7 @@ span {
 //CAROUSEL ON LIST-PREVIEW SETTINGS
 .el-carousel__container {
   // height: 80%;
-  max-height: 250px;
+  max-height: 150px;
   aspect-ratio: 18/12!important;
   // width: 400px;
   width: 100%;

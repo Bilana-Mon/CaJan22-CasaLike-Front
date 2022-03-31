@@ -31,7 +31,7 @@ export default {
     },
     actions: {
         async loadOrders({ commit, state }) {
-            await orderService.query()
+            let orders = await orderService.query();
             commit({ type: 'setOrders', orders })
         },
         async saveOrder({ commit }, { order }) {

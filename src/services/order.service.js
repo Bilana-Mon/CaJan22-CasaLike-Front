@@ -43,7 +43,7 @@ function getEmptyOrder() {
         },
         capacity: [],
         price: null,
-        user: 'Bilana Boneshtein',
+        user: 'Carl',
         host: '',
         fees: ''
     })

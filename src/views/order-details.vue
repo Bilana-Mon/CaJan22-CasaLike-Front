@@ -155,10 +155,12 @@ export default {
     margin: auto;
     margin-top: 2rem;
     padding: 2rem;
+
 }
 .order-details-desc {
     display: flex;
     flex-direction: column;
+    height: 40rem;
 }
 
 .stay-order-details {

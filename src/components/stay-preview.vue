@@ -5,7 +5,7 @@
         <el-carousel :autoplay="false" arrow="hover" trigger="click">
           <el-carousel-item v-for="item in stay.imgUrls" :key="item">
             <img
-              height="200"
+              height="250"
               class="stay-img-gallery"
               :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648473465/casaLike/stays/${item}`"
             />

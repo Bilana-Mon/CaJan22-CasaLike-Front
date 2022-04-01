@@ -59,7 +59,60 @@
     <section v-if="!order"></section>
     <!-- <easy-spinner /> -->
     <section v-if="order && !isApproved">
-        <p>Reservation status: Pending</p>
+        <h2>Reservation Status: Pending</h2>
+        <h3>Reservation details</h3>
+        <ul>
+            <li>
+                Stay name: {{ order.nameOfStay }}
+            </li>
+            <li>
+                Stay address: {{ order.location }}
+            </li>
+            <li>
+                The host: {{ order.host }}
+            </li>
+            <li>
+                {{ getFormattedDate(order.dates['0']) }}
+            </li>
+            <li>
+                {{ getFormattedDate(order.dates['1']) }}
+            </li>
+            <li>
+                Number of guests:
+                <span>Adults: {{ order.capacity.adults }}</span>
+                <span v-if="order.capacity.children">
+                    Children: {{ order.capacity.children }}
+                </span>
+                <span v-if="order.capacity.infants">
+                    Infants: {{ order.capacity.infants }}
+                </span>
+                <span v-if="order.capacity.pets">
+                    Pets: {{ order.capacity.pets }}
+                </span>
+            </li>
+            <li>
+                <span>Price per night (per person): {{ getFormattedPrice(this.order.price) }}</span>
+            </li>
+            <li>
+                Number of nights: {{ getNumOfNights }} nights
+            </li>
+            <li>
+                Total price excluding fees: {{ getTotalExFees }}
+            </li>
+            <li>
+            Fees:
+            <span>
+                Cleaning fee: {{ this.order.cleaningFee }}
+            </span>
+            <span>
+                Security deposit: {{ this.order.securityDeposit }}
+            </span>
+            </li>
+            <li>
+                Total price: {{getTotalPrice}}
+            </li>
+
+        </ul>
     </section>
 </template>
 
@@ -78,7 +131,7 @@ export default {
         console.log(this.order);
         setTimeout(() => {
             this.isApproved = true;
-        }, 10000);
+        }, 60000);
         // const { id } = this.$route.params
         // this.stay = await stayService.getById(id)
         // console.log(this.stay);
@@ -121,33 +174,23 @@ export default {
             console.log(diffInDays);
             return diffInDays
         },
-        getTotal() {
+        getTotalExFees() {
             let numNights = this.getNumOfNights
-            let price = numNights * (this.order.price)
-            let fees = this.order.fees
-            let total = price + fees;
-            console.log(numNights);
-            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(total)
+            let numGuests = this.order.capacity.adults + this.order.capacity.children
+            let price = numNights * (this.order.price) * numGuests
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(price)
+        },
+        getTotalPrice() {
+             let numNights = this.getNumOfNights
+            let numGuests = this.order.capacity.adults + this.order.capacity.children
+            let totalPriceExFees = numNights * (this.order.price) * numGuests
+            let cleaningFee = this.order.cleaningFee
+            if (!cleaningFee) cleaningFee = 0
+            let securityDeposit = this.order.securityDeposit
+             if (!securityDeposit) securityDeposit = 0
+             let totalPrice = totalPriceExFees + cleaningFee + securityDeposit
+             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(totalPrice)
         }
-        // getTotalFees() {
-        //     let cleanFees = this.stay.cleaningFee
-        //     if (!cleanFees) {
-        //         cleanFees = 0;
-        //     }
-        //     let securityFees = this.stay.securityDeposit
-        //     if (!securityFees) {
-        //         securityFees = 0;
-        //     }
-        //     let extraPeopleFees = this.stay.extraPeople
-        //     if (!extraPeopleFees) {
-        //         extraPeopleFees = 0;
-        //     }
-        //     let totalFees = extraPeopleFees + securityFees + cleanFees;
-        //     console.log(totalFees);
-        //     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalFees)
-        //     // return totalFees
-        // }
-
     },
     unmounted() { },
 }

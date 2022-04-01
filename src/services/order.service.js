@@ -45,7 +45,8 @@ function getEmptyOrder() {
         price: null,
         user: 'Bilana',
         host: '',
-        fees: ''
+        cleaningFee: '',
+        securityDeposit: ''
     })
 }
 

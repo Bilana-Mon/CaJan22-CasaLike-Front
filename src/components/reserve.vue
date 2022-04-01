@@ -188,7 +188,8 @@ export default {
         this.order.price = this.stay.price
         this.order.host = this.stay.host.fullname
         this.order.nameOfStay = this.stay.name
-        this.order.fees = this.getTotalFees
+        if (this.stay.cleaningFee) this.order.cleaningFee = this.stay.cleaningFee 
+        if (this.stay.securityDeposit) this.order.securityDeposit = this.stay.securityDeposit
         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
             this.order.dates['0'] = this.$store.getters.filter.dates['0']
             this.order.dates['1'] = this.$store.getters.filter.dates['1']
@@ -288,24 +289,7 @@ export default {
             const fullDate = date2 + "/" + date1 + "/" + date3
             return fullDate
         },
-        getTotalFees() {
-            let cleanFees = this.stay.cleaningFee
-            if (!cleanFees) {
-                cleanFees = 0;
-            }
-            let securityFees = this.stay.securityDeposit
-            if (!securityFees) {
-                securityFees = 0;
-            }
-            // let extraPeopleFees = this.stay.extraPeople
-            // if (!extraPeopleFees) {
-            //     extraPeopleFees = 0;
-            // }
-            let totalFees = securityFees + cleanFees;
-            console.log(totalFees);
-            // return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalFees)
-            return totalFees
-        },
+       
         showNumOfGuests() {
             let guestsTxt = '1 guest'
             if (this.order.capacity.adults > 0) {

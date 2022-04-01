@@ -64,7 +64,7 @@
                         </div>
                         <div class="btn-list">
                             <button
-                                :disabled="order.capacity.adults === 0"
+                                :disabled="order.capacity.adults === 1"
                                 @click.stop="updateCount('adults', -1)"
                             >-</button>
                             <span class="count-span">{{ order.capacity.adults }}</span>
@@ -132,13 +132,14 @@
             @mousemove="changeColor"
             @click.stop="checkOrder"
         >
-            <span class="text-reserve" v-if="isReserved">Reserved</span>
+            <span class="text-reserve" v-if="isReserved">Reserve</span>
+            <span class="text-reserve" v-if="!isReserved">Check availability</span>
         </button>
 
         <div v-if="isReserved">
             <p>
                 <span>{{ getFormattedPrice }}</span> X
-                <span>{{getNumOfGuests}}</span> X
+                <span>{{ getNumOfGuests }}</span> X
                 <span>{{ getNumOfNights }}</span>
                 <span>{{ getTotalPriceForNights }}</span>
             </p>
@@ -146,17 +147,17 @@
                 <span>Cleaning fee:</span>
                 <span>${{ this.stay.cleaningFee }}</span>
             </div>
-                <div v-if="this.stay.securityDeposit">
+            <div v-if="this.stay.securityDeposit">
                 <span>Security deposit:</span>
                 <span>${{ this.stay.securityDeposit }}</span>
-                </div>
-            <div> 
+            </div>
+            <div>
                 <span>Total:</span>
                 <span>{{ getTotalIncludeFees }}</span>
             </div>
         </div>
         <div v-if="isInvalid">
-            <p>Missing reservation details!</p>
+            <p>Please pick dates for your reservation!</p>
             <button class="msg-btn" @click="isInvalid = !isInvalid">Close</button>
         </div>
     </section>
@@ -183,6 +184,7 @@ export default {
             this.order.location = this.stay.address.street
         }
         this.order.capacity = { ...this.$store.getters.filter.countOfGuests }
+        if (this.order.capacity.adults === 0) this.order.capacity.adults = 1;
         this.order.price = this.stay.price
         this.order.host = this.stay.host.fullname
         this.order.nameOfStay = this.stay.name
@@ -247,13 +249,10 @@ export default {
             this.selectOpen = !this.selectOpen
         },
         async checkOrder() {
-            let adults = this.order.capacity.adults
-            if (adults >= 1 && this.order.dates['0'] !== 'Add date' && this.order.dates['1'] !== 'Add date') {
+            if (this.order.dates['0'] !== 'Add date' && this.order.dates['1'] !== 'Add date') {
                 let order = { ...this.order }
-
                 await this.$store.dispatch({ type: 'saveOrder', order })
                 console.log(this.$store.getters.order);
-                // TODO: fix update of dates in reserve
                 this.$router.push('/order')
             } else {
                 this.isInvalid = true;
@@ -261,7 +260,7 @@ export default {
         },
 
     },
-    
+
     computed: {
         getFormattedPrice() {
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.stay.price)
@@ -308,7 +307,7 @@ export default {
             return totalFees
         },
         showNumOfGuests() {
-            let guestsTxt = 'Add guests'
+            let guestsTxt = '1 guest'
             if (this.order.capacity.adults > 0) {
                 guestsTxt = this.order.capacity.adults + this.order.capacity.children;
                 if (guestsTxt === 1) guestsTxt = guestsTxt + ' ' + 'guest';
@@ -342,10 +341,10 @@ export default {
             let cleanFees = this.stay.cleaningFee
             if (!cleanFees) cleanFees = 0
             let securityDeposit = this.stay.securityDeposit
-             if (!securityDeposit) securityDeposit = 0
-            let totalInFees = totalExFees +  cleanFees + securityDeposit 
+            if (!securityDeposit) securityDeposit = 0
+            let totalInFees = totalExFees + cleanFees + securityDeposit
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(totalInFees)
-            
+
         },
     },
 }

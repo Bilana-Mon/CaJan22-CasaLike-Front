@@ -119,8 +119,8 @@
                     </li>
                     <span
                         class="pet-msg"
-                    >If you're lucky enough to have more than 2 pets with you, be sure to let your host know.</span>
-                    <a class="pets-service" @click.stop="toggleSelect">Close</a>
+                    >This place has a maximum of {{ stay.capacity }} guests, not including infants.</span>
+                    <div class="close-popup" @click.stop="toggleSelect">Close</div>
                 </ul>
             </div>
         </div>

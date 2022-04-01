@@ -12,8 +12,8 @@ img {
   max-height: 500px;
   width: 100%;
 }
-@media (max-width: 800px){
-  .header-bg{
+@media (max-width: 800px) {
+  .header-bg {
     height: 70%;
   }
 }
@@ -30,10 +30,10 @@ img {
   object-fit: cover;
 }
 
-.destination-row{
+.destination-row {
   margin-bottom: 2rem;
 }
-.destination-row:last-child{
+.destination-row:last-child {
   margin-bottom: 8rem;
 }
 .destination-cards-container {
@@ -53,19 +53,17 @@ img {
   padding-bottom: 2rem;
   padding-left: 1%;
   padding-right: 1%;
-  background:white;
+  background: white;
   text-align: center;
 }
 .destination-img {
   grid-area: img;
   background-size: cover;
-
 }
 .destination-text {
-  grid-area:text;
-  margin:25px
+  grid-area: text;
+  margin: 25px;
 }
-
 
 .destination-card {
   border-radius: 10px;
@@ -73,17 +71,16 @@ img {
   box-shadow: 2px 4px 15px 0px rgb(0 0 0 / 18%);
   // background-color: #f2f2f2;
 }
-.destination-card h2{
+.destination-card h2 {
   font-size: 1.4rem;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-family: 'CircularStd-Book';
+  font-family: "CircularStd-Book";
   text-align: left;
   font-weight: normal;
 }
-.destination-card p{
+.destination-card p {
   text-align: left;
-
 }
 
 .homepage-img {
@@ -112,6 +109,28 @@ img {
   top: 30%;
   width: 85%;
 }
+.flexible-btn {
+  cursor: pointer;
+  position: absolute;
+  color: #6f019c;
+  font-size: 1.09rem;
+  font-family: "CircularStd-Medium";
+  background-color: #ffffff;
+  padding-top: 15px;
+  padding-right: 30px;
+  padding-bottom: 16px;
+  padding-left: 30px;
+  border-radius: 30px;
+  border: none;
+  bottom: 11%;
+  right: 44%;
+
+  &:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(4px);
+}
+}
+
 
 .jingle2 {
   font-family: "CircularStd-Medium";
@@ -140,7 +159,7 @@ img {
   border: none;
   // top: 79%;
   bottom: 11%;
-  right: 5% 
+  right: 5%;
 }
 
 .section-heading {
@@ -169,7 +188,7 @@ img {
   /* margin: 0; */
   /* padding: 0; */
   /* width: 39%; */
-    // text-align: none !important;
+  // text-align: none !important;
   /* font-size: 14px; */
   /* font-family: "CircularStd-Light"; */
   /* color: #717171; */
@@ -197,146 +216,144 @@ img {
   position: relative;
   -webkit-appearance: none;
 
-.el-date-editor {
-  --el-date-editor-width: 220px;
-  --el-date-editor-monthrange-width: 300px;
-  --el-date-editor-daterange-width: 350px;
-  --el-date-editor-datetimerange-width: 400px;
-  --el-input-text-color: var(--el-text-color-regular);
-  --el-input-border: var(--el-border);
-  --el-input-hover-border: var(--el-border-color-hover);
-  --el-input-focus-border: var(--el-color-primary);
-  --el-input-transparent-border: 0 0 0 1px transparent inset;
-  --el-input-border-color: var(--el-border-color);
-  --el-input-border-radius: var(--el-border-radius-base);
-  --el-input-bg-color: var(--el-fill-color-blank);
-  --el-input-icon-color: var(--el-text-color-placeholder);
-  --el-input-placeholder-color: var(--el-text-color-placeholder);
-  --el-input-hover-border-color: var(--el-border-color-hover);
-  --el-input-clear-hover-color: var(--el-text-color-secondary);
-  --el-input-focus-border-color: none !important;
-  position: relative;
-  display: inline-block;
-  text-align: left;
-}
-.el-date-table td.end-date .el-date-table-cell__text, .el-date-table td.start-date .el-date-table-cell__text {
-  background-color: #000000!important;
-}
-.el-date-table-cell__text span  {
-  background-color: #000000!important;
-}
-.el-date-table td.in-range .el-date-table-cell {
-  background-color: #f7f7f7;
-}
-.el-date-range-picker {
-  --el-datepicker-text-color: var(--el-text-color-regular);
-  --el-datepicker-off-text-color: var(--el-text-color-placeholder);
-  --el-datepicker-header-text-color: var(--el-text-color-regular);
-  --el-datepicker-icon-color: var(--el-text-color-primary);
-  --el-datepicker-border-color: var(--el-disabled-border-color);
-  --el-datepicker-inner-border-color: var(--el-border-color-light);
-  --el-datepicker-inrange-bg-color: var(--el-border-color-extra-light);
-  --el-datepicker-inrange-hover-bg-color: var(--el-border-color-extra-light);
-  --el-datepicker-active-color: #000000!important;
-  --el-datepicker-hover-text-color: #000000!important;
-}
-
-//EXOTIC CARDS
-.exotic-cards-container {
-  position: relative;
-  
-  
-}
-.card {
-  display: grid;
-  // grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 13.125rem 7.5rem;
-  grid-template-areas: "image" "text";
-  border-radius: 8px;
-  background: white;
-  box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.07);
-  font-family: "CircularStd-Book";
-  text-align: left;
-  padding: 5px;
-  // overflow: scroll;
-  gap:20px
-}
-
-.card-image {
-  grid-area: image;
-}
-.card-text {
-  grid-area: text;
-}
-.card-image {
-  grid-area: image;
-  background: url("@/assets/imgs/homepage/hawaii.jpg");
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  background-size: cover;
-}
-.card-image.card2 {
-  background: url("@/assets/imgs/homepage/seychelles.jpg");
-  background-size: cover;
-}
-
-.card-stats.card2 .border {
-  border-left: 1px solid rgb(185, 67, 20);
-  border-right: 1px solid rgb(185, 67, 20);
-
-}
-/*card3*/
-.card-image.card3 {
-  background: url("@/assets/imgs/homepage/namibia.jpg");
-  background-size: cover;
-}
-
-/*card4*/
-.card-image.card4 {
-  background: url("@/assets/imgs/homepage/iceland.jpg");
-  background-size: cover;
-}
-
-img {
-  float: left;
-  display: none;
-}
-
-@media (max-width: 620px) {
-  .jingle {
-    font-size: 2rem;
+  .el-date-editor {
+    --el-date-editor-width: 220px;
+    --el-date-editor-monthrange-width: 300px;
+    --el-date-editor-daterange-width: 350px;
+    --el-date-editor-datetimerange-width: 400px;
+    --el-input-text-color: var(--el-text-color-regular);
+    --el-input-border: var(--el-border);
+    --el-input-hover-border: var(--el-border-color-hover);
+    --el-input-focus-border: var(--el-color-primary);
+    --el-input-transparent-border: 0 0 0 1px transparent inset;
+    --el-input-border-color: var(--el-border-color);
+    --el-input-border-radius: var(--el-border-radius-base);
+    --el-input-bg-color: var(--el-fill-color-blank);
+    --el-input-icon-color: var(--el-text-color-placeholder);
+    --el-input-placeholder-color: var(--el-text-color-placeholder);
+    --el-input-hover-border-color: var(--el-border-color-hover);
+    --el-input-clear-hover-color: var(--el-text-color-secondary);
+    --el-input-focus-border-color: none !important;
+    position: relative;
+    display: inline-block;
+    text-align: left;
   }
-  .jingle2 {
-    font-size: 2rem;
+  .el-date-table td.end-date .el-date-table-cell__text,
+  .el-date-table td.start-date .el-date-table-cell__text {
+    background-color: #000000 !important;
   }
-  .card{
-    overflow: scroll;
+  .el-date-table-cell__text span {
+    background-color: #000000 !important;
   }
-  .destination-cards {
-    overflow: scroll;
+  .el-date-table td.in-range .el-date-table-cell {
+    background-color: #f7f7f7;
   }
-}
-@media (min-width: 1306px) {
-  .jingle {
-    top: 27%;
+  .el-date-range-picker {
+    --el-datepicker-text-color: var(--el-text-color-regular);
+    --el-datepicker-off-text-color: var(--el-text-color-placeholder);
+    --el-datepicker-header-text-color: var(--el-text-color-regular);
+    --el-datepicker-icon-color: var(--el-text-color-primary);
+    --el-datepicker-border-color: var(--el-disabled-border-color);
+    --el-datepicker-inner-border-color: var(--el-border-color-light);
+    --el-datepicker-inrange-bg-color: var(--el-border-color-extra-light);
+    --el-datepicker-inrange-hover-bg-color: var(--el-border-color-extra-light);
+    --el-datepicker-active-color: #000000 !important;
+    --el-datepicker-hover-text-color: #000000 !important;
   }
 
-  // .jingle2 {
-  //   // top: 27%;
-  // }
-  .destination-cards-container {
-    width: 101%;
-    margin-left: -1%;
+  //EXOTIC CARDS
+  .exotic-cards-container {
+    position: relative;
   }
-  .destination-cards {
-    overflow-y: scroll
+  .card {
+    display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 13.125rem 7.5rem;
+    grid-template-areas: "image" "text";
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.07);
+    font-family: "CircularStd-Book";
+    text-align: left;
+    padding: 5px;
+    // overflow: scroll;
+    gap: 20px;
   }
-}
-@media (min-width: 1450px) {
-  .destination-cards {
-    overflow: hidden;
-    justify-content: space-between;
-    display: flex;
+
+  .card-image {
+    grid-area: image;
   }
-}
+  .card-text {
+    grid-area: text;
+  }
+  .card-image {
+    grid-area: image;
+    background: url("@/assets/imgs/homepage/hawaii.jpg");
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-size: cover;
+  }
+  .card-image.card2 {
+    background: url("@/assets/imgs/homepage/seychelles.jpg");
+    background-size: cover;
+  }
+
+  .card-stats.card2 .border {
+    border-left: 1px solid rgb(185, 67, 20);
+    border-right: 1px solid rgb(185, 67, 20);
+  }
+  /*card3*/
+  .card-image.card3 {
+    background: url("@/assets/imgs/homepage/namibia.jpg");
+    background-size: cover;
+  }
+
+  /*card4*/
+  .card-image.card4 {
+    background: url("@/assets/imgs/homepage/iceland.jpg");
+    background-size: cover;
+  }
+
+  img {
+    float: left;
+    display: none;
+  }
+
+  @media (max-width: 620px) {
+    .jingle {
+      font-size: 2rem;
+    }
+    .jingle2 {
+      font-size: 2rem;
+    }
+    .card {
+      overflow: scroll;
+    }
+    .destination-cards {
+      overflow: scroll;
+    }
+  }
+  @media (min-width: 1306px) {
+    .jingle {
+      top: 27%;
+    }
+
+    // .jingle2 {
+    //   // top: 27%;
+    // }
+    .destination-cards-container {
+      width: 101%;
+      margin-left: -1%;
+    }
+    .destination-cards {
+      overflow-y: scroll;
+    }
+  }
+  @media (min-width: 1450px) {
+    .destination-cards {
+      overflow: hidden;
+      justify-content: space-between;
+      display: flex;
+    }
+  }
 }

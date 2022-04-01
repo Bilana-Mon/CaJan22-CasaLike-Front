@@ -8,6 +8,9 @@
                     <div class="jingle">
                         <h3>Where would you like to feel at home today?</h3>
                     </div>
+                    <router-link class="link" to="/stay">
+                        <button href="#/stay" class="flexible-btn"> <span>I'm flexible </span></button>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -43,7 +46,7 @@
                                 src="src/assets/imgs/homepage/hongkong.webp"
                             />
                             <div class="destination-text">
-                                <h2>Hongkong</h2>
+                                <h2>Hong Kong</h2>
                             </div>
                         </div>
                         <div class="destination-card" @click="goExploreMontreal()">

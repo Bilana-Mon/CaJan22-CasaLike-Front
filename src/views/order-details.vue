@@ -1,7 +1,7 @@
 <template>
     <section class="section-row">
-        <section class="order-details-container section-col" v-if="order && isApproved">
-            <div class="order-details-success">
+        <!-- <section class="order-details-container section-col" v-if="order"> -->
+            <!-- <div class="order-details-success">
                 <h1>Your Order Details</h1>
                 <p>We thank you, for your reservation! Here are the details about your order:</p>
                 <div class="order-details-desc">
@@ -56,17 +56,25 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section v-if="!order"></section>
         <!-- <easy-spinner /> -->
-        <section class="pending-reservation-container section-col" v-if="order && !isApproved">
-            <div class="pending-status-container">
+        <section class="pending-reservation-container section-col" v-if="order">
+            <div class="pending-status-container" v-if="!isApproved">
                 <h2>Reservation Status: Pending</h2>
                 <div class="pending-img">
                     <img src="src/assets/icons/wall-clock.png" alt />
                 </div>
             </div>
+            <div class="pending-status-container" v-if="isApproved">
+                <h2>{{order.user}}, thank you for your reservation!</h2>
+                <div class="pending-img">
+                    <img src="src/assets/icons/compelete.png" alt />
+                </div>
+                </div>
+            <h3 v-if="isApproved">Enjoy your trip!</h3>
             <h3>Reservation details</h3>
+            
             <ul class="clean-list list-container">
                 <div class="desc-li-container">
                     <li>
@@ -166,8 +174,9 @@ export default {
         this.order = await this.$store.getters.order
         console.log(this.order);
         setTimeout(() => {
-            this.isApproved = false;
-        }, 60000000000);
+            this.isApproved = true;
+        }, 10000);
+        console.log(this.order.user)
         // const { id } = this.$route.params
         // this.stay = await stayService.getById(id)
         // console.log(this.stay);

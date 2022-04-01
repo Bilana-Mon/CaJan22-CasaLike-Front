@@ -90,45 +90,43 @@ span {
 .el-carousel__item img {
   object-fit: cover;
 }
-.stay-desc {
-  margin-bottom: 1.5rem;
-  cursor: pointer;
-  font-size:1.1rem;
-}
-.stay-desc > div {
-  margin-top: 5px;
-}
-.stay-desc .rating {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-}
+
 .stay-desc .rating .rating-star {
   margin-right: 8px;
 }
-.stay-desc .stay-loc .room-type {
+
+
+.rating{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.rating .rating-value{
+  font-size: 14px;
+  line-height: 18px;
+}
+.rating-value span{
+  color: $grey;
+}
+.stay-loc{
+  margin-top: 2px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
 }
-.stay-price {
-  display:flex;
-  flex-direction: row;
+.stay-loc .room-type, .stay-loc .stay-loc-name, .stay-name{
+  margin-bottom: 2px;
+  font-size:  18px;
+  line-height: 24px;
 }
-// .stay-desc .stay-loc-name {
-
-// }
-.stay-desc .stay-name{
-  margin-top: 0;
+.stay-price{
+  margin-top: 4px;
+  font-size: 18px;
 }
-.stay-desc .stay-loc span {
-  margin: 0 5px;
+.stay-loc span {
+  margin: 0 5px ;
 }
-.stay-desc .stay-price .price {
-  font-family: 'CircularStd-Book';
-  // margin-right: 10px;
-}
-
 @media (min-width: 600px) {
   // .stay-list {
   //   // margin: 0 75px;

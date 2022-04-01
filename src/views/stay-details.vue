@@ -4,6 +4,7 @@
       <section v-if="stay" class="stay-details">
         <h1>{{ stay.name }}</h1>
         <div class="stay-rate-container">
+          <div class="info-top-left">
           <span>
             <svg
               viewBox="0 0 32 32"
@@ -24,7 +25,8 @@
           <span class="stay-details-rating">{{ getFormattedRate }}</span> ·
           <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a> ·
           <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
-        <div class="icons-top">
+        </div>
+          <div class="icons-top">
           <div class="icon-share">
             <svg
               viewBox="0 0 32 32"

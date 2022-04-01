@@ -416,6 +416,15 @@
     font-size: 14px;
     margin-bottom: 20px;
 }
+
+.el-date-table td.end-date .el-date-table-cell__text, .el-date-table td.start-date .el-date-table-cell__text {
+    background-color: $black !important;
+}
+.el-date-table td.today .el-date-table-cell__text {
+    color: white !important;
+    font-weight: 700 !important;
+}
+
 @media (max-width: 990px){
     .search-scroll{
         top: 18px + 57px;

@@ -25,30 +25,38 @@
         </div>
         <div class="input-container">
             <div class="input-container-checks" @click="isDateShown = !isDateShown">
+                <div class="reserve-vsep">
                 <div class="card-check-in">CHECK-IN</div>
+                </div>
                 <div class="card-check-out">CHECKOUT</div>
+                <div class="date-container">
+                    <div>
+                    <el-date-picker
+                        v-model="order.dates"
+                        @change="isReserved = true"
+                        type="daterange"
+                        range-separator
+                        :start-placeholder="`${this.from}`"
+                        :end-placeholder="`${this.to}`"
+                        format="M/D/YYYY"
+                    />
+                </div>
             </div>
-            <div v-if="isDateShown">
-                <el-date-picker
-                    v-model="order.dates"
-                    @change="isReserved = true"
-                    type="daterange"
-                    range-separator
-                    :start-placeholder="`${this.from}`"
-                    :end-placeholder="`${this.to}`"
-                    format="M/D/YYYY"
-                />
             </div>
+            
         </div>
         <div class="container" @click="toggleSelect">
             <input type="checkbox" class="select-checkbox" />
             <label class="select-label" for="select-checkbox">
                 <div class="num-of-guests-container">
                     <div class="guest-txt-container">
-                        <div>Guests</div>
+                        <div class="guest-head">Guests</div>
                         <div class="num-of-guests-box">{{ showNumOfGuests }}</div>
                     </div>
-                    <div class="arrow-down-up-container"></div>
+                    <div class="arrow-down-up-container">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"></path></g></svg>
+                    </div>
+
                 </div>
             </label>
 

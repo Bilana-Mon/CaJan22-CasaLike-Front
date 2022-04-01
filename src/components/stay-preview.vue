@@ -40,17 +40,17 @@
             </span>
             <div class="rating-value">
               {{ getFormattedRate }}    
-              (<span>{{ stay.numOfReviews }} reviews</span>)
+              <span>({{ stay.numOfReviews }} reviews)</span>
             </div>
           </div>
           <div class="stay-loc">
-             <div class="room-type">{{ stay.roomType }}</div>
+             <div class="room-type">{{ stay.roomType }}</div><span>∙</span>
+             <div class="stay-loc-name">{{ getLocation }}</div>
           </div>
-            <!-- <span>∙</span> -->
-          <div class="stay-loc-name">{{ getLocation }}</div>
+          
           <div class="stay-name">{{ stay.name }}</div>
           <div class="stay-price">
-            <span class="price">{{ getFormattedPrice }} </span> <div class="price-night">/ night</div>
+            <div class="price-night"><b><span class="price">{{ getFormattedPrice }} </span></b> / night</div>
           </div>
         </div>
       </template>

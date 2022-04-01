@@ -4,7 +4,6 @@
   padding: 24px;
   box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
   width: 23.25rem;
-  height: 21.6875rem;
   background-color: white;
   z-index: 5;
   position: sticky;
@@ -21,12 +20,50 @@
   //   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  height: 3.5rem;
+  margin-top:1rem;
 }
+
+.input-container-checks{
+  position: relative;
+}
+.reserve-container .date-container{
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+.reserve-container .el-range-input{
+  text-align: center!important;
+  padding: 0!important;
+}
+.reserve-vsep {
+  border-right: 1px solid lightgrey;
+  height: 100%;
+  display: flex;
+  width:50%;
+}
+.reserve-container .card-check-in, .reserve-container .card-check-out{
+  margin-top:  -16px;
+
+}
+
+.reserve-container .reserve-vsep, .reserve-container .card-check-out, .reserve-container .container .select-label, .reserve-container .el-range-input{
+  padding-left:  0.8rem !important;
+}
+
+.reserve-container .el-range-input {
+  text-align:left!important;
+
+}
+
+.reserve-container .card-check-out{
+  width:50%;
+}
+
 
 .input-container-checks {
   display: flex;
-  margin: 15px;
-  justify-content: space-around;
   align-items: center;
   font-size: 12px;
   font-family: airbnb-medium;
@@ -34,6 +71,7 @@
   border-radius: 10px 10px 0 0;
   margin-bottom: 0;
   height: 64px;
+  width:100%;
 }
 
 .reserve-card .container {
@@ -55,20 +93,16 @@
   font-family: 'CircularStd-Book';
   font-size: .8rem;
   font-weight: normal;
+
 }
 
 .card-check-in,
 .card-check-out {
-  width: 10rem;
-  height: 3.5rem;
-  text-align: center;
+  text-align: left;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.card-check-in {
-  border-right: 1px solid lightgrey;
+  justify-content: flex-start;
+  font-size:11px;
 }
 
 .card-info {
@@ -88,9 +122,6 @@
   margin-bottom: -6px;
 }
 
-// .card-star {
-// }
-
 .card-rate {
   font-size: 14px;
   font-family: airbnb-medium;
@@ -107,6 +138,10 @@
   color: rgb(34, 34, 34);
   line-height: 1.125rem;
 
+}
+
+.guest-head {
+  font-size:11px;
 }
 
 .mouse-cursor-gradient-tracking {
@@ -157,6 +192,11 @@
   // transition: opacity 1s ease 0s !important;
 }
 
+.info-top-left{
+  display:flex;
+  align-items: center;
+}
+
 .mouse-cursor-gradient-tracking:hover:before {
   --size: 200px;
   opacity: 0.7;
@@ -190,17 +230,22 @@
   justify-content: space-between;
   width: 100%;
   text-align: left;
-  padding: 10px;
-}
-
-.reserve-card .select-label:after {
-  content: "\25BE";
-  position: relative;
-  margin-left: 0.5em;
 }
 
 .reserve-card .select-wrap {
   background: rgb(255, 255, 255);
+}
+
+.num-of-guests-container{
+  display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+}
+
+.arrow-down-up-container{
+  padding-right:0.8rem;
 }
 
 .reserve-card .select {
@@ -296,3 +341,4 @@
   margin: 10px;
   padding-bottom: 10px;
 }
+

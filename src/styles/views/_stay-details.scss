@@ -24,6 +24,11 @@
   align-items: flex-end;
   justify-content:space-between;
 }
+.info-top-left span{
+  display:flex;
+  align-items:center;
+}
+
 
 .icons-top {
   display:flex;
@@ -35,21 +40,27 @@
 
 }
 
-.icon-share{
+.icon-share {
   display:flex;
   flex-direction:row;
+  align-items: center;
+  margin-right:10px;
+
 }
 
 .icon-save {
   display:flex;
   flex-direction:row;
+  align-items: center;
 }
+
 .stay-details-rate {
   color: #222222;
 }
 .stay-details-address {
   color: #717171;
   font-family: CircularStd-Book;
+  margin-bottom:-3px;
 }
 .stay-images {
   display: grid;
@@ -146,7 +157,7 @@ hr {
 }
 .stay-details {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-top: -4rem;
 }
 .stay-desc-container {
   display: flex;

@@ -22,7 +22,7 @@
             <div class="search-bar-container">
                 <div class="search-element location-container">
                     <label for="location">
-                        <div class="location-input-container">
+                        <div class="location-input-container" @click="openListBox=!openListBox">
                             <div class="search-heading">Location</div>
                             <!-- <div class="search-text">Where are you going?</div> -->
                             <input
@@ -30,7 +30,7 @@
                                 type="text"
                                 v-model="filterBy.location"
                                 placeholder="Where are you going?"
-                            />
+                            />     
                         </div>
                     </label>
                 </div>
@@ -193,11 +193,14 @@ export default {
             },
             isActive: true,
             selectOpen: false,
-            searchExpanded: false
+            searchExpanded: false,
+            stays:null,
+            openListBox:false
         }
     },
     created() {
         window.addEventListener('scroll', this.handleScroll);
+         this.stays = this.$store.getters.stays
     },
     methods: {
         setFilter() {

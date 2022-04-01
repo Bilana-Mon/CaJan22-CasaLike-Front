@@ -18,11 +18,11 @@ export default {
             state.orders = orders
         },
         saveOrder(state, { order }) {
-            state.currOrder = order;
-            console.log(state.currOrder);
-            // const idx = state.orders.findIndex((currOrder) => currOrder._id === order._id)
-            // if (idx !== -1) state.orders.splice(idx, 1, order)
-            // else state.orders.push(order)
+            // state.currOrder = order;
+            // console.log(state.currOrder);
+            const idx = state.orders.findIndex((currOrder) => currOrder._id === order._id)
+            if (idx !== -1) state.orders.splice(idx, 1, order)
+            else state.orders.push(order)
         },
         removeOrder(state, { orderId }) {
             const idx = state.orders.findIndex((currOrder) => currOrder._id === orderId)

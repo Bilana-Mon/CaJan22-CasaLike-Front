@@ -30,7 +30,9 @@ async function getById(orderId) {
 
 async function save(order) {
     console.log('orderFront', order);
-    return await httpService.post(`order`, order)
+    return order._id
+        ? await httpService.put(`order/${order._id}`, order)
+        : await httpService.post(`order`, order)
 }
 
 function getEmptyOrder() {
@@ -46,7 +48,9 @@ function getEmptyOrder() {
         user: 'Bilana',
         host: '',
         cleaningFee: '',
-        securityDeposit: ''
+        securityDeposit: '',
+        isApproved: false,
+        isDeclined: false
     })
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <section class="orders-preview-container">
+    <section class="orders-preview-container" v-if="order">
         <li class="orders-list-conatainer">
             <!-- <div class="order-stay-container">
                 <span>Name of stay:</span>
@@ -32,6 +32,20 @@
                 <span>Name of guest:</span>
                 <span>{{ order.user }}</span>
             </div>
+            <div class="btn-container">
+                <button
+                    class="approve"
+                    @click="setOrderApproveStatus"
+                    :disabled="order.isApproved || order.isDeclined"
+                >Approve</button>
+                <button
+                    class="decline"
+                    @click="setOrderDeclineStatus"
+                    :disabled="order.isDeclined || order.isApproved"
+                >Decline</button>
+                <div v-if="isApproved">The reservation was approved!</div>
+                <div v-if="isDeclined">The reservation was declined!</div>
+            </div>
             <hr class="hr" />
         </li>
     </section>
@@ -45,9 +59,15 @@ export default {
         order: Object
     },
     components: {},
-    created() { },
+    async created() {
+        // this.order = await this.$store.getters.order
+    },
     data() {
-        return {}
+        return {
+
+            isApproved: false,
+            isDeclined: false
+        }
     },
     methods: {
         getFormattedDate(date) {
@@ -66,6 +86,18 @@ export default {
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
         },
+        setOrderApproveStatus() {
+            let order = { ...this.order }
+            order.isApproved = true
+            this.$store.dispatch({ type: 'saveOrder' })
+            console.log(order);
+        },
+        setOrderDeclineStatus() {
+            let order = { ...this.order }
+            order.isDeclined = true
+            this.$store.dispatch({ type: 'saveOrder' })
+            console.log(order);
+        }
     },
     computed: {},
 }

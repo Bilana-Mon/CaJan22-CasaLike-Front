@@ -43,8 +43,8 @@
                     @click="setOrderDeclineStatus"
                     :disabled="order.isDeclined || order.isApproved"
                 >Decline</button>
-                <div v-if="isApproved">The reservation was approved!</div>
-                <div v-if="isDeclined">The reservation was declined!</div>
+                <div v-if="order.isApproved">The reservation was approved!</div>
+                <div v-if="order.isDeclined">The reservation was declined!</div>
             </div>
             <hr class="hr" />
         </li>
@@ -89,13 +89,13 @@ export default {
         setOrderApproveStatus() {
             let order = { ...this.order }
             order.isApproved = true
-            this.$store.dispatch({ type: 'saveOrder' })
+            this.$store.dispatch({ type: 'setOrder' })
             console.log(order);
         },
         setOrderDeclineStatus() {
             let order = { ...this.order }
             order.isDeclined = true
-            this.$store.dispatch({ type: 'saveOrder' })
+            this.$store.dispatch({ type: 'setOrder' })
             console.log(order);
         }
     },

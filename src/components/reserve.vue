@@ -44,7 +44,7 @@
             <label class="select-label" for="select-checkbox">
                 <div class="num-of-guests-container">
                     <div class="guest-txt-container">
-                        <span>Guests</span>
+                        <div>Guests</div>
                         <div class="num-of-guests-box">{{ showNumOfGuests }}</div>
                     </div>
                     <div class="arrow-down-up-container"></div>

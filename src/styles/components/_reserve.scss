@@ -2,14 +2,14 @@
   border: 1px solid rgb(221, 221, 221);
   border-radius: 12px;
   padding: 24px;
-  box-shadow:  rgb(0 0 0 / 12%) 0px 6px 16px;
+  box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
   width: 23.25rem;
   height: 21.6875rem;
   background-color: white;
   z-index: 5;
   position: sticky;
-  top:6rem;
-  margin-top: 1rem; 
+  top: 6rem;
+  margin-top: 1rem;
 }
 
 .reserve-card p {
@@ -35,6 +35,7 @@
   margin-bottom: 0;
   height: 64px;
 }
+
 .reserve-card .container {
   width: 20.125rem;
   height: 3.5rem;
@@ -47,13 +48,17 @@
   justify-content: center;
   align-items: center;
 }
-  
-.card-check-in, .card-check-out, .reserve-card .select-checkbox{
+
+.card-check-in,
+.card-check-out,
+.reserve-card .select-checkbox {
   font-family: 'CircularStd-Book';
   font-size: .8rem;
   font-weight: normal;
 }
-.card-check-in, .card-check-out{
+
+.card-check-in,
+.card-check-out {
   width: 10rem;
   height: 3.5rem;
   text-align: center;
@@ -61,7 +66,8 @@
   align-items: center;
   justify-content: center;
 }
-.card-check-in{
+
+.card-check-in {
   border-right: 1px solid lightgrey;
 }
 
@@ -104,18 +110,14 @@
 
 .mouse-cursor-gradient-tracking {
   position: relative;
-  background: var(
-    --dls19-brand-gradient-radial,
-    radial-gradient(
-      circle at center,
-      #ff385c 5%,
-      #e61e4d 27.5%,
-      #e31c5f 40%,
-      #d70466 57.5%,
-      #bd1e59 75%,
-      #bd1e59 950%
-    )
-  ) !important;
+  background: var(--dls19-brand-gradient-radial,
+      radial-gradient(circle at center,
+        #ff385c 5%,
+        #e61e4d 27.5%,
+        #e31c5f 40%,
+        #d70466 57.5%,
+        #bd1e59 75%,
+        #bd1e59 950%)) !important;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   font-family: "CircularStd-Book";
@@ -140,15 +142,13 @@
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(
-    circle at center center,
-    rgb(255, 56, 92) 5%,
-    rgb(230, 30, 77) 27.5%,
-    rgb(227, 28, 95) 40%,
-    rgb(215, 4, 102) 57.5%,
-    rgb(189, 30, 89) 75%,
-    rgb(197, 30, 92) 95%
-  ) !important;
+  background: radial-gradient(circle at center center,
+      rgb(255, 56, 92) 5%,
+      rgb(230, 30, 77) 27.5%,
+      rgb(227, 28, 95) 40%,
+      rgb(215, 4, 102) 57.5%,
+      rgb(189, 30, 89) 75%,
+      rgb(197, 30, 92) 95%) !important;
   transform: translate(-50%, -50%);
 
   transition: width 0.2s ease, height 0.2s ease;
@@ -161,6 +161,7 @@
   opacity: 0.7;
   width: 100%;
 }
+
 .mouse-cursor-gradient-tracking span {
   position: relative;
 }
@@ -180,16 +181,23 @@
   position: relative;
 }
 
-.reserve-card .select-label{
+.reserve-card .select-label {
   position: relative;
   text-transform: uppercase;
   color: black;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
 }
+
 .reserve-card .select-label:after {
   content: "\25BE";
   position: relative;
   margin-left: 0.5em;
 }
+
 .reserve-card .select-wrap {
   background: rgb(255, 255, 255);
 }
@@ -214,9 +222,11 @@
   height: 27.9775rem;
   border-radius: 1rem;
 }
+
 .count-span {
   align-items: center;
 }
+
 .option {
   justify-content: inherit;
   display: flex;
@@ -228,6 +238,7 @@
   text-align: left;
   // font-size: 1rem;
 }
+
 .reserve-card .btn-list {
   display: flex;
   justify-content: right;
@@ -260,6 +271,7 @@
   background-color: whitesmoke;
   color: #717171;
 }
+
 .reserve-card .pet-msg {
   // font-size: 0.875rem;
   margin-top: 0.75rem;
@@ -267,6 +279,7 @@
   color: #717171;
   text-align: left;
 }
+
 .reserve-card .select a {
   text-decoration: none !important;
   color: inherit;

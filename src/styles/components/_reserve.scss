@@ -85,6 +85,7 @@
 .night {
   font-size: 1rem;
   padding-right: 5.55rem;
+  margin-bottom: -6px;
 }
 
 // .card-star {
@@ -210,17 +211,17 @@
   list-style: none;
   padding: 20px;
   padding-top: 10px;
-  margin-top: 1.85rem;
-  left: -1.966rem;
+  margin-top: 1.75rem;
+  right: -1%;
   position: absolute;
   background-color: #ffffff;
   min-width: 230px;
   overflow: auto;
   border: 1px solid #ddd;
   z-index: 1;
-  width: 23.625rem;
+  width: 27.5vw;
   height: 27.9775rem;
-  border-radius: 1rem;
+  border-radius: 5px;
 }
 
 .count-span {
@@ -270,6 +271,7 @@
   height: 2rem;
   background-color: whitesmoke;
   color: #717171;
+  font-weight:700;
 }
 
 .reserve-card .pet-msg {
@@ -281,7 +283,7 @@
 }
 
 .reserve-card .select a {
-  text-decoration: none !important;
+  text-decoration: underline;
   color: inherit;
   cursor: pointer;
   font-family: 'CircularStd-Medium';

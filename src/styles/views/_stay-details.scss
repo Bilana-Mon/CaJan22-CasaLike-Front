@@ -17,9 +17,9 @@
 }
 .stay-rate-container {
   display:flex;
-  margin:10px;
+  // margin:10px;
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  line-height: 3.25rem;
   font-family: CircularStd-Light;
   align-items: flex-end;
   justify-content:space-between;
@@ -98,7 +98,7 @@
   gap: 1rem;
 }
 .stay-details h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-family: CircularStd-Book;
   letter-spacing: 0.5px;
   color: #222222;
@@ -109,14 +109,16 @@
   margin-top: 0;
 }
 .stay-details .stay-desc {
-  display:flex;
-  flex-wrap: wrap;
   font-size: 1.1rem;
   font-family: CircularStd-Light;
   color: #222222;
   line-height: 1.25rem;
   text-align: left;
 }
+// .stay-desc {
+//   display:flex;
+//   flex-wrap: wrap;
+// }
 
 .stay-details .small-img {
   height: 3.5rem;
@@ -126,13 +128,9 @@
   top:10px;
 }
 
-// .reserve-card{
-//     // display: none;
-// }
-
 .stay-details-rating {
   font-family: "CircularStd-book";
-  margin: 5px;
+  margin: 2px;
 }
 
 .stay-details-rate {
@@ -260,6 +258,7 @@ hr {
 }
 .map-container h2 {
   margin-bottom: 1rem;
+  font-size:1.4rem;
 }
 .vue-map {
   width: 100%;
@@ -268,6 +267,10 @@ hr {
 }
 .vue-map-location {
   font-family: "CircularStd-Medium";
+}
+
+.host-header-text h2{
+  font-size:1.4rem;
 }
 .review-preview {
   margin: 1rem 0;
@@ -386,6 +389,7 @@ hr {
 }
 .host-icon-desc{
   padding: 0 10px;
+  margin-bottom: -4px;
 }
 .about-host-container{
   display: flex;

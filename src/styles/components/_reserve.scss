@@ -215,13 +215,13 @@
   right: -1%;
   position: absolute;
   background-color: #ffffff;
-  min-width: 230px;
   overflow: auto;
   border: 1px solid #ddd;
   z-index: 1;
-  width: 27.5vw;
+  width: 325px;
   height: 27.9775rem;
   border-radius: 5px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
 }
 
 .count-span {
@@ -235,7 +235,7 @@
 
 .reserve-card .options-list {
   flex-direction: column;
-  line-height: 1.25rem;
+  line-height: 1rem !important;
   text-align: left;
   // font-size: 1rem;
 }
@@ -254,9 +254,10 @@
   margin: 0.5rem;
   font-family: airbnb-book;
 }
+.close-popup {
+  // text-decoration: underline !important;
+  cursor: pointer;
 
-.reserve-card .pets-service {
-  text-decoration: underline !important;
 }
 
 // .text-reserve {
@@ -275,7 +276,7 @@
 }
 
 .reserve-card .pet-msg {
-  // font-size: 0.875rem;
+  font-size: 0.875rem;
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
   color: #717171;
@@ -283,7 +284,7 @@
 }
 
 .reserve-card .select a {
-  text-decoration: underline;
+  // text-decoration: underline;
   color: inherit;
   cursor: pointer;
   font-family: 'CircularStd-Medium';

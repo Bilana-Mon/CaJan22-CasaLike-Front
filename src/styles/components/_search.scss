@@ -313,9 +313,9 @@
 }
 
 .option-adults {
-    font-family: 'Airbnb-Light';
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    font-family: 'Airbnb-Light'!important;
+    font-size: 1rem!important;;
+    letter-spacing: 0.5px!important;;
 }
 
 
@@ -360,9 +360,10 @@
 }
 
 .option-title{
-    font-family: 'Airbnb-Light';
-    font-size: 1rem;
-    letter-spacing: 0.5px;
+    font-family: 'Airbnb-Light' !important;
+    font-size: 1rem!important;
+    letter-spacing: 0.5px!important;
+    // text-decoration:none;
 }
 .date-picker-heading span, .el-range-input{
     width: 50%!important;
@@ -394,34 +395,6 @@
 .date-picker-heading .check-out, .el-range-input:nth-child(4){
     padding-left: 40px!important;
 }
-// .el-date-editor .el-range-separator {
-//     flex: 1;
-//     display: inline-flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100%;
-//     padding: 0 0px;
-//     margin: 0;
-//     font-size: 33px;
-//     word-break: keep-all;
-//     color: #dddddd;
-// }
-// .el-date-editor .el-range-input {
-//     background: transparent;
-//     -webkit-appearance: none;
-//     appearance: none;
-//     border: none;
-//     outline: 0;
-//     display: inline-block;
-//     height: 100%;
-//     margin: 0;
-//     padding: 0;
-//     width: 39%;
-//     text-align: center;
-//     font-size: 14px;
-//     font-family: 'CircularStd-Light';
-//     color: #717171;
-// }
 .demo-date-picker {
     display: flex;
     width: 100%;

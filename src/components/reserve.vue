@@ -138,14 +138,21 @@
         <div v-if="isReserved">
             <p>
                 <span>{{ getFormattedPrice }}</span> X
+                <span>{{getNumOfGuests}}</span> X
                 <span>{{ getNumOfNights }}</span>
                 <span>{{ getTotalPriceForNights }}</span>
             </p>
-            <div>
+            <div v-if="this.stay.cleaningFee">
                 <span>Cleaning fee:</span>
-                <span v-if="this.stay.cleaningFee">{{ this.stay.cleaningFee }}</span>
+                <span>${{ this.stay.cleaningFee }}</span>
+            </div>
+                <div v-if="this.stay.securityDeposit">
                 <span>Security deposit:</span>
-                <span v-if="this.stay.securityDeposit">{{ this.stay.securityDeposit }}</span>
+                <span>${{ this.stay.securityDeposit }}</span>
+                </div>
+            <div> 
+                <span>Total:</span>
+                <span>{{ getTotalIncludeFees }}</span>
             </div>
         </div>
         <div v-if="isInvalid">
@@ -254,6 +261,7 @@ export default {
         },
 
     },
+    
     computed: {
         getFormattedPrice() {
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.stay.price)
@@ -319,10 +327,26 @@ export default {
         },
         getTotalPriceForNights() {
             let numOfNights = this.getNumOfNights;
-            let totalPrice = numOfNights * this.stay.price;
+            let numOfGuests = this.order.capacity.adults + this.order.capacity.children
+            if (numOfGuests === 0) numOfGuests = 1
+            let totalPrice = numOfNights * (this.stay.price) * (numOfGuests)
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(totalPrice)
-        }
-
+        },
+        getNumOfGuests() {
+            let numOfGuests = this.order.capacity.adults + this.order.capacity.children
+            if (numOfGuests === 0) numOfGuests = 1
+            return numOfGuests
+        },
+        getTotalIncludeFees() {
+            let totalExFees = this.stay.price * (this.getNumOfGuests) * (this.getNumOfNights)
+            let cleanFees = this.stay.cleaningFee
+            if (!cleanFees) cleanFees = 0
+            let securityDeposit = this.stay.securityDeposit
+             if (!securityDeposit) securityDeposit = 0
+            let totalInFees = totalExFees +  cleanFees + securityDeposit 
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(totalInFees)
+            
+        },
     },
 }
 </script>

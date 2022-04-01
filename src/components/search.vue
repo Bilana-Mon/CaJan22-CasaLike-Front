@@ -4,7 +4,11 @@
     ></div>
     <div class="search-scroll" @click="expandSearch">
         <div class="search-field">
-            <div class="start-your-search">Start your search</div>
+            <div
+                class="start-your-search"
+                v-if="this.filterBy.location.length"
+            >{{ this.filterBy.location }}</div>
+            <div class="start-your-search" v-else>Start your search</div>
             <button class="search-btn">
                 <div class="svg-container">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -22,7 +26,7 @@
             <div class="search-bar-container">
                 <div class="search-element location-container">
                     <label for="location">
-                        <div class="location-input-container" @click="openListBox=!openListBox">
+                        <div class="location-input-container" @click="openListBox = !openListBox">
                             <div class="search-heading">Location</div>
                             <!-- <div class="search-text">Where are you going?</div> -->
                             <input
@@ -30,7 +34,7 @@
                                 type="text"
                                 v-model="filterBy.location"
                                 placeholder="Where are you going?"
-                            />     
+                            />
                         </div>
                     </label>
                 </div>
@@ -194,8 +198,8 @@ export default {
             isActive: true,
             selectOpen: false,
             searchExpanded: false,
-            stays:null,
-            openListBox:false
+            stays: null,
+            openListBox: false
         }
     },
     created() {

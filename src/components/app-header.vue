@@ -79,9 +79,7 @@ export default {
             return this.isStayDetailsPage || this.scrolled;
         },
         isStayDetailsPage() {
-            console.log(2222, this.$route);
-            return this.$route.name == 'stay-details'
-            // return true // stay-details
+            return ['stay', 'stay-details'].includes(this.$route.name)
         }
     },
     methods: {

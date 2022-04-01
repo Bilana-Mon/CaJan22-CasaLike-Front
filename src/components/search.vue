@@ -200,11 +200,10 @@ export default {
     },
     created() {
         window.addEventListener('scroll', this.handleScroll);
-         this.stays = this.$store.getters.stays
+        this.stays = this.$store.getters.stays
     },
     methods: {
         setFilter() {
-
             let filterBy = { ...this.filterBy }
             this.$store.dispatch({ type: 'setFilter', filterBy })
             this.$router.push(`/stay?location=${this.filterBy.location}`)
@@ -214,10 +213,8 @@ export default {
             console.log(this.filterBy)
             this.$router.push(`/stay`)
         },
-        handleScroll(event) {
-            console.log(window.scrollY)
-            if (window.scrollY > 20) this.isActive = false
-            else this.isActive = true
+        handleScroll() {
+            this.isActive = window.scrollY > 20
         },
         toggleSelect() {
             console.log('kissmechokeme');
@@ -244,15 +241,15 @@ export default {
         }
     },
     computed: {
+        numberOfGuests() {
+            return this.filterBy.countOfGuests.adults + this.filterBy.countOfGuests.children;
+        },
+        isAdultsExists() {
+            return this.filterBy.countOfGuests.adults > 0;
+        },
         showNumOfGuests() {
-            let guestsTxt = 'Add guests'
-            if (this.filterBy.countOfGuests.adults > 0) {
-                guestsTxt = this.filterBy.countOfGuests.adults + this.filterBy.countOfGuests.children;
-                if (guestsTxt === 1) guestsTxt = guestsTxt + ' ' + 'guest';
-                else guestsTxt = guestsTxt + ' ' + 'guests';
-                console.log(guestsTxt);
-            }
-            return guestsTxt;
+            const guests = this.numberOfGuests > 1 ? 'guests' : 'guest'
+            return this.isAdultsExists ? this.numberOfGuests + ' ' + guests : 'Add guests'
         }
     },
 }

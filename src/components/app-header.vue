@@ -71,7 +71,17 @@ export default {
         return {
             addSignupModal: false,
             openLoginBar: false,
-            isScrolled: false
+            scrolled: false
+        }
+    },
+    computed: {
+        isScrolled() {
+            return this.isStayDetailsPage || this.scrolled;
+        },
+        isStayDetailsPage() {
+            console.log(2222, this.$route);
+            return this.$route.name == 'stay-details'
+            // return true // stay-details
         }
     },
     methods: {
@@ -79,12 +89,9 @@ export default {
             this.$router.push('/')
         },
         
-        handleScroll (event) {
-         if (window.scrollY > 5) this.isScrolled = true
-         else this.isScrolled = false
+        handleScroll() {
+            this.scrolled = window.scrollY > 5
         }
-    },
-    computed: {},
-    unmounted() { },
+    }
 }
 </script>

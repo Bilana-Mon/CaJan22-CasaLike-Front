@@ -3,7 +3,7 @@
   // max-height: 300px;
   // width: 400px;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 12px;
   cursor: pointer;
   object-fit: cover;
 }
@@ -85,7 +85,7 @@ span {
   color: #4c4c4c !important;
 }
 .el-carousel__item {
-  border-radius: 20px;
+  border-radius: 12px;
 }
 .el-carousel__item img {
   object-fit: cover;
@@ -93,6 +93,7 @@ span {
 .stay-desc {
   margin-bottom: 1.5rem;
   cursor: pointer;
+  font-size:1.1rem;
 }
 .stay-desc > div {
   margin-top: 5px;
@@ -105,14 +106,18 @@ span {
 .stay-desc .rating .rating-star {
   margin-right: 8px;
 }
-.stay-desc .stay-loc {
+.stay-desc .stay-loc .room-type {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.stay-desc .stay-loc-name {
-  font-weight: bold;
+.stay-price {
+  display:flex;
+  flex-direction: row;
 }
+// .stay-desc .stay-loc-name {
+
+// }
 .stay-desc .stay-name{
   margin-top: 0;
 }
@@ -120,8 +125,8 @@ span {
   margin: 0 5px;
 }
 .stay-desc .stay-price .price {
-  font-weight: bold;
-  margin-right: 10px;
+  font-family: 'CircularStd-Book';
+  // margin-right: 10px;
 }
 
 @media (min-width: 600px) {

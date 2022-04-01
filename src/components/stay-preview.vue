@@ -23,7 +23,12 @@
                 aria-hidden="true"
                 role="presentation"
                 focusable="false"
-                style="display: inline-block; height: 14px; width: 14px; fill: #ff385c;"
+                style="
+                  display: inline-block;
+                  height: 14px;
+                  width: 14px;
+                  fill: #ff385c;
+                "
                 class="st-current"
               >
                 <path
@@ -34,19 +39,18 @@
               </svg>
             </span>
             <div class="rating-value">
-              {{ getFormattedRate }}
-              (
-              <span>{{ stay.numOfReviews }} reviews</span>)
+              {{ getFormattedRate }}    
+              (<span>{{ stay.numOfReviews }} reviews</span>)
             </div>
           </div>
           <div class="stay-loc">
-            <div class="stay-loc-name">{{ getLocation }}</div>
-            <span>∙</span>
-            <div class="room-type">{{ stay.roomType }}</div>
+             <div class="room-type">{{ stay.roomType }}</div>
           </div>
+            <!-- <span>∙</span> -->
+          <div class="stay-loc-name">{{ getLocation }}</div>
           <div class="stay-name">{{ stay.name }}</div>
           <div class="stay-price">
-            <span class="price">{{ getFormattedPrice }}</span>
+            <span class="price">{{ getFormattedPrice }} </span> <div class="price-night">/ night</div>
           </div>
         </div>
       </template>
@@ -55,38 +59,41 @@
 </template>
 
 <script>
-import customCard from './custom-card.vue'
+import customCard from "./custom-card.vue";
 
 export default {
-  name: 'stay-preview',
+  name: "stay-preview",
   props: {
     stay: Object,
   },
   components: {
     customCard,
-
   },
 
   computed: {
     getFormattedRate() {
-      let rate = +(this.stay.reviewScores.rating) / 20
-      return rate
+      let rate = +this.stay.reviewScores.rating / 20;
+      return rate;
     },
     getLocation() {
-      let stayStreet = this.stay.address.street.split(',')
-      let formattedStayStreet = stayStreet[0]
-      let city = this.stay.address.city
-      let formattedLocation = formattedStayStreet + ' ' + city
-      return formattedLocation
+      let stayStreet = this.stay.address.street.split(",");
+      let formattedStayStreet = stayStreet[0];
+      let city = this.stay.address.city;
+      let formattedLocation = formattedStayStreet + " " + city;
+      return formattedLocation;
     },
     getFormattedPrice() {
-      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.stay.price)
-    }
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0,
+      }).format(this.stay.price);
+    },
   },
   methods: {
     goToStayDetalis() {
-      this.$router.push('/stay/' + this.stay._id)
-    }
-  }
-}
+      this.$router.push("/stay/" + this.stay._id);
+    },
+  },
+};
 </script>

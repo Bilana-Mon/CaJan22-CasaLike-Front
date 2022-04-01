@@ -31,6 +31,7 @@
             <div v-if="isDateShown">
                 <el-date-picker
                     v-model="order.dates"
+                    @change="isReserved = true"
                     type="daterange"
                     range-separator
                     :start-placeholder="`${this.from}`"
@@ -131,12 +132,25 @@
             @mousemove="changeColor"
             @click.stop="checkOrder"
         >
-            <span class="text-reserve">Reserve</span>
+            <span class="text-reserve" v-if="isReserved">Reserved</span>
         </button>
 
-        <div v-if="isInValid">
+        <div v-if="isReserved">
+            <p>
+                <span>{{ getFormattedPrice }}</span> X
+                <span>{{ getNumOfNights }}</span>
+                <span>{{ getTotalPriceForNights }}</span>
+            </p>
+            <div>
+                <span>Cleaning fee:</span>
+                <span v-if="this.stay.cleaningFee">{{ this.stay.cleaningFee }}</span>
+                <span>Security deposit:</span>
+                <span v-if="this.stay.securityDeposit">{{ this.stay.securityDeposit }}</span>
+            </div>
+        </div>
+        <div v-if="isInvalid">
             <p>Missing reservation details!</p>
-            <button class="msg-btn" @click="isInValid = !isInValid">Close</button>
+            <button class="msg-btn" @click="isInvalid = !isInvalid">Close</button>
         </div>
     </section>
 </template>
@@ -169,9 +183,11 @@ export default {
         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
             this.order.dates['0'] = this.$store.getters.filter.dates['0']
             this.order.dates['1'] = this.$store.getters.filter.dates['1']
+            this.isReserved = true;
         } else {
             this.order.dates['0'] = 'Add date'
             this.order.dates['1'] = 'Add date'
+            this.isReserved = false;
         }
         this.from = this.formatFrom
         this.to = this.formatTo
@@ -179,10 +195,10 @@ export default {
     data() {
         return {
             order: null,
-            isInValid: false,
+            isInvalid: false,
             selectOpen: false,
             msg: '',
-
+            isReserved: false,
             isFixed: false,
             isAbsoluteUp: false,
             isAbsoluteDown: false,
@@ -233,7 +249,7 @@ export default {
                 // TODO: fix update of dates in reserve
                 this.$router.push('/order')
             } else {
-                this.isInValid = true;
+                this.isInvalid = true;
             }
         },
 
@@ -274,11 +290,11 @@ export default {
             if (!securityFees) {
                 securityFees = 0;
             }
-            let extraPeopleFees = this.stay.extraPeople
-            if (!extraPeopleFees) {
-                extraPeopleFees = 0;
-            }
-            let totalFees = extraPeopleFees + securityFees + cleanFees;
+            // let extraPeopleFees = this.stay.extraPeople
+            // if (!extraPeopleFees) {
+            //     extraPeopleFees = 0;
+            // }
+            let totalFees = securityFees + cleanFees;
             console.log(totalFees);
             // return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalFees)
             return totalFees
@@ -292,6 +308,19 @@ export default {
                 console.log(guestsTxt);
             }
             return guestsTxt;
+        },
+        getNumOfNights() {
+            let startDate = this.order.dates['0'].getTime()
+            let endDate = this.order.dates['1'].getTime()
+            let diffInTime = endDate - startDate;
+            let diffInDays = diffInTime / (1000 * 3600 * 24)
+            console.log(diffInDays);
+            return diffInDays
+        },
+        getTotalPriceForNights() {
+            let numOfNights = this.getNumOfNights;
+            let totalPrice = numOfNights * this.stay.price;
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(totalPrice)
         }
 
     },

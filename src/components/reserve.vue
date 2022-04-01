@@ -1,5 +1,5 @@
 <template>
-    <section v-if="stay" class="reserve-card">
+    <section v-if="stay && order" class="reserve-card">
         <div class="card-info">
             <span class="card-price">{{ getFormattedPrice }}</span>
             <span class="night">/ night</span>
@@ -41,7 +41,16 @@
         </div>
         <div class="container" @click="toggleSelect">
             <input type="checkbox" class="select-checkbox" />
-            <label class="select-label" for="select-checkbox">Add guests</label>
+            <label class="select-label" for="select-checkbox">
+                <div class="num-of-guests-container">
+                    <div class="guest-txt-container">
+                        <span>Guests</span>
+                        <div class="num-of-guests-box">{{ showNumOfGuests }}</div>
+                    </div>
+                    <div class="arrow-down-up-container"></div>
+                </div>
+            </label>
+
             <div class="select-wrap">
                 <ul v-if="selectOpen" class="select">
                     <li class="option">
@@ -180,6 +189,7 @@ export default {
             isDateShown: false,
             from: '',
             to: '',
+
         }
     },
     methods: {
@@ -272,6 +282,16 @@ export default {
             console.log(totalFees);
             // return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalFees)
             return totalFees
+        },
+        showNumOfGuests() {
+            let guestsTxt = 'Add guests'
+            if (this.order.capacity.adults > 0) {
+                guestsTxt = this.order.capacity.adults + this.order.capacity.children;
+                if (guestsTxt === 1) guestsTxt = guestsTxt + ' ' + 'guest';
+                else guestsTxt = guestsTxt + ' ' + 'guests';
+                console.log(guestsTxt);
+            }
+            return guestsTxt;
         }
 
     },
@@ -285,6 +305,10 @@ export default {
 }
 .msg-btn:hover {
     cursor: pointer;
+}
+
+.num-of-guests-box {
+    text-transform: lowercase;
 }
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-    <section class="order-details-container">
+    <section class="order-details-container" v-if="order && isApproved">
         <div class="order-details-success">
             <h1>Your Order Details</h1>
             <p>We thank you, for your reservation! Here are the details about your order:</p>
@@ -56,10 +56,17 @@
             </div>
         </div>
     </section>
+    <section v-if="!order"></section>
+    <!-- <easy-spinner /> -->
+    <section v-if="order && !isApproved">
+        <p>Reservation status: Pending</p>
+    </section>
 </template>
 
 <script>
 // import { stayService } from "../services/stay.service.js";
+// import easySpinner from 'vue-easy-spinner';
+
 export default {
     name: 'order-details',
     // props: {
@@ -67,15 +74,21 @@ export default {
     // },
     components: {},
     async created() {
+        this.order = await this.$store.getters.order
+        console.log(this.order);
+        setTimeout(() => {
+            this.isApproved = true;
+        }, 10000);
         // const { id } = this.$route.params
         // this.stay = await stayService.getById(id)
         // console.log(this.stay);
-        this.order = await this.$store.getters.order
-        console.log(this.order);
+
     },
     data() {
         return {
-            order: null
+            order: null,
+            isApproved: false,
+            // isLoading:true
         }
     },
     methods: {
@@ -155,7 +168,6 @@ export default {
     margin: auto;
     margin-top: 2rem;
     padding: 2rem;
-
 }
 .order-details-desc {
     display: flex;

@@ -56,14 +56,14 @@
                 <div class="guests-container search-element" @click.stop="toggleSelect">
                     <div>
                         <div class="search-heading">Guests</div>
-                        <div class="search-text" v-if="!selectOpen">Add guests</div>
+                        <div class="search-text" v-if="!selectOpen">{{ showNumOfGuests }}</div>
                         <div class="container">
                             <input type="checkbox" class="select-checkbox" />
                             <label
                                 class="select-label"
                                 for="select-checkbox"
                                 v-if="selectOpen"
-                            >Add guests</label>
+                            >{{ showNumOfGuests }}</label>
                             <div class="select-wrap">
                                 <ul v-if="selectOpen" class="select">
                                     <li class="option">
@@ -238,6 +238,18 @@ export default {
         expandSearch() {
             this.searchExpanded = !this.searchExpanded;
             console.log(this.searchExpanded);
+        }
+    },
+    computed: {
+        showNumOfGuests() {
+            let guestsTxt = 'Add guests'
+            if (this.filterBy.countOfGuests.adults > 0) {
+                guestsTxt = this.filterBy.countOfGuests.adults + this.filterBy.countOfGuests.children;
+                if (guestsTxt === 1) guestsTxt = guestsTxt + ' ' + 'guest';
+                else guestsTxt = guestsTxt + ' ' + 'guests';
+                console.log(guestsTxt);
+            }
+            return guestsTxt;
         }
     },
 }

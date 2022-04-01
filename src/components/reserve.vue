@@ -57,7 +57,7 @@
                     <li class="option">
                         <div class="options-list">
                             <a href="#" title="First">
-                                <div class="option-adults">Adults</div>
+                                <div class="option-adults option-title">Adults</div>
                                 <br />
                                 <div class="option-age">Age 13 or above</div>
                             </a>
@@ -74,8 +74,8 @@
                     <li class="option">
                         <div class="options-list">
                             <a href="#" title="Second">
-                                Children
-                                <br />Ages 2–12
+                                <div class="option-child option-title">Children</div>
+                                <div class="option-age2">Ages 2–12</div>
                             </a>
                         </div>
                         <div class="btn-list">
@@ -90,8 +90,8 @@
                     <li class="option">
                         <div class="options-list">
                             <a href="#" title="Third">
-                                Infants
-                                <br />Under 2
+                                <div class="option-infants option-title">Infants</div>
+                                <div class="option-age3">Under 2</div>
                             </a>
                         </div>
                         <div class="btn-list">
@@ -105,11 +105,8 @@
                     </li>
                     <li class="option">
                         <div class="options-list">
-                            <a href="#" title="fourth">
-                                Pets
-                                <br />
-                                <a class="pets-service" href="#">Bringing a service animal?</a>
-                            </a>
+                            <div class="option-pets option-title" title="fourth">Pets</div>
+                            <a class="pets-service" href="#">Bringing a service animal?</a>
                         </div>
                         <div class="btn-list">
                             <button
@@ -188,7 +185,7 @@ export default {
         this.order.price = this.stay.price
         this.order.host = this.stay.host.fullname
         this.order.nameOfStay = this.stay.name
-        if (this.stay.cleaningFee) this.order.cleaningFee = this.stay.cleaningFee 
+        if (this.stay.cleaningFee) this.order.cleaningFee = this.stay.cleaningFee
         if (this.stay.securityDeposit) this.order.securityDeposit = this.stay.securityDeposit
         if (this.$store.getters.filter.dates['0'] && this.$store.getters.filter.dates['1']) {
             this.order.dates['0'] = this.$store.getters.filter.dates['0']
@@ -289,7 +286,7 @@ export default {
             const fullDate = date2 + "/" + date1 + "/" + date3
             return fullDate
         },
-       
+
         showNumOfGuests() {
             let guestsTxt = '1 guest'
             if (this.order.capacity.adults > 0) {

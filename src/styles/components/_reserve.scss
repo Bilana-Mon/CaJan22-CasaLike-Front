@@ -215,13 +215,13 @@
   right: -1%;
   position: absolute;
   background-color: #ffffff;
-  min-width: 230px;
   overflow: auto;
   border: 1px solid #ddd;
   z-index: 1;
-  width: 27.5vw;
+  width: 325px;
   height: 27.9775rem;
   border-radius: 5px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
 }
 
 .count-span {

@@ -78,8 +78,9 @@
         <li v-for="review in stay.reviews.slice(0, 6)" :key="review">
           <div class="review-header">
             <img
+              v-if="this.reviewimgsUrls"
               class="host-thumbnail"
-              :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799097/casaLike/reviews/${this.selectedImage}.jpg`"
+              :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799097/casaLike/reviews/${this.getRandomImg()}.jpg`"
               onerror="this.onerror=null; this.src='./src/assets/host.png'"
               alt
             />
@@ -114,7 +115,8 @@
   </section>
 </template>
 <!-- <a href="#" v-if="isTxtLong">Show more</a> -->
-<script>
+<script>import { rand } from "@vueuse/core"
+
 
 
 export default {
@@ -123,14 +125,11 @@ export default {
     stay: Object,
   },
   created() {
-    this.selectedImage = this.getRandomImg(this.reviewimgsUrls)
-
   },
   data() {
     return {
       isTxtLong: false,
       reviewimgsUrls: ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012', '013', '014'],
-      selectedImage: null
     }
   },
   methods: {
@@ -159,9 +158,16 @@ export default {
       }
       return formattedTxt
     },
-    getRandomImg(items) {
-      // let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)]
-      return items[Math.floor(Math.random() * items.length)];
+    getRandomImg() {
+      let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)]
+      let filteredImgs = this.reviewimgsUrls.filter(imgUrl => imgUrl !== randImg)
+      this.reviewimgsUrls = filteredImgs
+      // this.reviewimgsUrls.slice(idx, idx + 1)
+      // console.log(this.reviewimgsUrls);
+      console.log(filteredImgs);
+      return randImg
+
+
       // randImg = '00' + randImg
     }
   },

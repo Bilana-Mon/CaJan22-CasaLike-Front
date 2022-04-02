@@ -44,10 +44,11 @@ export default {
             console.log('lala', order);
             commit({ type: 'saveOrder', order })
         },
-        async setOrder({ commit }, { order }) {
+        async setOrder({ commit, dispatch }, { order }) {
             await orderService.save(order)
             console.log('lala', order);
             commit({ type: 'setOrder', order })
+            dispatch({ type: 'loadOrders' });
         },
         async removeOrder({ commit }, { orderId }) {
             await orderService.remove(orderId)

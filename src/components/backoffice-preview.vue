@@ -89,13 +89,13 @@ export default {
         setOrderApproveStatus() {
             let order = { ...this.order }
             order.isApproved = true
-            this.$store.dispatch({ type: 'setOrder' })
+            this.$store.dispatch({ type: 'setOrder', order })
             console.log(order);
         },
         setOrderDeclineStatus() {
             let order = { ...this.order }
             order.isDeclined = true
-            this.$store.dispatch({ type: 'setOrder' })
+            this.$store.dispatch({ type: 'setOrder', order })
             console.log(order);
         }
     },

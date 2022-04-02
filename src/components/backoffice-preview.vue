@@ -201,12 +201,12 @@ export default {
 </style> -->
 
 <style>
-td {
+.orders-preview-container td {
     width: 150px;
     /* border: 1px solid #222222; */
 }
 
-tr {
+.orders-preview-container tr {
     height: 100px;
 }
 

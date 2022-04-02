@@ -51,7 +51,7 @@ export default {
 </style> -->
 
 <style>
-table {
+.backoffice-list-container table {
     /* width: 100%; */
     table-layout: fixed;
     /* width: 100%; */
@@ -60,11 +60,11 @@ table {
     padding: 20px;
     border: 1px solid black;
 }
-thead {
+.backoffice-list-container thead {
     display: table-row;
     text-align: left;
 }
-th {
+.backoffice-list-container th {
     width: 150px;
 }
 

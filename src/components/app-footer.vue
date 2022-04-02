@@ -24,16 +24,7 @@
 
 <script>
 
-
 export default {
     name:'app-footer',
-    components: {},
-    created() { },
-    data() {
-        return {}
-    },
-    methods: {},
-    computed: {},
-    unmounted() { },
 }
 </script>

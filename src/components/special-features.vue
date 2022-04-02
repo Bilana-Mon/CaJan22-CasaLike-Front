@@ -113,7 +113,6 @@ export default {
     props: {
         stay: Object
     },
-    components: {},
     created() {
         this.getAmenities()
     },
@@ -140,7 +139,5 @@ export default {
             }
         }
     },
-    computed: {},
-    unmounted() { },
 }
 </script>

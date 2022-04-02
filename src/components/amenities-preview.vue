@@ -6,8 +6,6 @@
             </div>
             <div class="amenities-container">
                 <div class="amenity-container">
-                    <!-- v-for="amenity in stay.amenities" :key="amenity" -->
-                    <!-- <div class="svg"></div> -->
                     <ul class="amenity">
                         <li class="clean-list" v-if="isTV">
                             <svg
@@ -161,7 +159,6 @@ export default {
     props: {
         stay: Object
     },
-    components: {},
     created() {
         this.getAmenities()
     },
@@ -239,10 +236,5 @@ export default {
             }
         }
     },
-    computed: {
-
-    },
 }
 </script>
-<style>
-</style> 

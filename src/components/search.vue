@@ -202,14 +202,12 @@ export default {
             this.selectOpen = false;
         },
         goExplore() {
-            console.log(this.filterBy)
             this.$router.push(`/stay`)
         },
         handleScroll() {
             this.isActive = window.scrollY > 20
         },
         toggleSelect() {
-            console.log('kissmechokeme');
             this.selectOpen = !this.selectOpen
         },
         updateCount(age, diff) {
@@ -229,7 +227,6 @@ export default {
         },
         expandSearch() {
             this.searchExpanded = !this.searchExpanded;
-            console.log(this.searchExpanded);
         }
     },
     computed: {

@@ -181,18 +181,13 @@
 
 <script>
 
-
-
 import { orderService } from '../services/order.service.js'
-
 
 export default {
     name: 'reserve',
     props: {
         stay: Object,
-
     },
-    components: {},
     async created() {
         this.order = await orderService.getEmptyOrder()
         this.order.stayId = this.stay._id
@@ -232,7 +227,6 @@ export default {
             isDateShown: false,
             from: '',
             to: '',
-
         }
     },
     methods: {
@@ -240,7 +234,6 @@ export default {
             switch (age) {
                 case 'adults':
                     this.order.capacity.adults += diff;
-                    console.log(this.order)
                     break;
                 case 'children':
                     this.order.capacity.children += diff;
@@ -270,7 +263,6 @@ export default {
             if (this.order.dates['0'] !== 'Add date' && this.order.dates['1'] !== 'Add date') {
                 let order = { ...this.order }
                 await this.$store.dispatch({ type: 'saveOrder', order })
-                console.log(this.$store.getters.order);
                 this.$router.push('/order')
             } else {
                 this.isInvalid = true;
@@ -313,7 +305,6 @@ export default {
                 guestsTxt = this.order.capacity.adults + this.order.capacity.children;
                 if (guestsTxt === 1) guestsTxt = guestsTxt + ' ' + 'guest';
                 else guestsTxt = guestsTxt + ' ' + 'guests';
-                console.log(guestsTxt);
             }
             return guestsTxt;
         },
@@ -322,7 +313,6 @@ export default {
             let endDate = this.order.dates['1'].getTime()
             let diffInTime = endDate - startDate;
             let diffInDays = diffInTime / (1000 * 3600 * 24)
-            console.log(diffInDays);
             return diffInDays
         },
         getTotalPriceForNights() {

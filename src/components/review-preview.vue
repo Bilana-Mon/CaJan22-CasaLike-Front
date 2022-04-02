@@ -114,9 +114,8 @@
     </div>
   </section>
 </template>
-<!-- <a href="#" v-if="isTxtLong">Show more</a> -->
-<script>import { rand } from "@vueuse/core"
 
+<script>
 
 
 export default {
@@ -124,8 +123,7 @@ export default {
   props: {
     stay: Object,
   },
-  created() {
-  },
+  
   data() {
     return {
       isTxtLong: false,
@@ -143,7 +141,6 @@ export default {
       let monthNum = new Date(date).getMonth()
       let monthName = monthNames[monthNum - 1]
       let yearNum = new Date(date).getFullYear()
-      console.log(yearNum)
       let formattedDate = monthName + ' ' + yearNum
       return formattedDate
 
@@ -160,7 +157,6 @@ export default {
     },
     getRandomImg() {
       let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)]
-      console.log(randImg)
       // let filteredImgs = this.reviewimgsUrls.filter(imgUrl => imgUrl !== randImg)
       // this.reviewimgsUrls = filteredImgs
       // console.log(filteredImgs);

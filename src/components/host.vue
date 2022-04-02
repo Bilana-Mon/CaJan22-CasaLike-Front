@@ -1,7 +1,5 @@
 <template>
     <section v-if="stay">
-        <!-- <div class="section-row">
-        <div class="section-col">-->
         <div class="host-container">
             <h2 class="host-header-text">Hosted by {{ stay.host.fullname }}</h2>
             <div class="host-icon-container">
@@ -78,8 +76,6 @@
                 </div>
             </div>
         </div>
-        <!-- </div>
-        </div>-->
     </section>
 </template>
 
@@ -91,16 +87,11 @@ export default {
     props: {
         stay: Object
     },
-    components: {
-
-    },
-    created() { },
     data() {
         return {
             isLongAbout: false
         }
     },
-    methods: {},
     computed: {
         getHostAbout() {
             let hostAbout = this.stay.host.about
@@ -113,6 +104,5 @@ export default {
             return hostAbout
         }
     },
-    unmounted() { },
 }
 </script>

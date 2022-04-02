@@ -34,27 +34,13 @@ export default {
     components: {
         backofficePreview
     },
-    created() { },
-    data() {
-        return {}
-    },
-    methods: {},
-    computed: {},
-    unmounted() { },
+
 }
 </script>
 
-<!-- <style>
-.backoffice-list-container {
-    border: 1px solid #222222;
-}
-</style> -->
-
 <style>
 .backoffice-list-container table {
-    /* width: 100%; */
     table-layout: fixed;
-    /* width: 100%; */
     margin: 0 auto;
     border-radius: 12px;
     padding: 20px;

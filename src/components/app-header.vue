@@ -1,13 +1,9 @@
 <template>
     <header :class="{ 'app-header scrolled': isScrolled, 'app-header': !isScrolled }">
-    <!-- <header class="app-header"> -->
         <div class="section-row">
             <div class="section-col">
                 <nav :class="{ 'main-nav scrolled': isScrolled, 'main-nav': !isScrolled }">
-                <!-- <nav class="main-nav"> -->
                     <div @click="goHome" class="logo">
-                        <!-- <img class="logo-img" alt="logo-img" src="src/assets/airbnb/logo.svg" /> -->
-
                         <svg version="1.1" id="logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                              viewBox="-258.4 397.4 43 47" style="enable-background:new -258.4 397.4 43 47;" xml:space="preserve">
                         <path class="st0" d="M-484,826.8c0,3.9-3.1,7-7,7c-1.8,0-3.6-0.7-4.9-2l0,0l-8.1-7.9l-8.1,7.9l0,0c-2.7,2.7-7.2,2.7-9.9,0
@@ -45,7 +41,6 @@
                         </div>
                     </div>
                 </nav>
-                 <!-- @setFilter="setFilter" -->
                 <search />
                 <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
             </div>

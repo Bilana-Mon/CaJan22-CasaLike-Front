@@ -1,15 +1,7 @@
 <template>
     <section class="orders-preview-container" v-if="order">
         <tr>
-            <!-- <div class="order-stay-container">
-                <span>Name of stay:</span>
-                <span>{{ order.nameOfStay }}</span>
-            </div>-->
-
-            <!-- <div class="li-title">Name of guest:</div> -->
             <td>{{ order.user }}</td>
-
-            <!-- <div class="li-title">Number of guests:</div> -->
             <td>
                 <span>Adults:</span>
                 <span>{{ order.capacity.adults }}</span>
@@ -69,7 +61,6 @@ export default {
     props: {
         order: Object
     },
-    components: {},
     async created() {
         this.stay = stayService.getById(this.order.stayId)
         console.log(this.stay);
@@ -118,92 +109,12 @@ export default {
             this.isDeclined = true
         }
     },
-    computed: {},
 }
 </script>
-
-<!-- <style>
-.orders-preview-conatainer {
-    display: flex;
-    border: 1px solid #222222;
-    border-radius: 12px;
-    padding: 5px;
-}
-.orders-preview-conatainer span {
-    padding: 5px;
-}
-
-.order-description-container {
-    display: flex;
-    flex-direction: column;
-    margin-right: 5px;
-}
-
-.order-guest-name-container {
-    display: flex;
-    flex-direction: row;
-}
-.order-guest-container .guests-li {
-    display: flex;
-    flex-direction: row;
-}
-
-.order-description-container .li-title {
-    margin-right: 5px;
-}
-
-.order-dates-container {
-    display: flex;
-    flex-direction: column;
-}
-.order-dates-container .dates-from {
-    display: flex;
-    flex-direction: row;
-}
-.order-dates-container .dates-to {
-    display: flex;
-    flex-direction: row;
-}
-.order-dates-container .li-title {
-    margin-right: 5px;
-}
-
-.btn-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5px;
-}
-
-.btn-container button {
-    width: 75px;
-    height: 35px;
-    border: 1px solid #000;
-    font-family: "CircularStd-Book";
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    border-radius: 10px;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
-    color: #222222;
-    background-color: white;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
-.btn-container button:disabled {
-    border: 1px solid #717171;
-    color: #717171;
-    cursor: not-allowed;
-}
-</style> -->
 
 <style>
 .orders-preview-container td {
     width: 150px;
-    /* border: 1px solid #222222; */
 }
 
 .orders-preview-container tr {

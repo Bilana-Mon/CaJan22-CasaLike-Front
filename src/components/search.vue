@@ -22,7 +22,6 @@
         </div>
     </div>
     <section class="search-bar">
-        <form>
             <div class="search-bar-container">
                 <div class="search-element location-container">
                     <label for="location">
@@ -158,7 +157,7 @@
                     </div>
 
                     <div class="search-btn-container">
-                        <button @click.stop="setFilter" class="search-btn">
+                        <button @click.prevent.stop="setFilter" class="search-btn">
                             <div class="svg-container">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                     <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -171,7 +170,6 @@
                     </div>
                 </div>
             </div>
-        </form>
     </section>
 </template>
 

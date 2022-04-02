@@ -141,13 +141,14 @@
             <span class="text-reserve" v-if="!isReserved">Check availability</span>
         </button>
 
-        <div v-if="isReserved">
-            <p>
-                <span>{{ getFormattedPrice }}</span> X
-                <span>{{ getNumOfGuests }}</span> X
+        <div class="pricing-container" v-if="isReserved">
+            <div >
+                <span>{{ getFormattedPrice }} x</span> 
+                <span>{{ getNumOfGuests }} x</span> 
                 <span>{{ getNumOfNights }}</span>
                 <span>{{ getTotalPriceForNights }}</span>
-            </p>
+            </div>
+        <div class="pricing-services">
             <div v-if="this.stay.cleaningFee">
                 <span>Cleaning fee:</span>
                 <span>${{ this.stay.cleaningFee }}</span>
@@ -156,11 +157,14 @@
                 <span>Security deposit:</span>
                 <span>${{ this.stay.securityDeposit }}</span>
             </div>
-            <div>
-                <span>Total:</span>
-                <span>{{ getTotalIncludeFees }}</span>
-            </div>
         </div>
+    </div>
+            <div class="total-price">
+                <hr>
+                <span><b>Total:</b></span>
+                <span class="total-price-amount">{{ getTotalIncludeFees }}</span>
+            </div>
+        
         <div v-if="isInvalid">
             <p>Please pick dates for your reservation!</p>
             <button class="msg-btn" @click="isInvalid = !isInvalid">Close</button>

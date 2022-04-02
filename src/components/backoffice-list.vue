@@ -1,5 +1,5 @@
 <template>
-    <section class="back-office-list-container">
+    <section class="backoffice-list-container">
         <ul class="orders-list-container clean-list" v-for="order in this.orders" :key="order._id">
             <backoffice-preview :order="order"></backoffice-preview>
         </ul>
@@ -25,3 +25,11 @@ export default {
     unmounted() { },
 }
 </script>
+
+<style>
+.backoffice-list-container {
+    border: 1px solid #222222;
+}
+</style>
+
+

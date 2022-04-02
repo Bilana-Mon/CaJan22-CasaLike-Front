@@ -154,7 +154,7 @@
         <div class="text-charging">You won't be charged yet</div>
             <div v-if="isReserved && order"> 
                 <div class="pricing-night">
-                    <div> {{getFormattedPrice }} x {{ getNumOfNights }}  nights </div> 
+                    <div class="text-decor"> {{getFormattedPrice }} x {{ getNumOfNights }}  nights </div> 
                     <div>{{ getTotalPriceForNights }}</div>
                 </div>
               <div class="pricing-night" v-if="this.stay.cleaningFee">
@@ -165,8 +165,8 @@
                 <div class="fees">Security deposit:</div>
                 <div>${{ this.stay.securityDeposit }}</div>
             </div>
-            <div class="total-price">
-                <hr>
+                <hr class="hr-reserve">
+                <div class="total-price">
                 <div>Total:</div>
                 <div>{{ getTotalIncludeFees }}</div>
             </div>

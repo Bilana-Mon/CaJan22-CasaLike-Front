@@ -349,22 +349,44 @@
   color:$grey;
   margin:.5rem;
 }
-.pricing.total {
+.pricing-night {
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom:0.2rem;
+  color:$black;
 }
+
 .total-price{ 
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family:'CircularStd-Medium';
+  font-family:'CircularStd-Book';
+}
+.text-decor {
+  text-decoration: underline;
 }
 
+.fees{
+  text-decoration: underline;
+}
 
+.hr-reserve{
+  width: 100%;
+  border-top: 0.2px solid #dddddd;
+  margin: 1em 0;
+}
+
+.text-reserve{
+  font-family: 'CircularStd-Book';
+  font-size: 1.03rem;
+}
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7 !important;
+}
+.el-date-table td.end-date .el-date-table-cell__text, .el-date-table td.start-date .el-date-table-cell__text {
+  background-color: #222222!important;
 }
 
 .el-date-range-picker {

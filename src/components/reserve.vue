@@ -26,24 +26,23 @@
         <div class="input-container">
             <div class="input-container-checks" @click="isDateShown = !isDateShown">
                 <div class="reserve-vsep">
-                <div class="card-check-in">CHECK-IN</div>
+                    <div class="card-check-in">CHECK-IN</div>
                 </div>
                 <div class="card-check-out">CHECKOUT</div>
                 <div class="date-container">
                     <div>
-                    <el-date-picker
-                        v-model="order.dates"
-                        @change="isReserved = true"
-                        type="daterange"
-                        range-separator
-                        :start-placeholder="`${this.from}`"
-                        :end-placeholder="`${this.to}`"
-                        format="M/D/YYYY"
-                    />
+                        <el-date-picker
+                            v-model="order.dates"
+                            @change="isReserved = true"
+                            type="daterange"
+                            range-separator
+                            :start-placeholder="`${this.from}`"
+                            :end-placeholder="`${this.to}`"
+                            format="M/D/YYYY"
+                        />
+                    </div>
                 </div>
             </div>
-            </div>
-            
         </div>
         <div class="container" @click="toggleSelect">
             <input type="checkbox" class="select-checkbox" />
@@ -54,9 +53,21 @@
                         <div class="num-of-guests-box">{{ showNumOfGuests }}</div>
                     </div>
                     <div class="arrow-down-up-container">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><g fill="none"><path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"></path></g></svg>
+                        <svg
+                            viewBox="0 0 32 32"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            role="presentation"
+                            focusable="false"
+                            style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"
+                        >
+                            <g fill="none">
+                                <path
+                                    d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"
+                                />
+                            </g>
+                        </svg>
                     </div>
-
                 </div>
             </label>
 
@@ -142,24 +153,26 @@
         </button>
 
         <div class="pricing-container" v-if="isReserved">
-            <div >
-                <span>{{ getFormattedPrice }} </span> x
+            <div>
+                <span>{{ getFormattedPrice }}</span> x
                 <span>{{ getNumOfNights }}</span>
                 <span>{{ getTotalPriceForNights }}</span>
             </div>
-        <div class="pricing-services">
-            <div v-if="this.stay.cleaningFee">
-                <span>Cleaning fee:</span>
-                <span>${{ this.stay.cleaningFee }}</span>
+            <div class="pricing-services">
+                <div v-if="this.stay.cleaningFee">
+                    <span>Cleaning fee:</span>
+                    <span>${{ this.stay.cleaningFee }}</span>
+                </div>
+                <div v-if="this.stay.securityDeposit">
+                    <span>Security deposit:</span>
+                    <span>${{ this.stay.securityDeposit }}</span>
+                </div>
             </div>
-            <div v-if="this.stay.securityDeposit">
-                <span>Security deposit:</span>
-                <span>${{ this.stay.securityDeposit }}</span>
-            </div>
-        </div>
             <div class="total-price">
-                <hr>
-                <span><b>Total:</b></span>
+                <hr />
+                <span>
+                    <b>Total:</b>
+                </span>
                 <span>{{ getTotalIncludeFees }}</span>
             </div>
         </div>
@@ -186,6 +199,7 @@ export default {
     components: {},
     async created() {
         this.order = await orderService.getEmptyOrder()
+        this.order.stayId = this.stay._id
         this.order.location = this.$store.getters.filter.location
         if (!this.$store.getters.filter.location) {
             this.order.location = this.stay.address.street

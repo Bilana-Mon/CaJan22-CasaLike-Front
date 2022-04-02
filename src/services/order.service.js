@@ -38,6 +38,7 @@ async function save(order) {
 function getEmptyOrder() {
     return Promise.resolve({
         nameOfStay: '',
+        stayId: '',
         location: '',
         dates: {
             0: new Date(),

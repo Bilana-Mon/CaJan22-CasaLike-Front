@@ -52,6 +52,8 @@
 </template>
 
 <script>
+import { stayService } from "../services/stay.service.js"
+
 
 export default {
     name: 'backoffice-preview',
@@ -60,11 +62,13 @@ export default {
     },
     components: {},
     async created() {
-        // this.order = await this.$store.getters.order
+        this.stay = stayService.getById(this.order.stayId)
+        console.log(this.stay);
+        console.log(this.order.stayId);
     },
     data() {
         return {
-
+            stay: null,
             isApproved: false,
             isDeclined: false
         }

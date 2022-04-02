@@ -37,15 +37,19 @@
                 <span>{{ getFormattedDate(order.dates['1']) }}</span>
             </td>
             <td>
-                <span v-if="order.isApproved || this.isApproved">The reservation was approved!</span>
-                <span v-if="order.isDeclined || this.isDeclined">The reservation was declined!</span>
+                <span class="approve" v-if="order.isApproved || this.isApproved">Approved</span>
+                <span class="decline" v-if="order.isDeclined || this.isDeclined">Declined</span>
+                <span
+                    class="pending"
+                    v-if="!order.isDeclined && !this.isDeclined && !order.isApproved && !this.isApproved"
+                >Pending</span>
             </td>
-            <td>
+            <td class="btn-container">
                 <button
                     class="approve"
                     @click="setOrderApproveStatus(); toggleApprove()"
                     :disabled="order.isApproved || order.isDeclined || this.isApproved || this.isDeclined"
-                >Approved</button>
+                >Approve</button>
                 <button
                     class="decline"
                     @click="setOrderDeclineStatus(); toggleDeclined()"
@@ -199,10 +203,61 @@ export default {
 <style>
 td {
     width: 150px;
-    border: 1px solid #222222;
+    /* border: 1px solid #222222; */
 }
 
-.orders-preview-container div {
-    display: inline;
+tr {
+    height: 100px;
+}
+
+.btn-container button {
+    width: 65px;
+    height: 35px;
+    border: 1px solid #222222;
+    font-family: "CircularStd-Book";
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    color: #222222;
+    background-color: white;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-container button:disabled {
+    border: 1px solid #717171;
+    color: #717171;
+    cursor: not-allowed;
+}
+.btn-container button:disabled:hover {
+    border: 1px solid #717171;
+    color: #717171;
+    cursor: not-allowed;
+}
+
+.approve {
+    font-family: "Airbnb-medium";
+    color: #00a699;
+}
+.decline {
+    font-family: "Airbnb-medium";
+    color: #c01333;
+}
+.pending {
+    font-family: "Airbnb-medium";
+    color: #fc642d;
+}
+
+.btn-container .approve:hover {
+    border: 1px solid #00a699;
+    color: #00a699;
+}
+.btn-container .decline:hover {
+    border: 1px solid #c01333;
+    color: #c01333;
 }
 </style>

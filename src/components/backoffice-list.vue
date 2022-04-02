@@ -1,6 +1,7 @@
 <template>
     <section class="backoffice-list-container">
         <table cellpadding="0" cellspacing="0">
+            <h2 class="table-heading">Your Reservations</h2>
             <thead>
                 <tr>
                     <th>Name of guest:</th>
@@ -52,6 +53,11 @@ export default {
 <style>
 table {
     /* width: 100%; */
+    table-layout: fixed;
+    /* width: 100%; */
+    margin: 0 auto;
+    border-radius: 12px;
+    padding: 20px;
     border: 1px solid black;
 }
 thead {
@@ -60,6 +66,10 @@ thead {
 }
 th {
     width: 150px;
+}
+
+.table-heading {
+    color: #ff385c;
 }
 </style>
 

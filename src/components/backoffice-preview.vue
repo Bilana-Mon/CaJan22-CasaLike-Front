@@ -107,4 +107,28 @@ export default {
 .orders-list-conatainer span {
     padding: 5px;
 }
+
+.btn-container button {
+    width: 75px;
+    height: 35px;
+    border: 1px solid #000;
+    font-family: "CircularStd-Book";
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    color: #222222;
+    background-color: white;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.btn-container button:disabled {
+    border: 1px solid #717171;
+    color: #717171;
+    cursor: not-allowed;
+}
 </style>

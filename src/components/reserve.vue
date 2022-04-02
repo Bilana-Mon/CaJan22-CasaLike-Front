@@ -75,11 +75,11 @@
                 <ul v-if="selectOpen" class="select">
                     <li class="option">
                         <div class="options-list">
-                            <a href="#" title="First">
+                            <div title="First">
                                 <div class="option-adults option-title">Adults</div>
                                 <br />
                                 <div class="option-age">Age 13 or above</div>
-                            </a>
+                            </div>
                         </div>
                         <div class="btn-list">
                             <button
@@ -92,10 +92,10 @@
                     </li>
                     <li class="option">
                         <div class="options-list">
-                            <a href="#" title="Second">
+                            <div title="Second">
                                 <div class="option-child option-title">Children</div>
                                 <div class="option-age2">Ages 2–12</div>
-                            </a>
+                            </div>
                         </div>
                         <div class="btn-list">
                             <button
@@ -108,10 +108,10 @@
                     </li>
                     <li class="option">
                         <div class="options-list">
-                            <a href="#" title="Third">
+                            <div title="Third">
                                 <div class="option-infants option-title">Infants</div>
                                 <div class="option-age3">Under 2</div>
-                            </a>
+                            </div>
                         </div>
                         <div class="btn-list">
                             <button
@@ -125,7 +125,7 @@
                     <li class="option">
                         <div class="options-list">
                             <div class="option-pets option-title" title="fourth">Pets</div>
-                            <a class="pets-service" href="#">Bringing a service animal?</a>
+                            <div class="reserve-pets-service" >Bringing a service animal?</div>
                         </div>
                         <div class="btn-list">
                             <button

@@ -140,29 +140,26 @@
             <span class="text-reserve" v-if="isReserved">Reserve</span>
             <span class="text-reserve" v-if="!isReserved">Check availability</span>
         </button>
-
-        <div class="pricing-container" v-if="isReserved">
-            <div >
-                <span>{{ getFormattedPrice }} </span> x
-                <span>{{ getNumOfNights }}</span>
-                <span>{{ getTotalPriceForNights }}</span>
+        <div class="text-charging">You won't be charged yet</div>
+            <div v-if="isReserved"> </div>
+                <div class="pricing-night">
+                    <div> ${{ getFormattedPrice }} x {{ getNumOfNights }} nights </div> 
+                    <div>{{ getTotalPriceForNights }}</div>
+                </div>
+              <div class="pricing-night" v-if="this.stay.cleaningFee">
+                    <div class="fees">Cleaning fee:</div>
+                    <div>${{ this.stay.cleaningFee }}</div>
             </div>
-        <div class="pricing-services">
-            <div v-if="this.stay.cleaningFee">
-                <span>Cleaning fee:</span>
-                <span>${{ this.stay.cleaningFee }}</span>
+            <div class="pricing-night" v-if="this.stay.securityDeposit">
+                <div class="fees">Security deposit:</div>
+                <div>${{ this.stay.securityDeposit }}</div>
             </div>
-            <div v-if="this.stay.securityDeposit">
-                <span>Security deposit:</span>
-                <span>${{ this.stay.securityDeposit }}</span>
-            </div>
-        </div>
             <div class="total-price">
                 <hr>
-                <span><b>Total:</b></span>
-                <span>{{ getTotalIncludeFees }}</span>
+                <div>Total:</div>
+                <div>{{ getTotalIncludeFees }}</div>
             </div>
-        </div>
+        
         <div v-if="isInvalid">
             <p>Please pick dates for your reservation!</p>
             <button class="msg-btn" @click="isInvalid = !isInvalid">Close</button>

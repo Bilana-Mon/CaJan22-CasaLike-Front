@@ -124,7 +124,7 @@
                     <li class="option">
                         <div class="options-list">
                             <div class="option-pets option-title" title="fourth">Pets</div>
-                            <div class="reserve-pets-service" >Bringing a service animal?</div>
+                            <div class="reserve-pets-service">Bringing a service animal?</div>
                         </div>
                         <div class="btn-list">
                             <button
@@ -151,30 +151,30 @@
             <span class="text-reserve" v-if="!isReserved">Check availability</span>
         </button>
         <div class="text-charging">You won't be charged yet</div>
-            <div v-if="isReserved && order"> 
-                <div class="pricing-night">
-                    <div class="text-decor"> {{getFormattedPrice }} x {{ getNumOfNights }}  nights </div> 
-                    <div>{{ getTotalPriceForNights }}</div>
-                </div>
-              <div class="pricing-night" v-if="this.stay.cleaningFee">
-                    <div class="fees">Cleaning fee:</div>
-                    <div>${{ this.stay.cleaningFee }}</div>
+        <div v-if="isReserved && order">
+            <div class="pricing-night">
+                <div class="text-decor">{{ getFormattedPrice }} x {{ getNumOfNights }} nights</div>
+                <div>{{ getTotalPriceForNights }}</div>
+            </div>
+            <div class="pricing-night" v-if="this.stay.cleaningFee">
+                <div class="fees">Cleaning fee:</div>
+                <div>${{ this.stay.cleaningFee }}</div>
             </div>
             <div class="pricing-night" v-if="this.stay.securityDeposit">
                 <div class="fees">Security deposit:</div>
                 <div>${{ this.stay.securityDeposit }}</div>
             </div>
-                <hr class="hr-reserve">
-                <div class="total-price">
+            <hr class="hr-reserve" />
+            <div class="total-price">
                 <div>Total:</div>
                 <div>{{ getTotalIncludeFees }}</div>
             </div>
         </div>
         <div v-if="isInvalid">
-                <div class="msg-pickdates">
-            <div>Please pick dates for your reservation!</div>
-            <button class="msg-btn-pickdates" @click="isInvalid = !isInvalid">Close</button>
-                </div>  
+            <div class="msg-pickdates">
+                <div>Please pick dates for your reservation!</div>
+                <button class="msg-btn-pickdates" @click="isInvalid = !isInvalid">Close</button>
+            </div>
         </div>
     </section>
 </template>
@@ -340,17 +340,5 @@ export default {
 }
 </script>
 
-<style>
-.msg-btn {
-    background-color: white;
-    border: none;
-}
-.msg-btn:hover {
-    cursor: pointer;
-}
 
-.num-of-guests-box {
-    text-transform: lowercase;
-}
-</style>
 

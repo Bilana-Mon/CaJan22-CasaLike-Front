@@ -4,12 +4,17 @@
         <div class="section-row">
             <div class="section-col">
                 <div class="homepage-img">
-                    <img alt="homepage-img" src="src/assets/imgs/homepage/lake-house.jpg" />
+                    <img
+                        alt="homepage-img"
+                        src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648472873/casaLike/homepage/lake-house.jpg"
+                    />
                     <div class="jingle">
                         <h3>Where would you like to feel at home today?</h3>
                     </div>
                     <router-link class="link" to="/stay">
-                        <button href="#/stay" class="flexible-btn"> <span>I'm flexible </span></button>
+                        <button href="#/stay" class="flexible-btn">
+                            <span>I'm flexible</span>
+                        </button>
                     </router-link>
                 </div>
             </div>
@@ -23,7 +28,7 @@
                             <img
                                 class="destination-img"
                                 alt="porto"
-                                src="src/assets/imgs/homepage/porto.webp"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648472873/casaLike/homepage/porto.webp"
                             />
                             <div class="destination-text">
                                 <h2>Porto</h2>
@@ -33,7 +38,7 @@
                             <img
                                 class="destination-img"
                                 alt="maui"
-                                src="src/assets/imgs/homepage/maui.webp"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648472873/casaLike/homepage/maui.jpg"
                             />
                             <div class="destination-text">
                                 <h2>Maui</h2>
@@ -43,7 +48,7 @@
                             <img
                                 class="destination-img"
                                 alt="hongkong"
-                                src="src/assets/imgs/homepage/hongkong.webp"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648472873/casaLike/homepage/hongkong.webp"
                             />
                             <div class="destination-text">
                                 <h2>Hong Kong</h2>
@@ -53,7 +58,7 @@
                             <img
                                 class="destination-img"
                                 alt="montreal"
-                                src="src/assets/imgs/homepage/montreal.webp"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648472873/casaLike/homepage/montreal.jpg"
                             />
                             <div class="destination-text">
                                 <h2>Montreal</h2>
@@ -66,7 +71,10 @@
         <div class="section-row">
             <div class="section-col">
                 <div class="homepage-img">
-                    <img alt="homepage-img" src="src/assets/imgs/homepage/hoster2.jpg" />
+                    <img
+                        alt="homepage-img"
+                        src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799357/casaLike/homepage/hoster2.jpg"
+                    />
                     <div class="jingle2">
                         <h3>You can host anything, anywhere.</h3>
                     </div>
@@ -86,7 +94,7 @@
                             <img
                                 class="destination-img"
                                 alt="porto"
-                                src="src/assets/imgs/homepage/hawaii.jpg"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799428/casaLike/homepage/hawaii.jpg"
                             />
                             <div class="destination-text">
                                 <h2>Hawaii</h2>
@@ -99,7 +107,7 @@
                             <img
                                 class="destination-img"
                                 alt="maui"
-                                src="src/assets/imgs/homepage/seychelles.jpg"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799394/casaLike/homepage/seychelles.jpg"
                             />
                             <div class="destination-text">
                                 <h2>Seychelles</h2>
@@ -112,7 +120,7 @@
                             <img
                                 class="destination-img"
                                 alt="hongkong"
-                                src="src/assets/imgs/homepage/namibia.jpg"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799387/casaLike/homepage/namibia.jpg"
                             />
                             <div class="destination-text">
                                 <h2>Namibia</h2>
@@ -125,7 +133,7 @@
                             <img
                                 class="destination-img"
                                 alt="montreal"
-                                src="src/assets/imgs/homepage/iceland.jpg"
+                                src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799371/casaLike/homepage/iceland.jpg"
                             />
                             <div class="destination-text">
                                 <h2>Iceland</h2>
@@ -152,7 +160,7 @@ export default {
         return {
             filterBy: null,
             isScrolled: false,
-            city:'',
+            city: '',
         }
     },
     methods: {
@@ -173,7 +181,7 @@ export default {
             this.goExplore()
         },
         goExplore() {
-           
+
             let filterBy = JSON.parse(JSON.stringify(this.filterBy))
             filterBy.location = this.city
             this.$store.dispatch({ type: 'setFilter', filterBy })
@@ -191,5 +199,3 @@ export default {
     unmounted() { },
 }
 </script>
-<style>
-</style>

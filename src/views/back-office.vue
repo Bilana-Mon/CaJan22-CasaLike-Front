@@ -27,8 +27,3 @@ export default {
 }
 </script>
 
-<style>
-.backoffice-container {
-    min-height: 80vh;
-}
-</style>

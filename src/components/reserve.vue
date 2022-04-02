@@ -77,7 +77,6 @@
                         <div class="options-list">
                             <div title="First">
                                 <div class="option-adults option-title">Adults</div>
-                                <br />
                                 <div class="option-age">Age 13 or above</div>
                             </div>
                         </div>

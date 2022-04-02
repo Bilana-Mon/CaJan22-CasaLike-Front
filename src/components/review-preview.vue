@@ -159,24 +159,19 @@ export default {
       return formattedTxt
     },
     getRandomImg() {
-      let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)].toString()
+      let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)]
       console.log(randImg)
-      let filteredImgs = this.reviewimgsUrls.filter(imgUrl => imgUrl !== randImg)
-      this.reviewimgsUrls = filteredImgs
-      console.log(filteredImgs);
+      // let filteredImgs = this.reviewimgsUrls.filter(imgUrl => imgUrl !== randImg)
+      // this.reviewimgsUrls = filteredImgs
+      // console.log(filteredImgs);
       return randImg
-
-
-      // randImg = '00' + randImg
-    }
+    },
   },
   computed: {
     getFormattedRate() {
       let rate = +(this.stay.reviewScores.rating) / 20
       return rate
     },
-
-
   },
 
 }

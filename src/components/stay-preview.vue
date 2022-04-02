@@ -48,7 +48,7 @@
              <div class="stay-loc-name">{{ getLocation }}</div>
           </div>
           
-          <div class="stay-name">{{ stay.name }}</div>
+          <div class="stay-name">{{ getStayName }}</div>
           <div class="stay-price">
             <div class="price-night"><b><span class="price">{{ getFormattedPrice }} </span></b> / night</div>
           </div>
@@ -80,6 +80,7 @@ export default {
       let formattedStayStreet = stayStreet[0];
       let city = this.stay.address.city;
       let formattedLocation = formattedStayStreet + " " + city;
+      if (formattedLocation.length > 10) formattedLocation = formattedLocation.slice(0,10)
       return formattedLocation;
     },
     getFormattedPrice() {
@@ -89,6 +90,11 @@ export default {
         maximumFractionDigits: 0,
       }).format(this.stay.price);
     },
+    getStayName() {
+      let stayName = this.stay.name
+      if (stayName.length > 25) stayName = stayName.slice(0,25)
+      return stayName
+    }
   },
   methods: {
     goToStayDetalis() {

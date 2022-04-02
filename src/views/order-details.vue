@@ -139,11 +139,11 @@
                     <li>
                         <span class="li-title li-upper-title">Fees:</span>
                         <div class="fees-box">
-                            <div class="cleaning-fee-container">
+                            <div v-if="order.cleaningFee" class="cleaning-fee-container">
                                 <div class="li-title">Cleaning fee:</div>
                                 <div class="li-content">${{ this.order.cleaningFee }}</div>
                             </div>
-                            <div class="security-fee-container">
+                            <div v-if="order.securityDeposit" class="security-fee-container">
                                 <div class="li-title">Security deposit:</div>
                                 <div class="li-content">${{ this.order.securityDeposit }}</div>
                             </div>

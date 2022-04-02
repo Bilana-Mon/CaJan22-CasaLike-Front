@@ -75,11 +75,11 @@
     </div>
     <div class="review-preview-container">
       <ul>
-        <li v-for="review in stay.reviews.slice(0,6)" :key="review">
+        <li v-for="review in stay.reviews.slice(0, 6)" :key="review">
           <div class="review-header">
             <img
               class="host-thumbnail"
-              :src="review.by.imgUrl"
+              :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799097/casaLike/reviews/${this.selectedImage}.jpg`"
               onerror="this.onerror=null; this.src='./src/assets/host.png'"
               alt
             />
@@ -108,7 +108,9 @@
         </li>
       </ul>
     </div>
-      <div class="show-button"><a href="#">Show all {{stay.reviews.length}} reviews</a></div>
+    <div class="show-button">
+      <a href="#">Show all {{ stay.reviews.length }} reviews</a>
+    </div>
   </section>
 </template>
 <!-- <a href="#" v-if="isTxtLong">Show more</a> -->
@@ -120,14 +122,15 @@ export default {
   props: {
     stay: Object,
   },
-  components: {
-
-  },
   created() {
+    this.selectedImage = this.getRandomImg(this.reviewimgsUrls)
+
   },
   data() {
     return {
       isTxtLong: false,
+      reviewimgsUrls: ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012', '013', '014'],
+      selectedImage: null
     }
   },
   methods: {
@@ -155,6 +158,11 @@ export default {
         this.isTxtLong = false
       }
       return formattedTxt
+    },
+    getRandomImg(items) {
+      // let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)]
+      return items[Math.floor(Math.random() * items.length)];
+      // randImg = '00' + randImg
     }
   },
   computed: {
@@ -163,8 +171,9 @@ export default {
       return rate
     },
 
+
   },
-  unmounted() { },
+
 }
 </script>
 

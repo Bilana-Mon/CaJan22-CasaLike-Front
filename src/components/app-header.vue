@@ -79,7 +79,7 @@ export default {
             return this.isStayDetailsPage || this.scrolled;
         },
         isStayDetailsPage() {
-            return ['stay', 'stay-details'].includes(this.$route.name)
+            return ['stay', 'stay-details', 'order-details' ,'back-office'].includes(this.$route.name)
         }
     },
     methods: {

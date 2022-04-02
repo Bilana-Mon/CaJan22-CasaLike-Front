@@ -143,8 +143,7 @@
 
         <div class="pricing-container" v-if="isReserved">
             <div >
-                <span>{{ getFormattedPrice }} x</span> 
-                <span>{{ getNumOfGuests }} x</span> 
+                <span>{{ getFormattedPrice }} </span> x
                 <span>{{ getNumOfNights }}</span>
                 <span>{{ getTotalPriceForNights }}</span>
             </div>
@@ -158,13 +157,12 @@
                 <span>${{ this.stay.securityDeposit }}</span>
             </div>
         </div>
-    </div>
             <div class="total-price">
                 <hr>
                 <span><b>Total:</b></span>
-                <span class="total-price-amount">{{ getTotalIncludeFees }}</span>
+                <span>{{ getTotalIncludeFees }}</span>
             </div>
-        
+        </div>
         <div v-if="isInvalid">
             <p>Please pick dates for your reservation!</p>
             <button class="msg-btn" @click="isInvalid = !isInvalid">Close</button>
@@ -319,9 +317,8 @@ export default {
         },
         getTotalPriceForNights() {
             let numOfNights = this.getNumOfNights;
-            let numOfGuests = this.order.capacity.adults + this.order.capacity.children
-            if (numOfGuests === 0) numOfGuests = 1
-            let totalPrice = numOfNights * (this.stay.price) * (numOfGuests)
+            // if (numOfGuests === 0) numOfGuests = 1
+            let totalPrice = numOfNights * (this.stay.price)
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(totalPrice)
         },
         getNumOfGuests() {
@@ -330,7 +327,7 @@ export default {
             return numOfGuests
         },
         getTotalIncludeFees() {
-            let totalExFees = this.stay.price * (this.getNumOfGuests) * (this.getNumOfNights)
+            let totalExFees = this.stay.price * (this.getNumOfNights)
             let cleanFees = this.stay.cleaningFee
             if (!cleanFees) cleanFees = 0
             let securityDeposit = this.stay.securityDeposit

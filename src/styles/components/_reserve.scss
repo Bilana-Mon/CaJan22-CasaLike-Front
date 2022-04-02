@@ -102,7 +102,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size:11px;
+  font-size:10px;
+  font-family: 'CircularStd-Medium';
 }
 
 .card-info {
@@ -141,7 +142,8 @@
 }
 
 .guest-head {
-  font-size:11px;
+  font-size:10px;
+  font-family: 'CircularStd-Medium';
 }
 
 .mouse-cursor-gradient-tracking {
@@ -342,3 +344,31 @@
   padding-bottom: 10px;
 }
 
+.pricing-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.total-price{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family:'CircularStd-Book';
+
+}
+
+.total-price-amount{ 
+  padding-left: 225px;
+}
+
+
+.el-date-table td.in-range .el-date-table-cell {
+  background-color: #f7f7f7 !important;
+}
+
+.el-date-range-picker {
+--el-datepicker-active-color: var(--el-color-primary);
+--el-datepicker-hover-text-color: $black;
+}

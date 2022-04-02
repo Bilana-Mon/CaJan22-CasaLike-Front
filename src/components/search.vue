@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="btn-list">
                                             <button
-                                                :disabled="filterBy.countOfGuests.adults === 0"
+                                                :disabled="filterBy.countOfGuests.adults === 1"
                                                 @click.stop="updateCount('adults', -1)"
                                             >-</button>
                                             <span
@@ -187,7 +187,7 @@ export default {
                     start: new Date().getTime() - 3600 * 1000 * 24 * 7,
                 },
                 countOfGuests: {
-                    adults: 0,
+                    adults: 1,
                     children: 0,
                     infants: 0,
                     pets: 0

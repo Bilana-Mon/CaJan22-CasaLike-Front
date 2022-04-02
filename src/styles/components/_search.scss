@@ -13,6 +13,9 @@
     border-radius: 100px;
     z-index: 80;
 }
+.search-bar button:disabled {
+    cursor: not-allowed;
+}
 @media (max-width: 1040px) {
   // .search-scroll-bg.expanded + .search-scroll + .search-bar {
     .search-bar{

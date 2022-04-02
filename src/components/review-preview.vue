@@ -159,11 +159,10 @@ export default {
       return formattedTxt
     },
     getRandomImg() {
-      let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)]
+      let randImg = this.reviewimgsUrls[Math.floor(Math.random() * this.reviewimgsUrls.length)].toString()
+      console.log(randImg)
       let filteredImgs = this.reviewimgsUrls.filter(imgUrl => imgUrl !== randImg)
       this.reviewimgsUrls = filteredImgs
-      // this.reviewimgsUrls.slice(idx, idx + 1)
-      // console.log(this.reviewimgsUrls);
       console.log(filteredImgs);
       return randImg
 

@@ -344,23 +344,22 @@
   padding-bottom: 10px;
 }
 
-.pricing-container{
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-
+.text-charging{
+  text-align: center;
+  color:$grey;
+  margin:.5rem;
 }
-
-.total-price{
+.pricing.total {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  font-family:'CircularStd-Book';
-
+  justify-content: space-between;
+  padding-bottom:0.2rem;
 }
-
-.total-price-amount{ 
-  padding-left: 225px;
+.total-price{ 
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family:'CircularStd-Medium';
 }
 
 

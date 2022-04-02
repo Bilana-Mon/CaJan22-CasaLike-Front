@@ -35,16 +35,16 @@
             <div class="btn-container">
                 <button
                     class="approve"
-                    @click="setOrderApproveStatus"
-                    :disabled="order.isApproved || order.isDeclined"
-                >Approve</button>
+                    @click="setOrderApproveStatus(); toggleApprove()"
+                    :disabled="order.isApproved || order.isDeclined || this.isApproved || this.isDeclined"
+                >Approved</button>
                 <button
                     class="decline"
-                    @click="setOrderDeclineStatus"
-                    :disabled="order.isDeclined || order.isApproved"
+                    @click="setOrderDeclineStatus(); toggleDeclined()"
+                    :disabled="order.isDeclined || order.isApproved || this.isApproved || this.isDeclined"
                 >Decline</button>
-                <div v-if="order.isApproved">The reservation was approved!</div>
-                <div v-if="order.isDeclined">The reservation was declined!</div>
+                <div v-if="order.isApproved || this.isApproved">The reservation was approved!</div>
+                <div v-if="order.isDeclined || this.isDeclined">The reservation was declined!</div>
             </div>
             <hr class="hr" />
         </li>
@@ -52,6 +52,8 @@
 </template>
 
 <script>
+import { stayService } from "../services/stay.service.js"
+
 
 export default {
     name: 'backoffice-preview',
@@ -60,11 +62,13 @@ export default {
     },
     components: {},
     async created() {
-        // this.order = await this.$store.getters.order
+        this.stay = stayService.getById(this.order.stayId)
+        console.log(this.stay);
+        console.log(this.order.stayId);
     },
     data() {
         return {
-
+            stay: null,
             isApproved: false,
             isDeclined: false
         }
@@ -86,17 +90,23 @@ export default {
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
         },
-        setOrderApproveStatus() {
+        async setOrderApproveStatus() {
             let order = { ...this.order }
             order.isApproved = true
-            this.$store.dispatch({ type: 'setOrder', order })
+            await this.$store.dispatch({ type: 'setOrder', order })
             console.log(order);
         },
-        setOrderDeclineStatus() {
+        async setOrderDeclineStatus() {
             let order = { ...this.order }
             order.isDeclined = true
-            this.$store.dispatch({ type: 'setOrder', order })
+            await this.$store.dispatch({ type: 'setOrder', order })
             console.log(order);
+        },
+        toggleApprove() {
+            this.isApproved = true
+        },
+        toggleDeclined() {
+            this.isDeclined = true
         }
     },
     computed: {},

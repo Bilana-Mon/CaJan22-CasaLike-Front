@@ -1,47 +1,46 @@
 <template>
     <section class="orders-preview-container" v-if="order">
-        <li class="orders-preview-conatainer">
+        <tr>
             <!-- <div class="order-stay-container">
                 <span>Name of stay:</span>
                 <span>{{ order.nameOfStay }}</span>
             </div>-->
-            <div class="order-description-container">
-                <div class="order-guest-name-container">
-                    <div class="li-title">Name of guest:</div>
-                    <div class="li-content">{{ order.user }}</div>
-                </div>
-                <div class="order-guest-container">
-                    <div class="li-title">Number of guests:</div>
-                    <div class="guests-li">
-                        <div class="li-title">Adults:</div>
-                        <div class="li-content">{{ order.capacity.adults }}</div>
-                    </div>
-                    <div v-if="order.capacity.children" class="guests-li">
-                        <div class="li-title">Children:</div>
-                        <div class="li-content">{{ order.capacity.children }}</div>
-                    </div>
-                    <div v-if="order.capacity.infants" class="guests-li">
-                        <div class="li-title">Infants:</div>
-                        <div class="li-content">{{ order.capacity.infants }}</div>
-                    </div>
-                    <div v-if="order.capacity.pets" class="guests-li">
-                        <div class="li-title">Pets:</div>
-                        <div class="li-content">{{ order.capacity.pets }}</div>
-                    </div>
-                </div>
-                <div class="order-dates-container">
-                    <div class="dates-from">
-                        <div class="li-title">From:</div>
-                        <div class="li-content">{{ getFormattedDate(order.dates['0']) }}</div>
-                    </div>
-                    <div class="dates-to">
-                        <div class="li-title">To:</div>
-                        <div class="li-content">{{ getFormattedDate(order.dates['1']) }}</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="btn-container">
+            <!-- <div class="li-title">Name of guest:</div> -->
+            <td>{{ order.user }}</td>
+
+            <!-- <div class="li-title">Number of guests:</div> -->
+            <td>
+                <span>Adults:</span>
+                <span>{{ order.capacity.adults }}</span>
+
+                <span v-if="order.capacity.children">
+                    <span>Children:</span>
+                    <span>{{ order.capacity.children }}</span>
+                </span>
+                <span v-if="order.capacity.infants">
+                    <span>Infants:</span>
+                    <span>{{ order.capacity.infants }}</span>
+                </span>
+                <span v-if="order.capacity.pets" class="guests-li">
+                    <span>Pets:</span>
+                    <span>{{ order.capacity.pets }}</span>
+                </span>
+            </td>
+
+            <td>
+                <!-- <div class="li-title">From:</div> -->
+                <span>{{ getFormattedDate(order.dates['0']) }}</span>
+            </td>
+            <td>
+                <!-- <div class="li-title">To:</div> -->
+                <span>{{ getFormattedDate(order.dates['1']) }}</span>
+            </td>
+            <td>
+                <span v-if="order.isApproved || this.isApproved">The reservation was approved!</span>
+                <span v-if="order.isDeclined || this.isDeclined">The reservation was declined!</span>
+            </td>
+            <td>
                 <button
                     class="approve"
                     @click="setOrderApproveStatus(); toggleApprove()"
@@ -52,10 +51,8 @@
                     @click="setOrderDeclineStatus(); toggleDeclined()"
                     :disabled="order.isDeclined || order.isApproved || this.isApproved || this.isDeclined"
                 >Decline</button>
-                <div v-if="order.isApproved || this.isApproved">The reservation was approved!</div>
-                <div v-if="order.isDeclined || this.isDeclined">The reservation was declined!</div>
-            </div>
-        </li>
+            </td>
+        </tr>
     </section>
 </template>
 
@@ -121,7 +118,7 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
 .orders-preview-conatainer {
     display: flex;
     border: 1px solid #222222;
@@ -196,5 +193,16 @@ export default {
     border: 1px solid #717171;
     color: #717171;
     cursor: not-allowed;
+}
+</style> -->
+
+<style>
+td {
+    width: 150px;
+    border: 1px solid #222222;
+}
+
+.orders-preview-container div {
+    display: inline;
 }
 </style>

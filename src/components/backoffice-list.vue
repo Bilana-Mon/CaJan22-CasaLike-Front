@@ -1,8 +1,25 @@
 <template>
     <section class="backoffice-list-container">
-        <ul class="orders-list-container clean-list" v-for="order in this.orders" :key="order._id">
-            <backoffice-preview :order="order"></backoffice-preview>
-        </ul>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Name of guest:</th>
+                    <th>Number of guests:</th>
+                    <th>From:</th>
+                    <th>To:</th>
+                    <th>Status:</th>
+                    <th colspan="2">Actions:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <backoffice-preview
+                    class="orders-list-container clean-list"
+                    v-for="order in this.orders"
+                    :key="order._id"
+                    :order="order"
+                ></backoffice-preview>
+            </tbody>
+        </table>
     </section>
 </template>
 
@@ -26,9 +43,23 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
 .backoffice-list-container {
     border: 1px solid #222222;
+}
+</style> -->
+
+<style>
+table {
+    /* width: 100%; */
+    border: 1px solid black;
+}
+thead {
+    display: table-row;
+    text-align: left;
+}
+th {
+    width: 150px;
 }
 </style>
 

@@ -23,6 +23,7 @@
   width: 100%;
   height: 3.5rem;
   margin-top:1rem;
+  cursor: pointer;
 }
 
 .input-container-checks{
@@ -46,6 +47,9 @@
 .reserve-container .card-check-in, .reserve-container .card-check-out{
   margin-top:  -16px;
 
+}
+.container{
+  cursor: pointer;
 }
 
 .reserve-container .reserve-vsep, .reserve-container .card-check-out, .reserve-container .container .select-label, .reserve-container .el-range-input{
@@ -249,6 +253,7 @@
     flex-direction: row;
     width: 100%;
     align-items: center;
+    cursor: pointer;
 }
 
 .arrow-down-up-container{
@@ -328,7 +333,7 @@
   height: 2rem;
   background-color: whitesmoke;
   color: #717171;
-  font-weight:700;
+  font-size:1.3125rem;
 }
 
 .reserve-card .pet-msg {
@@ -351,6 +356,7 @@
   align-items: center;
   margin: 10px;
   padding-bottom: 10px;
+  cursor: pointer!important;
 }
 
 .text-charging{
@@ -391,6 +397,18 @@
   font-family: 'CircularStd-Book';
   font-size: 1.03rem;
 }
+
+.msg-pickdates{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.msg-btn-pickdates{
+border-radius:20px;
+background-color: transparent;
+}
+
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7 !important;
 }
@@ -402,3 +420,4 @@
 --el-datepicker-active-color: var(--el-color-primary);
 --el-datepicker-hover-text-color: $black;
 }
+

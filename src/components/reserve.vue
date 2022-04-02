@@ -172,8 +172,10 @@
             </div>
         </div>
         <div v-if="isInvalid">
-            <p>Please pick dates for your reservation!</p>
-            <button class="msg-btn" @click="isInvalid = !isInvalid">Close</button>
+                <div class="msg-pickdates">
+            <div>Please pick dates for your reservation!</div>
+            <button class="msg-btn-pickdates" @click="isInvalid = !isInvalid">Close</button>
+                </div>  
         </div>
     </section>
 </template>

@@ -124,7 +124,7 @@
                 <div class="price-li-container">
                     <li>
                         <span>
-                            <span class="li-title">Price per night (per person):</span>
+                            <span class="li-title">Price per night:</span>
                             <span class="li-content">{{ getFormattedPrice(this.order.price) }}</span>
                         </span>
                     </li>
@@ -221,14 +221,12 @@ export default {
         },
         getTotalExFees() {
             let numNights = this.getNumOfNights
-            let numGuests = this.order.capacity.adults + this.order.capacity.children
-            let price = numNights * (this.order.price) * numGuests
+            let price = numNights * (this.order.price)
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(price)
         },
         getTotalPrice() {
             let numNights = this.getNumOfNights
-            let numGuests = this.order.capacity.adults + this.order.capacity.children
-            let totalPriceExFees = numNights * (this.order.price) * numGuests
+            let totalPriceExFees = numNights * (this.order.price)
             let cleaningFee = this.order.cleaningFee
             if (!cleaningFee) cleaningFee = 0
             let securityDeposit = this.order.securityDeposit

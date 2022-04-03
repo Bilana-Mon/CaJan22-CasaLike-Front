@@ -29,23 +29,23 @@
                 <span>{{ getFormattedDate(order.dates['1']) }}</span>
             </td>
             <td>
-                <span class="approve" v-if="order.status==='approved' || this.isApproved">Approved</span>
-                <span class="decline" v-if="order.status==='declined' || this.isDeclined">Declined</span>
+                <span class="approve" v-if="order.status === 'approved' || this.isApproved">Approved</span>
+                <span class="decline" v-if="order.status === 'declined' || this.isDeclined">Declined</span>
                 <span
                     class="pending-content"
-                    v-if="order.status==='pending' && !this.isApproved && !this.isDeclined"
+                    v-if="order.status === 'pending' && !this.isApproved && !this.isDeclined"
                 >Pending</span>
             </td>
             <td class="btn-container">
                 <button
                     class="approve"
                     @click="setOrderApproveStatus(); togglePending()"
-                    :disabled="order.status==='approved' || order.status==='declined' || !this.isPending"
+                    :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
                 >Approve</button>
                 <button
                     class="decline"
                     @click="setOrderDeclineStatus(); togglePending()"
-                    :disabled="order.status==='approved' || order.status==='declined' || !this.isPending"
+                    :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
                 >Decline</button>
             </td>
         </tr>
@@ -66,7 +66,7 @@ export default {
     },
     data() {
         return {
-            isPending:true,
+            isPending: true,
             isApproved: false,
             isDeclined: false,
         }
@@ -80,37 +80,41 @@ export default {
                 "October", "November", "December"
             ]
             let dayNum = new Date(date).getDate()
-            console.log(dayNum)
             let monthNum = new Date(date).getMonth()
             let monthName = monthNames[monthNum]
             let yearNum = new Date(date).getFullYear()
-            console.log(yearNum)
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
         },
         async setOrderApproveStatus() {
             this.isApproved = true
             let order = { ...this.order }
-           order.status = 'approved'
+            order.status = 'approved'
+            order.isSeenByUser = false;
+            order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
             console.log(order);
         },
         togglePending() {
-          this.isPending = false
+            this.isPending = false
         },
         async setOrderDeclineStatus() {
             this.isDeclined = true
             let order = { ...this.order }
             order.status = 'declined'
+            order.isSeenByUser = false;
+            order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
+            await this.$store.dispatch({ type: 'saveOrder', order })
+            console.log(this.$store.getters.order);
             console.log(order);
         },
         getClassByStatus() {
             let order = { ...this.order }
             let classStatus = 'seen orders-preview-container'
             if (order.status === 'pending' && this.isPending) classStatus = 'unSeen orders-preview-container'
-            return classStatus  
-        }  
+            return classStatus
+        }
     },
 }
 </script>

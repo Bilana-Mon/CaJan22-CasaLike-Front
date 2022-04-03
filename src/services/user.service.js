@@ -2,6 +2,9 @@
 // import { utilService } from "./util.service.js"
 import { httpService } from "./http.service.js"
 
+const gUser = 'Bilana'
+const gHost = 'Kyrill'
+
 // const gUsers = '../data/user.json'
 // const USERS_KEY = 'usersDB'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -11,6 +14,7 @@ export const userService = {
     signup,
     logout,
     getLoggedinUser,
+    getLoggedinHost
 }
 
 async function login(userCred) {
@@ -47,5 +51,10 @@ function _saveLocalUser(user) {
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
+    // return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null')
+    return gUser
+}
+
+function getLoggedinHost() {
+   return gHost
 }

@@ -1,6 +1,7 @@
 // import { utilService } from "./util.service.js";
 // import { storageService } from "./async-storage.service.js";
 import { httpService } from "./http.service.js";
+import { userService } from "./user.service.js"
 
 
 // const ORDERS_KEY = 'ordersDB'
@@ -46,12 +47,14 @@ function getEmptyOrder() {
         },
         capacity: [],
         price: null,
-        user: 'Bilana',
-        host: '',
+        user: userService.getLoggedinUser(),
+        host: userService.getLoggedinHost(),
         cleaningFee: '',
         securityDeposit: '',
-        isApproved: false,
-        isDeclined: false
+        status:'pending',
+        isSeenByUser: true,
+        isSeenByHost: false
+
     })
 }
 

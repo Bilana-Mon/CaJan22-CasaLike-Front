@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { stayService } from "../services/stay.service.js"
+
 
 
 export default {
@@ -62,13 +62,11 @@ export default {
         order: Object
     },
     async created() {
-        this.stay = stayService.getById(this.order.stayId)
-        console.log(this.stay);
-        console.log(this.order.stayId);
+
     },
     data() {
         return {
-            stay: null,
+
             isApproved: false,
             isDeclined: false
         }

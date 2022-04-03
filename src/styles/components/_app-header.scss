@@ -26,6 +26,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    top:5px;
 }
 
 .logo-img {
@@ -62,6 +63,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    top:5px;
 }
 .nav-right > a{
     text-decoration: none;
@@ -89,7 +91,7 @@
     background: white;
     border-radius: 20px;
     width: 77px;
-    height: 42px;
+    height: 43px;
     cursor: pointer;
 }
 .main-nav.scrolled .login-bar{

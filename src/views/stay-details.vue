@@ -122,9 +122,6 @@
         <hr />
         <stay-map :stay="stay"></stay-map>
         <hr />
-        <!-- <section class="date-wrapper">
-          <date-open :stay="stay"></date-open>
-        </section>-->
         <host :stay="stay"></host>
       </section>
     </div>

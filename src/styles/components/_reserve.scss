@@ -29,13 +29,11 @@
 .input-container-checks {
   position: relative;
 }
-
 .reserve-container .date-container {
   position: absolute;
   width: 100%;
   bottom: 10px;
 }
-
 .reserve-container .el-range-input {
   text-align: center !important;
   padding: 0 !important;
@@ -67,13 +65,11 @@
 
 .reserve-container .el-range-input {
   text-align: left !important;
-
 }
 
 .reserve-container .card-check-out {
   width: 50%;
 }
-
 
 .input-container-checks {
   display: flex;
@@ -103,10 +99,9 @@
 .card-check-in,
 .card-check-out,
 .reserve-card .select-checkbox {
-  font-family: 'CircularStd-Book';
-  font-size: .8rem;
+  font-family: "CircularStd-Book";
+  font-size: 0.8rem;
   font-weight: normal;
-
 }
 
 .card-check-in,
@@ -152,12 +147,11 @@
 
 .card-reviews {
   text-decoration: underline;
-  font-family: 'Airbnb-Medium';
+  font-family: "Airbnb-Medium";
   padding-right: 4px;
   font-size: 0.875rem;
   color: rgb(34, 34, 34);
   line-height: 1.125rem;
-
 }
 
 .guest-head {
@@ -167,14 +161,18 @@
 
 .mouse-cursor-gradient-tracking {
   position: relative;
-  background: var(--dls19-brand-gradient-radial,
-      radial-gradient(circle at center,
-        #ff385c 5%,
-        #e61e4d 27.5%,
-        #e31c5f 40%,
-        #d70466 57.5%,
-        #bd1e59 75%,
-        #bd1e59 950%)) !important;
+  background: var(
+    --dls19-brand-gradient-radial,
+    radial-gradient(
+      circle at center,
+      #ff385c 5%,
+      #e61e4d 27.5%,
+      #e31c5f 40%,
+      #d70466 57.5%,
+      #bd1e59 75%,
+      #bd1e59 950%
+    )
+  ) !important;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   font-family: "CircularStd-Book";
@@ -199,13 +197,15 @@
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(circle at center center,
-      rgb(255, 56, 92) 5%,
-      rgb(230, 30, 77) 27.5%,
-      rgb(227, 28, 95) 40%,
-      rgb(215, 4, 102) 57.5%,
-      rgb(189, 30, 89) 75%,
-      rgb(197, 30, 92) 95%) !important;
+  background: radial-gradient(
+    circle at center center,
+    rgb(255, 56, 92) 5%,
+    rgb(230, 30, 77) 27.5%,
+    rgb(227, 28, 95) 40%,
+    rgb(215, 4, 102) 57.5%,
+    rgb(189, 30, 89) 75%,
+    rgb(197, 30, 92) 95%
+  ) !important;
   transform: translate(-50%, -50%);
 
   transition: width 0.2s ease, height 0.2s ease;
@@ -336,8 +336,6 @@
 
 }
 
-// .text-reserve {
-// }
 
 .reserve-card .btn-list button {
   margin-left: 0.125rem;
@@ -363,7 +361,7 @@
   // text-decoration: underline;
   color: inherit;
   cursor: pointer;
-  font-family: 'CircularStd-Medium';
+  font-family: "CircularStd-Medium";
 }
 
 .el-range-editor.el-input__inner {

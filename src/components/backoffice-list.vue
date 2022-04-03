@@ -25,16 +25,16 @@
 </template>
 
 <script>
-import backofficePreview from "./backoffice-preview.vue"
+import backofficePreview from "./backoffice-preview.vue";
+
 export default {
     name: 'backoffice-list',
     props: {
         orders: Array
     },
     components: {
-        backofficePreview
+        backofficePreview,
     },
-
 }
 </script>
 

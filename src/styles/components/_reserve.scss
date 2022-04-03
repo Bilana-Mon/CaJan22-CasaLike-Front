@@ -22,49 +22,50 @@
   flex-direction: column;
   width: 100%;
   height: 3.5rem;
-  margin-top:1rem;
+  margin-top: 1rem;
   cursor: pointer;
 }
 
-.input-container-checks{
+.input-container-checks {
   position: relative;
 }
-.reserve-container .date-container{
+.reserve-container .date-container {
   position: absolute;
   width: 100%;
   bottom: 10px;
 }
-.reserve-container .el-range-input{
-  text-align: center!important;
-  padding: 0!important;
+.reserve-container .el-range-input {
+  text-align: center !important;
+  padding: 0 !important;
 }
 .reserve-vsep {
   border-right: 1px solid lightgrey;
   height: 100%;
   display: flex;
-  width:50%;
+  width: 50%;
 }
-.reserve-container .card-check-in, .reserve-container .card-check-out{
-  margin-top:  -16px;
-
+.reserve-container .card-check-in,
+.reserve-container .card-check-out {
+  margin-top: -16px;
 }
-.container{
+.container {
   cursor: pointer;
 }
 
-.reserve-container .reserve-vsep, .reserve-container .card-check-out, .reserve-container .container .select-label, .reserve-container .el-range-input{
-  padding-left:  0.8rem !important;
+.reserve-container .reserve-vsep,
+.reserve-container .card-check-out,
+.reserve-container .container .select-label,
+.reserve-container .el-range-input {
+  padding-left: 0.8rem !important;
 }
 
 .reserve-container .el-range-input {
-  text-align:left!important;
-
+  text-align: left !important;
 }
 
-.reserve-container .card-check-out{
-  width:50%;
+.reserve-container .card-check-out {
+  width: 50%;
 }
-
 
 .input-container-checks {
   display: flex;
@@ -75,7 +76,7 @@
   border-radius: 10px 10px 0 0;
   margin-bottom: 0;
   height: 64px;
-  width:100%;
+  width: 100%;
 }
 
 .reserve-card .container {
@@ -94,10 +95,9 @@
 .card-check-in,
 .card-check-out,
 .reserve-card .select-checkbox {
-  font-family: 'CircularStd-Book';
-  font-size: .8rem;
+  font-family: "CircularStd-Book";
+  font-size: 0.8rem;
   font-weight: normal;
-
 }
 
 .card-check-in,
@@ -106,8 +106,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size:10px;
-  font-family: 'CircularStd-Medium';
+  font-size: 10px;
+  font-family: "CircularStd-Medium";
 }
 
 .card-info {
@@ -142,29 +142,32 @@
 
 .card-reviews {
   text-decoration: underline;
-  font-family: 'Airbnb-Medium';
+  font-family: "Airbnb-Medium";
   padding-right: 4px;
   font-size: 0.875rem;
   color: rgb(34, 34, 34);
   line-height: 1.125rem;
-
 }
 
 .guest-head {
-  font-size:10px;
-  font-family: 'CircularStd-Medium';
+  font-size: 10px;
+  font-family: "CircularStd-Medium";
 }
 
 .mouse-cursor-gradient-tracking {
   position: relative;
-  background: var(--dls19-brand-gradient-radial,
-      radial-gradient(circle at center,
-        #ff385c 5%,
-        #e61e4d 27.5%,
-        #e31c5f 40%,
-        #d70466 57.5%,
-        #bd1e59 75%,
-        #bd1e59 950%)) !important;
+  background: var(
+    --dls19-brand-gradient-radial,
+    radial-gradient(
+      circle at center,
+      #ff385c 5%,
+      #e61e4d 27.5%,
+      #e31c5f 40%,
+      #d70466 57.5%,
+      #bd1e59 75%,
+      #bd1e59 950%
+    )
+  ) !important;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   font-family: "CircularStd-Book";
@@ -189,13 +192,15 @@
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(circle at center center,
-      rgb(255, 56, 92) 5%,
-      rgb(230, 30, 77) 27.5%,
-      rgb(227, 28, 95) 40%,
-      rgb(215, 4, 102) 57.5%,
-      rgb(189, 30, 89) 75%,
-      rgb(197, 30, 92) 95%) !important;
+  background: radial-gradient(
+    circle at center center,
+    rgb(255, 56, 92) 5%,
+    rgb(230, 30, 77) 27.5%,
+    rgb(227, 28, 95) 40%,
+    rgb(215, 4, 102) 57.5%,
+    rgb(189, 30, 89) 75%,
+    rgb(197, 30, 92) 95%
+  ) !important;
   transform: translate(-50%, -50%);
 
   transition: width 0.2s ease, height 0.2s ease;
@@ -203,8 +208,8 @@
   // transition: opacity 1s ease 0s !important;
 }
 
-.info-top-left{
-  display:flex;
+.info-top-left {
+  display: flex;
   align-items: center;
 }
 
@@ -247,17 +252,17 @@
   background: rgb(255, 255, 255);
 }
 
-.num-of-guests-container{
+.num-of-guests-container {
   display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    cursor: pointer;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
 }
 
-.arrow-down-up-container{
-  padding-right:0.8rem;
+.arrow-down-up-container {
+  padding-right: 0.8rem;
 }
 
 .reserve-card .select {
@@ -321,14 +326,11 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  font-family:'CircularStd-Book';
-
+  font-family: "CircularStd-Book";
 }
 
-// .text-reserve {
-// }
 
-.reserve-card .btn-list button  {
+.reserve-card .btn-list button {
   margin-left: 0.125rem;
   margin-right: 0.125rem;
   border-radius: 50%;
@@ -337,7 +339,7 @@
   height: 2rem;
   background-color: whitesmoke;
   color: #717171;
-  font-size:1.3125rem;
+  font-size: 1.3125rem;
 }
 
 .reserve-card .pet-msg {
@@ -352,7 +354,7 @@
   // text-decoration: underline;
   color: inherit;
   cursor: pointer;
-  font-family: 'CircularStd-Medium';
+  font-family: "CircularStd-Medium";
 }
 
 .el-range-editor.el-input__inner {
@@ -360,68 +362,68 @@
   align-items: center;
   margin: 10px;
   padding-bottom: 10px;
-  cursor: pointer!important;
+  cursor: pointer !important;
 }
 
-.text-charging{
+.text-charging {
   text-align: center;
-  color:$grey;
-  margin:.5rem;
+  color: $grey;
+  margin: 0.5rem;
 }
 .pricing-night {
   padding-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom:0.2rem;
-  color:$black;
+  padding-bottom: 0.2rem;
+  color: $black;
 }
 
-.total-price{ 
-  display:flex;
+.total-price {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family:'CircularStd-Book';
+  font-family: "CircularStd-Book";
 }
 .text-decor {
   text-decoration: underline;
 }
 
-.fees{
+.fees {
   text-decoration: underline;
 }
 
-.hr-reserve{
+.hr-reserve {
   width: 100%;
   border-top: 0.2px solid #dddddd;
   margin: 1em 0;
 }
 
-.text-reserve{
-  font-family: 'CircularStd-Book';
+.text-reserve {
+  font-family: "CircularStd-Book";
   font-size: 1.03rem;
 }
 
-.msg-pickdates{
+.msg-pickdates {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.msg-btn-pickdates{
-border-radius:20px;
-background-color: transparent;
+.msg-btn-pickdates {
+  border-radius: 20px;
+  background-color: transparent;
 }
 
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7 !important;
 }
-.el-date-table td.end-date .el-date-table-cell__text, .el-date-table td.start-date .el-date-table-cell__text {
-  background-color: #222222!important;
+.el-date-table td.end-date .el-date-table-cell__text,
+.el-date-table td.start-date .el-date-table-cell__text {
+  background-color: #222222 !important;
 }
 
 .el-date-range-picker {
---el-datepicker-active-color: var(--el-color-primary);
---el-datepicker-hover-text-color: $black;
+  --el-datepicker-active-color: var(--el-color-primary);
+  --el-datepicker-hover-text-color: $black;
 }
-

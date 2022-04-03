@@ -1,5 +1,5 @@
 <template>
-    <section class="orders-preview-container" v-if="order">
+    <section :class="getClassByStatus()" v-if="order">
         <tr>
             <td>{{ order.user }}</td>
             <td>
@@ -29,23 +29,23 @@
                 <span>{{ getFormattedDate(order.dates['1']) }}</span>
             </td>
             <td>
-                <span class="approve" v-if="order.isApproved || this.isApproved">Approved</span>
-                <span class="decline" v-if="order.isDeclined || this.isDeclined">Declined</span>
+                <span class="approve" v-if="order.status === 'approved' || this.isApproved">Approved</span>
+                <span class="decline" v-if="order.status === 'declined' || this.isDeclined">Declined</span>
                 <span
-                    class="pending"
-                    v-if="!order.isDeclined && !this.isDeclined && !order.isApproved && !this.isApproved"
+                    class="pending-content"
+                    v-if="order.status === 'pending' && !this.isApproved && !this.isDeclined"
                 >Pending</span>
             </td>
             <td class="btn-container">
                 <button
                     class="approve"
-                    @click="setOrderApproveStatus(); toggleApprove()"
-                    :disabled="order.isApproved || order.isDeclined || this.isApproved || this.isDeclined"
+                    @click="setOrderApproveStatus(); togglePending()"
+                    :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
                 >Approve</button>
                 <button
                     class="decline"
-                    @click="setOrderDeclineStatus(); toggleDeclined()"
-                    :disabled="order.isDeclined || order.isApproved || this.isApproved || this.isDeclined"
+                    @click="setOrderDeclineStatus(); togglePending()"
+                    :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
                 >Decline</button>
             </td>
         </tr>
@@ -66,9 +66,9 @@ export default {
     },
     data() {
         return {
-
+            isPending: true,
             isApproved: false,
-            isDeclined: false
+            isDeclined: false,
         }
     },
     methods: {
@@ -80,33 +80,49 @@ export default {
                 "October", "November", "December"
             ]
             let dayNum = new Date(date).getDate()
-            console.log(dayNum)
             let monthNum = new Date(date).getMonth()
             let monthName = monthNames[monthNum]
             let yearNum = new Date(date).getFullYear()
-            console.log(yearNum)
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
         },
         async setOrderApproveStatus() {
+            this.isApproved = true
             let order = { ...this.order }
-            order.isApproved = true
+            order.status = 'approved'
+            order.isSeenByUser = false;
+            order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
             console.log(order);
+        },
+        togglePending() {
+            this.isPending = false
         },
         async setOrderDeclineStatus() {
+            this.isDeclined = true
             let order = { ...this.order }
-            order.isDeclined = true
+            order.status = 'declined'
+            order.isSeenByUser = false;
+            order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
+            await this.$store.dispatch({ type: 'saveOrder', order })
+            console.log(this.$store.getters.order);
             console.log(order);
         },
-        toggleApprove() {
-            this.isApproved = true
-        },
-        toggleDeclined() {
-            this.isDeclined = true
+        getClassByStatus() {
+            let order = { ...this.order }
+            let classStatus = 'seen orders-preview-container'
+            if (order.status === 'pending' && this.isPending) classStatus = 'unSeen orders-preview-container'
+            return classStatus
         }
     },
 }
 </script>
+
+<style>
+.unSeen {
+    font-weight: bold;
+    background-color: rgb(168, 168, 177);
+}
+</style>
 

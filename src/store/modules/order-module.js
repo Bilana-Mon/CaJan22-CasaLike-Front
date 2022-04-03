@@ -40,10 +40,11 @@ export default {
             let orders = await orderService.query();
             commit({ type: 'setOrders', orders })
         },
-        async saveOrder({ commit }, { order }) {
+        async saveOrder({ commit, dispatch }, { order }) {
             await orderService.save(order)
             console.log('lala', order);
             commit({ type: 'saveOrder', order })
+            dispatch({ type: 'loadOrders' });
         },
         async setOrder({ commit, dispatch }, { order }) {
             await orderService.save(order)

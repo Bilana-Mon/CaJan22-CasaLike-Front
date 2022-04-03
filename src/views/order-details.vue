@@ -61,10 +61,13 @@
         <!-- <easy-spinner /> -->
         <section class="pending-reservation-container section-col" v-if="order">
             <div class="pending-status-container" v-if="!isApproved">
+                <app-modal>
+                    <button @click="closeModal">X</button>
                 <h2>Reservation Status: Pending</h2>
                 <div class="pending-img">
                     <img src="/src/assets/icons/wall-clock.png" alt />
                 </div>
+                </app-modal>
             </div>
             <div class="pending-status-container" v-if="isApproved">
                 <h2>{{ order.user }}, thank you for your reservation!</h2>
@@ -208,7 +211,9 @@ export default {
             console.log(yearNum)
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
-        },
+        },closeModal() {
+          this.$emit('close')
+      },
     },
     computed: {
         getNumOfNights() {

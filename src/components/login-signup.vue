@@ -1,12 +1,13 @@
 <template>
-  <app-modal>
+  
   <section>
-   
+   <app-modal>
     <button @click="closeModal">X</button>
-
+    <p>lili lala</p>
+ </app-modal>
   </section>
 
-  </app-modal>
+ 
 </template>
 
 <script>

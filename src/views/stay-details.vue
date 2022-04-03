@@ -85,7 +85,10 @@
                 </div>
               </div>
               <div class="small-img-container">
-                <img class="small-img" :src="`/src/assets/imgs/stays/${stay.imgUrls[0]}`" />
+                <img
+                  class="small-img"
+                  :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799097/casaLike/reviews/004.jpg`"
+                />
               </div>
             </div>
             <hr />

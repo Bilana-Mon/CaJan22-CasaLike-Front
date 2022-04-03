@@ -87,7 +87,7 @@
               <div class="small-img-container">
                 <img
                   class="small-img"
-                  :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799097/casaLike/reviews/004.jpg`"
+                  :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1649008049/casaLike/reviews/kyrill.jpg`"
                 />
               </div>
             </div>

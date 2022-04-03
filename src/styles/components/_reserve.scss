@@ -29,25 +29,44 @@
 .input-container-checks {
   position: relative;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 .reserve-container .date-container {
   position: absolute;
   width: 100%;
   bottom: 10px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 .reserve-container .el-range-input {
   text-align: center !important;
   padding: 0 !important;
 }
+
 .reserve-vsep {
   border-right: 1px solid lightgrey;
   height: 100%;
   display: flex;
   width: 50%;
 }
+<<<<<<< HEAD
 .reserve-container .card-check-in,
 .reserve-container .card-check-out {
   margin-top: -16px;
 }
+=======
+
+.reserve-container .card-check-in,
+.reserve-container .card-check-out {
+  margin-top: -16px;
+
+}
+
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 .container {
   cursor: pointer;
 }
@@ -61,6 +80,10 @@
 
 .reserve-container .el-range-input {
   text-align: left !important;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 }
 
 .reserve-container .card-check-out {
@@ -107,7 +130,11 @@
   align-items: center;
   justify-content: flex-start;
   font-size: 10px;
+<<<<<<< HEAD
   font-family: "CircularStd-Medium";
+=======
+  font-family: 'CircularStd-Medium';
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 }
 
 .card-info {
@@ -115,6 +142,7 @@
   justify-content: space-around;
   align-items: center;
 }
+
 .reserve-pets-service {
   font-size: 0.83rem;
   font-family: "Airbnb-Book";
@@ -151,7 +179,11 @@
 
 .guest-head {
   font-size: 10px;
+<<<<<<< HEAD
   font-family: "CircularStd-Medium";
+=======
+  font-family: 'CircularStd-Medium';
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 }
 
 .mouse-cursor-gradient-tracking {
@@ -320,13 +352,19 @@
   margin: 0.5rem;
   font-family: airbnb-book;
 }
+
 .close-popup {
   text-decoration: underline !important;
   cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+<<<<<<< HEAD
   font-family: "CircularStd-Book";
+=======
+  font-family: 'CircularStd-Book';
+
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 }
 
 
@@ -368,8 +406,13 @@
 .text-charging {
   text-align: center;
   color: $grey;
+<<<<<<< HEAD
   margin: 0.5rem;
+=======
+  margin: .5rem;
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 }
+
 .pricing-night {
   padding-top: 10px;
   display: flex;
@@ -383,8 +426,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+<<<<<<< HEAD
   font-family: "CircularStd-Book";
+=======
+  font-family: 'CircularStd-Book';
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 }
+
 .text-decor {
   text-decoration: underline;
 }
@@ -400,7 +448,11 @@
 }
 
 .text-reserve {
+<<<<<<< HEAD
   font-family: "CircularStd-Book";
+=======
+  font-family: 'CircularStd-Book';
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
   font-size: 1.03rem;
 }
 
@@ -413,11 +465,28 @@
 .msg-btn-pickdates {
   border-radius: 20px;
   background-color: transparent;
+<<<<<<< HEAD
+=======
+}
+
+.msg-btn {
+  background-color: white;
+  border: none;
+}
+
+.msg-btn:hover {
+  cursor: pointer;
+}
+
+.num-of-guests-box {
+  text-transform: lowercase;
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496
 }
 
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7 !important;
 }
+<<<<<<< HEAD
 .el-date-table td.end-date .el-date-table-cell__text,
 .el-date-table td.start-date .el-date-table-cell__text {
   background-color: #222222 !important;
@@ -427,3 +496,15 @@
   --el-datepicker-active-color: var(--el-color-primary);
   --el-datepicker-hover-text-color: $black;
 }
+=======
+
+.el-date-table td.end-date .el-date-table-cell__text,
+.el-date-table td.start-date .el-date-table-cell__text {
+  background-color: #222222 !important;
+}
+
+.el-date-range-picker {
+  --el-datepicker-active-color: var(--el-color-primary);
+  --el-datepicker-hover-text-color: $black;
+}
+>>>>>>> 27b07fec5e494980ce913804e9249d41dd413496

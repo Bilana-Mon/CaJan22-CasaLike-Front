@@ -19,7 +19,6 @@ export default {
     },
     getters: {
         stays({ stays }) {
-            console.log(stays);
             return stays
         },
         staysToShow({ stays }) {
@@ -36,17 +35,12 @@ export default {
         },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
-            console.log(state.filterBy);
         }
     },
     actions: {
         async loadStays({ commit, state }) {
-            console.log('fuck');
-            console.log(state.filterBy);
             try {
-                console.log(state.filterBy)
                 let stays = await stayService.query(state.filterBy)
-                console.log(stays)
                 commit({ type: 'setStays', stays })
             } catch (err) {
                 console.log('error', err);
@@ -54,7 +48,6 @@ export default {
 
         },
         setFilter({ commit, dispatch }, { filterBy }) {
-            console.log('me');
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         }

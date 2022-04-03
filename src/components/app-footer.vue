@@ -6,15 +6,18 @@
                     <p>English (US)</p>
                     <p>$ USD</p>
                     <div class="footer-icons">
-                        <img src="src/assets/social/facebook.svg">
-                        <img src="src/assets/social/twitter.svg">
-                        <img src="src/assets/social/instagram.svg">
+                        <img src="/src/assets/social/facebook.svg" />
+                        <img src="/src/assets/social/twitter.svg" />
+                        <img src="/src/assets/social/instagram.svg" />
                     </div>
                 </div>
-                <div class=footer-side2>
-                    <p>© 2022 CasaLike, Inc.</p><p>·</p>
-                    <p>Privacy</p><p>·</p>
-                    <p>Terms</p><p>·</p>
+                <div class="footer-side2">
+                    <p>© 2022 CasaLike, Inc.</p>
+                    <p>·</p>
+                    <p>Privacy</p>
+                    <p>·</p>
+                    <p>Terms</p>
+                    <p>·</p>
                     <p>Sitemap</p>
                 </div>
             </div>
@@ -25,6 +28,6 @@
 <script>
 
 export default {
-    name:'app-footer',
+    name: 'app-footer',
 }
 </script>

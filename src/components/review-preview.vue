@@ -123,7 +123,7 @@ export default {
   props: {
     stay: Object,
   },
-  
+
   data() {
     return {
       isTxtLong: false,
@@ -173,54 +173,3 @@ export default {
 }
 </script>
 
-<style >
-.review-preview img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: solid;
-}
-
-.review-preview li {
-  list-style: none;
-}
-
-.progress-value {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  font-size: 0.875rem;
-  padding-bottom: 0.25rem;
-}
-
-progress {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 143px;
-  color: #273238;
-  height: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-progress::-webkit-progress-bar {
-  background-color: #eee;
-}
-
-progress::-webkit-progress-value {
-  background-color: #273238;
-}
-
-progress::-moz-progress-bar {
-  background-color: #eee;
-}
-</style>

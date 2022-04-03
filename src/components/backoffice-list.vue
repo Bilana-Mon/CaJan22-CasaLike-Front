@@ -38,25 +38,6 @@ export default {
 }
 </script>
 
-<style>
-.backoffice-list-container table {
-    table-layout: fixed;
-    margin: 0 auto;
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid black;
-}
-.backoffice-list-container thead {
-    display: table-row;
-    text-align: left;
-}
-.backoffice-list-container th {
-    width: 150px;
-}
 
-.table-heading {
-    color: #ff385c;
-}
-</style>
 
 

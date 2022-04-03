@@ -5,60 +5,60 @@
         <h1>{{ stay.name }}</h1>
         <div class="stay-rate-container">
           <div class="info-top-left">
-          <span>
-            <svg
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="presentation"
-              focusable="false"
-              style="display: inline-block; height: 14px; width: 14px; fill: #ff385c;"
-              class="st-current"
-            >
-              <path
-                d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
-                fill-rule="evenodd"
-                class
-              />
-            </svg>
-          </span>
-          <span class="stay-details-rating">{{ getFormattedRate }}</span> ·
-          <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a> ·
-          <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
-        </div>
+            <span>
+              <svg
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="display: inline-block; height: 14px; width: 14px; fill: #ff385c;"
+                class="st-current"
+              >
+                <path
+                  d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
+                  fill-rule="evenodd"
+                  class
+                />
+              </svg>
+            </span>
+            <span class="stay-details-rating">{{ getFormattedRate }}</span> ·
+            <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a> ·
+            <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
+          </div>
           <div class="icons-top">
-          <div class="icon-share">
-            <svg
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="presentation"
-              focusable="false"
-              style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible; margin-right:6px;"
-            >
-              <g fill="none">
-                <path d="M27 18v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9" />
-                <path d="M16 3v23V3z" />
-                <path d="M6 13l9.293-9.293a1 1 0 0 1 1.414 0L26 13" />
-              </g>
-            </svg> Share
-          </div>
-          <div class="icon-save">
-            <svg
-              viewBox="0 0 32 32"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              role="presentation"
-              focusable="false"
-              style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;margin-right:6px"
-            >
-              <path
-                d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
-              />
-            </svg> Save
+            <div class="icon-share">
+              <svg
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible; margin-right:6px;"
+              >
+                <g fill="none">
+                  <path d="M27 18v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-9" />
+                  <path d="M16 3v23V3z" />
+                  <path d="M6 13l9.293-9.293a1 1 0 0 1 1.414 0L26 13" />
+                </g>
+              </svg> Share
+            </div>
+            <div class="icon-save">
+              <svg
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;margin-right:6px"
+              >
+                <path
+                  d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+                />
+              </svg> Save
+            </div>
           </div>
         </div>
-      </div>
         <div class="stay-images">
           <img
             v-for="i in stay.imgUrls"
@@ -85,7 +85,10 @@
                 </div>
               </div>
               <div class="small-img-container">
-                <img class="small-img" :src="`src/assets/imgs/stays/${stay.imgUrls[0]}`" />
+                <img
+                  class="small-img"
+                  :src="`https://res.cloudinary.com/dpwyhvd1e/image/upload/v1648799097/casaLike/reviews/004.jpg`"
+                />
               </div>
             </div>
             <hr />

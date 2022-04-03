@@ -3,7 +3,7 @@
     <div class="section-row">
       <div class="section-col">
         <div class="becomehost-img">
-          <img alt="becomehost-img" src="src/assets/imgs/homepage/taylor-murphy.jpg" />
+          <img alt="becomehost-img" src="/src/assets/imgs/homepage/taylor-murphy.jpg" />
           <div class="jingle-host">
             <div class="jingle-host-text">
               Try hosting on

@@ -13,7 +13,7 @@ import appFooter from './components/app-footer.vue'
 export default {
   name: 'app',
   created() {
-     
+
   },
   components: {
     appHeader,
@@ -22,5 +22,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+

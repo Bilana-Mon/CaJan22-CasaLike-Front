@@ -1,7 +1,7 @@
 <template>
     <section class="section-row">
         <!-- <section class="order-details-container section-col" v-if="order"> -->
-            <!-- <div class="order-details-success">
+        <!-- <div class="order-details-success">
                 <h1>Your Order Details</h1>
                 <p>We thank you, for your reservation! Here are the details about your order:</p>
                 <div class="order-details-desc">
@@ -56,25 +56,25 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>-->
         <section v-if="!order"></section>
         <!-- <easy-spinner /> -->
         <section class="pending-reservation-container section-col" v-if="order">
             <div class="pending-status-container" v-if="!isApproved">
                 <h2>Reservation Status: Pending</h2>
                 <div class="pending-img">
-                    <img src="src/assets/icons/wall-clock.png" alt />
+                    <img src="/src/assets/icons/wall-clock.png" alt />
                 </div>
             </div>
             <div class="pending-status-container" v-if="isApproved">
-                <h2>{{order.user}}, thank you for your reservation!</h2>
+                <h2>{{ order.user }}, thank you for your reservation!</h2>
                 <div class="pending-img">
-                    <img src="src/assets/icons/compelete.png" alt />
+                    <img src="/src/assets/icons/compelete.png" alt />
                 </div>
-                </div>
+            </div>
             <h3 v-if="isApproved">Enjoy your trip!</h3>
             <h3>Reservation details</h3>
-            
+
             <ul class="clean-list list-container">
                 <div class="desc-li-container">
                     <li>
@@ -238,95 +238,3 @@ export default {
     unmounted() { },
 }
 </script>
-<style>
-.order-details-container {
-    height: 80vh;
-    margin-bottom: 2rem;
-}
-
-.order-details-success {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 44rem;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: auto;
-    margin-top: 2rem;
-    padding: 2rem;
-}
-.order-details-desc {
-    display: flex;
-    flex-direction: column;
-    height: 40rem;
-}
-
-.stay-order-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.guests-order-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.pricing-for-order {
-    display: flex;
-    flex-direction: column;
-}
-
-.pending-reservation-container {
-    min-height: 80vh;
-}
-
-.pending-status-container {
-    display: flex;
-    align-items: center;
-    gap: 12.5px;
-}
-
-.pending-img {
-    padding-top: 5px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-.pending-img img {
-    width: 24px;
-    height: 24px;
-}
-
-.pending-reservation-container .clean-list {
-    flex-direction: column;
-    margin: 0 auto;
-}
-
-.list-container .li-title {
-    font-family: "Airbnb-Medium";
-    font-size: 16px;
-    padding-right: 5px;
-}
-
-.guests-box {
-    display: flex;
-    flex-direction: column;
-}
-.guests-box .guests-li {
-    display: flex;
-    flex-direction: row;
-}
-.fees-box {
-    display: flex;
-    flex-direction: column;
-}
-
-.fees-box .cleaning-fee-container {
-    display: flex;
-    flex-direction: row;
-}
-.fees-box .security-fee-container {
-    display: flex;
-    flex-direction: row;
-}
-</style>

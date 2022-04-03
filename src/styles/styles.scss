@@ -19,6 +19,10 @@
 @import 'components/search.scss';
 @import 'components/stay-preview';
 @import 'components/reserve';
+@import 'components/backoffice-list';
+@import 'components/backoffice-preview';
+@import 'components/review-preview';
+
 
 
 
@@ -29,3 +33,4 @@
 @import 'views/home';
 @import 'views/backoffice';
 @import 'views/become-host';
+@import 'views/order-details';

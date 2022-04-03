@@ -1,15 +1,18 @@
 <template>
     <section class="backoffice-container">
+        <backoffice-cards></backoffice-cards>
         <backoffice-list :orders="orders"></backoffice-list>
     </section>
 </template>
 
 <script>
 import backofficeList from "../components/backoffice-list.vue"
+import backofficeCards from "../components/backoffice-cards.vue"
 export default {
     name: 'backoffice',
     components: {
-        backofficeList
+        backofficeList,
+        backofficeCards
     },
     async created() {
         await this.$store.dispatch({ type: 'loadOrders' })
@@ -27,8 +30,3 @@ export default {
 }
 </script>
 
-<style>
-.backoffice-container {
-    min-height: 80vh;
-}
-</style>

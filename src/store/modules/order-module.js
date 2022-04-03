@@ -10,6 +10,7 @@ export default {
             return orders
         },
         order({ currOrder }) {
+            console.log(currOrder);
             return currOrder;
         }
     },
@@ -26,9 +27,13 @@ export default {
             // else state.orders.push(order)
         },
         setOrder(state, { order }) {
+            console.log('set order lala', order);
             const idx = state.orders.findIndex((currOrder) => currOrder._id === order._id)
+            state.currOrder = order;
+            console.log(state.currOrder);
             if (idx !== -1) state.orders.splice(idx, 1, order)
             else state.orders.push(order)
+
         },
         removeOrder(state, { orderId }) {
             const idx = state.orders.findIndex((currOrder) => currOrder._id === orderId)

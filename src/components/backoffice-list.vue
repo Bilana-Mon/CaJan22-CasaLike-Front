@@ -62,13 +62,13 @@
             <table cellpadding="0" cellspacing="0">
                 <h2 class="table-heading">Your Reservations</h2>
                 <thead>
-                    <tr>
+                    <tr class="th-container">
                         <th>Name of guest:</th>
-                        <th>Number of guests:</th>
-                        <th>From:</th>
+                        <th >Number of guests:</th>
+                        <th >From:</th>
                         <th>To:</th>
-                        <th>Status:</th>
-                        <th colspan="2">Actions:</th>
+                        <th >Status:</th>
+                        <th>Actions:</th>
                     </tr>
                 </thead>
                 <tbody>

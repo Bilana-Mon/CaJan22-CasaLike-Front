@@ -2,6 +2,7 @@
     <tr :class="getClassByStatus()" v-if="order">
         <td>{{ order.user }}</td>
         <td>
+        <div class="td-guest">
             <span class="td-span-guests">Adults:</span>
             <span>{{ order.capacity.adults }}</span>
 
@@ -17,8 +18,8 @@
                 <span class="td-span-guests">Pets:</span>
                 <span>{{ order.capacity.pets }}</span>
             </div>
+        </div>
         </td>
-
         <td>
             <!-- <div class="li-title">From:</div> -->
             <span>{{ getFormattedDate(order.dates['0']) }}</span>

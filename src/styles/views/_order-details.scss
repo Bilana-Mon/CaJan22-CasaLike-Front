@@ -37,7 +37,16 @@
 }
 
 .pending-reservation-container {
-    min-height: 80vh;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    width: 43.25rem;
+    background-color: white;
+    z-index: 5;
+    position: sticky;
+    top: 6rem;
+    margin-top: 1rem;
 }
 
 .pending-status-container {

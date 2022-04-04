@@ -1,10 +1,15 @@
 .orders-preview-container td {
-    width: 150px;
+    width: 200px;
 
 }
 
-.orders-preview-container tr {
+.orders-preview-container {
     height: 55px;
+    // border-bottom: 1px solid lightgray;
+}
+
+.orders-preview-container:not(:last-of-type) {
+    border-bottom: 1px solid lightgray;
 }
 
 .btn-container button {

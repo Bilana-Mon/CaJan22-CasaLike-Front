@@ -30,7 +30,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    top:4px;
+    top: 4px;
 }
 
 .logo-img {
@@ -108,30 +108,53 @@
     height: 43px;
     cursor: pointer;
 }
-.login-bar:hover {
-    box-shadow: 0 0 11px rgba(33,33,33,.2); 
-  }
-.main-nav.scrolled .login-bar{
 
-.main-nav.scrolled .login-bar {
-    outline: 1px solid #e7e7e7;
+.login-bar:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
 }
 
 .login-bar svg {
     fill: #717171;
 }
 
-#hamburger {
-    height: 16px;
-    width: auto;
-    padding-right: 11px;
+.main-nav.scrolled .login-bar {
+
+    .main-nav.scrolled .login-bar {
+        outline: 1px solid #e7e7e7;
+    }
+
+
+
+    #hamburger {
+        height: 16px;
+        width: auto;
+        padding-right: 11px;
+    }
+
+    #user-circle {
+        height: 30px;
+        width: auto;
+        padding-right: 6px;
+    }
+
+    @media (max-width: 900px) {
+        .vsep {
+            display: none;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .nav-right>a {
+            padding: 12px 9px;
+        }
+
+        .app-header.scrolled+* {
+            // margin-top: 359px;
+            margin-top: 200px;
+        }
+    }
 }
 
-#user-circle {
-    height: 30px;
-    width: auto;
-    padding-right: 6px;
-}
 
 .user-icon-container {
     position: relative;
@@ -160,20 +183,3 @@
     border-radius: 50%;
     background-color: #ff385c;
 }
-
-@media (max-width: 900px) {
-    .vsep {
-        display: none;
-    }
-}
-
-@media (max-width: 800px) {
-    .nav-right>a {
-        padding: 12px 9px;
-    }
-
-    .app-header.scrolled+* {
-        // margin-top: 359px;
-        margin-top: 200px;
-    }
-}}

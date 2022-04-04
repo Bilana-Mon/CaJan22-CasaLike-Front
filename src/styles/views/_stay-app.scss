@@ -1,6 +1,27 @@
-.app-header.scrolled + .section-row  {
-    margin-top: 166px;
-  }
-.stay-app{
-	width: 100%;
+.app-header.scrolled+.section-row {
+  margin-top: 166px;
+}
+
+.stay-app {
+  width: 100%;
+}
+
+.loading-container {
+  position: absolute;
+  z-index: 1000;
+  background-color: white;
+  height: 50vh;
+  width: 50vw;
+  text-align: center;
+  line-height: 50vh;
+}
+
+.img {
+  position: relative;
+  margin: auto;
+  margin-top: 20%;
+}
+
+.main-layout {
+  min-height: 100vh;
 }

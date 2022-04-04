@@ -1,7 +1,15 @@
 <template>
-  <div class="section-row">
+  <div class="main-layout section-row">
+    <div class="loading-container" v-if="isLoading">
+      <img
+        class="img"
+        style="-webkit-user-select: none;margin: auto;transition:background-color:white 300ms;"
+        src="https://res.cloudinary.com/dpwyhvd1e/image/upload/v1649100298/casaLike/homepage/casalikeloader_nzvmn0.gif"
+        alt="loading..."
+      />
+    </div>
     <div class="section-col stay-col">
-      <section v-if="stay" class="stay-details">
+      <section v-if="stay && !isLoading" class="stay-details">
         <h1>{{ stay.name }}</h1>
         <div class="stay-rate-container">
           <div class="info-top-left">
@@ -22,9 +30,9 @@
                 />
               </svg>
             </span>
-            <span class="stay-details-rating">{{ getFormattedRate }}  · </span>
-            <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews </a> 
-            <b class="dot"> · </b>
+            <span class="stay-details-rating">{{ getFormattedRate }} ·</span>
+            <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a>
+            <b class="dot">·</b>
             <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
           </div>
           <div class="icons-top">
@@ -179,14 +187,23 @@ export default {
   async created() {
     const { id } = this.$route.params
     this.stay = await stayService.getById(id)
+    this.isLoading = false
   },
   data() {
     return {
       stay: null,
-      isOpenModal: false
+      isOpenModal: false,
+      isLoading: true
     }
   },
-  methods: {},
+  methods: {
+    getLoading() {
+      this.isLoading = true;
+    }
+  },
+  mounted() {
+    this.getLoading()
+  },
   computed: {
     getFormattedRate() {
       let rate = +(this.stay.reviewScores.rating) / 20

@@ -1,5 +1,5 @@
 <template>
-    <section class="homepage layout">
+    <section class="main-layout homepage layout">
         <div :class="{ 'header-bg scrolled': isScrolled, 'header-bg': !isScrolled }"></div>
         <div class="section-row">
             <div class="section-col">

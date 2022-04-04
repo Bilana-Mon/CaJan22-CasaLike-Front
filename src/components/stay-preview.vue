@@ -85,7 +85,7 @@ export default {
       let formattedStayStreet = stayStreet[0];
       let city = this.stay.address.city;
       let formattedLocation = formattedStayStreet + " " + city;
-      if (formattedLocation.length > 10) formattedLocation = formattedLocation.slice(0, 10)
+      if (formattedLocation.length > 15) formattedLocation = formattedLocation.slice(0, 15)
       return formattedLocation;
     },
     getFormattedPrice() {

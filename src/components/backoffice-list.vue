@@ -29,7 +29,7 @@
                                 class
                             />
                         </svg>
-                        <span class="badge text-success">4.9/5</span>
+                        <span class="badge text-success">4.9 / 5</span>
                     </h3>
                     <small class="text-muted">231 Reviews</small>
                 </div>
@@ -64,10 +64,10 @@
                 <thead>
                     <tr class="th-container">
                         <th>Name of guest:</th>
-                        <th >Number of guests:</th>
-                        <th >From:</th>
+                        <th>Number of guests:</th>
+                        <th>From:</th>
                         <th>To:</th>
-                        <th >Status:</th>
+                        <th>Status:</th>
                         <th>Actions:</th>
                     </tr>
                 </thead>

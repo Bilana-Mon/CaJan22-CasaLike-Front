@@ -29,6 +29,10 @@
     margin-block-end: 10px;
 }
 
+.h3-card svg {
+    margin-right: 5px;
+}
+
 .backoffice-list-container thead {
     display: table-row;
     text-align: left;
@@ -39,7 +43,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-self: flex-start;
-    margin-left: 230px;
+    margin-left: 79px;
     color: #ff385c;
 }
 
@@ -62,7 +66,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .backoffice-list-container .small-img-container .host-title {
@@ -101,4 +105,4 @@
     display: flex;
     list-style-type: none;
     flex-direction: row;
-  }
+}

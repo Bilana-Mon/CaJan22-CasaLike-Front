@@ -1,6 +1,6 @@
 <template>
     <section class="backoffice-container">
-        <backoffice-cards :orders="orders"></backoffice-cards>
+        <!-- <backoffice-cards :orders="orders"></backoffice-cards> -->
         <backoffice-list :orders="orders"></backoffice-list>
     </section>
 </template>

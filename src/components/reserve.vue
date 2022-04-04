@@ -271,7 +271,7 @@ export default {
         async checkOrder() {
             if (this.order.dates['0'] !== 'Add date' && this.order.dates['1'] !== 'Add date') {
                 let order = { ...this.order }
-                await this.$store.dispatch({ type: 'saveOrder', order })
+                await this.$store.dispatch({ type: 'setOrder', order })
                 this.isOpenModal = true
                 // this.$router.push('/order')
             } else {

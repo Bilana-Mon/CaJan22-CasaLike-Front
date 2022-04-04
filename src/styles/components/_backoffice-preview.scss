@@ -1,5 +1,6 @@
 .orders-preview-container td {
     width: 150px;
+
 }
 
 .orders-preview-container tr {
@@ -28,6 +29,10 @@
     border: 1px solid #717171;
     color: #717171;
     cursor: not-allowed;
+}
+
+.td-span-guests {
+    margin-right: 5px;
 }
 
 .btn-container button:disabled:hover {
@@ -59,4 +64,8 @@
 .btn-container .decline:hover {
     border: 1px solid #c01333;
     color: #c01333;
+}
+
+.unSeen {
+    font-family: 'Airbnb-bold';
 }

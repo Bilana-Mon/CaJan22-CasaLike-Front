@@ -3,21 +3,21 @@
         <tr>
             <td>{{ order.user }}</td>
             <td>
-                <span>Adults:</span>
+                <span class="td-span-guests">Adults:</span>
                 <span>{{ order.capacity.adults }}</span>
 
-                <span v-if="order.capacity.children">
-                    <span>Children:</span>
+                <div v-if="order.capacity.children">
+                    <span class="td-span-guests">Children:</span>
                     <span>{{ order.capacity.children }}</span>
-                </span>
-                <span v-if="order.capacity.infants">
-                    <span>Infants:</span>
+                </div>
+                <div v-if="order.capacity.infants">
+                    <span class="td-span-guests">Infants:</span>
                     <span>{{ order.capacity.infants }}</span>
-                </span>
-                <span v-if="order.capacity.pets" class="guests-li">
-                    <span>Pets:</span>
+                </div>
+                <div v-if="order.capacity.pets" class="guests-li">
+                    <span class="td-span-guests">Pets:</span>
                     <span>{{ order.capacity.pets }}</span>
-                </span>
+                </div>
             </td>
 
             <td>
@@ -93,6 +93,7 @@ export default {
             order.isSeenByUser = false;
             order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
+            // await this.$store.dispatch({ type: 'saveOrder', order })
             console.log(order);
         },
         togglePending() {
@@ -105,7 +106,8 @@ export default {
             order.isSeenByUser = false;
             order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
-            await this.$store.dispatch({ type: 'saveOrder', order })
+            // await this.$store.dispatch({ type: 'saveOrder', order })
+
             console.log(this.$store.getters.order);
             console.log(order);
         },
@@ -119,10 +121,4 @@ export default {
 }
 </script>
 
-<style>
-.unSeen {
-    font-weight: bold;
-    background-color: rgb(168, 168, 177);
-}
-</style>
 

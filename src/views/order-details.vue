@@ -1,104 +1,36 @@
 <template>
-    <section class="section-row">
-        <!-- <section class="order-details-container section-col" v-if="order"> -->
-        <!-- <div class="order-details-success">
-                <h1>Your Order Details</h1>
-                <p>We thank you, for your reservation! Here are the details about your order:</p>
-                <div class="order-details-desc">
-                    <div class="stay-order-details">
-                        <span>Name of the stay:</span>
-                        <span>{{ order.nameOfStay }}</span>
-                        <span>Address of the stay:</span>
-                        <span>{{ order.location }}</span>
-                        <span>The host:</span>
-                        <span>{{ order.host }}</span>
-                    </div>
-                    <hr class="hr" />
-                    <span>From:</span>
-                    <span>{{ getFormattedDate(order.dates['0']) }}</span>
-                    <span>To:</span>
-                    <span>{{ getFormattedDate(order.dates['1']) }}</span>
-                    <hr class="hr" />
-                    <div class="guests-order-details">
-                        <span>Number of guests:</span>
-                        <span>Adults:</span>
-                        <span>{{ order.capacity.adults }}</span>
-                        <span v-if="order.capacity.children">
-                            Children:
-                            <span>{{ order.capacity.children }}</span>
-                        </span>
-                        <span v-if="order.capacity.infants">
-                            Infants:
-                            <span>{{ order.capacity.infants }}</span>
-                        </span>
-                        <span v-if="order.capacity.pets">
-                            Pets:
-                            <span>{{ order.capacity.pets }}</span>
-                        </span>
-                    </div>
-                    <hr class="hr" />
-                    <div class="pricing-for-order">
-                        <span>Price per night:</span>
-                        <span>{{ getFormattedPrice(this.order.price) }} / night</span>
-                        <span>
-                            {{ getFormattedPrice(this.order.price) }}
-                            <span>X</span>
-                            <span>{{ getNumOfNights }} nights</span>
-                        </span>
-
-                        <span>Fees:</span>
-                        <span>{{ getFormattedPrice(this.order.fees) }}</span>
-                        <hr class="hr" />
-                        <span>
-                            Total:
-                            <span>{{ getTotal }}</span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </section>-->
-        <section v-if="!order"></section>
-        <!-- <easy-spinner /> -->
-        <section class="pending-reservation-container section-col" v-if="order">
-            <div class="pending-status-container" v-if="!isApproved">
-                <app-modal>
-                    <button @click="closeModal">X</button>
-                <h2>Reservation Status: Pending</h2>
-                <div class="pending-img">
-                    <img src="/src/assets/icons/wall-clock.png" alt />
-                </div>
-                </app-modal>
-            </div>
-            <div class="pending-status-container" v-if="isApproved">
-                <h2>{{ order.user }}, thank you for your reservation!</h2>
+    <section  class="section-row" v-if="order">    
+        <section class="pending-reservation-container section-col">
+            <div class="pending-status-container">
+                <h2>{{ this.order.user }}, thank you for your reservation!</h2>
                 <div class="pending-img">
                     <img src="/src/assets/icons/compelete.png" alt />
                 </div>
             </div>
-            <h3 v-if="isApproved">Enjoy your trip!</h3>
+            <h3>Enjoy your trip!</h3>
             <h3>Reservation details</h3>
 
             <ul class="clean-list list-container">
                 <div class="desc-li-container">
                     <li>
                         <span class="li-title">Stay name:</span>
-                        <span class="li-content">{{ order.nameOfStay }}</span>
+                        <span class="li-content">{{ this.order.nameOfStay }}</span>
                     </li>
                     <li>
                         <span class="li-title">Stay address:</span>
-                        <span class="li-content">{{ order.location }}</span>
+                        <span class="li-content">{{ this.order.location }}</span>
                     </li>
                     <li>
                         <span class="li-title">The host:</span>
-                        <span class="li-content">{{ order.host }}</span>
+                        <span class="li-content">{{ this.order.host }}</span>
                     </li>
                     <li>
                         <span class="li-title">From:</span>
-                        <span class="li-content">{{ getFormattedDate(order.dates['0']) }}</span>
+                        <span class="li-content">{{ getFormattedDate(this.order.dates['0']) }}</span>
                     </li>
                     <li>
                         <span class="li-title">To:</span>
-                        <span class="li-content">{{ getFormattedDate(order.dates['1']) }}</span>
+                        <span class="li-content">{{ getFormattedDate(this.order.dates['1']) }}</span>
                     </li>
                 </div>
                 <div class="guests-li-container">
@@ -107,19 +39,19 @@
                         <div class="guests-box">
                             <div class="guests-li">
                                 <div class="li-title">Adults:</div>
-                                <div class="li-content">{{ order.capacity.adults }}</div>
+                                <div class="li-content">{{ this.order.capacity.adults }}</div>
                             </div>
                             <div v-if="order.capacity.children" class="guests-li">
                                 <div class="li-title">Children:</div>
-                                <div class="li-content">{{ order.capacity.children }}</div>
+                                <div class="li-content">{{ this.order.capacity.children }}</div>
                             </div>
                             <div v-if="order.capacity.infants" class="guests-li">
                                 <div class="li-title">Infants:</div>
-                                <div class="li-content">{{ order.capacity.infants }}</div>
+                                <div class="li-content">{{ this.order.capacity.infants }}</div>
                             </div>
                             <div v-if="order.capacity.pets" class="guests-li">
                                 <div class="li-title">Pets:</div>
-                                <div class="li-content">{{ order.capacity.pets }}</div>
+                                <div class="li-content">{{ this.order.capacity.pets }}</div>
                             </div>
                         </div>
                     </li>
@@ -173,13 +105,14 @@ export default {
     //     stay: Object
     // },
     components: {},
+ 
     async created() {
-        this.order = await this.$store.getters.order
+      await this.$store.dispatch({ type: 'loadOrders' })
+        this.orders = JSON.parse(JSON.stringify(this.$store.getters.orders))
+        this.order = this.orders[0]
+        console.log(this.orders)
         console.log(this.order);
-        setTimeout(() => {
-            this.isApproved = true;
-        }, 10000);
-        console.log(this.order.user)
+    
         // const { id } = this.$route.params
         // this.stay = await stayService.getById(id)
         // console.log(this.stay);
@@ -188,7 +121,7 @@ export default {
     data() {
         return {
             order: null,
-            isApproved: false,
+            orders:null
             // isLoading:true
         }
     },

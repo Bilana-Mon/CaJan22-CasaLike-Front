@@ -1,9 +1,24 @@
+.backoffice-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 .backoffice-list-container table {
+    display: flex;
+    flex-direction: column;
     table-layout: fixed;
+    align-items: center;
+    text-align: left;
+    width: 100%;
     margin: 0 auto;
     border-radius: 12px;
     padding: 20px;
-    border: 1px solid black;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    color: #222222;
 }
 
 .backoffice-list-container thead {
@@ -13,8 +28,49 @@
 
 .backoffice-list-container th {
     width: 150px;
+    padding-bottom: 20px;
 }
 
 .table-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-left: 169px;
+
     color: #ff385c;
+}
+
+.table-heading .host-title {
+
+    margin-left: 179px;
+
+    color: #ff385c;
+}
+
+.backoffice-list-container .small-img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backoffice-list-container .small-img-container .host-title {
+    margin-left: 0;
+}
+
+.backoffice-list-container .small-img {
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    top: 10px;
+}
+
+.cards {
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    /* border-right: 0.5px solid #a7a6a6; */
+    margin: 20px;
+    border-radius: 15px;
+    padding: 12px;
 }

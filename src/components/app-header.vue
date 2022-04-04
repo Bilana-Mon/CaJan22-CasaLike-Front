@@ -75,15 +75,39 @@
                             </div>
                         </div>
                         <div v-if="openLoginBar" class="login-options">
-                            <div class="login-btn" @click="addSignupModal = true">
-                                <b>Sign up</b>
+                            <div class="login-btn">
+                                <b>Messages</b>
                             </div>
-                            <div class="login-btn" @click="addSignupModal = true">Log in</div>
+                            <div class="notification-icon-container">
+                                <div class="badge-counter"></div>
+                                <div class="login-btn">
+                                    <b>Notifications</b>
+                                </div>
+                            </div>
+                            <div class="login-btn">
+                                <b>Trips</b>
+                            </div>
+                            <div class="login-btn">
+                                <b>Wishlists</b>
+                            </div>
+                            <hr class="hr" />
+                            <div class="login-btn">
+                                <b>Host your home</b>
+                            </div>
+                            <div class="login-btn">
+                                <b>Account</b>
+                            </div>
+                            <hr class="hr" />
+                            <div class="login-btn">
+                                <b>Help</b>
+                            </div>
+                            <div class="login-btn">
+                                <b>Log out</b>
+                            </div>
                         </div>
                     </div>
                 </nav>
                 <search />
-                <login-signup v-if="addSignupModal" @close="addSignupModal = false"></login-signup>
             </div>
         </div>
     </header>
@@ -102,6 +126,9 @@ export default {
     },
     async created() {
         window.addEventListener('scroll', this.handleScroll);
+        this.orders = await JSON.parse(JSON.stringify(this.$store.getters.orders))
+        this.order = this.orders[this.orders.length - 1]
+        // this.isSeenByUser = this.order.isSeenByUser
         console.log(this.order)
 
     },
@@ -133,22 +160,3 @@ export default {
     }
 }
 </script>
-<style>
-.user-icon-container {
-    position: relative;
-}
-.badge-counter {
-    width: 12px;
-    height: 12px;
-
-    position: absolute;
-    top: -5px;
-    right: 4px;
-
-    border-radius: 50%;
-    font-size: 10px;
-    background-color: #ff385c;
-    color: white;
-    text-align: center;
-}
-</style>

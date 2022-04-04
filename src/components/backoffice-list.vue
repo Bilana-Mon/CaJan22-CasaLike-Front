@@ -1,6 +1,6 @@
 <template>
     <section class="section-row backoffice-list-container">
-        <div class="section-col stay-col container">
+        <div class="section-col stay-col">
             <div class="small-img-container">
                 <h2 class="table-heading host-title">Hello, Kyrill</h2>
                 <img
@@ -13,7 +13,7 @@
                     <p class="small text-muted">
                         <span class="badge text-success">Your Average Reviews</span>
                     </p>
-                    <h3>
+                    <h3 class="h3-card">
                         <svg
                             viewBox="0 0 32 32"
                             xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@
                     <p class="small text-muted">
                         <span class="badge text-success">Annual Income</span>
                     </p>
-                    <h3>$25,610</h3>
+                    <h3 class="h3-card">$25,610</h3>
                     <small class="text-muted">2% increased compared to last year</small>
                 </div>
 
@@ -46,15 +46,15 @@
                     <p class="small text-muted">
                         <span class="badge text-danger">Average Number of Reservations</span>
                     </p>
-                    <h3>48</h3>
+                    <h3 class="h3-card">48</h3>
                     <small class="text-muted">1.5% increased compared to last year</small>
                 </div>
 
-                <div class="section-col cards">
+                <div class="section-col last-card">
                     <p class="small text-muted">
                         <span class="badge text-success">You are a</span>
                     </p>
-                    <h3>Superhost</h3>
+                    <h3 class="h3-card">Superhost</h3>
                     <small class="text-muted">Superhosts are highly rated hosts.</small>
                 </div>
             </div>

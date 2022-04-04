@@ -1,5 +1,5 @@
 <template>
-    <section  class="section-row" v-if="order">    
+    <section class="section-row" v-if="order">
         <section class="pending-reservation-container section-col">
             <div class="pending-status-container">
                 <h2>{{ this.order.user }}, thank you for your reservation!</h2>
@@ -105,14 +105,14 @@ export default {
     //     stay: Object
     // },
     components: {},
- 
+
     async created() {
-      await this.$store.dispatch({ type: 'loadOrders' })
+        await this.$store.dispatch({ type: 'loadOrders' })
         this.orders = JSON.parse(JSON.stringify(this.$store.getters.orders))
         this.order = this.orders[0]
         console.log(this.orders)
         console.log(this.order);
-    
+
         // const { id } = this.$route.params
         // this.stay = await stayService.getById(id)
         // console.log(this.stay);
@@ -121,7 +121,7 @@ export default {
     data() {
         return {
             order: null,
-            orders:null
+            orders: null
             // isLoading:true
         }
     },
@@ -144,9 +144,9 @@ export default {
             console.log(yearNum)
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
-        },closeModal() {
-          this.$emit('close')
-      },
+        }, closeModal() {
+            this.$emit('close')
+        },
     },
     computed: {
         getNumOfNights() {

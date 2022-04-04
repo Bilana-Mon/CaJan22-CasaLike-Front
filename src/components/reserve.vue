@@ -177,13 +177,6 @@
             </div>
         </div>
     </section>
-    <app-modal v-if="isOpenModal">
-        <button @click="isOpenModal = !isOpenModal">X</button>
-        <h2>Reservation Status: Pending</h2>
-        <div class="pending-img">
-            <img src="/src/assets/icons/wall-clock.png" alt />
-        </div>
-    </app-modal>
 </template>
 
 <script>
@@ -272,7 +265,8 @@ export default {
             if (this.order.dates['0'] !== 'Add date' && this.order.dates['1'] !== 'Add date') {
                 let order = { ...this.order }
                 await this.$store.dispatch({ type: 'setOrder', order })
-                this.isOpenModal = true
+                this.$emit('orderPending')
+                // this.isOpenModal = true
                 // this.$router.push('/order')
             } else {
                 this.isInvalid = true;

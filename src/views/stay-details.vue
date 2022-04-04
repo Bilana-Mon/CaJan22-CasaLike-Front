@@ -68,8 +68,30 @@
         </div>
         <div class="details-reserve-container">
           <div class="reserve-container">
-            <reserve :stay="stay"></reserve>
+            <reserve :stay="stay" @orderPending="isOpenModal = !isOpenModal"></reserve>
           </div>
+          <app-modal class="order-modal" v-if="isOpenModal">
+            <div class="portal-content">
+              <button @click="isOpenModal = !isOpenModal">
+                <svg
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  role="presentation"
+                  focusable="false"
+                  style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible;"
+                >
+                  <path d="m6 6 20 20" />
+                  <path d="m26 6-20 20" />
+                </svg>
+              </button>
+              <h2>Bilana, Thanks For Your Reservation!</h2>
+              <h2>Your Reservation Status is: Pending</h2>
+              <div class="pending-img">
+                <img src="/src/assets/icons/wall-clock.png" alt />
+              </div>
+            </div>
+          </app-modal>
           <div class="stay-description-container">
             <div class="stay-desc-container">
               <div class="stay-type-container">
@@ -157,7 +179,8 @@ export default {
   },
   data() {
     return {
-      stay: null
+      stay: null,
+      isOpenModal: false
     }
   },
   methods: {},

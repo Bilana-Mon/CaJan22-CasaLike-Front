@@ -1,15 +1,13 @@
 <template>
-    <section class="section-row" v-if="order">
-        <section class="pending-reservation-container section-col">
-            <div class="pending-status-container">
-                <h2>{{ this.order.user }}, thank you for your reservation!</h2>
-                <div class="pending-img">
-                    <img src="/src/assets/icons/compelete.png" alt />
-                </div>
+    <section class="section-row section-col" v-if="order">
+        <div class="pending-status-container">
+            <h2>{{ this.order.user }}, your reservation was approved!</h2>
+            <div class="pending-img">
+                <img src="/src/assets/icons/compelete.png" alt />
             </div>
-            <h3>Enjoy your trip!</h3>
-            <h3>Reservation details</h3>
-
+        </div>
+        <h3>Your trip</h3>
+        <section class="pending-reservation-container section-col">
             <ul class="clean-list list-container">
                 <div class="desc-li-container">
                     <li>
@@ -112,7 +110,7 @@ export default {
         this.order = this.orders[this.orders.length - 1]
         console.log(this.orders)
         console.log(this.order);
-
+        this.editStatus()
         // const { id } = this.$route.params
         // this.stay = await stayService.getById(id)
         // console.log(this.stay);
@@ -160,6 +158,11 @@ export default {
         closeModal() {
             this.$emit('close')
         },
+        async editStatus() {
+            let order = { ...this.order }
+            order.isSeenByUser = true;
+            await this.$store.dispatch({ type: 'setOrder', order })
+        }
     },
     computed: {
         getTotalExFees() {

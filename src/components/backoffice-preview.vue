@@ -1,56 +1,53 @@
 <template>
-    <section :class="getClassByStatus()" v-if="order">
-        <tr>
-            <td>{{ order.user }}</td>
-            <td>
-                <span class="td-span-guests">Adults:</span>
-                <span>{{ order.capacity.adults }}</span>
+    <tr :class="getClassByStatus()" v-if="order">
+        <td>{{ order.user }}</td>
+        <td>
+            <span class="td-span-guests">Adults:</span>
+            <span>{{ order.capacity.adults }}</span>
 
-                <div v-if="order.capacity.children">
-                    <span class="td-span-guests">Children:</span>
-                    <span>{{ order.capacity.children }}</span>
-                </div>
-                <div v-if="order.capacity.infants">
-                    <span class="td-span-guests">Infants:</span>
-                    <span>{{ order.capacity.infants }}</span>
-                </div>
-                <div v-if="order.capacity.pets" class="guests-li">
-                    <span class="td-span-guests">Pets:</span>
-                    <span>{{ order.capacity.pets }}</span>
-                </div>
-            </td>
+            <div v-if="order.capacity.children">
+                <span class="td-span-guests">Children:</span>
+                <span>{{ order.capacity.children }}</span>
+            </div>
+            <div v-if="order.capacity.infants">
+                <span class="td-span-guests">Infants:</span>
+                <span>{{ order.capacity.infants }}</span>
+            </div>
+            <div v-if="order.capacity.pets" class="guests-li">
+                <span class="td-span-guests">Pets:</span>
+                <span>{{ order.capacity.pets }}</span>
+            </div>
+        </td>
 
-            <td>
-                <!-- <div class="li-title">From:</div> -->
-                <span>{{ getFormattedDate(order.dates['0']) }}</span>
-            </td>
-            <td>
-                <!-- <div class="li-title">To:</div> -->
-                <span>{{ getFormattedDate(order.dates['1']) }}</span>
-            </td>
-            <td>
-                <span class="approve" v-if="order.status === 'approved' || this.isApproved">Approved</span>
-                <span class="decline" v-if="order.status === 'declined' || this.isDeclined">Declined</span>
-                <span
-                    class="pending-content"
-                    v-if="order.status === 'pending' && !this.isApproved && !this.isDeclined"
-                >Pending</span>
-            </td>
-            <td class="btn-container">
-                <button
-                    class="approve"
-                    @click="setOrderApproveStatus(); togglePending()"
-                    :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
-                >Approve</button>
-                <button
-                    class="decline"
-                    @click="setOrderDeclineStatus(); togglePending()"
-                    :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
-                >Decline</button>
-            </td>
-        </tr>
-    </section>
-        <hr/>
+        <td>
+            <!-- <div class="li-title">From:</div> -->
+            <span>{{ getFormattedDate(order.dates['0']) }}</span>
+        </td>
+        <td>
+            <!-- <div class="li-title">To:</div> -->
+            <span>{{ getFormattedDate(order.dates['1']) }}</span>
+        </td>
+        <td>
+            <span class="approve" v-if="order.status === 'approved' || this.isApproved">Approved</span>
+            <span class="decline" v-if="order.status === 'declined' || this.isDeclined">Declined</span>
+            <span
+                class="pending-content"
+                v-if="order.status === 'pending' && !this.isApproved && !this.isDeclined"
+            >Pending</span>
+        </td>
+        <td class="btn-container">
+            <button
+                class="approve"
+                @click="setOrderApproveStatus(); togglePending()"
+                :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
+            >Approve</button>
+            <button
+                class="decline"
+                @click="setOrderDeclineStatus(); togglePending()"
+                :disabled="order.status === 'approved' || order.status === 'declined' || !this.isPending"
+            >Decline</button>
+        </td>
+    </tr>
 </template>
 
 <script>

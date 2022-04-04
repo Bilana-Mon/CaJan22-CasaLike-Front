@@ -60,7 +60,7 @@
                                 />
                             </svg>
                             <div class="user-icon-container">
-                                <div class="badge-counter">1</div>
+                                <div class="badge-counter" v-if="!isSeenByUser">1</div>
                                 <svg
                                     class="user-icon"
                                     id="user-circle"
@@ -79,8 +79,8 @@
                                 <b>Messages</b>
                             </div>
                             <div class="notification-icon-container">
-                                <div class="badge-counter"></div>
-                                <div class="login-btn">
+                                <div class="badge-counter" v-if="!isSeenByUser"></div>
+                                <div class="login-btn" @click="goToOrders()">
                                     <b>Notifications</b>
                                 </div>
                             </div>
@@ -126,9 +126,10 @@ export default {
     },
     async created() {
         window.addEventListener('scroll', this.handleScroll);
-        this.orders = await JSON.parse(JSON.stringify(this.$store.getters.orders))
+        await this.$store.dispatch({ type: 'loadOrders' })
+        this.orders = JSON.parse(JSON.stringify(this.$store.getters.orders))
         this.order = this.orders[this.orders.length - 1]
-        // this.isSeenByUser = this.order.isSeenByUser
+        this.isSeenByUser = this.order.isSeenByUser
         console.log(this.order)
 
     },
@@ -137,7 +138,7 @@ export default {
             addSignupModal: false,
             openLoginBar: false,
             scrolled: false,
-            isSeenByUser: null,
+            isSeenByUser: true,
             order: null
         }
     },
@@ -156,7 +157,11 @@ export default {
 
         handleScroll() {
             this.scrolled = window.scrollY > 5
+        },
+        goToOrders() {
+            this.$router.push('/order')
         }
+
     }
 }
 </script>

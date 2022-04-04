@@ -26,11 +26,11 @@
                     </li>
                     <li>
                         <span class="li-title">From:</span>
-                        <span class="li-content">{{ getFormattedDate(this.order.dates['0']) }}</span>
+                        <span class="li-content">{{ getFormattedDate(this.order.dates[0]['0']) }}</span>
                     </li>
                     <li>
                         <span class="li-title">To:</span>
-                        <span class="li-content">{{ getFormattedDate(this.order.dates['1']) }}</span>
+                        <span class="li-content">{{ getFormattedDate(this.order.dates[1]['1']) }}</span>
                     </li>
                 </div>
                 <div class="guests-li-container">
@@ -65,22 +65,22 @@
                     </li>
                     <li>
                         <span class="li-title">Number of nights:</span>
-                        <span class="li-content">{{ getNumOfNights }} nights</span>
+                        <span class="li-content">{{ getNumOfNights() }} nights</span>
                     </li>
                     <li>
                         <span class="li-title">Total price excluding fees:</span>
-                        <span class="li-content">{{ getTotalExFees }}</span>
+                        <!-- <span class="li-content">{{ getTotalExFees }}</span> -->
                     </li>
                     <li>
                         <span class="li-title li-upper-title">Fees:</span>
                         <div class="fees-box">
                             <div v-if="order.cleaningFee" class="cleaning-fee-container">
                                 <div class="li-title">Cleaning fee:</div>
-                                <div class="li-content">${{ this.order.cleaningFee }}</div>
+                                <!-- <div class="li-content">${{ this.order.cleaningFee }}</div> -->
                             </div>
                             <div v-if="order.securityDeposit" class="security-fee-container">
                                 <div class="li-title">Security deposit:</div>
-                                <div class="li-content">${{ this.order.securityDeposit }}</div>
+                                <!-- <div class="li-content">${{ this.order.securityDeposit }}</div> -->
                             </div>
                         </div>
                     </li>
@@ -88,7 +88,7 @@
                 <hr class="hr" />
                 <li>
                     <span class="li-title">Total price:</span>
-                    <span class="li-content">{{ getTotalPrice }}</span>
+                    <!-- <span class="li-content">{{ getTotalPrice }}</span> -->
                 </li>
             </ul>
         </section>
@@ -109,7 +109,7 @@ export default {
     async created() {
         await this.$store.dispatch({ type: 'loadOrders' })
         this.orders = JSON.parse(JSON.stringify(this.$store.getters.orders))
-        this.order = this.orders[0]
+        this.order = this.orders[this.orders.length - 1]
         console.log(this.orders)
         console.log(this.order);
 
@@ -144,19 +144,20 @@ export default {
             console.log(yearNum)
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
             return formattedDate
-        }, closeModal() {
-            this.$emit('close')
         },
-    },
-    computed: {
         getNumOfNights() {
-            let startDate = this.order.dates['0'].getTime()
-            let endDate = this.order.dates['1'].getTime()
+            let startDate = this.order.dates[0]['0'].getTime()
+            let endDate = this.order.dates[1]['1'].getTime()
             let diffInTime = endDate - startDate;
             let diffInDays = diffInTime / (1000 * 3600 * 24)
             console.log(diffInDays);
             return diffInDays
         },
+        closeModal() {
+            this.$emit('close')
+        },
+    },
+    computed: {
         getTotalExFees() {
             let numNights = this.getNumOfNights
             let price = numNights * (this.order.price)

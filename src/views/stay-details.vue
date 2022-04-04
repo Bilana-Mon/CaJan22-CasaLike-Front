@@ -85,10 +85,12 @@
                   <path d="m26 6-20 20" />
                 </svg>
               </button>
-              <h2>Bilana, Thanks For Your Reservation!</h2>
-              <h2>Your Reservation Status is: Pending</h2>
-              <div class="pending-img">
-                <img src="/src/assets/icons/wall-clock.png" alt />
+              <h2 class="h2-modal">Bilana, Thanks For Your Reservation!</h2>
+              <div class="order-status-pending-modal">
+                <h3>Your Reservation Status is: Pending</h3>
+                <div class="pending-img">
+                  <img src="/src/assets/icons/wall-clock.png" alt />
+                </div>
               </div>
             </div>
           </app-modal>

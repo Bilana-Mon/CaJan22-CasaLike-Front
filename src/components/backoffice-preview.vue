@@ -50,6 +50,7 @@
             </td>
         </tr>
     </section>
+        <hr/>
 </template>
 
 <script>

@@ -16,9 +16,16 @@
     width: 100%;
     margin: 0 auto;
     border-radius: 12px;
-    padding: 20px;
+    padding: 5px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     color: #222222;
+    margin-bottom: 1rem;
+}
+
+.h3-card {
+    text-align: center;
+    margin-block-start: 1px;
+    margin-block-end: 10px;
 }
 
 .backoffice-list-container thead {
@@ -36,7 +43,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-self: flex-start;
-    margin-left: 169px;
+    margin-left: 230px;
 
     color: #ff385c;
 }
@@ -53,6 +60,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5px;
 }
 
 .backoffice-list-container .small-img-container .host-title {
@@ -70,7 +78,19 @@
 .cards {
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     /* border-right: 0.5px solid #a7a6a6; */
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 22px;
+    margin-inline-end: 20px;
     border-radius: 15px;
-    padding: 12px;
+    padding-bottom: 16px;
+}
+
+.last-card {
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    /* border-right: 0.5px solid #a7a6a6; */
+    margin-top: 20px;
+    margin-bottom: 22px;
+    border-radius: 15px;
+    margin-inline-end: 0px;
+    padding-bottom: 16px;
 }

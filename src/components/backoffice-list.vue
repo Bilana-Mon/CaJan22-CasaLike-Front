@@ -73,7 +73,7 @@
                 </thead>
                 <tbody>
                     <backoffice-preview
-                        class="orders-list-container clean-list"
+                        class="orders-list-container"
                         v-for="order in this.orders"
                         :key="order._id"
                         :order="order"
@@ -97,6 +97,7 @@ export default {
     },
 }
 </script>
+
 
 
 

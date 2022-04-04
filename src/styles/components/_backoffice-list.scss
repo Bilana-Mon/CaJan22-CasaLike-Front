@@ -96,3 +96,9 @@
     padding-bottom: 16px;
     border: 1px solid lightgray;
 }
+
+.orders-list-container {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+  }

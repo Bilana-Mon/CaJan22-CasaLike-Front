@@ -17,9 +17,9 @@
     margin: 0 auto;
     border-radius: 12px;
     padding: 5px;
-    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     color: #222222;
     margin-bottom: 1rem;
+    border: 1px solid lightgray;
 }
 
 .h3-card {
@@ -34,7 +34,7 @@
 }
 
 .backoffice-list-container th {
-    width: 150px;
+    width: 200px;
     padding-bottom: 20px;
 }
 
@@ -76,21 +76,21 @@
 }
 
 .cards {
-    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     /* border-right: 0.5px solid #a7a6a6; */
     margin-top: 20px;
     margin-bottom: 22px;
     margin-inline-end: 20px;
     border-radius: 15px;
     padding-bottom: 16px;
+    border: 1px solid lightgray;
 }
 
 .last-card {
-    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
     /* border-right: 0.5px solid #a7a6a6; */
     margin-top: 20px;
     margin-bottom: 22px;
     border-radius: 15px;
     margin-inline-end: 0px;
     padding-bottom: 16px;
+    border: 1px solid lightgray;
 }

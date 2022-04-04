@@ -437,6 +437,8 @@
   text-transform: lowercase;
 }
 
+//DATE PICKER SETTINGS:
+
 .el-date-table td.in-range .el-date-table-cell {
   background-color: #f7f7f7 !important;
 }
@@ -450,3 +452,11 @@
   --el-datepicker-active-color: var(--el-color-primary);
   --el-datepicker-hover-text-color: $black;
 }
+
+.el-date-table td.today.end-date .el-date-table-cell__text, .el-date-table td.today.start-date .el-date-table-cell__text {
+  color: #fff !important;
+}
+
+  .el-date-table td.today .el-date-table-cell__text {
+    color: var(--el-text-color-regular) !important;
+  }

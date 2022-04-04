@@ -17,11 +17,11 @@ img {
 h1 {
   font-family: airbnb-extrabold;
 }
-.section-col, .main-nav.scrolled {
-  max-width: calc(min(1280px, 100%)) !important;
+.section-col, .main-nav.scrolled{
+  max-width: calc(min(1380px, 100%) - 5px) !important;
 }
 .section-col.stay-col, .stay-col .main-nav.scrolled{
-  max-width: calc(min(1280px, 100%)) !important;
+  max-width: calc(min(1380px, 100%) - 5px) !important;
 }
 .section-col{
   width: 100%;

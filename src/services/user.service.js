@@ -56,5 +56,5 @@ function getLoggedinUser() {
 }
 
 function getLoggedinHost() {
-   return gHost
+    return gHost
 }

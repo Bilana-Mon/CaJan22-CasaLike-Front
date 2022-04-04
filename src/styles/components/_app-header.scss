@@ -26,7 +26,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    top:5px;
+    top:4px;
 }
 
 .logo-img {
@@ -94,6 +94,9 @@
     height: 43px;
     cursor: pointer;
 }
+.login-bar:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  }
 .main-nav.scrolled .login-bar{
     outline: 1px solid #e7e7e7;
 }

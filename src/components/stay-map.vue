@@ -1,7 +1,7 @@
 <template v-if="stay">
   <section class="map-container">
     <h2>Where you’ll be</h2>
-    <GMapMap class="map" :center="center" :zoom="10" map-type-id="terrain">
+    <GMapMap class="map" :center="center" :zoom="18" map-type-id="terrain">
       <GMapMarker :options="markerOptions" />
     </GMapMap>
     <p class="vue-map-location">{{ stay.address.street }}</p>

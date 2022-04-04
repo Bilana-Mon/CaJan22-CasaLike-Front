@@ -29,8 +29,12 @@
 .info-top-left span {
   display: flex;
   align-items: center;
+  padding-left: 4px;
 }
 
+.dot{
+  white-space:pre;
+}
 
 .icons-top {
   display: flex;
@@ -64,7 +68,7 @@
   color: #717171;
   font-family: CircularStd-Book;
   margin-bottom: -2px;
-  margin-left: 12px;
+  margin-left: 4px;
 }
 
 .stay-images {
@@ -161,7 +165,7 @@
 .stay-details-rate {
   font-size: 0.975rem !important;
   font-family: "CircularStd-book" !important;
-  margin-left: 0.5rem;
+  margin-left: 0.2rem;
 }
 
 hr {
@@ -311,7 +315,7 @@ hr {
 
 .vue-map {
   width: 100%;
-  min-height: 17rem !important;
+  min-height: 35rem !important;
   border-radius: 10px;
 }
 
@@ -387,11 +391,6 @@ hr {
   min-width: 3rem;
 }
 
-.stay-details-rate {
-  font-size: 1.4rem;
-  font-family: "CircularStd-Medium";
-  margin-left: 0.5rem;
-}
 
 .stay-details-rate a {
   text-decoration: none;

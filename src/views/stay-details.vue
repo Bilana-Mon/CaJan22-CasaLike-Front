@@ -12,7 +12,7 @@
                 aria-hidden="true"
                 role="presentation"
                 focusable="false"
-                style="display: inline-block; height: 14px; width: 14px; fill: #ff385c;"
+                style="display: inline-block; height: 14px; width: 14px; fill: #ff385c; margin-bottom: 2px;"
                 class="st-current"
               >
                 <path
@@ -22,8 +22,9 @@
                 />
               </svg>
             </span>
-            <span class="stay-details-rating">{{ getFormattedRate }}</span> ·
-            <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews</a> ·
+            <span class="stay-details-rating">{{ getFormattedRate }}  · </span>
+            <a class="stay-details-rate" href="#">{{ stay.numOfReviews }} reviews </a> 
+            <b class="dot"> · </b>
             <a class="stay-details-address" href="#">{{ stay.address.street }}</a>
           </div>
           <div class="icons-top">
@@ -72,7 +73,7 @@
           </div>
           <app-modal class="order-modal" v-if="isOpenModal">
             <div class="portal-content">
-              <button @click="isOpenModal = !isOpenModal">
+              <button class="portal-close-btn" @click="isOpenModal = !isOpenModal">
                 <svg
                   viewBox="0 0 32 32"
                   xmlns="http://www.w3.org/2000/svg"

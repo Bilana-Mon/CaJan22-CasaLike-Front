@@ -161,9 +161,7 @@
 
 .mouse-cursor-gradient-tracking {
   position: relative;
-  background: var(
-    --dls19-brand-gradient-radial,
-    radial-gradient(
+  background: radial-gradient(
       circle at center,
       #ff385c 5%,
       #e61e4d 27.5%,
@@ -171,8 +169,7 @@
       #d70466 57.5%,
       #bd1e59 75%,
       #bd1e59 950%
-    )
-  ) !important;
+    );
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   font-family: "CircularStd-Book";
@@ -373,7 +370,7 @@
 }
 
 .text-charging {
-  text-align: center;
+  text-align: center; 
   color: $grey;
   margin: .5rem;
 }
@@ -452,6 +449,8 @@
   --el-datepicker-active-color: var(--el-color-primary);
   --el-datepicker-hover-text-color: $black;
 }
+
+//ON CURRENT DATE
 
 .el-date-table td.today.end-date .el-date-table-cell__text, .el-date-table td.today.start-date .el-date-table-cell__text {
   color: #fff !important;

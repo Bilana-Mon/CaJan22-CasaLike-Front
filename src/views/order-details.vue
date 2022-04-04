@@ -26,11 +26,11 @@
                     </li>
                     <li>
                         <span class="li-title">From:</span>
-                        <span class="li-content">{{ getFormattedDate(this.order.dates[0]['0']) }}</span>
+                        <span class="li-content">{{ getFormattedDate(this.order.dates[0]) }}</span>
                     </li>
                     <li>
                         <span class="li-title">To:</span>
-                        <span class="li-content">{{ getFormattedDate(this.order.dates[1]['1']) }}</span>
+                        <span class="li-content">{{ getFormattedDate(this.order.dates[1]) }}</span>
                     </li>
                 </div>
                 <div class="guests-li-container">
@@ -130,26 +130,30 @@ export default {
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(+price)
         },
         getFormattedDate(date) {
+            console.log('forammated date', date);
             let monthNames = [
                 "January", "February", "March",
                 "April", "May", "June",
                 "July", "August", "September",
                 "October", "November", "December"
             ]
-            let dayNum = new Date(date).getDate()
-            console.log(dayNum)
+            let dayNum = new Date(date).getDate() - 1
+            console.log('dayNum', dayNum)
             let monthNum = new Date(date).getMonth()
             let monthName = monthNames[monthNum]
             let yearNum = new Date(date).getFullYear()
-            console.log(yearNum)
+            console.log('yearNum', yearNum)
             let formattedDate = dayNum + ' ' + monthName + ' ' + yearNum
+            console.log('formattedDate', formattedDate);
             return formattedDate
         },
         getNumOfNights() {
-            let startDate = this.order.dates[0]['0'].getTime()
-            let endDate = this.order.dates[1]['1'].getTime()
+            let startDate = new Date(this.order.dates[0]).getTime()
+            let endDate = new Date(this.order.dates[1]).getTime()
+
             let diffInTime = endDate - startDate;
             let diffInDays = diffInTime / (1000 * 3600 * 24)
+
             console.log(diffInDays);
             return diffInDays
         },

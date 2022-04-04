@@ -59,17 +59,20 @@
                                     d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
                                 />
                             </svg>
-
-                            <svg
-                                id="user-circle"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512"
-                            >
-                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                                <path
-                                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"
-                                />
-                            </svg>
+                            <div class="user-icon-container">
+                                <div class="badge-counter">1</div>
+                                <svg
+                                    class="user-icon"
+                                    id="user-circle"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                >
+                                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                    <path
+                                        d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c39.77 0 72 32.24 72 72S295.8 272 256 272c-39.76 0-72-32.24-72-72S216.2 128 256 128zM256 448c-52.93 0-100.9-21.53-135.7-56.29C136.5 349.9 176.5 320 224 320h64c47.54 0 87.54 29.88 103.7 71.71C356.9 426.5 308.9 448 256 448z"
+                                    />
+                                </svg>
+                            </div>
                         </div>
                         <div v-if="openLoginBar" class="login-options">
                             <div class="login-btn" @click="addSignupModal = true">
@@ -100,7 +103,7 @@ export default {
     async created() {
         window.addEventListener('scroll', this.handleScroll);
         console.log(this.order)
-  
+
     },
     data() {
         return {
@@ -108,7 +111,7 @@ export default {
             openLoginBar: false,
             scrolled: false,
             isSeenByUser: null,
-            order:null
+            order: null
         }
     },
     computed: {
@@ -130,3 +133,22 @@ export default {
     }
 }
 </script>
+<style>
+.user-icon-container {
+    position: relative;
+}
+.badge-counter {
+    width: 12px;
+    height: 12px;
+
+    position: absolute;
+    top: -5px;
+    right: 4px;
+
+    border-radius: 50%;
+    font-size: 10px;
+    background-color: #ff385c;
+    color: white;
+    text-align: center;
+}
+</style>

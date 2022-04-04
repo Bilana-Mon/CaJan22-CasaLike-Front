@@ -99,15 +99,16 @@ export default {
     },
     async created() {
         window.addEventListener('scroll', this.handleScroll);
-        this.isSeenByUser = await this.$store.getters.order.isSeenByUser
-        console.log(this.$store.getters.order);
+        console.log(this.order)
+  
     },
     data() {
         return {
             addSignupModal: false,
             openLoginBar: false,
             scrolled: false,
-            isSeenByUser: null
+            isSeenByUser: null,
+            order:null
         }
     },
     computed: {

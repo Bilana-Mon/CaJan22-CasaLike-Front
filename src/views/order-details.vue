@@ -108,8 +108,9 @@ export default {
  
     async created() {
       await this.$store.dispatch({ type: 'loadOrders' })
-        this.order = JSON.parse(JSON.stringify(this.$store.getters.orders[0]))
-        console.log(this.order)
+        this.orders = JSON.parse(JSON.stringify(this.$store.getters.orders))
+        this.order = this.orders[0]
+        console.log(this.orders)
         console.log(this.order);
     
         // const { id } = this.$route.params
@@ -120,6 +121,7 @@ export default {
     data() {
         return {
             order: null,
+            orders:null
             // isLoading:true
         }
     },

@@ -93,7 +93,7 @@ export default {
             order.isSeenByUser = false;
             order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
-            await this.$store.dispatch({ type: 'saveOrder', order })
+            // await this.$store.dispatch({ type: 'saveOrder', order })
             console.log(order);
         },
         togglePending() {
@@ -106,7 +106,7 @@ export default {
             order.isSeenByUser = false;
             order.isSeenByHost = true;
             await this.$store.dispatch({ type: 'setOrder', order })
-            await this.$store.dispatch({ type: 'saveOrder', order })
+            // await this.$store.dispatch({ type: 'saveOrder', order })
 
             console.log(this.$store.getters.order);
             console.log(order);

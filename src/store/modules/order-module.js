@@ -18,19 +18,17 @@ export default {
         setOrders(state, { orders }) {
             state.orders = orders
         },
-        saveOrder(state, { order }) {
-            state.currOrder = order;
-            console.log(state.currOrder);
+        // saveOrder(state, { order }) {
+        //     state.currOrder = order;
+        //     console.log(state.currOrder);
             // console.log(state.currOrder);
             // const idx = state.orders.findIndex((currOrder) => currOrder._id === order._id)
             // if (idx !== -1) state.orders.splice(idx, 1, order)
             // else state.orders.push(order)
-        },
+        // },
         setOrder(state, { order }) {
             console.log('set order lala', order);
             const idx = state.orders.findIndex((currOrder) => currOrder._id === order._id)
-            state.currOrder = order;
-            console.log(state.currOrder);
             if (idx !== -1) state.orders.splice(idx, 1, order)
             else state.orders.push(order)
 
@@ -45,12 +43,12 @@ export default {
             let orders = await orderService.query();
             commit({ type: 'setOrders', orders })
         },
-        async saveOrder({ commit, dispatch }, { order }) {
-            await orderService.save(order)
-            console.log('lala', order);
-            commit({ type: 'saveOrder', order })
-            dispatch({ type: 'loadOrders' });
-        },
+        // async saveOrder({ commit, dispatch }, { order }) {
+        //     await orderService.save(order)
+        //     console.log('lala', order);
+        //     commit({ type: 'saveOrder', order })
+        //     dispatch({ type: 'loadOrders' });
+        // },
         async setOrder({ commit, dispatch }, { order }) {
             await orderService.save(order)
             console.log('lala', order);

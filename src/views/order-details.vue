@@ -174,7 +174,9 @@ export default {
     // },
     components: {},
     async created() {
-        this.order = await this.$store.getters.order
+        await this.$store.dispatch({ type: 'loadOrders' })
+        this.order = this.$store.getters.orders[0]
+        console.log(this.order)
         console.log(this.order);
         setTimeout(() => {
             this.isApproved = true;

@@ -13,7 +13,7 @@ import appFooter from './components/app-footer.vue'
 export default {
   name: 'app',
   created() {
-
+ this.$store.dispatch({ type: 'loadOrders' })
   },
   components: {
     appHeader,
